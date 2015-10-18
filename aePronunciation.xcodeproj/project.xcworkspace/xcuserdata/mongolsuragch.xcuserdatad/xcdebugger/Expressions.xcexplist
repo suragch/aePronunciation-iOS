@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "PracticeSoundsViewController.keyTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "numberCorrect">
+            </PersistentString>
+            <PersistentString
+               value = "numberWrong">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PracticeSoundsViewController.playButtonTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "readyForNewSound">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
