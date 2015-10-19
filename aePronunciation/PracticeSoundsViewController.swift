@@ -110,7 +110,7 @@ class PracticeSoundsViewController: UIViewController {
         // cancel
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) in
             // do nothing
-        }
+        } 
         
         // add action buttons to action sheet
         myActionSheet.addAction(vowelsAndConsonantsAction)
