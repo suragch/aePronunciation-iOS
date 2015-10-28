@@ -1,11 +1,3 @@
-//
-//  Player.swift
-//  aePronunciation
-//
-//  Created by MongolSuragch on 10/5/15.
-//  Copyright © 2015 Suragch. All rights reserved.
-//
-
 import Foundation
 import AudioToolbox
 

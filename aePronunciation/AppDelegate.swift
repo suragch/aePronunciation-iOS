@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  aePronunciation
-//
-//  Created by MongolSuragch on 9/28/15.
-//  Copyright © 2015 Suragch. All rights reserved.
-//
 
 import UIKit
 
@@ -13,6 +6,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    override init() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaultValues = [
+            Key.name : "",
+            Key.numberOfQuestions : 50,
+            Key.contentType : ExamType.Doubles.rawValue
+        ]
+        defaults.registerDefaults(defaultValues as! [String : AnyObject])
+        super.init()
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

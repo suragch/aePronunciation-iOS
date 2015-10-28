@@ -21,8 +21,13 @@
 		50DC217B1BB8FF65000075AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DC21791BB8FF65000075AE /* LaunchScreen.storyboard */; };
 		50DC21861BB8FF65000075AE /* aePronunciationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC21851BB8FF65000075AE /* aePronunciationTests.swift */; };
 		50DC21911BB8FF65000075AE /* aePronunciationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC21901BB8FF65000075AE /* aePronunciationUITests.swift */; };
+		50E2EAF41BD6182600842ED3 /* TestResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420241BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420261BBF684C0092F74B /* DoubleSound.swift */; settings = {ASSET_TAGS = (); }; };
+		50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6431BD4ABBB002CC689 /* Answer.swift */; settings = {ASSET_TAGS = (); }; };
+		50E9E64A1BD50717002CC689 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6491BD50717002CC689 /* Key.swift */; settings = {ASSET_TAGS = (); }; };
+		50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E64B1BD50A50002CC689 /* TestViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +68,13 @@
 		50DC218C1BB8FF65000075AE /* aePronunciationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aePronunciationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DC21901BB8FF65000075AE /* aePronunciationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationUITests.swift; sourceTree = "<group>"; };
 		50DC21921BB8FF65000075AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestResultsViewController.swift; sourceTree = "<group>"; };
 		50E420241BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSoundsCollectionViewCell.swift; sourceTree = "<group>"; };
 		50E420261BBF684C0092F74B /* DoubleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSound.swift; sourceTree = "<group>"; };
+		50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
+		50E9E6431BD4ABBB002CC689 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		50E9E6491BD50717002CC689 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		50E9E64B1BD50A50002CC689 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,9 @@
 				5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */,
 				50D64FD81BBE912C003657A4 /* LearnDoubleSoundsViewController.swift */,
 				508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */,
+				50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */,
+				50E9E64B1BD50A50002CC689 /* TestViewController.swift */,
+				50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -117,6 +130,8 @@
 				50D64FD61BBE7E96003657A4 /* SingleSound.swift */,
 				50E420261BBF684C0092F74B /* DoubleSound.swift */,
 				508360581BC29ABA00A225E6 /* Player.swift */,
+				50E9E6431BD4ABBB002CC689 /* Answer.swift */,
+				50E9E6491BD50717002CC689 /* Key.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -319,12 +334,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */,
 				50DC216F1BB8FF65000075AE /* AppDelegate.swift in Sources */,
 				50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */,
 				50D64FD91BBE912C003657A4 /* LearnDoubleSoundsViewController.swift in Sources */,
 				50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */,
+				50E2EAF41BD6182600842ED3 /* TestResultsViewController.swift in Sources */,
 				5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */,
+				50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */,
 				50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */,
+				50E9E64A1BD50717002CC689 /* Key.swift in Sources */,
+				50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */,
 				50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */,
 				508360591BC29ABA00A225E6 /* Player.swift in Sources */,
 				508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */,

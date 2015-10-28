@@ -1,12 +1,10 @@
-//
-//  SingleSound.swift
-//  aePronunciation
-//
-//  Created by MongolSuragch on 10/2/15.
-//  Copyright © 2015 Suragch. All rights reserved.
-//
-
 import Foundation
+
+//enum SingleSoundType: Int {
+//    case VowelsAndConsonants = 0
+//    case VowelsOnly
+//    case ConsonantsOnly
+//}
 
 class SingleSound {
     

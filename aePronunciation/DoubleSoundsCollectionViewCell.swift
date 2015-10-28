@@ -1,11 +1,3 @@
-//
-//  DoubleSoundsCollectionViewCell.swift
-//  aePronunciation
-//
-//  Created by MongolSuragch on 10/3/15.
-//  Copyright © 2015 Suragch. All rights reserved.
-//
-
 import UIKit
 
 class DoubleSoundsCollectionViewCell: UICollectionViewCell {

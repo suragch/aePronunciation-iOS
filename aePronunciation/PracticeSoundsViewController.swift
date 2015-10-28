@@ -1,11 +1,3 @@
-//
-//  PracticeSoundsViewController.swift
-//  aePronunciation
-//
-//  Created by MongolSuragch on 10/5/15.
-//  Copyright © 2015 Suragch. All rights reserved.
-//
-
 import UIKit
 
 class PracticeSoundsViewController: UIViewController {
@@ -20,12 +12,13 @@ class PracticeSoundsViewController: UIViewController {
     private var inputKeyCounter = 0
     private var readyForNewSound = true
     private var alreadyMadeWrongAnswerForThisIpa = false
-    private enum SingleType {
+    private enum SingleSoundType {
         case VowelsAndConsonants
         case VowelsOnly
         case ConsonantsOnly
     }
-    private var vowelsOrConsonants = SingleType.VowelsAndConsonants
+    private var vowelsOrConsonants = SingleSoundType.VowelsAndConsonants
+    private let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
 
     // MARK: - Outlets
     
@@ -86,7 +79,7 @@ class PracticeSoundsViewController: UIViewController {
         // Vowels and consonants
         let vowelsAndConsonantsAction = UIAlertAction(title: "Vowels and Consonants", style: UIAlertActionStyle.Default) { (action) in
             
-            self.vowelsOrConsonants = SingleType.VowelsAndConsonants
+            self.vowelsOrConsonants = SingleSoundType.VowelsAndConsonants
             self.vowelsAndConsonantsLabel.text = "Vowels and Consonants"
             self.resetToInitialValues()
         }
@@ -94,7 +87,7 @@ class PracticeSoundsViewController: UIViewController {
         // vowels only
         let vowelsAction = UIAlertAction(title: "Vowels Only", style: UIAlertActionStyle.Default) { (action) in
             
-            self.vowelsOrConsonants = SingleType.VowelsOnly
+            self.vowelsOrConsonants = SingleSoundType.VowelsOnly
             self.vowelsAndConsonantsLabel.text = "Vowels Only"
             self.resetToInitialValues()
         }
@@ -102,7 +95,7 @@ class PracticeSoundsViewController: UIViewController {
         // consonants only
         let consonantsAction = UIAlertAction(title: "Consonants Only", style: UIAlertActionStyle.Default) { (action) in
             
-            self.vowelsOrConsonants = SingleType.ConsonantsOnly
+            self.vowelsOrConsonants = SingleSoundType.ConsonantsOnly
             self.vowelsAndConsonantsLabel.text = "Consonants Only"
             self.resetToInitialValues()
         }
@@ -110,7 +103,7 @@ class PracticeSoundsViewController: UIViewController {
         // cancel
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) in
             // do nothing
-        } 
+        }
         
         // add action buttons to action sheet
         myActionSheet.addAction(vowelsAndConsonantsAction)
@@ -207,6 +200,8 @@ class PracticeSoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        numberCorrectLabel.textColor = rightColor
+        
         resetToInitialValues()
         
         inputWindow.layer.borderWidth = 2.0
@@ -220,26 +215,35 @@ class PracticeSoundsViewController: UIViewController {
 
     func getRandomIpa() -> String {
         
-        if singleMode {
+        var randomIpa = ""
+        
+        // don't allow repeats
+        repeat {
             
-            switch vowelsOrConsonants {
-            case SingleType.VowelsAndConsonants:
+            if singleMode {
                 
-                return singleSound.getRandomIpa()
+                switch vowelsOrConsonants {
+                case SingleSoundType.VowelsAndConsonants:
+                    
+                    randomIpa = singleSound.getRandomIpa()
+                    
+                case SingleSoundType.VowelsOnly:
+                    
+                    randomIpa = singleSound.getRandomVowelIpa()
+                    
+                case SingleSoundType.ConsonantsOnly:
+                    
+                    randomIpa = singleSound.getRandomConsonantIpa()
+                }
                 
-            case SingleType.VowelsOnly:
+            } else { // double mode
                 
-                return singleSound.getRandomVowelIpa()
-                
-            case SingleType.ConsonantsOnly:
-                
-                return singleSound.getRandomConsonantIpa()
+                randomIpa = doubleSound.getRandomIpa()
             }
             
-        } else { // double mode
-            
-            return doubleSound.getRandomIpa()
-        }
+        } while randomIpa == currentIpa
+        
+        return randomIpa
     }
     
     func playIpa(ipa: String) {
