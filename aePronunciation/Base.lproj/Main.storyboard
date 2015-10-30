@@ -1040,10 +1040,6 @@ The Line 2</string>
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-FA-deH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <animations/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl0-Ik-Qri">
                                                     <rect key="frame" x="0.0" y="15" width="50" height="21"/>
                                                     <animations/>
@@ -1051,6 +1047,10 @@ The Line 2</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-FA-deH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <animations/>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2115,7 +2115,7 @@ The Line 2</string>
         <scene sceneID="yNf-ca-pFV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eIb-sY-YWY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Learn" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Learn" image="triangle" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YfR-5m-49B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2135,7 +2135,7 @@ The Line 2</string>
         <scene sceneID="ZbA-zE-9m7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vrn-oS-8QI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Practice" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Practice" image="square" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s8j-d4-Bon">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2154,7 +2154,7 @@ The Line 2</string>
         <!--Test View Controller-->
         <scene sceneID="VpH-Jj-cPt">
             <objects>
-                <viewController id="jd4-f7-vqR" customClass="TestViewController" customModule="aePronunciation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jd4-f7-vqR" customClass="TestViewController" customModule="aePronunciation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6bm-gs-oYq"/>
                         <viewControllerLayoutGuide type="bottom" id="4tV-je-Rmn"/>
@@ -2173,7 +2173,7 @@ The Line 2</string>
                                             <constraint firstAttribute="width" constant="72" id="OPJ-kX-Ayf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joN-Yt-EPI">
@@ -3199,7 +3199,7 @@ The Line 2</string>
                                         <rect key="frame" x="20" y="8" width="37" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="874-dn-eVQ">
@@ -3214,28 +3214,28 @@ The Line 2</string>
                                         <rect key="frame" x="8" y="104" width="276" height="60"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right: 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13T-OP-RcX">
                                         <rect key="frame" x="20" y="172" width="70" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLF-3O-Lbo">
                                         <rect key="frame" x="20" y="201" width="70" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 20, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KU-Pa-dTO">
                                         <rect key="frame" x="20" y="37" width="134" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -3280,7 +3280,11 @@ The Line 2</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Test Results" id="yhb-fQ-US7">
-                        <barButtonItem key="leftBarButtonItem" title="Try Again" id="kG0-OD-JNw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="kG0-OD-JNw">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="T6H-3d-C0y" id="RA0-9H-JvB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="8KU-Pa-dTO" id="elI-nZ-oLM"/>
@@ -3387,7 +3391,9 @@ The Line 2</string>
                             <constraint firstItem="yvz-To-sYT" firstAttribute="centerX" secondItem="hDK-eB-FIk" secondAttribute="centerX" id="zIs-Tf-DlO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Test Setup" id="yW7-yZ-Ucj"/>
+                    <navigationItem key="navigationItem" title="Test Setup" id="yW7-yZ-Ucj">
+                        <barButtonItem key="backBarButtonItem" title="Quit" id="ycJ-o2-zDZ"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentTypeButton" destination="GFF-YA-BPD" id="7hv-C2-g0D"/>
@@ -3403,7 +3409,7 @@ The Line 2</string>
         <scene sceneID="BSi-vd-c8V">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KwP-tu-R4w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Test" id="49K-ff-gzd"/>
+                    <tabBarItem key="tabBarItem" title="Test" image="circle" id="49K-ff-gzd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xsP-go-EM4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3422,11 +3428,12 @@ The Line 2</string>
     </scenes>
     <resources>
         <image name="border" width="16" height="16"/>
+        <image name="circle" width="30" height="30"/>
         <image name="clear" width="32" height="32"/>
-        <image name="first" width="30" height="30"/>
         <image name="next" width="7" height="32"/>
         <image name="play" width="32" height="32"/>
-        <image name="second" width="30" height="30"/>
         <image name="settings" width="32" height="32"/>
+        <image name="square" width="30" height="30"/>
+        <image name="triangle" width="30" height="30"/>
     </resources>
 </document>

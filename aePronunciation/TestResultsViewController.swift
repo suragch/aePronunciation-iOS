@@ -51,6 +51,10 @@ class TestResultsViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     // MARK: - Overrides
     
     override func viewDidLoad() {
@@ -183,15 +187,19 @@ class TestResultsViewController: UIViewController {
             
             if examType == ExamType.Doubles {
                 
-                let (userFirst, userSecond) = doubleSound.parse(answer.userAnswer)!
+                
                 let (correctFirst, correctSecond) = doubleSound.parse(answer.correctAnswer)!
                 
-                if userFirst == correctFirst {
-                    numCorrect++
+                if let (userFirst, userSecond) = doubleSound.parse(answer.userAnswer) {
+                    if userFirst == correctFirst {
+                        numCorrect++
+                    }
+                    if userSecond == correctSecond {
+                        numCorrect++
+                    }
                 }
-                if userSecond == correctSecond {
-                    numCorrect++
-                }
+                
+                
                 
             } else { // single
                 if answer.userAnswer == answer.correctAnswer {
@@ -215,26 +223,36 @@ class TestResultsViewController: UIViewController {
         // color user's wrong answer red
         if examType == ExamType.Doubles {
             
-            let (userFirst, userSecond) = doubleSound.parse(userAnswer)!
+            
             let (correctFirst, correctSecond) = doubleSound.parse(correctAnswer)!
-            
-            // first part
-            if userFirst != correctFirst {
-                // red
-                returnString.appendAttributedString(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: wrongColor]))
+            if let (userFirst, userSecond) = doubleSound.parse(userAnswer) {
+                
+                // first part
+                if userFirst != correctFirst {
+                    // red
+                    returnString.appendAttributedString(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                } else {
+                    // green
+                    returnString.appendAttributedString(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: rightColor]))
+                }
+                
+                // second part
+                if userSecond != correctSecond {
+                    // red
+                    returnString.appendAttributedString(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                }else {
+                    // green
+                    returnString.appendAttributedString(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: rightColor]))
+                }
             } else {
-                // green
-                returnString.appendAttributedString(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: rightColor]))
+                
+                // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
+                
+                // for now just color it all red (also in score counting)
+                returnString.appendAttributedString(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
             }
             
-            // second part
-            if userSecond != correctSecond {
-                // red
-                returnString.appendAttributedString(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: wrongColor]))
-            }else {
-                // green
-                returnString.appendAttributedString(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: rightColor]))
-            }
+            
             
         } else { // single
             

@@ -7,7 +7,7 @@ enum ExamType: Int {
     case ConsonantsOnly
 }
 
-class TestSetupViewController: UIViewController {
+class TestSetupViewController: UIViewController, UITextFieldDelegate {
 
     private var numberOfQuestions = 50 // defaults are registered in AppDelegate
     private let numberOfQuestionsArray = [ 5, 10, 25, 50, 100 ]
@@ -143,6 +143,22 @@ class TestSetupViewController: UIViewController {
         updateNumberOfQuestionsDisplay()
         updateTypeButtonDisplay()
         
+        // set textfield delegate
+        nameTextField.delegate = self
+        
+    }
+    
+    // MARK: - UITextFieldDelegate protocol
+    
+    // Called when 'return' key pressed.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user click on the view (outside the UITextField).
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // MARK: - Other methods

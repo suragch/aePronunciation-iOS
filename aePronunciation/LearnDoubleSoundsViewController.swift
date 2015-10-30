@@ -8,7 +8,6 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     let reuseIdentifier = "cell"
     let doubleSound = DoubleSound()
 
-    
     // MARK: - UICollectionViewDataSource protocol
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -20,6 +19,11 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! DoubleSoundsCollectionViewCell
         
         cell.cellLabel.text = doubleSound.ipaStringList[indexPath.item]
+        cell.cellLabel.textColor = self.view.tintColor
+        //cell.backgroundColor = UIColor.yellowColor()
+        cell.layer.borderColor = self.view.tintColor.CGColor //  UIColor.blueColor().CGColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
         
         return cell
     }
@@ -33,8 +37,5 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
         if let soundFile = doubleSound.fileNameForIpa(ipa) {
             player.playSoundFromFile(soundFile)
         }
-        
-        
     }
-    
 }
