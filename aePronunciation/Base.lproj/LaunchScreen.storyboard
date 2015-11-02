@@ -35,14 +35,23 @@ Pronunciation</string>
                                 <rect key="frame" x="270" y="149" width="60" height="60"/>
                                 <animations/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmB-iq-gA2">
+                                <rect key="frame" x="253" y="559" width="94" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9oa-IR-YQO" firstAttribute="top" secondItem="eoR-b9-D53" secondAttribute="bottom" constant="8" id="2Gu-xn-mp0"/>
                             <constraint firstItem="9oa-IR-YQO" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="4UH-c8-0DX"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="pmB-iq-gA2" secondAttribute="bottom" constant="20" id="G8y-bE-oaF"/>
                             <constraint firstItem="eoR-b9-D53" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="S9s-Mi-zzE"/>
                             <constraint firstItem="9oa-IR-YQO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="lox-T7-g76"/>
+                            <constraint firstItem="pmB-iq-gA2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="u7w-d2-ArG"/>
                             <constraint firstItem="9oa-IR-YQO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vw0-p5-GAm"/>
                         </constraints>
                     </view>
