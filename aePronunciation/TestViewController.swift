@@ -45,7 +45,7 @@ class TestViewController: UIViewController {
             
         } else { // doubles
             
-            ++inputKeyCounter
+            inputKeyCounter += 1
             
             if inputKeyCounter < 3 {
                 inputWindow.text = inputWindow.text! + ipaTap
@@ -79,7 +79,7 @@ class TestViewController: UIViewController {
         inputKeyCounter = 0
         nextButton.hidden = true
         
-        ++questionNumber
+        questionNumber += 1
         
         if questionNumber == totalNumberOfQuestions {
             

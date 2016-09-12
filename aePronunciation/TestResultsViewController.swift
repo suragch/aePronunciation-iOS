@@ -192,10 +192,10 @@ class TestResultsViewController: UIViewController {
                 
                 if let (userFirst, userSecond) = doubleSound.parse(answer.userAnswer) {
                     if userFirst == correctFirst {
-                        numCorrect++
+                        numCorrect += 1
                     }
                     if userSecond == correctSecond {
-                        numCorrect++
+                        numCorrect += 1
                     }
                 }
                 
@@ -203,7 +203,7 @@ class TestResultsViewController: UIViewController {
                 
             } else { // single
                 if answer.userAnswer == answer.correctAnswer {
-                    numCorrect++
+                    numCorrect += 1
                 }
             }
         }

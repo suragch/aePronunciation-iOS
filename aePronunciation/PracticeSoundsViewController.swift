@@ -58,7 +58,7 @@ class PracticeSoundsViewController: UIViewController {
         }
         
         if !alreadyMadeWrongAnswerForThisIpa {
-            ++numberWrong
+            numberWrong += 1
             updateStatLabels()
         }
         
@@ -130,7 +130,7 @@ class PracticeSoundsViewController: UIViewController {
             inputWindow.text = ""
             inputKeyCounter = 0
         }
-        ++inputKeyCounter
+        inputKeyCounter += 1
         
         // get ipa String for key tapped
         let ipaTap = sender.titleLabel?.text ?? ""
@@ -148,7 +148,7 @@ class PracticeSoundsViewController: UIViewController {
             
             // update label
             if !alreadyMadeWrongAnswerForThisIpa {
-                ++numberCorrect
+                numberCorrect += 1
             }
             
             // reset values
@@ -163,7 +163,7 @@ class PracticeSoundsViewController: UIViewController {
             
             // update label
             if !alreadyMadeWrongAnswerForThisIpa {
-                ++numberWrong
+                numberWrong += 1
                 alreadyMadeWrongAnswerForThisIpa = true
             }
             
