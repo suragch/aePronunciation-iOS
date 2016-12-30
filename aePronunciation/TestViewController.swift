@@ -3,19 +3,19 @@ import UIKit
 class TestViewController: UIViewController {
 
     
-    private var answers = [Answer]()
-    private let player = Player()
-    private lazy var singleSound = SingleSound()
-    private lazy var doubleSound = DoubleSound()
+    fileprivate var answers = [Answer]()
+    fileprivate let player = Player()
+    fileprivate lazy var singleSound = SingleSound()
+    fileprivate lazy var doubleSound = DoubleSound()
     //private var singleMode = true // false == double mode
-    private var currentIpa = ""
-    private var inputKeyCounter = 0
+    fileprivate var currentIpa = ""
+    fileprivate var inputKeyCounter = 0
     //private var readyForNewSound = false
     //private var alreadyMadeWrongAnswerForThisIpa = false
-    private var questionNumber = 0 // zero based
-    private var totalNumberOfQuestions = -1
-    private var examType = ExamType.Doubles
-    private var startTime = NSDate()
+    fileprivate var questionNumber = 0 // zero based
+    fileprivate var totalNumberOfQuestions = -1
+    fileprivate var examType = ExamType.doubles
+    fileprivate var startTime = Date()
     
     
     // MARK: - Outlets
@@ -27,21 +27,21 @@ class TestViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func playButtonTapped(sender: UIButton) {
+    @IBAction func playButtonTapped(_ sender: UIButton) {
         
         playIpa(currentIpa)
         
     }
     
-    @IBAction func keyTapped(sender: UIButton) {
+    @IBAction func keyTapped(_ sender: UIButton) {
         
         // get ipa String for key tapped
         let ipaTap = sender.titleLabel?.text ?? ""
         
-        if examType != ExamType.Doubles { // singles
+        if examType != ExamType.doubles { // singles
             
             inputWindow.text = ipaTap
-            nextButton.hidden = false
+            nextButton.isHidden = false
             
         } else { // doubles
             
@@ -52,22 +52,22 @@ class TestViewController: UIViewController {
             }
             
             if inputKeyCounter > 1 {
-                nextButton.hidden = false
+                nextButton.isHidden = false
             }
         }
         
     }
     
-    @IBAction func clearButtonTap(sender: UIButton) {
+    @IBAction func clearButtonTap(_ sender: UIButton) {
         
         inputWindow.text = ""
         inputKeyCounter = 0
-        nextButton.hidden = true
+        nextButton.isHidden = true
     }
     
     
     
-    @IBAction func nextButtonTapped(sender: UIButton) {
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
         
         // record correct answer and user answer
         let userAnswer = inputWindow.text!
@@ -77,14 +77,14 @@ class TestViewController: UIViewController {
         // update display
         inputWindow.text = ""
         inputKeyCounter = 0
-        nextButton.hidden = true
+        nextButton.isHidden = true
         
         questionNumber += 1
         
         if questionNumber == totalNumberOfQuestions {
             
             // TODO: Start Results View Controller with answers data
-            self.performSegueWithIdentifier(Segue.testToResults, sender: self)
+            self.performSegue(withIdentifier: Segue.testToResults, sender: self)
             
         } else {
             
@@ -103,17 +103,17 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
         
         // Get values set in test setup
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         
         
         
         // number of questions
-        let number = userDefaults.integerForKey(Key.numberOfQuestions)
+        let number = userDefaults.integer(forKey: Key.numberOfQuestions)
         if number > 0 {
             totalNumberOfQuestions = number
         }
         // content type
-        if let type = ExamType(rawValue: userDefaults.integerForKey(Key.contentType)) {
+        if let type = ExamType(rawValue: userDefaults.integer(forKey: Key.contentType)) {
             examType = type
         }
         
@@ -128,16 +128,16 @@ class TestViewController: UIViewController {
         
         // play first sound
         currentIpa = getRandomIpa()
-        nextButton.hidden = true
+        nextButton.isHidden = true
         playIpa(currentIpa)
         
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // pass the answers to the results view controller
-        let resultsViewController = segue.destinationViewController as! TestResultsViewController
+        let resultsViewController = segue.destination as! TestResultsViewController
         resultsViewController.testAnswers = answers
         resultsViewController.startTime = startTime
         resultsViewController.examType = examType
@@ -153,19 +153,19 @@ class TestViewController: UIViewController {
         repeat {
         
             switch examType {
-            case ExamType.Singles:
+            case ExamType.singles:
                 
                 randomIpa = singleSound.getRandomIpa()
                 
-            case ExamType.VowelsOnly:
+            case ExamType.vowelsOnly:
                 
                 randomIpa = singleSound.getRandomVowelIpa()
                 
-            case ExamType.ConsonantsOnly:
+            case ExamType.consonantsOnly:
                 
                 randomIpa = singleSound.getRandomConsonantIpa()
                 
-            case ExamType.Doubles:
+            case ExamType.doubles:
                 
                 randomIpa = doubleSound.getRandomIpa()
             }
@@ -175,9 +175,9 @@ class TestViewController: UIViewController {
         return randomIpa
     }
     
-    func playIpa(ipa: String) {
+    func playIpa(_ ipa: String) {
         
-        if examType == ExamType.Doubles {
+        if examType == ExamType.doubles {
             
             if let fileName = doubleSound.fileNameForIpa(ipa) {
                 player.playSoundFromFile(fileName)

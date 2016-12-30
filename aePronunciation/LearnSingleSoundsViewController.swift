@@ -3,9 +3,9 @@ import AudioToolbox
 
 class LearnSingleSoundsViewController: UIViewController {
     
-    private let player = Player()
-    private let defaultIpaToShowFirst = "æ"
-    private let singleSound = SingleSound()
+    fileprivate let player = Player()
+    fileprivate let defaultIpaToShowFirst = "æ"
+    fileprivate let singleSound = SingleSound()
 
     // MARK: - Outlets
     
@@ -17,7 +17,7 @@ class LearnSingleSoundsViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func keyTapped(sender: UIButton) {
+    @IBAction func keyTapped(_ sender: UIButton) {
         
         let buttonText = sender.titleLabel?.text ?? ""
         
@@ -30,7 +30,7 @@ class LearnSingleSoundsViewController: UIViewController {
         
     }
     
-    @IBAction func example1(sender: UIButton) {
+    @IBAction func example1(_ sender: UIButton) {
         
         
         if let ipa = ipaLabel.text {
@@ -41,7 +41,7 @@ class LearnSingleSoundsViewController: UIViewController {
         
     }
     
-    @IBAction func example2(sender: UIButton) {
+    @IBAction func example2(_ sender: UIButton) {
         
         if let ipa = ipaLabel.text {
             if let fileName = singleSound.exampleTwoFileNameFromIpa(ipa) {
@@ -50,7 +50,7 @@ class LearnSingleSoundsViewController: UIViewController {
         }
     }
     
-    @IBAction func example3(sender: UIButton) {
+    @IBAction func example3(_ sender: UIButton) {
         
         if let ipa = ipaLabel.text {
             if let fileName = singleSound.exampleThreeFileNameFromIpa(ipa) {
@@ -68,23 +68,23 @@ class LearnSingleSoundsViewController: UIViewController {
         updateDisplayForIpa(defaultIpaToShowFirst)
         
         // Center button text
-        example1.titleLabel?.textAlignment = NSTextAlignment.Center
-        example2.titleLabel?.textAlignment = NSTextAlignment.Center
-        example3.titleLabel?.textAlignment = NSTextAlignment.Center
+        example1.titleLabel?.textAlignment = NSTextAlignment.center
+        example2.titleLabel?.textAlignment = NSTextAlignment.center
+        example3.titleLabel?.textAlignment = NSTextAlignment.center
     }
     
     
     
-    func updateDisplayForIpa(ipa: String) {
+    func updateDisplayForIpa(_ ipa: String) {
         
         if let fileName = singleSound.fileNameForIpa(ipa) {
             
             ipaLabel.text = ipa
             ipaDescription.text = "\(fileName)_description".localized
             ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
-            example1.setTitle("\(fileName)_example1".localized, forState: UIControlState.Normal)
-            example2.setTitle("\(fileName)_example2".localized, forState: UIControlState.Normal)
-            example3.setTitle("\(fileName)_example3".localized, forState: UIControlState.Normal)
+            example1.setTitle("\(fileName)_example1".localized, for: UIControlState())
+            example2.setTitle("\(fileName)_example2".localized, for: UIControlState())
+            example3.setTitle("\(fileName)_example3".localized, for: UIControlState())
             
         }
     }

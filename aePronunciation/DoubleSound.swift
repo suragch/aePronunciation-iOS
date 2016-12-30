@@ -48,7 +48,7 @@ class DoubleSound {
         "il", "ɪl", "el", "ɛl", "æl", "ɑl", "ɔl", "ol", "ʊl", "ul", "ʌl", "aɪl", "aʊl", "ɔɪl", "ɝl", "ɑrl", "ɛrl", "ɪrl", "ɔrl"
     ]
     
-    private let fileNameDictionary = [
+    fileprivate let fileNameDictionary = [
         "pi": "pairs01_01",
         "pɪ": "pairs01_02", 
         "pe": "pairs01_03", 
@@ -870,7 +870,7 @@ class DoubleSound {
     
     // MARK: - Methods
     
-    func fileNameForIpa(ipa: String) -> String? {
+    func fileNameForIpa(_ ipa: String) -> String? {
         
         return fileNameDictionary[ipa]
     }
@@ -884,7 +884,7 @@ class DoubleSound {
         return ipaStringList[Int(index)]
     }
     
-    func parse(ipaDouble: String) -> (String, String)? {
+    func parse(_ ipaDouble: String) -> (String, String)? {
     
         let length = ipaDouble.characters.count
         
@@ -917,7 +917,7 @@ class DoubleSound {
         return (firstSound, secondSound)
     }
     
-    func isValidIpaDouble(ipa: String) -> Bool {
+    func isValidIpaDouble(_ ipa: String) -> Bool {
         
         if fileNameDictionary[ipa] == nil {
             return false

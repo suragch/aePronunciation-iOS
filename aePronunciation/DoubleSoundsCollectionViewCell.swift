@@ -4,9 +4,9 @@ class DoubleSoundsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
         didSet {
-            if (highlighted) {
+            if (isHighlighted) {
                 self.layer.opacity = 0.6;
             } else {
                 self.layer.opacity = 1.0;

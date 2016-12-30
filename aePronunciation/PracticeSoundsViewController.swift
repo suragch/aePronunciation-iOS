@@ -2,23 +2,23 @@ import UIKit
 
 class PracticeSoundsViewController: UIViewController {
     
-    private let player = Player()
-    private lazy var singleSound = SingleSound()
-    private lazy var doubleSound = DoubleSound()
-    private var numberCorrect = 0
-    private var numberWrong = 0
-    private var singleMode = true // false == double mode
-    private var currentIpa = ""
-    private var inputKeyCounter = 0
-    private var readyForNewSound = true
-    private var alreadyMadeWrongAnswerForThisIpa = false
-    private enum SingleSoundType {
-        case VowelsAndConsonants
-        case VowelsOnly
-        case ConsonantsOnly
+    fileprivate let player = Player()
+    fileprivate lazy var singleSound = SingleSound()
+    fileprivate lazy var doubleSound = DoubleSound()
+    fileprivate var numberCorrect = 0
+    fileprivate var numberWrong = 0
+    fileprivate var singleMode = true // false == double mode
+    fileprivate var currentIpa = ""
+    fileprivate var inputKeyCounter = 0
+    fileprivate var readyForNewSound = true
+    fileprivate var alreadyMadeWrongAnswerForThisIpa = false
+    fileprivate enum SingleSoundType {
+        case vowelsAndConsonants
+        case vowelsOnly
+        case consonantsOnly
     }
-    private var vowelsOrConsonants = SingleSoundType.VowelsAndConsonants
-    private let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
+    fileprivate var vowelsOrConsonants = SingleSoundType.vowelsAndConsonants
+    fileprivate let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
 
     // MARK: - Outlets
     
@@ -32,7 +32,7 @@ class PracticeSoundsViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func playButtonTapped(sender: UIButton) {
+    @IBAction func playButtonTapped(_ sender: UIButton) {
         
         if readyForNewSound {
             
@@ -43,7 +43,7 @@ class PracticeSoundsViewController: UIViewController {
             readyForNewSound = false
             alreadyMadeWrongAnswerForThisIpa = false
             inputWindow.text = ""
-            inputWindow.layer.backgroundColor = UIColor.whiteColor().CGColor
+            inputWindow.layer.backgroundColor = UIColor.white.cgColor
             
         }
         
@@ -51,7 +51,7 @@ class PracticeSoundsViewController: UIViewController {
         playIpa(currentIpa)
         
     }
-    @IBAction func tellMeButtonTapped(sender: UIButton) {
+    @IBAction func tellMeButtonTapped(_ sender: UIButton) {
         
         if readyForNewSound {
             return
@@ -69,39 +69,39 @@ class PracticeSoundsViewController: UIViewController {
         readyForNewSound = true
         
     }
-    @IBAction func optionsButtonTapped(sender: AnyObject) {
+    @IBAction func optionsButtonTapped(_ sender: AnyObject) {
         
         // start an action sheet to choose type
         
         // Create the action sheet
-        let myActionSheet = UIAlertController(title: "Content", message: "Which sounds do you want to practice?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let myActionSheet = UIAlertController(title: "Content", message: "Which sounds do you want to practice?", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         // Vowels and consonants
-        let vowelsAndConsonantsAction = UIAlertAction(title: "Vowels and Consonants", style: UIAlertActionStyle.Default) { (action) in
+        let vowelsAndConsonantsAction = UIAlertAction(title: "Vowels and Consonants", style: UIAlertActionStyle.default) { (action) in
             
-            self.vowelsOrConsonants = SingleSoundType.VowelsAndConsonants
+            self.vowelsOrConsonants = SingleSoundType.vowelsAndConsonants
             self.vowelsAndConsonantsLabel.text = "Vowels and Consonants"
             self.resetToInitialValues()
         }
         
         // vowels only
-        let vowelsAction = UIAlertAction(title: "Vowels Only", style: UIAlertActionStyle.Default) { (action) in
+        let vowelsAction = UIAlertAction(title: "Vowels Only", style: UIAlertActionStyle.default) { (action) in
             
-            self.vowelsOrConsonants = SingleSoundType.VowelsOnly
+            self.vowelsOrConsonants = SingleSoundType.vowelsOnly
             self.vowelsAndConsonantsLabel.text = "Vowels Only"
             self.resetToInitialValues()
         }
         
         // consonants only
-        let consonantsAction = UIAlertAction(title: "Consonants Only", style: UIAlertActionStyle.Default) { (action) in
+        let consonantsAction = UIAlertAction(title: "Consonants Only", style: UIAlertActionStyle.default) { (action) in
             
-            self.vowelsOrConsonants = SingleSoundType.ConsonantsOnly
+            self.vowelsOrConsonants = SingleSoundType.consonantsOnly
             self.vowelsAndConsonantsLabel.text = "Consonants Only"
             self.resetToInitialValues()
         }
         
         // cancel
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
             // do nothing
         }
         
@@ -116,10 +116,10 @@ class PracticeSoundsViewController: UIViewController {
         myActionSheet.popoverPresentationController?.sourceRect = self.optionsButton.bounds
         
         // present the action sheet
-        self.presentViewController(myActionSheet, animated: true, completion: nil)
+        self.present(myActionSheet, animated: true, completion: nil)
     }
     
-    @IBAction func keyTapped(sender: UIButton) {
+    @IBAction func keyTapped(_ sender: UIButton) {
         
         // User must listen to practice sound before pressing a key
         if readyForNewSound {
@@ -176,7 +176,7 @@ class PracticeSoundsViewController: UIViewController {
         
     }
     
-    @IBAction func switchSingleDoubleTapped(sender: UIBarButtonItem) {
+    @IBAction func switchSingleDoubleTapped(_ sender: UIBarButtonItem) {
         
         singleMode = !singleMode
         resetToInitialValues()
@@ -184,14 +184,14 @@ class PracticeSoundsViewController: UIViewController {
         if singleMode {
             singleDoubleSwitch.title = "Double"
             self.navigationController?.navigationBar.topItem?.title = "Practice Single Sounds"
-            self.optionsButton.hidden = false
-            self.vowelsAndConsonantsLabel.hidden = false
+            self.optionsButton.isHidden = false
+            self.vowelsAndConsonantsLabel.isHidden = false
         } else {
             
             self.navigationController?.navigationBar.topItem?.title = "Practice Double Sounds"
             singleDoubleSwitch.title = "Single"
-            self.optionsButton.hidden = true
-            self.vowelsAndConsonantsLabel.hidden = true
+            self.optionsButton.isHidden = true
+            self.vowelsAndConsonantsLabel.isHidden = true
         }
     }
     
@@ -223,15 +223,15 @@ class PracticeSoundsViewController: UIViewController {
             if singleMode {
                 
                 switch vowelsOrConsonants {
-                case SingleSoundType.VowelsAndConsonants:
+                case SingleSoundType.vowelsAndConsonants:
                     
                     randomIpa = singleSound.getRandomIpa()
                     
-                case SingleSoundType.VowelsOnly:
+                case SingleSoundType.vowelsOnly:
                     
                     randomIpa = singleSound.getRandomVowelIpa()
                     
-                case SingleSoundType.ConsonantsOnly:
+                case SingleSoundType.consonantsOnly:
                     
                     randomIpa = singleSound.getRandomConsonantIpa()
                 }
@@ -246,7 +246,7 @@ class PracticeSoundsViewController: UIViewController {
         return randomIpa
     }
     
-    func playIpa(ipa: String) {
+    func playIpa(_ ipa: String) {
         
         if singleMode {
             
@@ -262,7 +262,7 @@ class PracticeSoundsViewController: UIViewController {
         }
     }
     
-    func getAnswerFromInputWindow(newIpaGuess: String) -> String? {
+    func getAnswerFromInputWindow(_ newIpaGuess: String) -> String? {
         
         if newIpaGuess == "" { return nil }
         
@@ -296,7 +296,7 @@ class PracticeSoundsViewController: UIViewController {
         updateStatLabels()
         inputKeyCounter = 0
         inputWindow.text = ""
-        inputWindow.layer.backgroundColor = UIColor.whiteColor().CGColor
+        inputWindow.layer.backgroundColor = UIColor.white.cgColor
     }
     
     func updateStatLabels() {
@@ -311,23 +311,23 @@ class PracticeSoundsViewController: UIViewController {
         
     }
     
-    func animateAnswerThatIs(correct: Bool) {
+    func animateAnswerThatIs(_ correct: Bool) {
         
         if correct { // (green)
             
-            UIView.animateWithDuration(0.3, animations: {
-                self.inputWindow.layer.backgroundColor = UIColor.greenColor().CGColor
+            UIView.animate(withDuration: 0.3, animations: {
+                self.inputWindow.layer.backgroundColor = UIColor.green.cgColor
             })
             
         } else { // incorrect (red)
             
             // fade in
-            UIView.animateWithDuration(0.3, animations: {
-                    self.inputWindow.layer.backgroundColor = UIColor.redColor().CGColor
+            UIView.animate(withDuration: 0.3, animations: {
+                    self.inputWindow.layer.backgroundColor = UIColor.red.cgColor
                 })
             // fade out
-            UIView.animateWithDuration(0.7, delay: 0, options: [.CurveEaseOut], animations: { () -> Void in
-                    self.inputWindow.layer.backgroundColor = UIColor.whiteColor().CGColor
+            UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseOut], animations: { () -> Void in
+                    self.inputWindow.layer.backgroundColor = UIColor.white.cgColor
                 }, completion: { Void in
                     self.inputWindow.text = ""
             })

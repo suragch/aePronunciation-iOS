@@ -4,24 +4,24 @@ import AudioToolbox
 class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
-    private let player = Player()
+    fileprivate let player = Player()
     let reuseIdentifier = "cell"
     let doubleSound = DoubleSound()
 
     // MARK: - UICollectionViewDataSource protocol
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return doubleSound.ipaStringList.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! DoubleSoundsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DoubleSoundsCollectionViewCell
         
         cell.cellLabel.text = doubleSound.ipaStringList[indexPath.item]
         cell.cellLabel.textColor = self.view.tintColor
         //cell.backgroundColor = UIColor.yellowColor()
-        cell.layer.borderColor = self.view.tintColor.CGColor //  UIColor.blueColor().CGColor
+        cell.layer.borderColor = self.view.tintColor.cgColor //  UIColor.blueColor().CGColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         
@@ -30,7 +30,7 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     
     // MARK: - UICollectionViewDelegate protocol
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // play sound
         let ipa = doubleSound.ipaStringList[indexPath.item]

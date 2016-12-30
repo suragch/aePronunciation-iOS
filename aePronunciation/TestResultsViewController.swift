@@ -4,20 +4,20 @@ class TestResultsViewController: UIViewController {
 
     // values passed in from previous view controller
     var testAnswers = [Answer]()
-    var startTime = NSDate()
-    var examType = ExamType.Doubles
+    var startTime = Date()
+    var examType = ExamType.doubles
     
     // constants
-    private let cellReuseIdentifier = "cell"
-    private let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
-    private let wrongColor = UIColor.redColor()
-    private let endTime = NSDate()
+    fileprivate let cellReuseIdentifier = "cell"
+    fileprivate let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
+    fileprivate let wrongColor = UIColor.red
+    fileprivate let endTime = Date()
     //let delayBeforePlayingSecondSound = 1.0
     
     // variables
-    private let player = Player()
-    private lazy var singleSound = SingleSound()
-    private lazy var doubleSound = DoubleSound()
+    fileprivate let player = Player()
+    fileprivate lazy var singleSound = SingleSound()
+    fileprivate lazy var doubleSound = DoubleSound()
     //var timer = NSTimer()
     
     
@@ -33,27 +33,27 @@ class TestResultsViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func timeButtonTapped(sender: UIButton) {
+    @IBAction func timeButtonTapped(_ sender: UIButton) {
         
         // get the time strings
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let startTimeString = formatter.stringFromDate(startTime)
-        let endTimeString = formatter.stringFromDate(endTime)
+        let formatter = DateFormatter()
+        formatter.timeStyle = DateFormatter.Style.medium
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        let startTimeString = formatter.string(from: startTime)
+        let endTimeString = formatter.string(from: endTime)
         
         // create the message from the time strings
         let message = "Start time: \(startTimeString)\nEndTime: \(endTimeString)"
         
         // start an alert with start and stop time
-        let alert = UIAlertController(title: "Test Time Length", message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Test Time Length", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     // MARK: - Overrides
     
@@ -61,26 +61,26 @@ class TestResultsViewController: UIViewController {
         super.viewDidLoad()
         
         // Get name from user defaults
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if let name = userDefaults.stringForKey(Key.name) {
+        let userDefaults = UserDefaults.standard
+        if let name = userDefaults.string(forKey: Key.name) {
             userNameLabel.text = name
         }
         
         // Set the date
-        let now = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") // use US English
-        formatter.dateStyle = NSDateFormatterStyle.LongStyle
-        dateLabel.text = formatter.stringFromDate(now)
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX") // use US English
+        formatter.dateStyle = DateFormatter.Style.long
+        dateLabel.text = formatter.string(from: now)
         
         // Show elapsed time
         let timeString = getTimeString()
-        timeButton.setTitle(timeString, forState: UIControlState.Normal)
+        timeButton.setTitle(timeString, for: UIControlState())
         
         // calculate score
         let numberCorrect = calculateNumberCorrect()
         var totalNumber = testAnswers.count
-        if examType == ExamType.Doubles {
+        if examType == ExamType.doubles {
             totalNumber *= 2
         }
         let score = (numberCorrect * 100) / totalNumber // round down
@@ -91,20 +91,20 @@ class TestResultsViewController: UIViewController {
         
         
         // register UITableViewCell for reuse
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
     }
     
     // MARK: - Table View methods
     
     // number of rows in table view
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.testAnswers.count
     }
     
     // create a cell for each table view row
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as UITableViewCell!
+        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         
         // make attributes
         let correctAnswer = self.testAnswers[indexPath.row].correctAnswer
@@ -114,9 +114,9 @@ class TestResultsViewController: UIViewController {
         
         // build string
         let attributedString = NSMutableAttributedString(string: "\(indexPath.row + 1).  ")
-        attributedString.appendAttributedString(correctAnswerAttr)
-        attributedString.appendAttributedString(NSAttributedString(string: "  "))
-        attributedString.appendAttributedString(userAnswerAttr)
+        attributedString.append(correctAnswerAttr)
+        attributedString.append(NSAttributedString(string: "  "))
+        attributedString.append(userAnswerAttr)
         
         // set label text
         cell.textLabel?.attributedText = attributedString
@@ -125,7 +125,7 @@ class TestResultsViewController: UIViewController {
     }
     
     // method to run when table view cell is tapped
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
                 
         let correctAnswer = self.testAnswers[indexPath.row].correctAnswer
         let userAnswer = self.testAnswers[indexPath.row].userAnswer
@@ -150,26 +150,26 @@ class TestResultsViewController: UIViewController {
         var timeString = ""
         
         
-        let userCalendar = NSCalendar.currentCalendar()
-        let timeComponents: NSCalendarUnit = [.Hour, .Minute, .Second]
-        let elapsedTime = userCalendar.components(
+        let userCalendar = Calendar.current
+        let timeComponents: NSCalendar.Unit = [.hour, .minute, .second]
+        let elapsedTime = (userCalendar as NSCalendar).components(
             timeComponents,
-            fromDate: startTime,
-            toDate: endTime,
+            from: startTime,
+            to: endTime,
             options: [])
         
-        if elapsedTime.hour > 0 {
+        if elapsedTime.hour! > 0 {
             timeString = "\(elapsedTime.hour) hr"
         }
         
-        if elapsedTime.minute > 0 {
+        if elapsedTime.minute! > 0 {
             if timeString.characters.count > 0 {
                 timeString = timeString + ", "
             }
             timeString = timeString + "\(elapsedTime.minute) min"
         }
         
-        if elapsedTime.second > 0 {
+        if elapsedTime.second! > 0 {
             if timeString.characters.count > 0 {
                 timeString = timeString + ", "
             }
@@ -185,7 +185,7 @@ class TestResultsViewController: UIViewController {
         var numCorrect = 0
         for answer in testAnswers {
             
-            if examType == ExamType.Doubles {
+            if examType == ExamType.doubles {
                 
                 
                 let (correctFirst, correctSecond) = doubleSound.parse(answer.correctAnswer)!
@@ -211,7 +211,7 @@ class TestResultsViewController: UIViewController {
         return numCorrect
     }
     
-    func attributedTextForUserAnswer(userAnswer: String, correctAnswer: String) -> NSAttributedString {
+    func attributedTextForUserAnswer(_ userAnswer: String, correctAnswer: String) -> NSAttributedString {
     
         let returnString = NSMutableAttributedString()
         
@@ -221,7 +221,7 @@ class TestResultsViewController: UIViewController {
         }
         
         // color user's wrong answer red
-        if examType == ExamType.Doubles {
+        if examType == ExamType.doubles {
             
             
             let (correctFirst, correctSecond) = doubleSound.parse(correctAnswer)!
@@ -230,42 +230,42 @@ class TestResultsViewController: UIViewController {
                 // first part
                 if userFirst != correctFirst {
                     // red
-                    returnString.appendAttributedString(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: wrongColor]))
                 } else {
                     // green
-                    returnString.appendAttributedString(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: rightColor]))
+                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: rightColor]))
                 }
                 
                 // second part
                 if userSecond != correctSecond {
                     // red
-                    returnString.appendAttributedString(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: wrongColor]))
                 }else {
                     // green
-                    returnString.appendAttributedString(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: rightColor]))
+                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: rightColor]))
                 }
             } else {
                 
                 // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
                 
                 // for now just color it all red (also in score counting)
-                returnString.appendAttributedString(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                returnString.append(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
             }
             
             
             
         } else { // single
             
-            returnString.appendAttributedString(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
+            returnString.append(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
             
         }
         
         return returnString
     }
     
-    func playIpa(ipa: String) {
+    func playIpa(_ ipa: String) {
         
-        if examType == ExamType.Doubles {
+        if examType == ExamType.doubles {
             
             if let fileName = doubleSound.fileNameForIpa(ipa) {
                 player.playSoundFromFile(fileName)
@@ -280,12 +280,8 @@ class TestResultsViewController: UIViewController {
         
     }
     
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
 }

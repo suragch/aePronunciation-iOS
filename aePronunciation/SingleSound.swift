@@ -8,7 +8,7 @@ import Foundation
 
 class SingleSound {
     
-    private let soundName = [
+    fileprivate let soundName = [
         "p": "single_p",
         "t": "single_t",
         "k": "single_k",
@@ -60,10 +60,10 @@ class SingleSound {
     
     // test/practice pool excludes "ə", "ɚ", "ʔ", "ɾ"
     //private let ipaTestPool = [ "p", "t", "k", "ʧ", "f", "θ", "s", "ʃ", "b", "d", "g", "ʤ", "v", "ð", "z", "ʒ", "m", "n", "ŋ", "l", "w", "j", "h", "r", "i", "ɪ", "ɛ", "æ", "ɑ", "ɔ", "ʊ", "u", "ʌ", "e", "aɪ", "aʊ", "ɔɪ", "o", "ɝ", "ɑr", "ɛr", "ɪr", "ɔr" ]
-    private let ipaTestPoolVowels = [ "i", "ɪ", "ɛ", "æ", "ɑ", "ɔ", "ʊ", "u", "ʌ", "e", "aɪ", "aʊ", "ɔɪ", "o", "ɝ", "ɑr", "ɛr", "ɪr", "ɔr" ]
-    private let ipaTestPoolConsonants = [ "p", "t", "k", "ʧ", "f", "θ", "s", "ʃ", "b", "d", "g", "ʤ", "v", "ð", "z", "ʒ", "m", "n", "ŋ", "l", "w", "j", "h", "r" ]
+    fileprivate let ipaTestPoolVowels = [ "i", "ɪ", "ɛ", "æ", "ɑ", "ɔ", "ʊ", "u", "ʌ", "e", "aɪ", "aʊ", "ɔɪ", "o", "ɝ", "ɑr", "ɛr", "ɪr", "ɔr" ]
+    fileprivate let ipaTestPoolConsonants = [ "p", "t", "k", "ʧ", "f", "θ", "s", "ʃ", "b", "d", "g", "ʤ", "v", "ð", "z", "ʒ", "m", "n", "ŋ", "l", "w", "j", "h", "r" ]
     
-    private let exampleOneFile = [
+    fileprivate let exampleOneFile = [
         "p": "pass",
         "t": "toad",
         "k": "cool",
@@ -113,7 +113,7 @@ class SingleSound {
         "ɾ": "water"
     ]
     
-    private let exampleTwoFile = [
+    fileprivate let exampleTwoFile = [
         "p": "speak",
         "t": "sting",
         "k": "skill",
@@ -163,7 +163,7 @@ class SingleSound {
         "ɾ": "little"
     ]
     
-    private let exampleThreeFile = [
+    fileprivate let exampleThreeFile = [
         "p": "stop",
         "t": "it",
         "k": "week",
@@ -223,22 +223,22 @@ class SingleSound {
     
     // MARK: - Methods
     
-    func fileNameForIpa(ipa: String) -> String? {
+    func fileNameForIpa(_ ipa: String) -> String? {
         
         return soundName[ipa]
     }
     
-    func exampleOneFileNameFromIpa(ipa: String) -> String? {
+    func exampleOneFileNameFromIpa(_ ipa: String) -> String? {
         
         return exampleOneFile[ipa]
     }
     
-    func exampleTwoFileNameFromIpa(ipa: String) -> String? {
+    func exampleTwoFileNameFromIpa(_ ipa: String) -> String? {
         
         return exampleTwoFile[ipa]
     }
     
-    func exampleThreeFileNameFromIpa(ipa: String) -> String? {
+    func exampleThreeFileNameFromIpa(_ ipa: String) -> String? {
         
         return exampleThreeFile[ipa]
     }

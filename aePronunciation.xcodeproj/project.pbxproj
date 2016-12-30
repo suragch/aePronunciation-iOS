@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		505489151BBD672B00C4B141 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = 505489141BBD672B00C4B141 /* raw */; settings = {ASSET_TAGS = (); }; };
-		5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		508360591BC29ABA00A225E6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360581BC29ABA00A225E6 /* Player.swift */; settings = {ASSET_TAGS = (); }; };
-		50D64FD31BBE5083003657A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50D64FD21BBE5083003657A4 /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
-		50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD41BBE5D8B003657A4 /* String+localized.swift */; settings = {ASSET_TAGS = (); }; };
-		50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD61BBE7E96003657A4 /* SingleSound.swift */; settings = {ASSET_TAGS = (); }; };
-		50D64FD91BBE912C003657A4 /* LearnDoubleSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD81BBE912C003657A4 /* LearnDoubleSoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		505489151BBD672B00C4B141 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = 505489141BBD672B00C4B141 /* raw */; };
+		5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */; };
+		508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */; };
+		508360591BC29ABA00A225E6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360581BC29ABA00A225E6 /* Player.swift */; };
+		50D64FD31BBE5083003657A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50D64FD21BBE5083003657A4 /* Localizable.strings */; };
+		50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD41BBE5D8B003657A4 /* String+localized.swift */; };
+		50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD61BBE7E96003657A4 /* SingleSound.swift */; };
+		50D64FD91BBE912C003657A4 /* LearnDoubleSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD81BBE912C003657A4 /* LearnDoubleSoundsViewController.swift */; };
 		50DC216F1BB8FF65000075AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC216E1BB8FF65000075AE /* AppDelegate.swift */; };
 		50DC21761BB8FF65000075AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DC21741BB8FF65000075AE /* Main.storyboard */; };
 		50DC21781BB8FF65000075AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DC21771BB8FF65000075AE /* Assets.xcassets */; };
 		50DC217B1BB8FF65000075AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DC21791BB8FF65000075AE /* LaunchScreen.storyboard */; };
 		50DC21861BB8FF65000075AE /* aePronunciationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC21851BB8FF65000075AE /* aePronunciationTests.swift */; };
 		50DC21911BB8FF65000075AE /* aePronunciationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC21901BB8FF65000075AE /* aePronunciationUITests.swift */; };
-		50E2EAF41BD6182600842ED3 /* TestResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420241BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420261BBF684C0092F74B /* DoubleSound.swift */; settings = {ASSET_TAGS = (); }; };
-		50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6431BD4ABBB002CC689 /* Answer.swift */; settings = {ASSET_TAGS = (); }; };
-		50E9E64A1BD50717002CC689 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6491BD50717002CC689 /* Key.swift */; settings = {ASSET_TAGS = (); }; };
-		50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E64B1BD50A50002CC689 /* TestViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		50E2EAF41BD6182600842ED3 /* TestResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */; };
+		50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420241BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift */; };
+		50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420261BBF684C0092F74B /* DoubleSound.swift */; };
+		50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */; };
+		50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6431BD4ABBB002CC689 /* Answer.swift */; };
+		50E9E64A1BD50717002CC689 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6491BD50717002CC689 /* Key.swift */; };
+		50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E64B1BD50A50002CC689 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,15 +267,18 @@
 					50DC216A1BB8FF65000075AE = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = HSUZ2UJNHR;
+						LastSwiftMigration = 0820;
 					};
 					50DC21801BB8FF65000075AE = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 6W926R56AA;
+						LastSwiftMigration = 0820;
 						TestTargetID = 50DC216A1BB8FF65000075AE;
 					};
 					50DC218B1BB8FF65000075AE = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 6W926R56AA;
+						LastSwiftMigration = 0820;
 						TestTargetID = 50DC216A1BB8FF65000075AE;
 					};
 				};
@@ -495,6 +498,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -509,6 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -521,6 +526,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.aePronunciationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aePronunciation.app/aePronunciation";
 			};
 			name = Debug;
@@ -533,6 +539,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.aePronunciationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aePronunciation.app/aePronunciation";
 			};
 			name = Release;
@@ -544,6 +551,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.aePronunciationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = aePronunciation;
 				USES_XCTRUNNER = YES;
 			};
@@ -556,6 +564,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.aePronunciationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = aePronunciation;
 				USES_XCTRUNNER = YES;
 			};
