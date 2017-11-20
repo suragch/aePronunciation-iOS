@@ -108,7 +108,7 @@ class TestResultsViewController: UIViewController {
         
         // make attributes
         let correctAnswer = self.testAnswers[indexPath.row].correctAnswer
-        let correctAnswerAttr = NSAttributedString(string: correctAnswer, attributes: [NSForegroundColorAttributeName: rightColor])
+        let correctAnswerAttr = NSAttributedString(string: correctAnswer, attributes: [NSAttributedStringKey.foregroundColor: rightColor])
         let userAnswer = self.testAnswers[indexPath.row].userAnswer
         let userAnswerAttr = attributedTextForUserAnswer(userAnswer, correctAnswer: correctAnswer)
         
@@ -230,33 +230,33 @@ class TestResultsViewController: UIViewController {
                 // first part
                 if userFirst != correctFirst {
                     // red
-                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
                 } else {
                     // green
-                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSForegroundColorAttributeName: rightColor]))
+                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
                 }
                 
                 // second part
                 if userSecond != correctSecond {
                     // red
-                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
                 }else {
                     // green
-                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSForegroundColorAttributeName: rightColor]))
+                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
                 }
             } else {
                 
                 // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
                 
                 // for now just color it all red (also in score counting)
-                returnString.append(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
+                returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
             }
             
             
             
         } else { // single
             
-            returnString.append(NSAttributedString(string: userAnswer, attributes: [NSForegroundColorAttributeName: wrongColor]))
+            returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
             
         }
         
