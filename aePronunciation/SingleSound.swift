@@ -4,7 +4,7 @@ import Foundation
 //    case VowelsAndConsonants = 0
 //    case VowelsOnly
 //    case ConsonantsOnly
-//}
+// }
 
 class SingleSound {
     
