@@ -19,6 +19,10 @@ struct Ipa {
         return "ptkʧfθsʃbdgʤvðzʒmnŋlwjhrʔɾ".contains(ipa)
     }
     
+    static func isSpecial<T>(ipa: T) -> Bool where T: StringProtocol {
+        return "ʔɾəɚ".contains(ipa)
+    }
+    
     
     static let p = "p"
     static let t = "t"

@@ -188,16 +188,16 @@ class TestResultsViewController: UIViewController {
             if examType == ExamType.doubles {
                 
                 
-                let (correctFirst, correctSecond) = doubleSound.parse(answer.correctAnswer)!
-                
-                if let (userFirst, userSecond) = doubleSound.parse(answer.userAnswer) {
-                    if userFirst == correctFirst {
-                        numCorrect += 1
-                    }
-                    if userSecond == correctSecond {
-                        numCorrect += 1
-                    }
-                }
+//                let (correctFirst, correctSecond) = doubleSound.parse(answer.correctAnswer)!
+//
+//                if let (userFirst, userSecond) = doubleSound.parse(answer.userAnswer) {
+//                    if userFirst == correctFirst {
+//                        numCorrect += 1
+//                    }
+//                    if userSecond == correctSecond {
+//                        numCorrect += 1
+//                    }
+//                }
                 
                 
                 
@@ -224,33 +224,33 @@ class TestResultsViewController: UIViewController {
         if examType == ExamType.doubles {
             
             
-            let (correctFirst, correctSecond) = doubleSound.parse(correctAnswer)!
-            if let (userFirst, userSecond) = doubleSound.parse(userAnswer) {
-                
-                // first part
-                if userFirst != correctFirst {
-                    // red
-                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-                } else {
-                    // green
-                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
-                }
-                
-                // second part
-                if userSecond != correctSecond {
-                    // red
-                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-                }else {
-                    // green
-                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
-                }
-            } else {
-                
-                // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
-                
-                // for now just color it all red (also in score counting)
-                returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-            }
+//            let (correctFirst, correctSecond) = doubleSound.parse(correctAnswer)!
+//            if let (userFirst, userSecond) = doubleSound.parse(userAnswer) {
+//
+//                // first part
+//                if userFirst != correctFirst {
+//                    // red
+//                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
+//                } else {
+//                    // green
+//                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
+//                }
+//
+//                // second part
+//                if userSecond != correctSecond {
+//                    // red
+//                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
+//                }else {
+//                    // green
+//                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
+//                }
+//            } else {
+//
+//                // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
+//
+//                // for now just color it all red (also in score counting)
+//                returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
+//            }
             
             
             
@@ -265,18 +265,18 @@ class TestResultsViewController: UIViewController {
     
     func playIpa(_ ipa: String) {
         
-        if examType == ExamType.doubles {
-            
-            if let fileName = doubleSound.fileNameForIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-            
-        } else {
-            
-            if let fileName = singleSound.fileNameForIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-        }
+//        if examType == ExamType.doubles {
+//            
+//            if let fileName = doubleSound.fileNameForIpa(ipa) {
+//                player.playSoundFromFile(fileName)
+//            }
+//            
+//        } else {
+//            
+//            if let fileName = singleSound.fileNameForIpa(ipa) {
+//                player.playSoundFromFile(fileName)
+//            }
+//        }
         
     }
     

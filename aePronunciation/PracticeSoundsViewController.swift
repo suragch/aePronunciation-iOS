@@ -222,19 +222,19 @@ class PracticeSoundsViewController: UIViewController {
             
             if singleMode {
                 
-                switch vowelsOrConsonants {
-                case SingleSoundType.vowelsAndConsonants:
-                    
-                    randomIpa = singleSound.getRandomIpa()
-                    
-                case SingleSoundType.vowelsOnly:
-                    
-                    randomIpa = singleSound.getRandomVowelIpa()
-                    
-                case SingleSoundType.consonantsOnly:
-                    
-                    randomIpa = singleSound.getRandomConsonantIpa()
-                }
+//                switch vowelsOrConsonants {
+//                case SingleSoundType.vowelsAndConsonants:
+//
+//                    randomIpa = singleSound.getRandomIpa()
+//
+//                case SingleSoundType.vowelsOnly:
+//
+//                    randomIpa = singleSound.getRandomVowelIpa()
+//
+//                case SingleSoundType.consonantsOnly:
+//
+//                    randomIpa = singleSound.getRandomConsonantIpa()
+//                }
                 
             } else { // double mode
                 
@@ -248,18 +248,18 @@ class PracticeSoundsViewController: UIViewController {
     
     func playIpa(_ ipa: String) {
         
-        if singleMode {
-            
-            if let fileName = singleSound.fileNameForIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-            
-        } else { // double mode
-            
-            if let fileName = doubleSound.fileNameForIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-        }
+//        if singleMode {
+//            
+//            if let fileName = singleSound.fileNameForIpa(ipa) {
+//                player.playSoundFromFile(fileName)
+//            }
+//            
+//        } else { // double mode
+//            
+//            if let fileName = doubleSound.fileNameForIpa(ipa) {
+//                player.playSoundFromFile(fileName)
+//            }
+//        }
     }
     
     func getAnswerFromInputWindow(_ newIpaGuess: String) -> String? {

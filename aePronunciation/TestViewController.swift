@@ -159,11 +159,11 @@ class TestViewController: UIViewController {
                 
             case ExamType.vowelsOnly:
                 
-                randomIpa = singleSound.getRandomVowelIpa()
+                randomIpa = singleSound.getRandomIpa()
                 
             case ExamType.consonantsOnly:
                 
-                randomIpa = singleSound.getRandomConsonantIpa()
+                randomIpa = singleSound.getRandomIpa()
                 
             case ExamType.doubles:
                 
@@ -179,13 +179,13 @@ class TestViewController: UIViewController {
         
         if examType == ExamType.doubles {
             
-            if let fileName = doubleSound.fileNameForIpa(ipa) {
+            if let fileName = DoubleSound.getSoundFileName(doubleSoundIpa: ipa) {
                 player.playSoundFromFile(fileName)
             }
             
         } else {
             
-            if let fileName = singleSound.fileNameForIpa(ipa) {
+            if let fileName = SingleSound.getSoundFileName(ipa: ipa) {
                 player.playSoundFromFile(fileName)
             }
         }

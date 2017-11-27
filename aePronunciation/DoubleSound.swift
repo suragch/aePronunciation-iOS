@@ -31,12 +31,48 @@ class DoubleSound {
     func restrictListToAllPairsContaining(ipa: String) {
         if ipa.isEmpty {return}
         
+        if Ipa.isSpecial(ipa: ipa) {
+            restrictListToSpecialSoundsContaining(ipa: ipa)
+            return
+        }
+        
         let singleItemArray = [ipa]
         if Ipa.isConsonant(ipa: ipa) {
             restrictListToPairsContainingAtLeastOneSoundFrom(consonants: singleItemArray, vowels: [String]())
         } else {
             restrictListToPairsContainingAtLeastOneSoundFrom(consonants: [String](), vowels: singleItemArray)
         }
+    }
+    
+    func restrictListToPairsContainingBothSoundsFrom(
+        consonants: [String],
+        vowels: [String]) {
+        
+        // Since every pair contains both a vowel and a consonant,
+        // an exact match requires both to be present.
+        if vowels.isEmpty || consonants.isEmpty {return}
+        
+        // loop through all pairs and add any for with both consonant and vowel are in allowedSounds
+        doubleSounds = [String]()
+        for key in DoubleSound.soundMap.keys {
+            let (c, v) = Ipa.splitDoubleSound(str: key)
+            if (stringContainsItemFromList(str: c, list: consonants) && stringContainsItemFromList(str: v, list: vowels)) {
+                doubleSounds!.append(key)
+            }
+        }
+    }
+    
+    func restrictListToSpecialSoundsContaining(ipa: String) {
+        doubleSounds = [String]()
+        for key in DoubleSound.soundSpecialMap.keys {
+            if key.contains(ipa) {
+                doubleSounds!.append(key)
+            }
+        }
+    }
+    
+    func includeAllSounds() {
+        doubleSounds = Array(DoubleSound.soundMap.keys)
     }
     
     private func stringContainsItemFromList(str: String, list: [String]) -> Bool {
@@ -50,61 +86,31 @@ class DoubleSound {
     
     // MARK: - Methods
     
-    func fileNameForIpa(_ ipa: String) -> String? {
-        
-        return fileNameDictionary[ipa]
-    }
-    
     func getRandomIpa() -> String {
         
-        // get random sound index number
-        let index = arc4random_uniform(UInt32(ipaStringList.count))
+        if doubleSounds == nil || doubleSounds?.count == 0 {
+            includeAllSounds()
+        }
+        
+        // get random integer (0 <= x < numberOfSounds)
+        let index = Int(arc4random_uniform(UInt32(doubleSounds!.count)))
         
         // translate integer to ipa string
-        return ipaStringList[Int(index)]
+        return doubleSounds![index]
     }
     
-    func parse(_ ipaDouble: String) -> (String, String)? {
-    
-        let length = ipaDouble.characters.count
-        
-        if length < 2 {
-            return nil
+    class func getSoundFileName(doubleSoundIpa: String) -> String? {
+        if Ipa.isSpecial(ipa: doubleSoundIpa) {
+            return DoubleSound.soundSpecialMap[doubleSoundIpa]
         }
-        
-        var firstSound = ""
-        var secondSound = ""
-        
-        // get first two chars of ipaDouble
-        
-        var prefixLength = 1
-        
-        if (ipaDouble.hasPrefix("aɪ") || ipaDouble.hasPrefix("aʊ")
-            || ipaDouble.hasPrefix("ɔɪ") || ipaDouble.hasPrefix("ɑr")
-            || ipaDouble.hasPrefix("ɛr") || ipaDouble.hasPrefix("ɪr")
-            || ipaDouble.hasPrefix("ɔr")) {
-                
-                if length == 2 {
-                    return nil
-                }
-                
-                prefixLength = 2
-        }
-        
-        firstSound = String(ipaDouble.characters.prefix(prefixLength))
-        secondSound = String(ipaDouble.characters.suffix(length - prefixLength))
-        
-        return (firstSound, secondSound)
+        return DoubleSound.soundMap[doubleSoundIpa]
     }
     
-    func isValidIpaDouble(_ ipa: String) -> Bool {
-        
-        if fileNameDictionary[ipa] == nil {
-            return false
+    func getSounds() -> [String] {
+        if doubleSounds == nil {
+            includeAllSounds()
         }
-        
-        return true
-         
+        return doubleSounds!
     }
     
     private static let soundMap = [
@@ -927,4 +933,130 @@ class DoubleSound {
         "ɔrl": "double_or_l"
     ]
     
+    private static let soundSpecialMap = [
+        "iʔ": "double_i_glottal",
+        "ɪʔ": "double_is_glottal",
+        "eɪʔ": "double_ei_glottal",
+        "ɛʔ": "double_e_glottal",
+        "æʔ": "double_ae_glottal",
+        "ɑʔ": "double_a_glottal",
+        "ɔʔ": "double_c_glottal",
+        "oʊʔ": "double_ou_glottal",
+        "ʊʔ": "double_us_glottal",
+        "uʔ": "double_u_glottal",
+        "ʌʔ": "double_vu_glottal",
+        "aɪʔ": "double_ai_glottal",
+        "aʊʔ": "double_au_glottal",
+        "ɔɪʔ": "double_oi_glottal",
+        "ɝʔ": "double_ers_glottal",
+        "ɑrʔ": "double_ar_glottal",
+        "ɛrʔ": "double_er_glottal",
+        "ɪrʔ": "double_ir_glottal",
+        "ɔrʔ": "double_or_glottal",
+        "ˈiɾə": "double_i_flap_shwua",
+        "ˈɪɾə": "double_is_flap_shwua",
+        "ˈeɪɾə": "double_ei_flap_shwua",
+        "ˈɛɾə": "double_e_flap_shwua",
+        "ˈæɾə": "double_ae_flap_shwua",
+        "ˈɑɾə": "double_a_flap_shwua",
+        "ˈɔɾə": "double_c_flap_shwua",
+        "ˈoʊɾə": "double_ou_flap_shwua",
+        "ˈʊɾə": "double_us_flap_shwua",
+        "ˈuɾə": "double_u_flap_shwua",
+        "ˈʌɾə": "double_vu_flap_shwua",
+        "ˈaɪɾə": "double_ai_flap_shwua",
+        "ˈaʊɾə": "double_au_flap_shwua",
+        "ˈɔɪɾə": "double_oi_flap_shwua",
+        "ˈɝɾə": "double_ers_flap_shwua",
+        "ˈɑrɾə": "double_ar_flap_shwua",
+        "ˈɛrɾə": "double_er_flap_shwua",
+        "ˈɪrɾə": "double_ir_flap_shwua",
+        "ˈɔrɾə": "double_or_flap_shwua",
+        "pə": "double_p_shwua",
+        "tə": "double_t_shwua",
+        "kə": "double_k_shwua",
+        "ʧə": "double_ch_shwua",
+        "fə": "double_f_shwua",
+        "θə": "double_th_shwua",
+        "sə": "double_s_shwua",
+        "ʃə": "double_sh_shwua",
+        "bə": "double_b_shwua",
+        "də": "double_d_shwua",
+        "gə": "double_g_shwua",
+        "ʤə": "double_dzh_shwua",
+        "və": "double_v_shwua",
+        "ðə": "double_thv_shwua",
+        "zə": "double_z_shwua",
+        "ʒə": "double_zh_shwua",
+        "mə": "double_m_shwua",
+        "nə": "double_n_shwua",
+        "lə": "double_l_shwua",
+        "wə": "double_w_shwua",
+        "jə": "double_j_shwua",
+        "hə": "double_h_shwua",
+        "rə": "double_r_shwua",
+        "əp": "double_shwua_p",
+        "ət": "double_shwua_t",
+        "ək": "double_shwua_k",
+        "əʧ": "double_shwua_ch",
+        "əf": "double_shwua_f",
+        "əθ": "double_shwua_th",
+        "əs": "double_shwua_s",
+        "əʃ": "double_shwua_sh",
+        "əb": "double_shwua_b",
+        "əd": "double_shwua_d",
+        "əg": "double_shwua_g",
+        "əʤ": "double_shwua_dzh",
+        "əv": "double_shwua_v",
+        "əð": "double_shwua_thv",
+        "əz": "double_shwua_z",
+        "əʒ": "double_shwua_zh",
+        "əm": "double_shwua_m",
+        "ən": "double_shwua_n",
+        "əŋ": "double_shwua_ng",
+        "əl": "double_shwua_l",
+        "pɚ": "double_p_eru",
+        "tɚ": "double_t_eru",
+        "kɚ": "double_k_eru",
+        "ʧɚ": "double_ch_eru",
+        "fɚ": "double_f_eru",
+        "θɚ": "double_th_eru",
+        "sɚ": "double_s_eru",
+        "ʃɚ": "double_sh_eru",
+        "bɚ": "double_b_eru",
+        "dɚ": "double_d_eru",
+        "gɚ": "double_g_eru",
+        "ʤɚ": "double_dzh_eru",
+        "vɚ": "double_v_eru",
+        "ðɚ": "double_thv_eru",
+        "zɚ": "double_z_eru",
+        "ʒɚ": "double_zh_eru",
+        "mɚ": "double_m_eru",
+        "nɚ": "double_n_eru",
+        "lɚ": "double_l_eru",
+        "wɚ": "double_w_eru",
+        "jɚ": "double_j_eru",
+        "hɚ": "double_h_eru",
+        "rɚ": "double_r_eru",
+        "ɚp": "double_eru_p",
+        "ɚt": "double_eru_t",
+        "ɚk": "double_eru_k",
+        "ɚʧ": "double_eru_ch",
+        "ɚf": "double_eru_f",
+        "ɚθ": "double_eru_th",
+        "ɚs": "double_eru_s",
+        "ɚʃ": "double_eru_sh",
+        "ɚb": "double_eru_b",
+        "ɚd": "double_eru_d",
+        "ɚg": "double_eru_g",
+        "ɚʤ": "double_eru_dzh",
+        "ɚv": "double_eru_v",
+        "ɚð": "double_eru_thv",
+        "ɚz": "double_eru_z",
+        "ɚʒ": "double_eru_zh",
+        "ɚm": "double_eru_m",
+        "ɚn": "double_eru_n",
+        "ɚŋ": "double_eru_ng",
+        "ɚl": "double_eru_l",
+        ]
 }
