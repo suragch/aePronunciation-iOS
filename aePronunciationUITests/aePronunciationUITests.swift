@@ -2,8 +2,8 @@
 //  aePronunciationUITests.swift
 //  aePronunciationUITests
 //
-//  Created by MongolSuragch on 9/28/15.
-//  Copyright © 2015 Suragch. All rights reserved.
+//  Created by MongolSuragch on 11/20/17.
+//  Copyright © 2017 Suragch. All rights reserved.
 //
 
 import XCTest
@@ -31,9 +31,6 @@ class aePronunciationUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        
-        
     }
     
 }

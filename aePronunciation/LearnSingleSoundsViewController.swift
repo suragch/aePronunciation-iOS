@@ -1,12 +1,13 @@
 import UIKit
 import AudioToolbox
 
-class LearnSingleSoundsViewController: UIViewController {
+class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     
     fileprivate let player = Player()
     fileprivate let defaultIpaToShowFirst = "æ"
     fileprivate let singleSound = SingleSound()
-
+    private let learnDoubleSegueId = "learnSingleToLearnDouble"
+    
     // MARK: - Outlets
     
     @IBOutlet weak var ipaLabel: UILabel!
@@ -14,49 +15,37 @@ class LearnSingleSoundsViewController: UIViewController {
     @IBOutlet weak var example1: UIButton!
     @IBOutlet weak var example2: UIButton!
     @IBOutlet weak var example3: UIButton!
+    @IBOutlet weak var keyboard: IpaKeyboard!
+    @IBOutlet weak var videoView: UIView!
     
     // MARK: - Actions
     
-    @IBAction func keyTapped(_ sender: UIButton) {
-        
-        let buttonText = sender.titleLabel?.text ?? ""
-        
-        updateDisplayForIpa(buttonText)
-        
-        // play sound
-        if let fileName = singleSound.fileNameForIpa(buttonText) {
-            player.playSoundFromFile(fileName)
-        }
-        
-    }
-    
     @IBAction func example1(_ sender: UIButton) {
-        
-        
-        if let ipa = ipaLabel.text {
-            if let fileName = singleSound.exampleOneFileNameFromIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-        }
-        
+        guard let ipa = ipaLabel.text else {return}
+        guard let fileName = SingleSound.getExampleOneFileName(ipa: ipa)
+            else {return}
+        player.playSoundFromFile(fileName)
     }
     
     @IBAction func example2(_ sender: UIButton) {
-        
-        if let ipa = ipaLabel.text {
-            if let fileName = singleSound.exampleTwoFileNameFromIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-        }
+        guard let ipa = ipaLabel.text else {return}
+        guard let fileName = SingleSound.getExampleTwoFileName(ipa: ipa)
+            else {return}
+        player.playSoundFromFile(fileName)
     }
     
     @IBAction func example3(_ sender: UIButton) {
+        guard let ipa = ipaLabel.text else {return}
+        guard let fileName = SingleSound.getExampleThreeFileName(ipa: ipa)
+            else {return}
+        player.playSoundFromFile(fileName)
+    }
+    
+    @IBAction func more(_ sender: UIButton) {
         
-        if let ipa = ipaLabel.text {
-            if let fileName = singleSound.exampleThreeFileNameFromIpa(ipa) {
-                player.playSoundFromFile(fileName)
-            }
-        }
+        // TODO: Show double sounds
+        // start LearnDoubleSounds, pass in the current IPA
+        
     }
     
     // MARK: - Overrides
@@ -64,7 +53,8 @@ class LearnSingleSoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Update display with default IPA
+        keyboard.delegate = self
+        
         updateDisplayForIpa(defaultIpaToShowFirst)
         
         // Center button text
@@ -73,20 +63,39 @@ class LearnSingleSoundsViewController: UIViewController {
         example3.titleLabel?.textAlignment = NSTextAlignment.center
     }
     
-    
-    
     func updateDisplayForIpa(_ ipa: String) {
+        guard let fileName = SingleSound.getSoundFileName(ipa: ipa)
+            else {return}
         
-        if let fileName = singleSound.fileNameForIpa(ipa) {
-            
-            ipaLabel.text = ipa
-            ipaDescription.text = "\(fileName)_description".localized
-            ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
-            example1.setTitle("\(fileName)_example1".localized, for: UIControlState())
-            example2.setTitle("\(fileName)_example2".localized, for: UIControlState())
-            example3.setTitle("\(fileName)_example3".localized, for: UIControlState())
-            
+        ipaLabel.text = ipa
+        ipaDescription.text = "\(fileName)_description".localized
+        ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
+        example1.setTitle("\(fileName)_example1".localized, for: UIControlState())
+        example2.setTitle("\(fileName)_example2".localized, for: UIControlState())
+        example3.setTitle("\(fileName)_example3".localized, for: UIControlState())
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == learnDoubleSegueId {
+            let learnDoubleVC = segue.destination as! LearnDoubleSoundsViewController
+            learnDoubleVC.ipa = ipaLabel.text
+        }
+        
+    }
+    
+    // MARK:- KeyboardDelegate methods
+    
+    func keyWasTapped(_ character: String) {
+        updateDisplayForIpa(character)
+        
+        // play sound
+        if let fileName =  SingleSound.getSoundFileName(ipa: character) {
+            player.playSoundFromFile(fileName)
         }
     }
     
+    func keyBackspace() {
+        // only conforming to keyboard delegate
+    }
 }

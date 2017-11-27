@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		505489151BBD672B00C4B141 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = 505489141BBD672B00C4B141 /* raw */; };
+		504200D31FC2D3020026FBCA /* Ipa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504200D21FC2D3010026FBCA /* Ipa.swift */; };
+		50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C121FC295AB00B6E228 /* IpaKeyboard.swift */; };
+		50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */; };
+		50483C171FC2966900B6E228 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C161FC2966900B6E228 /* KeyboardKey.swift */; };
+		50483C1F1FC29A3300B6E228 /* aePronunciationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C1E1FC29A3300B6E228 /* aePronunciationTests.swift */; };
+		50483C2D1FC29A5700B6E228 /* aePronunciationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */; };
+		50483C351FC29BAD00B6E228 /* KeyboardImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */; };
+		504FD6681FC51AF100622B50 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = 504FD6671FC51AF100622B50 /* raw */; };
 		5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */; };
 		508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */; };
 		508360591BC29ABA00A225E6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360581BC29ABA00A225E6 /* Player.swift */; };
@@ -28,8 +35,36 @@
 		50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E64B1BD50A50002CC689 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		50483C211FC29A3300B6E228 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DC21631BB8FF65000075AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DC216A1BB8FF65000075AE;
+			remoteInfo = aePronunciation;
+		};
+		50483C2F1FC29A5700B6E228 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DC21631BB8FF65000075AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DC216A1BB8FF65000075AE;
+			remoteInfo = aePronunciation;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		505489141BBD672B00C4B141 /* raw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = raw; sourceTree = "<group>"; };
+		504200D21FC2D3010026FBCA /* Ipa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ipa.swift; sourceTree = "<group>"; };
+		50483C121FC295AB00B6E228 /* IpaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpaKeyboard.swift; sourceTree = "<group>"; };
+		50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextKey.swift; sourceTree = "<group>"; };
+		50483C161FC2966900B6E228 /* KeyboardKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
+		50483C1C1FC29A3200B6E228 /* aePronunciationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aePronunciationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50483C1E1FC29A3300B6E228 /* aePronunciationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationTests.swift; sourceTree = "<group>"; };
+		50483C201FC29A3300B6E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50483C2A1FC29A5700B6E228 /* aePronunciationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aePronunciationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationUITests.swift; sourceTree = "<group>"; };
+		50483C2E1FC29A5700B6E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardImageKey.swift; sourceTree = "<group>"; };
+		504FD6671FC51AF100622B50 /* raw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = raw; sourceTree = "<group>"; };
 		5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnSingleSoundsViewController.swift; sourceTree = "<group>"; };
 		508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSoundsViewController.swift; sourceTree = "<group>"; };
 		508360581BC29ABA00A225E6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -57,6 +92,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		50483C191FC29A3200B6E228 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50483C271FC29A5700B6E228 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC21681BB8FF65000075AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,6 +116,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50483C1D1FC29A3200B6E228 /* aePronunciationTests */ = {
+			isa = PBXGroup;
+			children = (
+				50483C1E1FC29A3300B6E228 /* aePronunciationTests.swift */,
+				50483C201FC29A3300B6E228 /* Info.plist */,
+			);
+			path = aePronunciationTests;
+			sourceTree = "<group>";
+		};
+		50483C2B1FC29A5700B6E228 /* aePronunciationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */,
+				50483C2E1FC29A5700B6E228 /* Info.plist */,
+			);
+			path = aePronunciationUITests;
+			sourceTree = "<group>";
+		};
 		5074CC0B1BBCCDE2005B0871 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +142,6 @@
 				508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */,
 				50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */,
 				50E9E64B1BD50A50002CC689 /* TestViewController.swift */,
-				50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -84,6 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				50DC21741BB8FF65000075AE /* Main.storyboard */,
+				50483C121FC295AB00B6E228 /* IpaKeyboard.swift */,
+				50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */,
+				50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */,
+				50483C161FC2966900B6E228 /* KeyboardKey.swift */,
 				50E420241BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift */,
 			);
 			name = Views;
@@ -97,6 +167,7 @@
 				508360581BC29ABA00A225E6 /* Player.swift */,
 				50E9E6431BD4ABBB002CC689 /* Answer.swift */,
 				50E9E6491BD50717002CC689 /* Key.swift */,
+				504200D21FC2D3010026FBCA /* Ipa.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -105,9 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				50DC216E1BB8FF65000075AE /* AppDelegate.swift */,
-				50DC21771BB8FF65000075AE /* Assets.xcassets */,
-				505489141BBD672B00C4B141 /* raw */,
+				504FD6671FC51AF100622B50 /* raw */,
+				50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */,
 				50DC217C1BB8FF65000075AE /* Info.plist */,
+				50DC21771BB8FF65000075AE /* Assets.xcassets */,
 				50D64FD21BBE5083003657A4 /* Localizable.strings */,
 				50D64FD41BBE5D8B003657A4 /* String+localized.swift */,
 				50DC21791BB8FF65000075AE /* LaunchScreen.storyboard */,
@@ -121,6 +193,8 @@
 				50DC216D1BB8FF65000075AE /* aePronunciation */,
 				50DC21841BB8FF65000075AE /* aePronunciationTests */,
 				50DC218F1BB8FF65000075AE /* aePronunciationUITests */,
+				50483C1D1FC29A3200B6E228 /* aePronunciationTests */,
+				50483C2B1FC29A5700B6E228 /* aePronunciationUITests */,
 				50DC216C1BB8FF65000075AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				50DC216B1BB8FF65000075AE /* aePronunciation.app */,
+				50483C1C1FC29A3200B6E228 /* aePronunciationTests.xctest */,
+				50483C2A1FC29A5700B6E228 /* aePronunciationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +241,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		50483C1B1FC29A3200B6E228 /* aePronunciationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50483C231FC29A3300B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationTests" */;
+			buildPhases = (
+				50483C181FC29A3200B6E228 /* Sources */,
+				50483C191FC29A3200B6E228 /* Frameworks */,
+				50483C1A1FC29A3200B6E228 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50483C221FC29A3300B6E228 /* PBXTargetDependency */,
+			);
+			name = aePronunciationTests;
+			productName = aePronunciationTests;
+			productReference = 50483C1C1FC29A3200B6E228 /* aePronunciationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50483C291FC29A5700B6E228 /* aePronunciationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50483C311FC29A5700B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationUITests" */;
+			buildPhases = (
+				50483C261FC29A5700B6E228 /* Sources */,
+				50483C271FC29A5700B6E228 /* Frameworks */,
+				50483C281FC29A5700B6E228 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50483C301FC29A5700B6E228 /* PBXTargetDependency */,
+			);
+			name = aePronunciationUITests;
+			productName = aePronunciationUITests;
+			productReference = 50483C2A1FC29A5700B6E228 /* aePronunciationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		50DC216A1BB8FF65000075AE /* aePronunciation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50DC21951BB8FF65000075AE /* Build configuration list for PBXNativeTarget "aePronunciation" */;
@@ -188,9 +300,20 @@
 		50DC21631BB8FF65000075AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Suragch;
 				TargetAttributes = {
+					50483C1B1FC29A3200B6E228 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 50DC216A1BB8FF65000075AE;
+					};
+					50483C291FC29A5700B6E228 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 50DC216A1BB8FF65000075AE;
+					};
 					50DC216A1BB8FF65000075AE = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = HSUZ2UJNHR;
@@ -212,19 +335,35 @@
 			projectRoot = "";
 			targets = (
 				50DC216A1BB8FF65000075AE /* aePronunciation */,
+				50483C1B1FC29A3200B6E228 /* aePronunciationTests */,
+				50483C291FC29A5700B6E228 /* aePronunciationUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		50483C1A1FC29A3200B6E228 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50483C281FC29A5700B6E228 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC21691BB8FF65000075AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50DC217B1BB8FF65000075AE /* LaunchScreen.storyboard in Resources */,
 				50D64FD31BBE5083003657A4 /* Localizable.strings in Resources */,
+				504FD6681FC51AF100622B50 /* raw in Resources */,
 				50DC21781BB8FF65000075AE /* Assets.xcassets in Resources */,
-				505489151BBD672B00C4B141 /* raw in Resources */,
 				50DC21761BB8FF65000075AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,28 +371,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		50483C181FC29A3200B6E228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50483C1F1FC29A3300B6E228 /* aePronunciationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50483C261FC29A5700B6E228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50483C2D1FC29A5700B6E228 /* aePronunciationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50DC21671BB8FF65000075AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */,
 				50DC216F1BB8FF65000075AE /* AppDelegate.swift in Sources */,
+				504200D31FC2D3020026FBCA /* Ipa.swift in Sources */,
+				50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */,
 				50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */,
 				50D64FD91BBE912C003657A4 /* LearnDoubleSoundsViewController.swift in Sources */,
 				50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */,
 				50E2EAF41BD6182600842ED3 /* TestResultsViewController.swift in Sources */,
 				5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */,
+				50483C171FC2966900B6E228 /* KeyboardKey.swift in Sources */,
 				50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */,
+				50483C351FC29BAD00B6E228 /* KeyboardImageKey.swift in Sources */,
 				50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */,
 				50E9E64A1BD50717002CC689 /* Key.swift in Sources */,
 				50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */,
 				50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */,
 				508360591BC29ABA00A225E6 /* Player.swift in Sources */,
 				508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */,
+				50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50483C221FC29A3300B6E228 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50DC216A1BB8FF65000075AE /* aePronunciation */;
+			targetProxy = 50483C211FC29A3300B6E228 /* PBXContainerItemProxy */;
+		};
+		50483C301FC29A5700B6E228 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50DC216A1BB8FF65000075AE /* aePronunciation */;
+			targetProxy = 50483C2F1FC29A5700B6E228 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50DC21741BB8FF65000075AE /* Main.storyboard */ = {
@@ -275,6 +448,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		50483C241FC29A3300B6E228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSUZ2UJNHR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = aePronunciationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aePronunciation.app/aePronunciation";
+			};
+			name = Debug;
+		};
+		50483C251FC29A3300B6E228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSUZ2UJNHR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = aePronunciationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aePronunciation.app/aePronunciation";
+			};
+			name = Release;
+		};
+		50483C321FC29A5700B6E228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSUZ2UJNHR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = aePronunciationUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = aePronunciation;
+			};
+			name = Debug;
+		};
+		50483C331FC29A5700B6E228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HSUZ2UJNHR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = aePronunciationUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = aePronunciation;
+			};
+			name = Release;
+		};
 		50DC21931BB8FF65000075AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -408,6 +677,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		50483C231FC29A3300B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50483C241FC29A3300B6E228 /* Debug */,
+				50483C251FC29A3300B6E228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50483C311FC29A5700B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50483C321FC29A5700B6E228 /* Debug */,
+				50483C331FC29A5700B6E228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50DC21661BB8FF65000075AE /* Build configuration list for PBXProject "aePronunciation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

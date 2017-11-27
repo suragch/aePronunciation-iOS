@@ -3,7 +3,7 @@ import AudioToolbox
 
 class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
+    var ipa: String?
     fileprivate let player = Player()
     let reuseIdentifier = "cell"
     let doubleSound = DoubleSound()
