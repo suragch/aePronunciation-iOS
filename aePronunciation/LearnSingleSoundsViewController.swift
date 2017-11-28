@@ -3,9 +3,9 @@ import AudioToolbox
 
 class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     
-    fileprivate let player = Player()
-    fileprivate let defaultIpaToShowFirst = "æ"
-    fileprivate let singleSound = SingleSound()
+    private let player = Player()
+    private let defaultIpaToShowFirst = "æ"
+    private let singleSound = SingleSound()
     private let learnDoubleSegueId = "learnSingleToLearnDouble"
     
     // MARK: - Outlets
@@ -64,15 +64,19 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     }
     
     func updateDisplayForIpa(_ ipa: String) {
-        guard let fileName = SingleSound.getSoundFileName(ipa: ipa)
+        guard let prefix = ipaForNamePrefix[ipa]
             else {return}
         
         ipaLabel.text = ipa
-        ipaDescription.text = "\(fileName)_description".localized
+        
+        ipaDescription.text = "\(prefix)_description".localized
         ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
-        example1.setTitle("\(fileName)_example1".localized, for: UIControlState())
-        example2.setTitle("\(fileName)_example2".localized, for: UIControlState())
-        example3.setTitle("\(fileName)_example3".localized, for: UIControlState())
+        example1.setTitle("\(prefix)_example1".localized, for: UIControlState())
+        example2.setTitle("\(prefix)_example2".localized, for: UIControlState())
+        example3.setTitle("\(prefix)_example3".localized, for: UIControlState())
+        
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,4 +102,54 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     func keyBackspace() {
         // only conforming to keyboard delegate
     }
+    
+    let ipaForNamePrefix = [
+        "p":"p",
+        "t":"t",
+        "k":"k",
+        "ʧ":"ch",
+        "f":"f",
+        "θ":"th_voiceless",
+        "s":"s",
+        "ʃ":"sh",
+        "b":"b",
+        "d":"d",
+        "g":"g",
+        "ʤ":"dzh",
+        "v":"v",
+        "ð":"th_voiced",
+        "z":"z",
+        "ʒ":"zh",
+        "m":"m",
+        "n":"n",
+        "ŋ":"ng",
+        "l":"l",
+        "w":"w",
+        "j":"j",
+        "h":"h",
+        "r":"r",
+        "i":"i",
+        "ɪ":"i_short",
+        "ɛ":"e_short",
+        "æ":"ae",
+        "ɑ":"a",
+        "ɔ":"c_backwards",
+        "ʊ":"u_short",
+        "u":"u",
+        "ʌ":"v_upsidedown",
+        "ə":"schwa",
+        "eɪ":"ei",
+        "aɪ":"ai",
+        "aʊ":"au",
+        "ɔɪ":"oi",
+        "oʊ":"ou",
+        "ɾ":"flap_t",
+        "ɝ":"er_stressed",
+        "ɚ":"er_unstressed",
+        "ɑr":"ar",
+        "ɛr":"er",
+        "ɪr":"ir",
+        "ɔr":"or",
+        "ʔ":"glottal_stop"
+    ]
 }

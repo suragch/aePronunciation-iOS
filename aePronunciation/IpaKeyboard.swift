@@ -163,7 +163,7 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         key_u_short.primaryString = Ipa.u_short
         key_u.primaryString = Ipa.u
         key_v_upsidedown.primaryString = Ipa.v_upsidedown
-        key_shwua.primaryString = Ipa.shwua
+        key_shwua.primaryString = Ipa.schwa
         
         // Row 2
         key_ei.primaryString = Ipa.ei

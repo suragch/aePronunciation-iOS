@@ -1,0 +1,323 @@
+/* 
+  English
+*/
+
+/////////////////////////////
+//  Non-Translated strings //
+/////////////////////////////
+
+// <!-- Practice Tab -->
+"tell_me_button" = "\?";
+
+//<!-- Test results activity -->
+"test_results_percent" = "%1$d%%";
+
+//<!-- History Tests Activity-->
+"history_tests_item_score" = "%1$d%%";
+
+//<!-- About Activity -->
+"about_contact_url" = "http://www.aepronunciation.com/app/";
+
+//<!-- Learn sounds tab-->
+"p_example1" = "pass\n/pæs/";
+"p_example2" = "speak\n/spik/";
+"p_example3" = "stop\n/stɑp/";
+"t_example1" = "toad\n/tod/";
+"t_example2" = "sting\n/stɪŋ/";
+"t_example3" = "it\n/ɪt/";
+"k_example1" = "cool\n/kul/";
+"k_example2" = "skill\n/skɪl/";
+"k_example3" = "week\n/wik/";
+"ch_example1" = "chairs\n/ʧɛrz/";
+"ch_example2" = "each of\n/\'iʧəv/";
+"ch_example3" = "church\n/ʧɝʧ/";
+"f_example1" = "father\n/\'fɑðɚ/";
+"f_example2" = "gift\n/gɪft/";
+"f_example3" = "if\n/ɪf/";
+"th_voiceless_example1" = "think\n/θɪŋk/";
+"th_voiceless_example2" = "Jonathan\n/\'ʤɑnəθən/";
+"th_voiceless_example3" = "earth\n/ɝθ/";
+"s_example1" = "set\n/sɛt/";
+"s_example2" = "raced\n/rest/";
+"s_example3" = "pass\n/pæs/";
+"sh_example1" = "shoot\n/ʃut/";
+"sh_example2" = "wished\n/wɪʃt/";
+"sh_example3" = "ash\n/æʃ/";
+"b_example1" = "bill\n/bɪl/";
+"b_example2" = "above\n/ə\'bʌv/";
+"b_example3" = "rib\n/rɪb/";
+"d_example1" = "delicious\n/də\'lɪʃəs/";
+"d_example2" = "cards\n/kɑrdz/";
+"d_example3" = "card\n/kɑrd/";
+"g_example1" = "good\n/gʊd/";
+"g_example2" = "again\n/ə\'gɛn/";
+"g_example3" = "pig\n/pɪg/";
+"dzh_example1" = "jump\n/ʤʌmp/";
+"dzh_example2" = "agile\n/\'æʤəl/";
+"dzh_example3" = "edge\n/ɛʤ/";
+"v_example1" = "very\n/\'vɛri/";
+"v_example2" = "every\n/\'ɛvri/";
+"v_example3" = "have\n/hæv/";
+"th_voiced_example1" = "they\'re\n/ðɛr/";
+"th_voiced_example2" = "father\n/fɑðɚ/";
+"th_voiced_example3" = "bathe\n/beð/";
+"z_example1" = "zoo\n/zu/";
+"z_example2" = "raised\n/rezd/";
+"z_example3" = "cars\n/kɑrz/";
+"zh_example1" = "usually\n/\'juʒli/";
+"zh_example2" = "pleasure\n/\'plɛʒɚ/";
+"zh_example3" = "beige\n/beʒ/";
+"m_example1" = "me\n/mi/";
+"m_example2" = "jump\n/ʤʌmp/";
+"m_example3" = "arm\n/ɑrm/";
+"n_example1" = "new\n/nu/";
+"n_example2" = "panda\n/\'pændə/";
+"n_example3" = "sun\n/sʌn/";
+"ng_example1" = "ringing\n/\'rɪŋɪŋ/";
+"ng_example2" = "think\n/θɪŋk/";
+"ng_example3" = "sung\n/sʌŋ/";
+"l_example1" = "loud\n/laʊd/";
+"l_example2" = "cool\n/kul/";
+"l_example3" = "bill\n/bɪl/";
+"w_example1" = "wary\n/\'wɛri/";
+"w_example2" = "twelve\n/twɛlv/";
+"w_example3" = "what\n/wʌt/";
+"j_example1" = "year\n/jɪr/";
+"j_example2" = "cube\n/kjub/";
+"j_example3" = "yellow\n/\'jɛlo/";
+"h_example1" = "her\n/hɝ/";
+"h_example2" = "have\n/hæv/";
+"h_example3" = "ahead\n/ə\'hɛd/";
+"r_example1" = "real\n/ril/";
+"r_example2" = "rib\n/rɪb/";
+"r_example3" = "roar\n/rɔr/";
+"i_example1" = "each\n/iʧ/";
+"i_example2" = "read\n/rid/";
+"i_example3" = "me\n/mi/";
+"i_short_example1" = "it\n/ɪt/";
+"i_short_example2" = "him\n/hɪm/";
+"i_short_example3" = "rib\n/rɪb/";
+"e_short_example1" = "edge\n/ɛʤ/";
+"e_short_example2" = "set\n/sɛt/";
+"e_short_example3" = "said\n/sɛd/";
+"ae_example1" = "ash\n/æʃ/";
+"ae_example2" = "bad\n/bæd/";
+"ae_example3" = "bat\n/bæt/";
+"a_example1" = "on\n/ɑn/";
+"a_example2" = "father\n/\'fɑðɚ/";
+"a_example3" = "ma\n/mɑ/";
+"c_backwards_example1" = "ought\n/ɔt/";
+"c_backwards_example2" = "call\n/kɔl/";
+"c_backwards_example3" = "saw\n/sɔ/";
+"u_short_example1" = "put\n/pʊt/";
+"u_short_example2" = "good\n/gʊd/";
+"u_short_example3" = "should\n/ʃʊd/";
+"u_example1" = "ooze\n/uz/";
+"u_example2" = "shoot\n/ʃut/";
+"u_example3" = "blue\n/blu/";
+"v_upsidedown_example1" = "up\n/ʌp/";
+"v_upsidedown_example2" = "sun\n/sʌn/";
+"v_upsidedown_example3" = "uh-huh\n/ə\'hʌ/";
+"schwa_example1" = "above\n/ə\'bʌv/";
+"schwa_example2" = "delicious\n/də\'lɪʃəs/";
+"schwa_example3" = "panda\n/\'pændə/";
+"ei_example1" = "age\n/eʤ/";
+"ei_example2" = "safe\n/sef/";
+"ei_example3" = "may\n/me/";
+"ai_example1" = "I\'m\n/aɪm/";
+"ai_example2" = "bite\n/baɪt/";
+"ai_example3" = "fly\n/flaɪ/";
+"au_example1" = "out\n/aʊt/";
+"au_example2" = "loud\n/laʊd/";
+"au_example3" = "cow\n/kaʊ/";
+"oi_example1" = "oil\n/ɔɪl/";
+"oi_example2" = "voice\n/vɔɪs/";
+"oi_example3" = "boy\n/bɔɪ/";
+"ou_example1" = "oath\n/oθ/";
+"ou_example2" = "cove\n/kov/";
+"ou_example3" = "low\n/lo/";
+"er_stressed_example1" = "earth\n/ɝθ/";
+"er_stressed_example2" = "birthday\n/\'bɝθde/";
+"er_stressed_example3" = "her\n/hɝ/";
+"er_unstressed_example1" = "mother\n/\'mʌðɚ/";
+"er_unstressed_example2" = "perform\n/pɚ\'fɔrm/";
+"er_unstressed_example3" = "wonderful\n/\'wʌndɚfəl/";
+"ar_example1" = "arm\n/ɑrm/";
+"ar_example2" = "part\n/pɑrt/";
+"ar_example3" = "car\n/kɑr/";
+"er_example1" = "aired\n/ɛrd/";
+"er_example2" = "chairs\n/ʧɛrz/";
+"er_example3" = "there\n/ðɛr/";
+"ir_example1" = "ear\n/ɪr/";
+"ir_example2" = "weird\n/wɪrd/";
+"ir_example3" = "here\n/hɪr/";
+"or_example1" = "oars\n/ɔrz/";
+"or_example2" = "north\n/nɔrθ/";
+"or_example3" = "roar\n/rɔr/";
+"glottal_stop_example1" = "put\n/pʊʔ/";
+"glottal_stop_example2" = "button\n/\'bʌʔn/";
+"glottal_stop_example3" = "uh-oh\n/\'ʌʔo/";
+"flap_t_example1" = "water\n/\'wɑɾɚ/";
+"flap_t_example2" = "little\n/\'lɪɾəl/";
+"flap_t_example3" = "thirty\n/\'θɝɾi/";
+
+/////////////////////////////
+//  Translated strings //////
+/////////////////////////////
+
+"app_name" = "ae Pronunciation";
+"locale" = "en";
+
+// Main menu
+"main_menu_keyboard" = "Keyboard";
+"main_menu_history" = "History";
+"main_menu_about" = "About";
+
+// Tabs
+"main_tab_learn" = "Learn";
+"main_tab_practice" = "Practice";
+"main_tab_test" = "Test";
+
+// Learn Single fragment
+"learn_single_show_doubles" = "more…";
+
+// Learn Double sounds dialog
+"title_activity_learn_double" = "Double sounds with /%1$s/";
+
+// Practice Tab
+"practice_mode_single" = "Single";
+"practice_mode_double" = "Double";
+
+// Select Sounds dialog
+"select_sounds_title" = "Choose sounds to practice";
+"select_sounds_radio_single" = "Single";
+"select_sounds_radio_double" = "Double";
+"select_sounds_cb_vowels" = "Vowels";
+"select_sounds_cb_consonants" = "Consonants";
+"select_sounds_positive_button" = "OK";
+
+// Test setup tab
+"test_setup_name" = "Name";
+"test_default_name" = "Me";
+"test_setup_number_of_questions" = "Questions:";
+"test_setup_type" = "Type:";
+"test_setup_single" = "Single";
+"test_setup_double" = "Double";
+"test_setup_begin_button" = "Begin";
+
+// Test Activity
+"title_activity_test" = "Test";
+
+// Test results activity
+"title_activity_test_results" = "Test Results";
+"test_results_right" = "Right: %1$d";
+"test_results_wrong" = "Wrong: %1$d";
+"test_results_time" = "Time length: %1$s";
+"test_results_practice_difficult_button" = "Practice the difficult sounds";
+
+// History Activity
+"title_activity_history" = "History";
+"history_time_title" = "Total time spent:";
+"history_test_title" = "Tests:";
+"history_details" = "Details";
+
+// History Time Details Activity
+"title_activity_history_time" = "Total time spent";
+"history_time_details_learning" = "Time Learning";
+"history_time_details_practicing" = "Time Practicing";
+"history_time_details_testing" = "Time Testing";
+"history_time_details_total" = "Total Time";
+"history_time_details_type_single" = "Singles";
+"history_time_details_type_double" = "Doubles";
+
+// History Test Details Activity
+"title_activity_history_tests" = "Past tests";
+"history_test_details_type_single" = "Single (%1$d)";
+"history_test_details_type_double" = "Double (%1$d)";
+"history_test_details_specific_test_number_of_questions" = "Questions: %1$d";
+
+
+// History Tests Activity
+"title_activity_history_test_details" = "Test details";
+"history_tests_type_single" = "Single: %1$d%%";
+"history_tests_type_double" = "Double: %1$d%%";
+
+// About Activity
+"title_activity_about" = "About";
+"about_app_name" = "American English Pronunciation";
+"about_app_version" = "Version %1$s";
+"about_content" = "If you have any questions, comments, or suggestions, then please leave a message.";
+"about_contact" = "Contact";
+
+// Keyboard Input Activity
+"title_activity_keyboard_input" = "Write IPA";
+"keyboard_input_toast_text_copied" = "IPA text copied";
+"keyboard_menu_copy" = "Copy";
+"keyboard_menu_clear" = "Clear";
+"keyboard_menu_share" = "Share";
+"keyboard_menu_share_chooser_title" = "Share text to…";
+"keyboard_menu_alert_message" = "Are you sure you want to delete all the text?";
+"keyboard_menu_alert_clear_all_button" = "Delete";
+
+// Error dialog
+"error_dialog_title" = "Problem";
+"error_two_consonants" = "You wrote %1$s + %2$s (two consonants). You should choose one consonant and one vowel.";
+"error_two_vowels" = "You wrote %1$s + %2$s (two vowels). You should choose one consonant and one vowel.";
+"error_initial_ng" = "You wrote  %1$s + %2$s, but /ŋ/ never begins a syllable in English.";
+"error_final_r" = "You should use the keys for one of the R vowels (ɝ, ɑr, ɛr, ɪr, ɔr) if you want to end a sound with /r/. There should also be another consonant.";
+"error_final_wjh" = "You wrote %1$s + %2$s, but a syllable never ends with the /%2$s/ sound in English.";
+"error_dialog_ok_button" = "OK";
+
+// general dialog buttons
+"dialog_cancel_button" = "Cancel";
+
+// Learn sounds tab
+"p_description" = "/p/ is aspirated ([pʰ]) at the beginning of words but it is unaspirated ([p]) after /s/ and at the end of a word. Be careful not to read the third example /stɑpə/.";
+"t_description" = "/t/ is aspirated ([tʰ]) at the beginning of words but it is unaspirated ([t]) after /s/ and at the end of a word. Be careful not to read the third example [ɪtə] or [ɪtʰ] or [ɪts]. Also note that the letter \"t\" often changes its pronunciation in American English. See /ʔ/ and /ɾ/.";
+"k_description" = "/k/ is aspirated ([kʰ]) at the beginning of words but it is unaspirated ([k]) after /s/ and at the end of a word. Be careful not to read the third example /wikə/.";
+"ch_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ʧɝʧə/.";
+"f_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ɪfə/.";
+"th_voiceless_description" = "In this sound the tongue lightly touches the bottom of the top teeth. Do not say /s/.";
+"s_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /pæsə/.";
+"sh_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /æʃə/.";
+"b_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /rɪbə/ or /rɪp/.";
+"d_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /kɑrdə/ or /kɑrt/.";
+"g_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /pɪgə/ or /pɪk/.";
+"dzh_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ɛʤə/.";
+"v_description" = "Note the difference between /v/ and /w/. In the /v/ sound the top teeth touch the bottom lip. This is the same mouth position as /f/. The only difference is that /v/ is voiced. Also be careful not to read the third example /hævə/.";
+"th_voiced_description" = "In this sound the tongue lightly touches the bottom of the top teeth. This is the same mouth position as /θ/. The main difference is that /ð/ is voiced.";
+"z_description" = "This sound uses the same mouth position as /s/. The only difference is that /z/ is voiced.";
+"zh_description" = "This sound uses the same mouth position as /ʃ/. The only difference is that /ʒ/ is voiced.";
+"m_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ɑrmə/.";
+"n_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /sʌnə/.";
+"ng_description" = "This sound does not begin any words in English.";
+"l_description" = "At the beginning of words, [l] is the proper IPA symbol. However, at the end of words it is pronounced differently. The IPA for this sound is written [ɫ] but we use the /l/ symbol for both [l] and [ɫ] in this app (as do many textbooks and dictionaries). Example 2 could also be written /kuəl/.";
+"w_description" = "Note the difference between /w/ and /v/. In the /w/ sound the lips make a small circle and do not touch the teeth. A minority of Americans pronounce \"wh\" as /hw/ (in IPA this is /ʍ/).";
+"j_description" = "This sound does not come at the end of any words in English. Note the difference between \"year\" and \"ear\".";
+"h_description" = "This sound does not come at the end of any words in English.";
+"r_description" = "This sound should be written /ɹ/ according to IPA. (The IPA /r/ is actually a trilled r.) However, in order to maintain consistency with many dictionaries and textbooks, the symbol /r/ is used here.";
+"i_description" = "In British English pronunciation this sound is usually written as /iː/, where the two dots represent a long vowel sound. Long and short vowels are not differentiated as much in American English and so the two dots are not written. If a vowel is before a voiced consonant then it is long. If it is before a voiceless consonant then it is short.";
+"i_short_description" = "This is a different sound than /i/. The difference is not so much one of long and short, but of a different position of the mouth and tongue. The mouth is open just a little wider and the tongue is just a little further back than /i/.";
+"e_short_description" = "Many dictionaries and textbooks that describe British English use the symbol /e/ for this sound. According to IPA, though, it should be written /ɛ/. The mouth is open less than with /æ/ and the tongue is a little more forward.";
+"ae_description" = "Stretch your lips wide like the /ɛ/ but open your mouth big like the /ɑ/. Your tongue should be further back than with /ɛ/.";
+"a_description" = "Also written as /ɑː/ in British English. Note that this is a very different sound than /ʌ/ in American English.";
+"c_backwards_description" = "This sound should be written /ɒ/ according to IPA. However, to be consistent with most dictionaries, /ɔ/ is used here. Note, though, that it is not the same sound as when /ɔː/ is used to describe British pronunciation. About 40% of Americans do not pronounce the /ɔ/ sound. They replace it with the /ɑ/ sound. The above examples would be pronounced /ɑt/, /kɑl/, ɑnd /sɑ/. The words \"cot\" and \"caught\" would also be pronounced the same (/kɑt/).";
+"u_short_description" = "Sometimes it is written incorrectly as /u/, but it should be written /ʊ/ (without the \"tail\"). /u/ and /ʊ/ are two very different vowels.";
+"u_description" = "Also written /uː/, but like /iː/, /ɑː/, ɑnd /ɔː/, the long vowel dots are not needed in American English.";
+"v_upsidedown_description" = "This is a different sound than /ɑ/. The difference is not so much one of long and short, but of a different position of the mouth and tongue. Note that it is also pronounced somewhat differently than the British sound that is also usually written /ʌ/. When this sound is in an unstressed syllable it is written /ə/.";
+"schwa_description" = "The vowel /ə/ is the most common sound in American English because of its use in unstressed syllables and words. It is called a schwa. When this sound is in a stressed syllable it is written /ʌ/.";
+"ei_description" = "This is a diphthong, a combination of the /e/ and /ɪ/ sounds. It is sometimes also written as /e/ in some American English dictionaries. (Do not confuse this with the British English symbol /e/, which is actually pronounced /ɛ/.) Words with the American English /eɪ/ sound are pronounced /ɛɪ/ in British English. However, they still write it as /eɪ/.";
+"ai_description" = "This is a diphthong, a combination of the /a/ and /ɪ/ sounds. Note the difference from /æ/.";
+"au_description" = "This is a diphthong, a combination of the /a/ and /ʊ/ sounds. Note the difference from /ɔ/.";
+"oi_description" = "The \"ɔ\" used in /ɔɪ/ is not the same sound as the /ɔ/ in this app. (This is because the /ɔ/ used to describe many American English words should actually be written /ɒ/.) The /ɔɪ/ sound begins with small rounded lips.";
+"ou_description" = "This is a diphthong, a combination of the /o/ and /ʊ/ sounds. Note that there is a slight difference from the British pronunciation of /əʊ/.";
+"er_stressed_description" = "The /ɝ/ sound is sometimes written /ər/ or /əɹ/. This is the sound in a stressed syllable or a one-syllable word. When /ɝ/ is unstressed it is written /ɚ/. In British English /ɝ/ is pronounced as /ɜː/.";
+"er_unstressed_description" = "The /ɚ/ sound is the same as /ɝ/ except that /ɚ/ is used for unstressed syllables. It is sometimes also written as /ər/ or /əɹ/. In British English /ɚ/ is pronounced as /ə/.";
+"ar_description" = "The /ɑr/ sound is more correctly written /ɑɹ/ or /ɑɚ/ according to IPA. It is pronounced as /ɑː/ in British English.";
+"er_description" = "The /ɛr/ sound is more correctly written /ɛɹ/ or /ɛɚ/ according to IPA. It is pronounced and written as /eə/ in British English.";
+"ir_description" = "The /ɪr/ sound is more correctly written /ɪɹ/ or /ɪɚ/ according to IPA. It is pronounced as /ɪə/ in British English.";
+"or_description" = "The \"ɔ\" used in /ɔr/ is not the same sound as the /ɔ/ in this app. (This is because the /ɔ/ used to describe many American English words should be written /ɒ/.) The /ɔr/ sound begins with small rounded lips. It is more correctly written /ɔɹ/ according to IPA. It is pronounced as /ɔː/ in British English.";
+"glottal_stop_description" = "This sound is called a glottal stop. It is not always taught in English textbooks, but it is an important part of American English pronunciation. Note the difference in the pronunciation of \"put\" here and in the example for the /ʊ/ sound. The /ʔ/ sound often replaces /t/, especially at the end of words and in middle of sentences.";
+"flap_t_description" = "The /ɾ/ sound (not /r/) is called a flap t or an alveolar tap. It is not usually taught in English textbooks, but it is an important part of American English pronunciation. The /ɾ/ sound often replaces /t/, especially when /t/ comes between vowels in an unstressed syllable. The /ɾ/ sound can also be written /d/, though this is not as accurate. In that case, the examples would be written /\'wɑdɚ/, /\'lɪdəl/, ɑnd /\'θɝdi/.";
+
+

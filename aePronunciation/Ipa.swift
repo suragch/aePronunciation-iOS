@@ -2,17 +2,22 @@ import Swift
 
 struct Ipa {
     
+    static let NUMBER_OF_VOWELS = 21
+    static let NUMBER_OF_VOWELS_FOR_DOUBLES = 19 // not ə, ɚ
+    static let NUMBER_OF_CONSONANTS = 26
+    static let NUMBER_OF_CONSONANTS_FOR_DOUBLES = 24 // not ʔ. ɾ
+    
     static func splitDoubleSound(str: String) -> (String, String) {
         //let firstChar = s.prefix(1)
-        var index = s.index(str.startIndex, offsetBy: 1)
+        var index = str.index(str.startIndex, offsetBy: 1)
         let firstChar = str.prefix(upTo: index)
         
         if isConsonant(ipa: firstChar) {
-            return (String(firstChar), String(s[index...]))
+            return (String(firstChar), String(str[index...]))
         }
-        index = s.index(str.endIndex, offsetBy: -1)
+        index = str.index(str.endIndex, offsetBy: -1)
         let lastChar = str.suffix(1)
-        return (String(lastChar), String(s[..<index]))
+        return (String(lastChar), String(str[..<index]))
     }
     
     static func isConsonant<T>(ipa: T) -> Bool where T: StringProtocol {
@@ -23,6 +28,67 @@ struct Ipa {
         return "ʔɾəɚ".contains(ipa)
     }
     
+    static func hasTwoPronunciations<T>(ipa: T) -> Bool where T: StringProtocol {
+        return "fvθðmnl".contains(ipa)
+    }
+    
+    static func getAllVowels() -> [String] {
+        
+        return [
+            Ipa.i,
+            Ipa.i_short,
+            Ipa.e_short,
+            Ipa.ae,
+            Ipa.a,
+            Ipa.c_backwards,
+            Ipa.u_short,
+            Ipa.u,
+            Ipa.v_upsidedown,
+            Ipa.schwa,
+            Ipa.ei,
+            Ipa.ai,
+            Ipa.au,
+            Ipa.oi,
+            Ipa.ou,
+            Ipa.er_stressed,
+            Ipa.er_unstressed,
+            Ipa.ar,
+            Ipa.er,
+            Ipa.ir,
+            Ipa.or
+        ]
+    }
+    
+    static func getAllConsonants() -> [String] {
+        return [
+            Ipa.p,
+            Ipa.t,
+            Ipa.k,
+            Ipa.ch,
+            Ipa.f,
+            Ipa.th_voiceless,
+            Ipa.s,
+            Ipa.sh,
+            Ipa.b,
+            Ipa.d,
+            Ipa.g,
+            Ipa.dzh,
+            Ipa.v,
+            Ipa.th_voiced,
+            Ipa.z,
+            Ipa.zh,
+            Ipa.m,
+            Ipa.n,
+            Ipa.ng,
+            Ipa.l,
+            Ipa.w,
+            Ipa.j,
+            Ipa.h,
+            Ipa.r,
+            Ipa.glottal_stop,
+            Ipa.flap_t
+        ]
+    }
     
     static let p = "p"
     static let t = "t"
@@ -57,7 +123,7 @@ struct Ipa {
     static let u_short = "ʊ"
     static let u = "u"
     static let v_upsidedown = "ʌ"
-    static let shwua = "ə"
+    static let schwa = "ə"
     static let ei = "eɪ"
     static let ai = "aɪ"
     static let au = "aʊ"

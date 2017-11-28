@@ -62,13 +62,19 @@ class DoubleSound {
         }
     }
     
-    func restrictListToSpecialSoundsContaining(ipa: String) {
+    private func restrictListToSpecialSoundsContaining(ipa: String) {
         doubleSounds = [String]()
-        for key in DoubleSound.soundSpecialMap.keys {
-            if key.contains(ipa) {
+        for key in DoubleSound.specialSoundMap.keys {
+            if shouldInclude(specialSound: key, forIpa: ipa) {
                 doubleSounds!.append(key)
             }
         }
+    }
+    
+    private func shouldInclude(specialSound: String, forIpa ipa: String) -> Bool {
+        if !specialSound.contains(ipa) {return false}
+        if specialSound.contains(Ipa.flap_t) && ipa == Ipa.schwa {return false}
+        return true
     }
     
     func includeAllSounds() {
@@ -100,8 +106,8 @@ class DoubleSound {
     }
     
     class func getSoundFileName(doubleSoundIpa: String) -> String? {
-        if Ipa.isSpecial(ipa: doubleSoundIpa) {
-            return DoubleSound.soundSpecialMap[doubleSoundIpa]
+        if let value = DoubleSound.specialSoundMap[doubleSoundIpa] {
+            return value
         }
         return DoubleSound.soundMap[doubleSoundIpa]
     }
@@ -933,7 +939,7 @@ class DoubleSound {
         "ɔrl": "double_or_l"
     ]
     
-    private static let soundSpecialMap = [
+    private static let specialSoundMap = [
         "iʔ": "double_i_glottal",
         "ɪʔ": "double_is_glottal",
         "eɪʔ": "double_ei_glottal",
