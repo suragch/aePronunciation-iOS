@@ -1,8 +1,10 @@
 import UIKit
+import AVFoundation
 import AudioToolbox
 
 class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     
+    private var avPlayer: AVPlayer?
     private let player = Player()
     private let defaultIpaToShowFirst = "æ"
     private let singleSound = SingleSound()
@@ -55,20 +57,31 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         
         keyboard.delegate = self
         
-        updateDisplayForIpa(defaultIpaToShowFirst)
-        
         // Center button text
         example1.titleLabel?.textAlignment = NSTextAlignment.center
         example2.titleLabel?.textAlignment = NSTextAlignment.center
         example3.titleLabel?.textAlignment = NSTextAlignment.center
+        
+        // set up video player
+        self.avPlayer = AVPlayer()
+        let playerLayer: AVPlayerLayer = AVPlayerLayer(player: avPlayer)
+        playerLayer.frame = videoView.bounds
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        videoView.layer.addSublayer(playerLayer)
+        
+        updateDisplayForIpa(defaultIpaToShowFirst)
     }
     
     func updateDisplayForIpa(_ ipa: String) {
+        guard ipaLabel.text != ipa else {return}
         guard let prefix = ipaForNamePrefix[ipa]
             else {return}
         
-        ipaLabel.text = ipa
+        print("updating display")
+
         
+        ipaLabel.text = ipa
+        loadVideoFor(ipa: ipa)
         ipaDescription.text = "\(prefix)_description".localized
         ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
         example1.setTitle("\(prefix)_example1".localized, for: UIControlState())
@@ -77,6 +90,21 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         
         
         
+    }
+    
+    func loadVideoFor(ipa: String) {
+        // get the path string for the video from assets
+        guard let writtenName = ipaForNamePrefix[ipa] else {return}
+        let resourceName = "raw/v_" + writtenName
+        let videoString:String? = Bundle.main.path(forResource: resourceName, ofType: "mp4")
+        guard let unwrappedVideoPath = videoString else {return}
+        
+        // convert the path string to a url
+        let videoUrl = URL(fileURLWithPath: unwrappedVideoPath)
+        
+        let asset = AVAsset(url: videoUrl)
+        let playerItem = AVPlayerItem(asset: asset)
+        avPlayer?.replaceCurrentItem(with: playerItem)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,9 +122,11 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         updateDisplayForIpa(character)
         
         // play sound
-        if let fileName =  SingleSound.getSoundFileName(ipa: character) {
-            player.playSoundFromFile(fileName)
-        }
+//        if let fileName =  SingleSound.getSoundFileName(ipa: character) {
+//            player.playSoundFromFile(fileName)
+//        }
+        avPlayer?.seek(to: kCMTimeZero)
+        avPlayer?.play()
     }
     
     func keyBackspace() {

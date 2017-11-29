@@ -32,8 +32,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbJ-yW-03e" userLabel="IpaViewContainer">
                                                 <rect key="frame" x="8" y="8" width="116" height="87"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="æ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-FV-0RL">
-                                                        <rect key="frame" x="31" y="5.5" width="54" height="76.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-FV-0RL">
+                                                        <rect key="frame" x="43" y="5.5" width="30.5" height="76.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -51,7 +51,6 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZS-cQ-3LT">
                                                         <rect key="frame" x="8" y="21" width="80" height="45"/>
-                                                        <color key="backgroundColor" red="0.61618377209999997" green="0.58672751540000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="cki-Mm-wAL"/>
                                                             <constraint firstAttribute="height" constant="45" id="gSe-tt-PK3"/>
