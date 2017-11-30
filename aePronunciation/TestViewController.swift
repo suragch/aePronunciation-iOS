@@ -180,13 +180,13 @@ class TestViewController: UIViewController {
         if examType == ExamType.doubles {
             
             if let fileName = DoubleSound.getSoundFileName(doubleSoundIpa: ipa) {
-                player.playSoundFromFile(fileName)
+                player.playSoundFrom(file: fileName)
             }
             
         } else {
             
             if let fileName = SingleSound.getSoundFileName(ipa: ipa) {
-                player.playSoundFromFile(fileName)
+                player.playSoundFrom(file: fileName)
             }
         }
         

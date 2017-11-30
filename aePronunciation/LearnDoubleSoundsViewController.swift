@@ -41,7 +41,7 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
         // play sound
         let ipa = doubleSound.getSounds()[indexPath.item]
         if let soundFile = DoubleSound.getSoundFileName(doubleSoundIpa: ipa) {
-            player.playSoundFromFile(soundFile)
+            player.playSoundFrom(file: soundFile)
         }
     }
 }

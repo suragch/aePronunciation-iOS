@@ -26,28 +26,21 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         guard let ipa = ipaLabel.text else {return}
         guard let fileName = SingleSound.getExampleOneFileName(ipa: ipa)
             else {return}
-        player.playSoundFromFile(fileName)
+        player.playSoundFrom(file: fileName)
     }
     
     @IBAction func example2(_ sender: UIButton) {
         guard let ipa = ipaLabel.text else {return}
         guard let fileName = SingleSound.getExampleTwoFileName(ipa: ipa)
             else {return}
-        player.playSoundFromFile(fileName)
+        player.playSoundFrom(file: fileName)
     }
     
     @IBAction func example3(_ sender: UIButton) {
         guard let ipa = ipaLabel.text else {return}
         guard let fileName = SingleSound.getExampleThreeFileName(ipa: ipa)
             else {return}
-        player.playSoundFromFile(fileName)
-    }
-    
-    @IBAction func more(_ sender: UIButton) {
-        
-        // TODO: Show double sounds
-        // start LearnDoubleSounds, pass in the current IPA
-        
+        player.playSoundFrom(file: fileName)
     }
     
     // MARK: - Overrides
@@ -77,9 +70,6 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         guard let prefix = ipaForNamePrefix[ipa]
             else {return}
         
-        print("updating display")
-
-        
         ipaLabel.text = ipa
         loadVideoFor(ipa: ipa)
         ipaDescription.text = "\(prefix)_description".localized
@@ -87,9 +77,6 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         example1.setTitle("\(prefix)_example1".localized, for: UIControlState())
         example2.setTitle("\(prefix)_example2".localized, for: UIControlState())
         example3.setTitle("\(prefix)_example3".localized, for: UIControlState())
-        
-        
-        
     }
     
     func loadVideoFor(ipa: String) {
@@ -120,11 +107,6 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     
     func keyWasTapped(_ character: String) {
         updateDisplayForIpa(character)
-        
-        // play sound
-//        if let fileName =  SingleSound.getSoundFileName(ipa: character) {
-//            player.playSoundFromFile(fileName)
-//        }
         avPlayer?.seek(to: kCMTimeZero)
         avPlayer?.play()
     }

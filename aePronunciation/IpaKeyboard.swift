@@ -83,13 +83,13 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         setup()
     }
     
-    func setup() {
+    private func setup() {
         addSubviews()
         setPrimaryKeyStrings()
         assignDelegates()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         
         // Row 1
         self.addSubview(key_i)
@@ -151,7 +151,7 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         self.addSubview(key_flap_t)
     }
     
-    func setPrimaryKeyStrings() {
+    private func setPrimaryKeyStrings() {
         
         // Row 1
         key_i.primaryString = Ipa.i
@@ -213,7 +213,7 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         key_flap_t.primaryString = Ipa.flap_t
     }
     
-    func assignDelegates() {
+    private func assignDelegates() {
         
         // Row 1
         key_i.delegate = self
@@ -297,7 +297,7 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
             eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
             0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
         
-        let subview = subviews[3]
+        //let subview = subviews[3]
         
         let numberOfRows = numberOfKeysPerRow.count
         let totalWidth = self.bounds.width
@@ -308,7 +308,7 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         for rowIndex in 0..<numberOfRows {
             let start = keyIndex
             let end = keyIndex + numberOfKeysPerRow[rowIndex]
-            for rowItemIndex in start..<end {
+            for _ in start..<end {
                 let key = subviews[keyIndex]
                 let keyWidth = totalWidth * keyWeights[keyIndex]
                 let keyHeight = totalHeight / CGFloat(numberOfRows)
@@ -335,6 +335,16 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
     func keyBackspaceTapped() {
         self.delegate?.keyBackspace()
         print("key text: backspace")
+    }
+    
+    // MARK: - Public update methods
+    
+    func updateKeysFor(soundMode: SoundMode) {
+        
+    }
+    
+    func updateKeyAppearanceFor(selectedSounds: [String]?) {
+        
     }
 }
 
