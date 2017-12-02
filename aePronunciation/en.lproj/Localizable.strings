@@ -10,10 +10,10 @@
 "tell_me_button" = "\?";
 
 //<!-- Test results activity -->
-"test_results_percent" = "%1$d%%";
+"test_results_percent" = "%d%%";
 
 //<!-- History Tests Activity-->
-"history_tests_item_score" = "%1$d%%";
+"history_tests_item_score" = "%d%%";
 
 //<!-- About Activity -->
 "about_contact_url" = "http://www.aepronunciation.com/app/";
@@ -182,7 +182,7 @@
 "learn_single_show_doubles" = "more…";
 
 // Learn Double sounds dialog
-"title_activity_learn_double" = "Double sounds with /%1$s/";
+"title_activity_learn_double" = "Double sounds with /%@/";
 
 // Practice Tab
 "practice_mode_single" = "Single";
@@ -210,9 +210,9 @@
 
 // Test results activity
 "title_activity_test_results" = "Test Results";
-"test_results_right" = "Right: %1$d";
-"test_results_wrong" = "Wrong: %1$d";
-"test_results_time" = "Time length: %1$s";
+"test_results_right" = "Right: %d";
+"test_results_wrong" = "Wrong: %d";
+"test_results_time" = "Time length: %@";
 "test_results_practice_difficult_button" = "Practice the difficult sounds";
 
 // History Activity
@@ -232,20 +232,20 @@
 
 // History Test Details Activity
 "title_activity_history_tests" = "Past tests";
-"history_test_details_type_single" = "Single (%1$d)";
-"history_test_details_type_double" = "Double (%1$d)";
-"history_test_details_specific_test_number_of_questions" = "Questions: %1$d";
+"history_test_details_type_single" = "Single (%d)";
+"history_test_details_type_double" = "Double (%d)";
+"history_test_details_specific_test_number_of_questions" = "Questions: %d";
 
 
 // History Tests Activity
 "title_activity_history_test_details" = "Test details";
-"history_tests_type_single" = "Single: %1$d%%";
-"history_tests_type_double" = "Double: %1$d%%";
+"history_tests_type_single" = "Single: %d%%";
+"history_tests_type_double" = "Double: %d%%";
 
 // About Activity
 "title_activity_about" = "About";
 "about_app_name" = "American English Pronunciation";
-"about_app_version" = "Version %1$s";
+"about_app_version" = "Version %@";
 "about_content" = "If you have any questions, comments, or suggestions, then please leave a message.";
 "about_contact" = "Contact";
 
@@ -261,11 +261,11 @@
 
 // Error dialog
 "error_dialog_title" = "Problem";
-"error_two_consonants" = "You wrote %1$s + %2$s (two consonants). You should choose one consonant and one vowel.";
-"error_two_vowels" = "You wrote %1$s + %2$s (two vowels). You should choose one consonant and one vowel.";
-"error_initial_ng" = "You wrote  %1$s + %2$s, but /ŋ/ never begins a syllable in English.";
+"error_two_consonants" = "You wrote %@ + %@ (two consonants). You should choose one consonant and one vowel.";
+"error_two_vowels" = "You wrote %@ + %@ (two vowels). You should choose one consonant and one vowel.";
+"error_initial_ng" = "You wrote  %@ + %@, but /ŋ/ never begins a syllable in English.";
 "error_final_r" = "You should use the keys for one of the R vowels (ɝ, ɑr, ɛr, ɪr, ɔr) if you want to end a sound with /r/. There should also be another consonant.";
-"error_final_wjh" = "You wrote %1$s + %2$s, but a syllable never ends with the /%2$s/ sound in English.";
+"error_final_wjh" = "You wrote %@ + %@, but a syllable never ends with the /%@/ sound in English.";
 "error_dialog_ok_button" = "OK";
 
 // general dialog buttons

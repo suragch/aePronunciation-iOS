@@ -78,7 +78,7 @@ class KeyboardImageKey: KeyboardKey {
     // long press
     override func longPressBegun(_ guesture: UILongPressGestureRecognizer) {
         if self.secondaryString != "" {
-            delegate?.keyTextEntered(self.secondaryString)
+            delegate?.keyTextEntered(sender: self, keyText: self.secondaryString)
         } else {
             // enter primary string if this key has no seconary string
             //delegate?.keyTextEntered(self.primaryString)
@@ -86,7 +86,7 @@ class KeyboardImageKey: KeyboardKey {
             if keyType == KeyType.backspace {
                 delegate?.keyBackspaceTapped()
             } else {
-                delegate?.keyTextEntered(self.primaryString)
+                delegate?.keyTextEntered(sender: self, keyText: self.primaryString)
             }
             
             if repeatOnLongPress {
@@ -112,7 +112,7 @@ class KeyboardImageKey: KeyboardKey {
         if keyType == KeyType.backspace {
             delegate?.keyBackspaceTapped()
         } else {
-            delegate?.keyTextEntered(self.primaryString)
+            delegate?.keyTextEntered(sender: self, keyText: self.primaryString)
         }
         
     }
@@ -125,7 +125,7 @@ class KeyboardImageKey: KeyboardKey {
         if keyType == KeyType.backspace {
             delegate?.keyBackspaceTapped()
         } else {
-            delegate?.keyTextEntered(self.primaryString)
+            delegate?.keyTextEntered(sender: self, keyText: self.primaryString)
         }
     }
     

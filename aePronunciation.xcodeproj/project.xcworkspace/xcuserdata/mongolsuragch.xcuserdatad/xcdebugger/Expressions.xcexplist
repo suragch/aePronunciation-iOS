@@ -3,10 +3,40 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "PracticeSoundsViewController.playButtonTapped(_:):PracticeSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentIpa">
+            </PersistentString>
+            <PersistentString
+               value = "doubleSound.getSoundCount()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PracticeSoundsViewController.playButtonTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "readyForNewSound">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "LearnSingleSoundsViewController.keyWasTapped(_:):LearnSingleSoundsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "avPlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "IpaKeyboard.mode.didset:IpaKeyboard.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "mode">
+            </PersistentString>
+            <PersistentString
+               value = "subviews.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -18,14 +48,6 @@
             </PersistentString>
             <PersistentString
                value = "numberWrong">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PracticeSoundsViewController.playButtonTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "readyForNewSound">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -7,12 +7,8 @@ import UIKit
 
 // protocol for communication with keyboard
 protocol KeyboardKeyDelegate: class {
-    func keyTextEntered(_ keyText: String)
-    //func keyFvsTapped(_ fvs: String)
-    func keyBackspaceTapped()
-    //func keyKeyboardTapped()
-    //func keyNewKeyboardChosen(_ keyboardName: String)
-    //func otherAvailableKeyboards(_ displayNames: [String])
+    func keyTextEntered(sender: KeyboardKey, keyText: String)
+    func keyBackspaceTapped() 
 }
 
 
@@ -21,8 +17,8 @@ class KeyboardKey: UIControl {
     
     weak var delegate: KeyboardKeyDelegate? // probably a keyboard class
     
-    fileprivate let backgroundLayer = KeyboardKeyBackgroundLayer()
-    fileprivate var oldFrame = CGRect.zero
+    private let backgroundLayer = KeyboardKeyBackgroundLayer()
+    private var oldFrame = CGRect.zero
     
     // space between the frame edge of the visible border of the key
     var padding: CGFloat {
@@ -32,6 +28,12 @@ class KeyboardKey: UIControl {
     }
     
     var fillColor = UIColor.white {
+        didSet {
+            backgroundLayer.setNeedsDisplay()
+        }
+    }
+    
+    override var isSelected: Bool {
         didSet {
             backgroundLayer.setNeedsDisplay()
         }
@@ -165,7 +167,11 @@ class KeyboardKeyBackgroundLayer: CALayer {
             //let borderColor = key.borderColor.CGColor
             
             // Fill
-            ctx.setFillColor(key.fillColor.cgColor)
+            if key.isSelected {
+                ctx.setFillColor(key.tintColor.cgColor)
+            } else {
+                ctx.setFillColor(key.fillColor.cgColor)
+            }
             ctx.addPath(keyPath.cgPath)
             ctx.fillPath()
             

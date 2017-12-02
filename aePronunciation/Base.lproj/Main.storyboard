@@ -341,7 +341,7 @@
                                         </constraints>
                                         <state key="normal" image="settings"/>
                                         <connections>
-                                            <action selector="optionsButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="etn-M9-M7P"/>
+                                            <segue destination="0Pc-r0-59d" kind="show" identifier="selectSoundsSegueId" id="djh-pc-JNL"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLN-vD-eb6">
@@ -362,16 +362,26 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jlg-13-iEd">
                                         <rect key="frame" x="91" y="77" width="200" height="120"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdm-cD-yOl" userLabel="InputWindowBorder">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-PD-vtz" userLabel="PlayButton">
+                                                <rect key="frame" x="0.0" y="60" width="200" height="60"/>
+                                                <state key="normal" image="play"/>
+                                                <connections>
+                                                    <action selector="playButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="9gk-9I-dyg"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdm-cD-yOl" userLabel="InputWindowBorder">
+                                                <rect key="frame" x="8" y="0.0" width="200" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HS-xc-qcU">
                                                         <rect key="frame" x="168" y="0.0" width="32" height="60"/>
                                                         <state key="normal" image="clear"/>
+                                                        <connections>
+                                                            <action selector="clearButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Yyn-1m-nci"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2o-DD-V8z">
                                                         <rect key="frame" x="0.0" y="0.0" width="168" height="60"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -388,13 +398,6 @@
                                                     <constraint firstItem="h2o-DD-V8z" firstAttribute="top" secondItem="rdm-cD-yOl" secondAttribute="top" id="yEP-0I-wzr"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-PD-vtz" userLabel="PlayButton">
-                                                <rect key="frame" x="0.0" y="60" width="200" height="60"/>
-                                                <state key="normal" image="play"/>
-                                                <connections>
-                                                    <action selector="playButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="9gk-9I-dyg"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -403,7 +406,7 @@
                                             <constraint firstItem="SnN-PD-vtz" firstAttribute="height" secondItem="rdm-cD-yOl" secondAttribute="height" id="EQ9-sz-gW8"/>
                                             <constraint firstItem="SnN-PD-vtz" firstAttribute="top" secondItem="rdm-cD-yOl" secondAttribute="bottom" id="SIX-gt-zaR"/>
                                             <constraint firstItem="SnN-PD-vtz" firstAttribute="leading" secondItem="Jlg-13-iEd" secondAttribute="leading" id="VHF-df-GcV"/>
-                                            <constraint firstAttribute="height" constant="120" id="XrP-0S-c1H"/>
+                                            <constraint firstAttribute="height" constant="120" id="XrP-0S-c1H" userLabel="height = 150"/>
                                             <constraint firstAttribute="bottom" secondItem="SnN-PD-vtz" secondAttribute="bottom" id="cBU-52-oU0"/>
                                             <constraint firstAttribute="width" constant="200" id="e5f-6F-B9l"/>
                                             <constraint firstAttribute="trailing" secondItem="rdm-cD-yOl" secondAttribute="trailing" id="uua-fp-cWB"/>
@@ -469,20 +472,111 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Practice Single Sounds" id="6gM-6j-yO8"/>
+                    <navigationItem key="navigationItem" title="Practice Single Sounds" id="6gM-6j-yO8">
+                        <barButtonItem key="backBarButtonItem" title=" " id="1wR-2j-ymD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="inputLabel" destination="h2o-DD-V8z" id="26J-Ug-dOU"/>
                         <outlet property="inputWindowBorderView" destination="rdm-cD-yOl" id="901-YB-cxj"/>
+                        <outlet property="ipaKeyboard" destination="cRf-hd-hmU" id="7kU-R6-Iw6"/>
                         <outlet property="numberCorrectLabel" destination="xLN-vD-eb6" id="BlX-YN-CvW"/>
                         <outlet property="numberWrongLabel" destination="Mwm-2Q-gTq" id="T0o-M3-jhF"/>
-                        <outlet property="optionsButton" destination="Tjz-0s-AiV" id="t9Q-nF-wgr"/>
                         <outlet property="percentLabel" destination="T7Y-sf-3Zq" id="jfY-gl-auC"/>
-                        <outlet property="vowelsAndConsonantsLabel" destination="Q18-YE-vYF" id="uWk-GZ-eKr"/>
+                        <outlet property="practiceModeLabel" destination="Q18-YE-vYF" id="E4d-ho-3Bw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1413.5999999999999" y="-441.22938530734638"/>
+        </scene>
+        <!--Select Sounds View Controller-->
+        <scene sceneID="qo1-lO-Ah8">
+            <objects>
+                <viewController id="0Pc-r0-59d" customClass="SelectSoundsViewController" customModule="aePronunciation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aIo-a9-Exu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z4t-54-i3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Us5-Yg-JIY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYp-TW-ohv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Obr-Vr-pTW"/>
+                                </items>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vMo-xo-sDK">
+                                <rect key="frame" x="130" y="104" width="115" height="29"/>
+                                <segments>
+                                    <segment title="Single"/>
+                                    <segment title="Double"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onSingleDoubleChanged:" destination="0Pc-r0-59d" eventType="valueChanged" id="6Tv-N1-Z7W"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xqe-Gp-Z0g">
+                                <rect key="frame" x="16" y="184" width="51" height="31"/>
+                                <connections>
+                                    <action selector="vowelsSwitched:" destination="0Pc-r0-59d" eventType="valueChanged" id="IGz-mS-pE5"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i72-cp-Qk4">
+                                <rect key="frame" x="16" y="223" width="51" height="31"/>
+                                <connections>
+                                    <action selector="consonantsSwitched:" destination="0Pc-r0-59d" eventType="valueChanged" id="cN0-w5-Amc"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vowels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgl-bk-DdZ">
+                                <rect key="frame" x="73" y="189" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4m-e9-evg" customClass="IpaChooserKeyboard" customModule="aePronunciation" customModuleProvider="target">
+                                <rect key="frame" x="16" y="274" width="343" height="324"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consonants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocp-nT-sdi">
+                                <rect key="frame" x="73" y="228" width="91.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xgl-bk-DdZ" firstAttribute="leading" secondItem="xqe-Gp-Z0g" secondAttribute="trailing" constant="8" id="0DY-uw-6Xc"/>
+                            <constraint firstItem="vMo-xo-sDK" firstAttribute="top" secondItem="LYp-TW-ohv" secondAttribute="bottom" constant="40" id="3va-7b-m54"/>
+                            <constraint firstItem="vMo-xo-sDK" firstAttribute="centerX" secondItem="Us5-Yg-JIY" secondAttribute="centerX" id="EFl-eU-iop"/>
+                            <constraint firstItem="Xgl-bk-DdZ" firstAttribute="centerY" secondItem="xqe-Gp-Z0g" secondAttribute="centerY" id="Fh4-R4-YJf"/>
+                            <constraint firstItem="i72-cp-Qk4" firstAttribute="leading" secondItem="Us5-Yg-JIY" secondAttribute="leadingMargin" id="HkE-Pf-MtP"/>
+                            <constraint firstAttribute="trailing" secondItem="LYp-TW-ohv" secondAttribute="trailing" id="JmB-5S-7k4"/>
+                            <constraint firstItem="s4m-e9-evg" firstAttribute="leading" secondItem="Us5-Yg-JIY" secondAttribute="leadingMargin" id="Jof-w3-Htf"/>
+                            <constraint firstItem="xqe-Gp-Z0g" firstAttribute="top" secondItem="LYp-TW-ohv" secondAttribute="bottom" constant="120" id="KB1-VF-Pbg"/>
+                            <constraint firstItem="xqe-Gp-Z0g" firstAttribute="leading" secondItem="Us5-Yg-JIY" secondAttribute="leadingMargin" id="MxE-wc-ddF"/>
+                            <constraint firstItem="i72-cp-Qk4" firstAttribute="top" secondItem="xqe-Gp-Z0g" secondAttribute="bottom" constant="8" id="WdN-Hz-Ynm"/>
+                            <constraint firstItem="LYp-TW-ohv" firstAttribute="leading" secondItem="Us5-Yg-JIY" secondAttribute="leading" id="cN4-DX-tMz"/>
+                            <constraint firstItem="ocp-nT-sdi" firstAttribute="centerY" secondItem="i72-cp-Qk4" secondAttribute="centerY" id="def-8W-wGx"/>
+                            <constraint firstItem="ocp-nT-sdi" firstAttribute="leading" secondItem="i72-cp-Qk4" secondAttribute="trailing" constant="8" id="etj-H8-kpq"/>
+                            <constraint firstItem="Z4t-54-i3L" firstAttribute="top" secondItem="s4m-e9-evg" secondAttribute="bottom" constant="20" id="h4G-ZP-aj7"/>
+                            <constraint firstItem="s4m-e9-evg" firstAttribute="trailing" secondItem="Us5-Yg-JIY" secondAttribute="trailingMargin" id="nYU-l3-FPC"/>
+                            <constraint firstItem="LYp-TW-ohv" firstAttribute="top" secondItem="Us5-Yg-JIY" secondAttribute="top" constant="20" id="wZh-SX-aki"/>
+                            <constraint firstItem="s4m-e9-evg" firstAttribute="top" secondItem="i72-cp-Qk4" secondAttribute="bottom" constant="20" id="yvj-P6-NUG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="consonantsLabel" destination="ocp-nT-sdi" id="de9-0q-bzB"/>
+                        <outlet property="ipaChooserKeyboard" destination="s4m-e9-evg" id="MLh-P8-C3x"/>
+                        <outlet property="singleDoubleSegmentedControl" destination="vMo-xo-sDK" id="dY9-OA-MOA"/>
+                        <outlet property="vowelsLabel" destination="Xgl-bk-DdZ" id="UT4-rz-FcM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXS-GF-nPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="-443.02848575712147"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

@@ -6,23 +6,49 @@ import UIKit
 @IBDesignable
 class KeyboardTextKey: KeyboardKey {
     
- 
-    fileprivate let primaryLayer = CATextLayer()
-    fileprivate let secondaryLayer = CATextLayer()
+    private let primaryLayer = CATextLayer()
+    private let secondaryLayer = CATextLayer()
     let secondaryLayerMargin: CGFloat = 5.0
-    fileprivate var oldFrame = CGRect.zero
+    private var oldFrame = CGRect.zero
+    private static let selectedTextColor = UIColor.white
+    private static let disabledTextColor = UIColor.lightGray
+    private static let normalTextColor = UIColor.black
     
     // MARK: Primary input value
     
     @IBInspectable var primaryString: String = "" {
         didSet {
-            //primaryLayer.displayString = primaryString
             updatePrimaryLayerFrame()
         }
     }
     @IBInspectable var primaryStringFontSize: CGFloat = 17 {
         didSet {
             updatePrimaryLayerFrame()
+        }
+    }
+    var primaryStringFontColor: UIColor = normalTextColor {
+        didSet {
+            updatePrimaryLayerFrame()
+        }
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                primaryStringFontColor = KeyboardTextKey.selectedTextColor
+            } else {
+                primaryStringFontColor = KeyboardTextKey.normalTextColor
+            }
+        }
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            if isEnabled {
+                primaryStringFontColor = KeyboardTextKey.normalTextColor
+            } else {
+                primaryStringFontColor = KeyboardTextKey.disabledTextColor
+            }
         }
     }
     
@@ -55,42 +81,33 @@ class KeyboardTextKey: KeyboardKey {
     
     override var frame: CGRect {
         didSet {
-            
             // only update frames if non-zero and changed
             if frame != CGRect.zero && frame != oldFrame {
                 updatePrimaryLayerFrame()
                 updateSecondaryLayerFrame()
                 oldFrame = frame
             }
-            
-            
         }
     }
     
     func setup() {
-        
-        
         // Primary text layer
-        //primaryLayer.useMirroredFont = useMirroredFont
         primaryLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(primaryLayer)
         
         // Secondary text layer
-        //secondaryLayer.useMirroredFont = useMirroredFont
         secondaryLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(secondaryLayer)
-        
-        
     }
     
     func updatePrimaryLayerFrame() {
         
-        let myAttribute = [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: primaryStringFontSize) ]
-        //let myString = primaryLayer.string as? String ?? ""
+        let myAttribute: [NSAttributedStringKey : Any] = [
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: primaryStringFontSize),
+            NSAttributedStringKey.foregroundColor: primaryStringFontColor ]
         let attrString = NSMutableAttributedString(string: primaryString, attributes: myAttribute )
         let size = dimensionsForAttributedString(attrString)
         
-        // This is the frame for the soon-to-be rotated layer
         let x = (layer.bounds.width - size.width) / 2
         let y = (layer.bounds.height - size.height) / 2
         primaryLayer.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
@@ -99,12 +116,9 @@ class KeyboardTextKey: KeyboardKey {
     
     func updateSecondaryLayerFrame() {
         let myAttribute = [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: secondaryStringFontSize) ]
-        
-        //let myString = secondaryString  // secondaryLayer.string as? String ?? ""
         let attrString = NSMutableAttributedString(string: secondaryString, attributes: myAttribute )
         let size = dimensionsForAttributedString(attrString)
         
-        // This is the frame for the soon-to-be rotated layer
         let x = layer.bounds.width - size.width - secondaryLayerMargin
         let y = layer.bounds.height - size.height - secondaryLayerMargin
         secondaryLayer.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
@@ -114,10 +128,10 @@ class KeyboardTextKey: KeyboardKey {
     
     override func longPressBegun(_ guesture: UILongPressGestureRecognizer) {
         if self.secondaryString != "" {
-            delegate?.keyTextEntered(self.secondaryString)
+            delegate?.keyTextEntered(sender: self, keyText: self.secondaryString)
         } else {
             // enter primary string if this key has no seconary string
-            delegate?.keyTextEntered(self.primaryString)
+            delegate?.keyTextEntered(sender: self, keyText: self.primaryString)
         }
     }
     
@@ -125,7 +139,7 @@ class KeyboardTextKey: KeyboardKey {
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         super.endTracking(touch, with: event)
         
-        delegate?.keyTextEntered(self.primaryString)
+        delegate?.keyTextEntered(sender: self, keyText: self.primaryString)
         
     }
     

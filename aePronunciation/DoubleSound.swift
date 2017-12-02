@@ -119,6 +119,38 @@ class DoubleSound {
         return doubleSounds!
     }
     
+    static func parse(ipaDouble: String) -> (String, String)? {
+        let count = ipaDouble.count
+        if count < 2 {return nil}
+        
+        if !startsWithTwoCharVowel(ipaDouble: ipaDouble) {
+            let index = ipaDouble.index(ipaDouble.startIndex, offsetBy: 1)
+            let first = ipaDouble[..<index]
+            let second = ipaDouble[index...]
+            return (String(first), String(second))
+        }
+        
+        if (count == 2) {
+            // this is technically an error (shouldn't separate a 2-char vowel)
+            let first = ipaDouble.prefix(1)
+            let second = ipaDouble.suffix(1)
+            return (String(first), String(second))
+        }
+        
+        let index = ipaDouble.index(ipaDouble.startIndex, offsetBy: 2)
+        let first = ipaDouble[..<index]
+        let second = ipaDouble[index...]
+        return (String(first), String(second))
+    }
+    
+    private static func startsWithTwoCharVowel(ipaDouble: String) -> Bool {
+        return ipaDouble.hasPrefix(Ipa.ai) || ipaDouble.hasPrefix(Ipa.au)
+            || ipaDouble.hasPrefix(Ipa.ei) || ipaDouble.hasPrefix(Ipa.ou)
+            || ipaDouble.hasPrefix(Ipa.oi) || ipaDouble.hasPrefix(Ipa.ar)
+            || ipaDouble.hasPrefix(Ipa.er) || ipaDouble.hasPrefix(Ipa.ir)
+            || ipaDouble.hasPrefix(Ipa.or)
+    }
+    
     private static let soundMap = [
         "pi": "double_p_i",
         "pɪ": "double_p_is",

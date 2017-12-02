@@ -24,6 +24,10 @@ struct Ipa {
         return "ptkʧfθsʃbdgʤvðzʒmnŋlwjhrʔɾ".contains(ipa)
     }
     
+    static func isVowel<T>(ipa: T) -> Bool where T: StringProtocol {
+        return !isConsonant(ipa: ipa)
+    }
+    
     static func isSpecial<T>(ipa: T) -> Bool where T: StringProtocol {
         return "ʔɾəɚ".contains(ipa)
     }

@@ -8,6 +8,23 @@ protocol KeyboardDelegate: class {
 
 class IpaKeyboard: UIView, KeyboardKeyDelegate {
     
+    private let numberKeysDouble = 43
+    private let numberKeysSingle = 47
+
+    var mode = SoundMode.single {
+        didSet {
+            if mode == SoundMode.single
+                && subviews.count == numberKeysDouble {
+                addSpecialKeysBackIn()
+                self.setNeedsLayout()
+            } else if mode == SoundMode.double
+                && subviews.count == numberKeysSingle {
+                removeSpecialKeys()
+                self.setNeedsLayout()
+            }
+        }
+    }
+    
     weak var delegate: KeyboardDelegate? // probably the view controller
     
     // Keyboard Keys
@@ -284,21 +301,9 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         // |  b | d  | g | dzh|  v | th |  z |  zh |    Row 5
         // | m | n | ng| l | w | j | h | r | ? | r |    Row 6
         
-        let sixth: CGFloat = 1/6
-        let eighth: CGFloat = 1/8
-        
-        let numberOfKeysPerRow = [10, 5, 6, 8, 8, 10]
+        let numberOfKeysPerRow = getNumberOfKeysPerRow()
         // each row should sum to 1
-        let keyWeights: [CGFloat] = [
-            0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,
-            0.2, 0.2, 0.2, 0.2, 0.2,
-            sixth, sixth, sixth, sixth, sixth, sixth,
-            eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
-            eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
-            0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
-        
-        //let subview = subviews[3]
-        
+        let keyWeights = getKeyWeights()
         let numberOfRows = numberOfKeysPerRow.count
         let totalWidth = self.bounds.width
         let totalHeight = self.bounds.height
@@ -323,28 +328,86 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
         }
     }
     
+    private func getNumberOfKeysPerRow() -> [Int] {
+        if mode == SoundMode.single {
+            return [10, 5, 6, 8, 8, 10] // 47 total
+        } else { // double
+            return [9, 5, 5, 8, 8, 8] // 43 total
+        }
+    }
+
+    private func getKeyWeights() -> [CGFloat] {
+        // each row should sum to 1
+
+        let eighth: CGFloat = 1/8
+
+        if mode == SoundMode.single {
+            let sixth: CGFloat = 1/6
+            return [
+                0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,
+                0.2, 0.2, 0.2, 0.2, 0.2,
+                sixth, sixth, sixth, sixth, sixth, sixth,
+                eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
+                eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
+                0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+        } else {
+            // excluding special sounds for double keyboard
+            let ninth: CGFloat = 1/9
+            return [
+                ninth, ninth, ninth, ninth, ninth, ninth, ninth, ninth, ninth,
+                0.2, 0.2, 0.2, 0.2, 0.2,
+                0.2, 0.2, 0.2, 0.2, 0.2,
+                eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
+                eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth,
+                eighth, eighth, eighth, eighth, eighth, eighth, eighth, eighth]
+        }
+    }
+    
+    
+    private func addSpecialKeysBackIn() {
+        self.insertSubview(key_shwua, aboveSubview: key_v_upsidedown)
+        self.insertSubview(key_er_unstressed, aboveSubview: key_er_stressed)
+        self.addSubview(key_glottal_stop)
+        self.addSubview(key_flap_t)
+    }
+    
+    private func removeSpecialKeys() {
+        for myView in subviews {
+            guard let key = myView as? KeyboardTextKey else {continue}
+            if Ipa.isSpecial(ipa: key.primaryString) {
+                key.removeFromSuperview()
+            }
+        }
+    }
+    
     // MARK: - KeyboardKeyDelegate protocol
     
-    func keyTextEntered(_ keyText: String) {
-        //print("key text: \(keyText)")
-        
+    
+    func keyTextEntered(sender: KeyboardKey, keyText: String) {
         // pass the input up to the Keyboard delegate
         self.delegate?.keyWasTapped(keyText)
     }
     
     func keyBackspaceTapped() {
         self.delegate?.keyBackspace()
-        print("key text: backspace")
+        //print("key text: backspace")
     }
     
     // MARK: - Public update methods
     
-    func updateKeysFor(soundMode: SoundMode) {
-        
-    }
-    
     func updateKeyAppearanceFor(selectedSounds: [String]?) {
-        
+        guard let selected = selectedSounds else {return}
+        for myView in subviews {
+            guard let key = myView as? KeyboardTextKey else {continue}
+            var isEnabled = false
+            innerLoop: for sound in selected {
+                if sound == key.primaryString {
+                    isEnabled = true
+                    break innerLoop
+                }
+            }
+            key.isEnabled = isEnabled
+        }
     }
 }
 
