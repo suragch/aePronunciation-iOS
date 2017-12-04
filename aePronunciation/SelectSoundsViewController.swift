@@ -5,15 +5,17 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     private static let DOUBLE = 1
     private var somethingWasChanged = false
     
-    var previouslySelectedMode: SoundMode?
-    var previouslySelectedVowels: [String]?
-    var previouslySelectedConsonants: [String]?
+    var previouslySelectedMode = SoundMode.single
+    var previouslySelectedKeys = [String]()
+    // var previouslySelectedConsonants: [String]?
     var callback : ((SoundMode, [String], [String]) -> Void)?
     
     @IBOutlet weak var singleDoubleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var vowelsLabel: UILabel!
     @IBOutlet weak var consonantsLabel: UILabel!
     @IBOutlet weak var ipaChooserKeyboard: IpaChooserKeyboard!
+    @IBOutlet weak var vowelsSwitch: UISwitch!
+    @IBOutlet weak var consonantsSwitch: UISwitch!
     
     // MARK:- Overrides
     
@@ -22,8 +24,8 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
         
         //self.navigationItem.title = "select_sounds_title".localized
         self.title = "select_sounds_title".localized
-        ipaChooserKeyboard.setVowels(areSelected: true)
-        ipaChooserKeyboard.setConsonants(areSelected: true)
+        initPreviouslyChosenItems()
+        somethingWasChanged = false
     }
     
     override func viewWillDisappear(_ animated : Bool) {
@@ -46,6 +48,10 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
         } else {
             ipaChooserKeyboard.mode = SoundMode.double
         }
+        vowelsSwitch.setOn(true, animated: true)
+        consonantsSwitch.setOn(true, animated: true)
+        let allSounds = Ipa.getAllVowels() + Ipa.getAllConsonants()
+        ipaChooserKeyboard.setKeySelectedFor(selectedSounds: allSounds)
         somethingWasChanged = true
     }
     
@@ -71,6 +77,25 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     
     // MARK:- Other
     
+    private func initPreviouslyChosenItems() {
+        ipaChooserKeyboard.mode = previouslySelectedMode
+        if previouslySelectedMode == SoundMode.single {
+            singleDoubleSegmentedControl.selectedSegmentIndex = 0
+        } else {
+            singleDoubleSegmentedControl.selectedSegmentIndex = 1
+        }
+        //let vowels = previouslySelectedVowels ?? Ipa.getAllVowels()
+        //let consonants = previouslySelectedConsonants ?? Ipa.getAllConsonants()
+        //let previouslySelected = previouslySelected
+        ipaChooserKeyboard.setKeySelectedFor(selectedSounds: previouslySelectedKeys)
+        if !ipaChooserKeyboard.hasSelectedVowels() {
+            vowelsSwitch.setOn(false, animated: false)
+        }
+        if !ipaChooserKeyboard.hasSelectedConsonants() {
+            consonantsSwitch.setOn(false, animated: false)
+        }
+    }
+        
     private func getSoundMode() -> SoundMode {
         if singleDoubleSegmentedControl.selectedSegmentIndex == SelectSoundsViewController.SINGLE {
             return SoundMode.single

@@ -409,5 +409,16 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
             key.isEnabled = isEnabled
         }
     }
+    
+    func getEnabledKeys() -> [String] {
+        var enabledKeys = [String]()
+        for myView in subviews {
+            guard let key = myView as? KeyboardTextKey else {continue}
+            if key.isEnabled {
+                enabledKeys.append(key.primaryString)
+            }
+        }
+        return enabledKeys
+    }
 }
 

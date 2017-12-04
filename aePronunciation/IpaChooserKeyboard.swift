@@ -22,6 +22,41 @@ class IpaChooserKeyboard: IpaKeyboard {
         sender.isSelected = !sender.isSelected
     }
     
+    func hasSelectedVowels() -> Bool {
+        for myView in subviews {
+            guard let key = myView as? KeyboardTextKey else {continue}
+            if Ipa.isVowel(ipa: key.primaryString) && key.isSelected {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func hasSelectedConsonants() -> Bool {
+        for myView in subviews {
+            guard let key = myView as? KeyboardTextKey else {continue}
+            if Ipa.isConsonant(ipa: key.primaryString) && key.isSelected {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func setKeySelectedFor(selectedSounds: [String]?) {
+        guard let selected = selectedSounds else {return}
+        for myView in subviews {
+            guard let key = myView as? KeyboardTextKey else {continue}
+            var isSelected = false
+            innerLoop: for sound in selected {
+                if sound == key.primaryString {
+                    isSelected = true
+                    break innerLoop
+                }
+            }
+            key.isSelected = isSelected
+        }
+    }
+    
     func setVowels(areSelected: Bool) {
         for myView in subviews {
             guard let key = myView as? KeyboardTextKey else {continue}

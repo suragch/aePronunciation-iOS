@@ -18,7 +18,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     @IBOutlet weak var example2: UIButton!
     @IBOutlet weak var example3: UIButton!
     @IBOutlet weak var keyboard: IpaKeyboard!
-    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var videoView: UIImageView!
     
     // MARK: - Actions
     
@@ -63,6 +63,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         videoView.layer.addSublayer(playerLayer)
         
         updateDisplayForIpa(defaultIpaToShowFirst)
+        loadVideoFor(ipa: defaultIpaToShowFirst)
     }
     
     func updateDisplayForIpa(_ ipa: String) {
@@ -71,7 +72,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
             else {return}
         
         ipaLabel.text = ipa
-        loadVideoFor(ipa: ipa)
+        videoView.image = UIImage(named: "\(prefix)_placeholder")
         ipaDescription.text = "\(prefix)_description".localized
         ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
         example1.setTitle("\(prefix)_example1".localized, for: UIControlState())
@@ -107,6 +108,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     
     func keyWasTapped(_ character: String) {
         updateDisplayForIpa(character)
+        loadVideoFor(ipa: character)
         avPlayer?.seek(to: kCMTimeZero)
         avPlayer?.play()
     }
