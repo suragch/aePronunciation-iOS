@@ -15,6 +15,8 @@ class MyUserDefaults {
     static let TIME_TEST_SINGLE_KEY = "timeTestSingle"
     static let TIME_TEST_DOUBLE_KEY = "timeTestDouble"
     
+    static let defaultNumberOfTestQuestions = 50;
+    
     static var storedPracticeMode: SoundMode {
         get {
             let isSingle = UserDefaults.standard.bool(forKey: PRACTICE_MODE_IS_SINGLE_KEY)
@@ -22,4 +24,38 @@ class MyUserDefaults {
             return SoundMode.double
         }
     }
+    
+    // just to be called one time in the AppDelegate
+    class func registerDefaults() {
+        let defaults = UserDefaults.standard
+        let defaultValues : [String : Any] = [
+            TEST_NAME_KEY : "",
+            NUMBER_OF_QUESTIONS_KEY : defaultNumberOfTestQuestions,
+            TEST_MODE_KEY : SoundMode.single.rawValue
+        ]
+        defaults.register(defaults: defaultValues)
+    }
+    
+    class func getTestSetupPreferences()
+        -> (name: String, number: Int, mode: SoundMode) {
+        
+            let defaults = UserDefaults.standard
+            let name = defaults.string(forKey: TEST_NAME_KEY) ?? ""
+            let number = defaults.integer(forKey: NUMBER_OF_QUESTIONS_KEY)
+            let soundModeRaw = defaults.string(forKey: TEST_MODE_KEY)
+            var mode = SoundMode.single
+            if soundModeRaw == SoundMode.double.rawValue {
+                mode = SoundMode.double
+            }
+            return (name, number, mode)
+    }
+    
+    class func saveTestSetupPreferences(name: String, number: Int, mode: SoundMode) {
+        
+        let defaults = UserDefaults.standard
+        defaults.set(name, forKey: TEST_NAME_KEY)
+        defaults.set(number, forKey: NUMBER_OF_QUESTIONS_KEY)
+        defaults.set(mode.rawValue, forKey: TEST_MODE_KEY)
+    }
+    
 }

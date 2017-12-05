@@ -3,27 +3,26 @@ import UIKit
 class TestViewController: UIViewController {
 
     
-    fileprivate var answers = [Answer]()
-    fileprivate let player = Player()
-    fileprivate lazy var singleSound = SingleSound()
-    fileprivate lazy var doubleSound = DoubleSound()
-    //private var singleMode = true // false == double mode
-    fileprivate var currentIpa = ""
-    fileprivate var inputKeyCounter = 0
-    //private var readyForNewSound = false
-    //private var alreadyMadeWrongAnswerForThisIpa = false
-    fileprivate var questionNumber = 0 // zero based
-    fileprivate var totalNumberOfQuestions = -1
-    fileprivate var examType = ExamType.doubles
-    fileprivate var startTime = Date()
+    private var answers = [Answer]()
+    private let player = Player()
+    private lazy var singleSound = SingleSound()
+    private lazy var doubleSound = DoubleSound()
+    private var currentIpa = ""
+    private var inputKeyCounter = 0
+    private var readyForNewSound = true
+    private var questionNumber = 0 // zero based
+    private var totalNumberOfQuestions = -1
+    private var startTime = Date()
     
     
     // MARK: - Outlets
     
     @IBOutlet weak var questionNumberLabel: UILabel!
+    @IBOutlet weak var testModeLabel: UILabel!
     @IBOutlet weak var inputWindow: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var inputWindowView: UIView!
+    @IBOutlet weak var ipaKeyboard: IpaKeyboard!
     
     // MARK: - Actions
     

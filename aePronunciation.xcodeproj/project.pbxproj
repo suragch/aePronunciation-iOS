@@ -161,6 +161,7 @@
 				50DF5ABB1FD1043600DD7A04 /* SelectSoundsViewController.swift */,
 				50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */,
 				50E9E64B1BD50A50002CC689 /* TestViewController.swift */,
+				50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -201,7 +202,6 @@
 			children = (
 				50DC216E1BB8FF65000075AE /* AppDelegate.swift */,
 				504FD6671FC51AF100622B50 /* raw */,
-				50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */,
 				50DC217C1BB8FF65000075AE /* Info.plist */,
 				50DC21771BB8FF65000075AE /* Assets.xcassets */,
 				5094F1861FCD08DD00F5EF29 /* Localizable.strings */,

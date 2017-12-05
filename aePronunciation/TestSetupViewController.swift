@@ -1,118 +1,26 @@
 import UIKit
 
-enum ExamType: Int {
-    case doubles = 0
-    case singles
-    case vowelsOnly
-    case consonantsOnly
-}
-
 class TestSetupViewController: UIViewController, UITextFieldDelegate {
-
-    fileprivate var numberOfQuestions = 50 // defaults are registered in AppDelegate
-    fileprivate let numberOfQuestionsArray = [ 5, 10, 25, 50, 100 ]
-    fileprivate var contentType = ExamType.doubles
-    fileprivate var name = ""
     
     // MARK: - Outlets
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var numberOfQuestionsButton: UIButton!
-    @IBOutlet weak var contentTypeButton: UIButton!
+    @IBOutlet weak var numberOfQuestionsLabel: UILabel!
+    @IBOutlet weak var numberOfQuestionsSegControl: UISegmentedControl!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var typeSegControl: UISegmentedControl!
+    @IBOutlet weak var beginButton: UIButton!
     
     // MARK: - Actions
-    
-    @IBAction func numberOfQuestionsButtonTapped(_ sender: UIButton) {
-        
-        // Create the action sheet
-        let myActionSheet = UIAlertController(title: "Number of Questions", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-        //var alertActions = [ UIAlertAction ]()
-        
-        for number in numberOfQuestionsArray {
-            
-            let myAction = UIAlertAction(title: String(number), style: UIAlertActionStyle.default) { (action) in
-                //print("\(number) action button tapped")
-                self.numberOfQuestions = number
-                self.updateNumberOfQuestionsDisplay()
-                
-            }
-            myActionSheet.addAction(myAction)
-        }
-        
-        
-        // cancel action button
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
-            // do nothing
-        }
-        myActionSheet.addAction(cancelAction)
-        
-        // support iPads (popover view)
-        myActionSheet.popoverPresentationController?.sourceView = self.numberOfQuestionsButton
-        myActionSheet.popoverPresentationController?.sourceRect = self.numberOfQuestionsButton.bounds
-        
-        // present the action sheet
-        self.present(myActionSheet, animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func contentTypeButtonTapped(_ sender: UIButton) {
-        
-        // Create the action sheet
-        let myActionSheet = UIAlertController(title: "Content", message: "What do you want to take a test on?", preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-        // Double Sounds action button
-        let doubleAction = UIAlertAction(title: "Double Sounds (Consonant and Vowel)", style: UIAlertActionStyle.default) { (action) in
-            self.contentType = ExamType.doubles
-            self.updateTypeButtonDisplay()
-        }
-        
-        // Single Sounds action button
-        let singleAction = UIAlertAction(title: "Single Sounds (Consonant or Vowel)", style: UIAlertActionStyle.default) { (action) in
-            self.contentType = ExamType.singles
-            self.updateTypeButtonDisplay()
-        }
-        
-        // Vowels Only action button
-        let vowelsAction = UIAlertAction(title: "Vowels Only", style: UIAlertActionStyle.default) { (action) in
-            self.contentType = ExamType.vowelsOnly
-            self.updateTypeButtonDisplay()
-        }
-        
-        // Consonants Only action button
-        let consonantsAction = UIAlertAction(title: "Consonants Only", style: UIAlertActionStyle.default) { (action) in
-            self.contentType = ExamType.consonantsOnly
-            self.updateTypeButtonDisplay()
-        }
-        
-        // cancel action button
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) in
-            // do nothing
-        }
-        
-        // add action buttons to action sheet
-        myActionSheet.addAction(doubleAction)
-        myActionSheet.addAction(singleAction)
-        myActionSheet.addAction(vowelsAction)
-        myActionSheet.addAction(consonantsAction)
-        myActionSheet.addAction(cancelAction)
-        
-        // support iPads (popover view)
-        myActionSheet.popoverPresentationController?.sourceView = self.contentTypeButton
-        myActionSheet.popoverPresentationController?.sourceRect = self.contentTypeButton.bounds
-        
-        // present the action sheet
-        self.present(myActionSheet, animated: true, completion: nil)
-    }
     
     @IBAction func beginButtonTapped(_ sender: UIButton) {
         
         // save settings as defaults
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(nameTextField.text, forKey: Key.name)
-        userDefaults.set(numberOfQuestions, forKey: Key.numberOfQuestions)
-        userDefaults.set(contentType.rawValue, forKey: Key.contentType)
-        
+        let name = nameTextField.text ?? "test_default_name".localized
+        let number = getSelectedNumberOfQuestions()
+        let mode = getSelectedMode()
+        MyUserDefaults.saveTestSetupPreferences(
+            name: name, number: number, mode: mode)
     }
     
     // MARK: - Overrides
@@ -120,32 +28,20 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // get defaults from settings
+        // localize labels
+        nameTextField.placeholder = "test_setup_name".localized
+        numberOfQuestionsLabel.text = "test_setup_number_of_questions".localized
+        typeLabel.text = "test_setup_type".localized
+        beginButton.titleLabel?.text = "test_setup_begin_button".localized
         
-        // name
-        let userDefaults = UserDefaults.standard
-        if let savedName = userDefaults.string(forKey: Key.name) {
-            name = savedName
-        }
-        // number of questions
-        let number = userDefaults.integer(forKey: Key.numberOfQuestions)
-        if number > 0 {
-            numberOfQuestions = number
-        }
-        // content type
-        if let type = ExamType(rawValue: userDefaults.integer(forKey: Key.contentType)) {
-            contentType = type
-        }
-        
-        
-        // update display with values
+        // update display with saved/default values
+        let (name, number, mode) = MyUserDefaults.getTestSetupPreferences()
         nameTextField.text = name
-        updateNumberOfQuestionsDisplay()
-        updateTypeButtonDisplay()
+        updateNumberOfQuestionsDisplay(number: number)
+        updateTypeButtonDisplay(mode: mode)
         
         // set textfield delegate
         nameTextField.delegate = self
-        
     }
     
     // MARK: - UITextFieldDelegate protocol
@@ -163,23 +59,53 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Other methods
     
-    func updateNumberOfQuestionsDisplay() {
-        
-        self.numberOfQuestionsButton.setTitle("\(numberOfQuestions) questions", for: UIControlState())
+    func updateNumberOfQuestionsDisplay(number: Int) {
+        switch number {
+        case 5:
+            typeSegControl.selectedSegmentIndex = 0
+        case 10:
+            typeSegControl.selectedSegmentIndex = 1
+        case 25:
+            typeSegControl.selectedSegmentIndex = 2
+        case 50:
+            typeSegControl.selectedSegmentIndex = 3
+        case 100:
+            typeSegControl.selectedSegmentIndex = 4
+        default:
+            typeSegControl.selectedSegmentIndex = 3
+        }
+    }
+
+    func updateTypeButtonDisplay(mode: SoundMode) {
+        switch mode {
+        case SoundMode.single:
+            numberOfQuestionsSegControl.selectedSegmentIndex = 0
+        case SoundMode.double:
+            numberOfQuestionsSegControl.selectedSegmentIndex = 1
+        }
     }
     
-    func updateTypeButtonDisplay() {
-        
-        switch contentType {
-        case ExamType.doubles:
-            self.contentTypeButton.setTitle("Double Sounds", for: UIControlState())
-        case ExamType.singles:
-            self.contentTypeButton.setTitle("Single Sounds", for: UIControlState())
-        case ExamType.vowelsOnly:
-            self.contentTypeButton.setTitle("Vowels Only", for: UIControlState())
-        case ExamType.consonantsOnly:
-            self.contentTypeButton.setTitle("Consonants Only", for: UIControlState())
+    private func getSelectedNumberOfQuestions() -> Int {
+        let index = numberOfQuestionsSegControl.selectedSegmentIndex
+        guard let text = numberOfQuestionsSegControl.titleForSegment(at: index) else {
+            return MyUserDefaults.defaultNumberOfTestQuestions
         }
-        
+        guard let number = Int(text) else {
+            return MyUserDefaults.defaultNumberOfTestQuestions
+        }
+        return number
     }
+    
+    private func getSelectedMode() -> SoundMode {
+        let index = typeSegControl.selectedSegmentIndex
+        switch index {
+        case 0:
+            return SoundMode.single
+        case 1:
+            return SoundMode.double
+        default:
+            return SoundMode.single
+        }
+    }
+ 
 }

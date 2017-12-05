@@ -5,15 +5,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     override init() {
-        let defaults = UserDefaults.standard
-        let defaultValues : [String : Any] = [
-            Key.name : "",
-            Key.numberOfQuestions : 50,
-            Key.contentType : ExamType.doubles.rawValue
-        ]
-        defaults.register(defaults: defaultValues)
+        // set all the default values
+        MyUserDefaults.registerDefaults()
         super.init()
     }
     
