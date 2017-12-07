@@ -85,6 +85,8 @@ class TestResultsViewController: UIViewController {
         
         // register UITableViewCell for reuse
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        
+        // Add test to database
     }
     
     // MARK: - Table View methods
@@ -119,16 +121,17 @@ class TestResultsViewController: UIViewController {
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-                
-        let correctAnswer = self.testAnswers[indexPath.row].correctAnswer
-        let userAnswer = self.testAnswers[indexPath.row].userAnswer
+        
+        let answer = answers[indexPath.row]
+        let correctAnswer = answer.correctAnswer
+        let userAnswer = answer.userAnswer
         
         // play sounds
         playIpa(correctAnswer)
         if correctAnswer != userAnswer {
             var delayTime = 1.0
-            if correctAnswer == "l" { // this sound needs more time to finish
-                delayTime = 2.0
+            if Ipa.hasTwoPronunciations(ipa: correctAnswer) {
+                delayTime = 2.0  // these sounds needs more time to finish
             }
             delay(delayTime) {
                 self.playIpa(userAnswer)
@@ -173,32 +176,54 @@ class TestResultsViewController: UIViewController {
     
         // count number correct
         var numCorrect = 0
-        for answer in testAnswers {
+        for answer in answers {
+            let correct = answer.correctAnswer
+            let user = answer.userAnswer
             
-            if examType == ExamType.doubles {
-                
-                
-//                let (correctFirst, correctSecond) = doubleSound.parse(answer.correctAnswer)!
-//
-//                if let (userFirst, userSecond) = doubleSound.parse(answer.userAnswer) {
-//                    if userFirst == correctFirst {
-//                        numCorrect += 1
-//                    }
-//                    if userSecond == correctSecond {
-//                        numCorrect += 1
-//                    }
-//                }
-                
-                
-                
-            } else { // single
-                if answer.userAnswer == answer.correctAnswer {
-                    numCorrect += 1
+            // Single
+            if testMode == SoundMode.single && correct == user {
+                numCorrect += 1
+                continue
+            }
+            
+            // Double
+            guard let parsedCorrect = DoubleSound.parse(ipaDouble: correct) else {continue}
+            guard let parsedUser = DoubleSound.parse(ipaDouble: user) else {continue}
+            if parsedCorrect.0 == parsedUser.0 {
+                numCorrect += 1
+            }
+            if parsedCorrect.1 == parsedUser.1 {
+                numCorrect += 1
+            }
+        }
+        return numCorrect
+    }
+    
+    private func findNeedToPracticeSounds(answers: [Answer]) -> Set<String> {
+        var practiceSet = Set<String>()
+        for answer in answers {
+            let user = answer.userAnswer
+            let correct = answer.correctAnswer
+            
+            if testMode == SoundMode.single {
+                if user != correct {
+                    practiceSet.insert(user)
+                    practiceSet.insert(correct)
+                }
+            } else { // Double
+                guard let parsedCorrect = DoubleSound.parse(ipaDouble: correct) else {continue}
+                guard let parsedUser = DoubleSound.parse(ipaDouble: user) else {continue}
+                if parsedCorrect.0 != parsedUser.0 {
+                    practiceSet.insert(parsedCorrect.0)
+                    practiceSet.insert(parsedUser.0)
+                }
+                if parsedCorrect.1 == parsedUser.1 {
+                    practiceSet.insert(parsedCorrect.1)
+                    practiceSet.insert(parsedUser.1)
                 }
             }
         }
-        
-        return numCorrect
+        return practiceSet
     }
     
     func attributedTextForUserAnswer(_ userAnswer: String, correctAnswer: String) -> NSAttributedString {

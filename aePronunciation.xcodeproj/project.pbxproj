@@ -22,6 +22,7 @@
 		5094F1841FCD08DD00F5EF29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5094F1861FCD08DD00F5EF29 /* Localizable.strings */; };
 		5094F18B1FCF8BE600F5EF29 /* SoundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */; };
 		5094F18D1FCFACCE00F5EF29 /* MyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */; };
+		50A7D9CE1FD96A7800671847 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9CD1FD96A7800671847 /* DatabaseManager.swift */; };
 		50CB442C1FCC01BB0071FFFA /* SpecialSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */; };
 		50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD41BBE5D8B003657A4 /* String+localized.swift */; };
 		50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD61BBE7E96003657A4 /* SingleSound.swift */; };
@@ -85,6 +86,7 @@
 		5094F1891FCD08F700F5EF29 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
 		5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefaults.swift; sourceTree = "<group>"; };
+		50A7D9CD1FD96A7800671847 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialSound.swift; sourceTree = "<group>"; };
 		50D64FD41BBE5D8B003657A4 /* String+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		50D64FD61BBE7E96003657A4 /* SingleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleSound.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				50E9E6431BD4ABBB002CC689 /* Answer.swift */,
 				5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */,
 				5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */,
+				50A7D9CD1FD96A7800671847 /* DatabaseManager.swift */,
 				50E9E6491BD50717002CC689 /* Key.swift */,
 				5019E20C1FD8207F0021303D /* StudyTimer.swift */,
 				504200D21FC2D3010026FBCA /* Ipa.swift */,
@@ -446,6 +449,7 @@
 				508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */,
 				50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */,
 				50DF5AC21FD2C26500DD7A04 /* UIColor+custom.swift in Sources */,
+				50A7D9CE1FD96A7800671847 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

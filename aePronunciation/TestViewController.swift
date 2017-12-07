@@ -69,7 +69,8 @@ class TestViewController: UIViewController, KeyboardDelegate {
         questionNumber += 1
         
         if questionNumber == totalNumberOfQuestions {
-            // start results view controller
+            
+            saveTestToDatabase()
             self.performSegue(withIdentifier: TestViewController.testToResultsSegue, sender: self)
         } else {
             // auto play next sound
@@ -168,4 +169,31 @@ class TestViewController: UIViewController, KeyboardDelegate {
         return endTime - startTime
     }
 
+    private func saveTestToDatabase() {
+        
+        // save it in a background thread
+        DispatchQueue.global(qos: .background).async {
+            var correctAnswersConcat = ""
+            var userAnswersConcat = ""
+            for answer in self.answers {
+                if correctAnswersConcat != "" {
+                    // comma separated values
+                    correctAnswersConcat.append(",")
+                    userAnswersConcat.append(",")
+                }
+                correctAnswersConcat.append(answer.correctAnswer)
+                userAnswersConcat.append(answer.userAnswer)
+            }
+            
+            // TODO: add things to database
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
