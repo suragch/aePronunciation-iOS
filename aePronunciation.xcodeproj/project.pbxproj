@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5019E20D1FD820800021303D /* StudyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019E20C1FD8207F0021303D /* StudyTimer.swift */; };
 		504200D31FC2D3020026FBCA /* Ipa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504200D21FC2D3010026FBCA /* Ipa.swift */; };
 		50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C121FC295AB00B6E228 /* IpaKeyboard.swift */; };
 		50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5019E20C1FD8207F0021303D /* StudyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimer.swift; sourceTree = "<group>"; };
 		504200D21FC2D3010026FBCA /* Ipa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ipa.swift; sourceTree = "<group>"; };
 		50483C121FC295AB00B6E228 /* IpaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpaKeyboard.swift; sourceTree = "<group>"; };
 		50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextKey.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */,
 				5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */,
 				50E9E6491BD50717002CC689 /* Key.swift */,
+				5019E20C1FD8207F0021303D /* StudyTimer.swift */,
 				504200D21FC2D3010026FBCA /* Ipa.swift */,
 			);
 			name = Models;
@@ -424,6 +427,7 @@
 				50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */,
 				50D64FD91BBE912C003657A4 /* LearnDoubleSoundsViewController.swift in Sources */,
 				5094F18D1FCFACCE00F5EF29 /* MyUserDefaults.swift in Sources */,
+				5019E20D1FD820800021303D /* StudyTimer.swift in Sources */,
 				5094F18B1FCF8BE600F5EF29 /* SoundMode.swift in Sources */,
 				50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */,
 				50DF5AC01FD2607300DD7A04 /* IpaChooserKeyboard.swift in Sources */,

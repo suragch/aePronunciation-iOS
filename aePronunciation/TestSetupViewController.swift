@@ -16,7 +16,7 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     @IBAction func beginButtonTapped(_ sender: UIButton) {
         
         // save settings as defaults
-        let name = nameTextField.text ?? "test_default_name".localized
+        let name = getName()
         let number = getSelectedNumberOfQuestions()
         let mode = getSelectedMode()
         MyUserDefaults.saveTestSetupPreferences(
@@ -42,6 +42,14 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
         
         // set textfield delegate
         nameTextField.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let testVC = segue.destination as? TestViewController {
+            testVC.studentName = getName()
+            testVC.totalNumberOfQuestions = getSelectedNumberOfQuestions()
+            testVC.testMode = getSelectedMode()
+        }
     }
     
     // MARK: - UITextFieldDelegate protocol
@@ -83,6 +91,10 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
         case SoundMode.double:
             numberOfQuestionsSegControl.selectedSegmentIndex = 1
         }
+    }
+    
+    private func getName() -> String {
+        return nameTextField.text ?? "test_default_name".localized
     }
     
     private func getSelectedNumberOfQuestions() -> Int {

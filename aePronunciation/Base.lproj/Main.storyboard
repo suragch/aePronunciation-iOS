@@ -791,27 +791,20 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="874-dn-eVQ">
-                                        <rect key="frame" x="20" y="66" width="162" height="30"/>
-                                        <state key="normal" title="10 minutes, 27 seconds"/>
-                                        <connections>
-                                            <action selector="timeButtonTapped:" destination="T6H-3d-C0y" eventType="touchUpInside" id="DVO-gC-yRv"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="96%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYK-Az-59l">
-                                        <rect key="frame" x="8" y="104" width="167.5" height="60"/>
+                                        <rect key="frame" x="8" y="66" width="167.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right: 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13T-OP-RcX">
-                                        <rect key="frame" x="20" y="172" width="70" height="21"/>
+                                        <rect key="frame" x="20" y="134" width="70" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLF-3O-Lbo">
-                                        <rect key="frame" x="20" y="201" width="70" height="21"/>
+                                        <rect key="frame" x="20" y="163" width="70" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -822,21 +815,49 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time length: 0:02:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBt-79-wem">
+                                        <rect key="frame" x="20" y="192" width="160" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6A-oa-wVI">
+                                        <rect key="frame" x="20" y="233" width="156" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="8yw-HW-yfF"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Practice the difficult sounds">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="practiceDifficultButtonTapped:" destination="T6H-3d-C0y" eventType="touchUpInside" id="deP-qG-ln4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="874-dn-eVQ" firstAttribute="top" secondItem="8KU-Pa-dTO" secondAttribute="bottom" constant="8" id="1Xg-50-DDQ"/>
-                                    <constraint firstItem="874-dn-eVQ" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="ELc-lI-cUb"/>
-                                    <constraint firstItem="iYK-Az-59l" firstAttribute="top" secondItem="874-dn-eVQ" secondAttribute="bottom" constant="8" id="FXC-Yw-WF2"/>
-                                    <constraint firstAttribute="trailing" secondItem="iYK-Az-59l" secondAttribute="trailing" constant="8" id="IXn-BN-UW7"/>
-                                    <constraint firstItem="yLF-3O-Lbo" firstAttribute="top" secondItem="13T-OP-RcX" secondAttribute="bottom" constant="8" id="J3b-6T-05p"/>
+                                    <constraint firstItem="13T-OP-RcX" firstAttribute="top" secondItem="iYK-Az-59l" secondAttribute="bottom" constant="8" id="2s1-HL-jly"/>
+                                    <constraint firstItem="HBt-79-wem" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="Bue-IP-S3w"/>
+                                    <constraint firstItem="yLF-3O-Lbo" firstAttribute="top" secondItem="13T-OP-RcX" secondAttribute="bottom" constant="8" id="DOr-NR-Xbx"/>
+                                    <constraint firstItem="V6A-oa-wVI" firstAttribute="top" secondItem="HBt-79-wem" secondAttribute="bottom" constant="20" id="JOd-fK-qrE"/>
                                     <constraint firstItem="8KU-Pa-dTO" firstAttribute="top" secondItem="6z0-bv-0Jb" secondAttribute="bottom" constant="8" id="Oyp-6Z-uvT"/>
-                                    <constraint firstItem="yLF-3O-Lbo" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="XCH-p2-JI0"/>
-                                    <constraint firstItem="iYK-Az-59l" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="8" id="hjC-rz-ehI"/>
+                                    <constraint firstItem="HBt-79-wem" firstAttribute="top" secondItem="yLF-3O-Lbo" secondAttribute="bottom" constant="8" id="Pq4-V0-IWk"/>
+                                    <constraint firstItem="yLF-3O-Lbo" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="Ri5-7H-8MF"/>
+                                    <constraint firstItem="iYK-Az-59l" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="8" id="Wx2-5V-uZ4"/>
+                                    <constraint firstItem="iYK-Az-59l" firstAttribute="top" secondItem="8KU-Pa-dTO" secondAttribute="bottom" constant="8" id="e8g-a5-SQ1"/>
+                                    <constraint firstItem="13T-OP-RcX" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="eCe-Cp-BOP"/>
                                     <constraint firstItem="6z0-bv-0Jb" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="jZT-dp-ftp"/>
                                     <constraint firstItem="6z0-bv-0Jb" firstAttribute="top" secondItem="Dqa-CY-liz" secondAttribute="top" constant="8" id="jxB-Pi-LHd"/>
                                     <constraint firstItem="8KU-Pa-dTO" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="nPQ-IV-CZD"/>
-                                    <constraint firstItem="13T-OP-RcX" firstAttribute="top" secondItem="iYK-Az-59l" secondAttribute="bottom" constant="8" id="tAG-i3-vtw"/>
-                                    <constraint firstItem="13T-OP-RcX" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="xxj-Nk-P81"/>
+                                    <constraint firstItem="V6A-oa-wVI" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="os5-qd-56n"/>
+                                    <constraint firstAttribute="trailing" secondItem="iYK-Az-59l" secondAttribute="trailing" constant="8" id="rXY-Kh-Usn"/>
+                                    <constraint firstAttribute="trailing" secondItem="V6A-oa-wVI" secondAttribute="trailing" constant="8" id="vG0-at-cqY"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-6O-4mm">
@@ -870,16 +891,17 @@
                     <connections>
                         <outlet property="dateLabel" destination="8KU-Pa-dTO" id="elI-nZ-oLM"/>
                         <outlet property="percentLabel" destination="iYK-Az-59l" id="I7A-VM-saH"/>
+                        <outlet property="practiceButton" destination="V6A-oa-wVI" id="2Ig-lv-6AQ"/>
                         <outlet property="rightLabel" destination="13T-OP-RcX" id="IRh-x8-Qi7"/>
                         <outlet property="tableView" destination="8A5-6O-4mm" id="maD-E6-TqP"/>
-                        <outlet property="timeButton" destination="874-dn-eVQ" id="Riz-z9-HDx"/>
+                        <outlet property="timeLabel" destination="HBt-79-wem" id="0t8-9O-wl8"/>
                         <outlet property="userNameLabel" destination="6z0-bv-0Jb" id="paO-uJ-cB0"/>
                         <outlet property="wrongLabel" destination="yLF-3O-Lbo" id="Ib2-ps-ehf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ng-6d-hES" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="356"/>
+            <point key="canvasLocation" x="3020" y="355.7721139430285"/>
         </scene>
         <!--Test Setup-->
         <scene sceneID="1RL-2g-v2C">

@@ -3,22 +3,19 @@ import UIKit
 class TestResultsViewController: UIViewController {
 
     // values passed in from previous view controller
-    var testAnswers = [Answer]()
-    var startTime = Date()
-    var examType = ExamType.doubles
+    var userName = "test_default_name".localized
+    var timeLength: TimeInterval = 0
+    var answers = [Answer]()
+    var testMode = MyUserDefaults.defaultTestMode
     
-    // constants
-    fileprivate let cellReuseIdentifier = "cell"
-    fileprivate let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
-    fileprivate let wrongColor = UIColor.red
-    fileprivate let endTime = Date()
-    //let delayBeforePlayingSecondSound = 1.0
-    
-    // variables
-    fileprivate let player = Player()
-    fileprivate lazy var singleSound = SingleSound()
-    fileprivate lazy var doubleSound = DoubleSound()
-    //var timer = NSTimer()
+    private var score = 0
+    private var wrong = ""
+    private let cellReuseIdentifier = "cell"
+    private let rightColor = UIColor.rightGreen
+    private let wrongColor = UIColor.red
+    private let player = Player()
+    private lazy var singleSound = SingleSound()
+    private lazy var doubleSound = DoubleSound()
     
     
     // MARK: - Outlets
@@ -26,12 +23,17 @@ class TestResultsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var timeButton: UIButton!
+    //@IBOutlet weak var timeButton: UIButton!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var wrongLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var practiceButton: UIButton!
     
     // MARK: - Actions
+    
+    @IBAction func practiceDifficultButtonTapped(_ sender: UIButton) {
+    }
     
     @IBAction func timeButtonTapped(_ sender: UIButton) {
         
@@ -60,35 +62,26 @@ class TestResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get name from user defaults
-        let userDefaults = UserDefaults.standard
-        if let name = userDefaults.string(forKey: Key.name) {
-            userNameLabel.text = name
-        }
+        // name
+        userNameLabel.text = userName
         
-        // Set the date
-        let now = Date()
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX") // use US English
-        formatter.dateStyle = DateFormatter.Style.long
-        dateLabel.text = formatter.string(from: now)
-        
-        // Show elapsed time
-        let timeString = getTimeString()
-        timeButton.setTitle(timeString, for: UIControlState())
+        // date
+        dateLabel.text = getFormattedDate()
         
         // calculate score
         let numberCorrect = calculateNumberCorrect()
-        var totalNumber = testAnswers.count
-        if examType == ExamType.doubles {
+        var totalNumber = answers.count
+        if testMode == SoundMode.double {
             totalNumber *= 2
         }
         let score = (numberCorrect * 100) / totalNumber // round down
-        percentLabel.text = "\(score)%"
-        rightLabel.text = "Right: \(numberCorrect)"
-        wrongLabel.text = "Wrong: \(totalNumber - numberCorrect)"
+        percentLabel.text = String.localizedStringWithFormat("test_results_percent".localized, score)
+        rightLabel.text = String.localizedStringWithFormat("test_results_right".localized, numberCorrect)
+        let numberWrong = totalNumber - numberCorrect
+        wrongLabel.text =  String.localizedStringWithFormat("test_results_wrong".localized, numberWrong)
         
-        
+        // Show elapsed time
+        timeLabel.text = getTimeString()
         
         // register UITableViewCell for reuse
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -144,39 +137,36 @@ class TestResultsViewController: UIViewController {
     }
     
     // MARK: - Other methods
+    
+    private func getFormattedDate() -> String {
+        // Set the date
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.locale = getLocale()
+        formatter.dateStyle = DateFormatter.Style.long
+        return formatter.string(from: now)
+    }
+    
+    private func getLocale() -> Locale {
+        // This allows the date to only be formatted for the translated
+        // languages. All others will use the US English format.
+        let currentTranslationLocale = "locale".localized
+        switch currentTranslationLocale {
+        case "zh_Hans":
+            return Locale(identifier: "zh_Hans") // Simplified Chinese
+        case "zh_Hant":
+            return Locale(identifier: "zh_Hant") // Traditional Chinese
+        default:
+            return Locale(identifier: "en_US_POSIX") // US English
+        }
+    }
 
     func getTimeString() -> String {
-        
-        var timeString = ""
-        
-        
-        let userCalendar = Calendar.current
-        let timeComponents: NSCalendar.Unit = [.hour, .minute, .second]
-        let elapsedTime = (userCalendar as NSCalendar).components(
-            timeComponents,
-            from: startTime,
-            to: endTime,
-            options: [])
-        
-        if elapsedTime.hour! > 0 {
-            timeString = "\(elapsedTime.hour) hr"
-        }
-        
-        if elapsedTime.minute! > 0 {
-            if timeString.characters.count > 0 {
-                timeString = timeString + ", "
-            }
-            timeString = timeString + "\(elapsedTime.minute) min"
-        }
-        
-        if elapsedTime.second! > 0 {
-            if timeString.characters.count > 0 {
-                timeString = timeString + ", "
-            }
-            timeString = timeString + "\(elapsedTime.second) sec"
-        }
-        
-        return timeString
+        let interval = Int(timeLength)
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        let hours = (interval / 3600)
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
     func calculateNumberCorrect() -> Int {

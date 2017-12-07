@@ -2,6 +2,8 @@
   Simplified Chinese
 */
 
+"locale" = "zh_Hans";
+
 "i_description" = "在英式英语中/i/音标通常写作/i:/，两个点代表发长音。但是在美式发音中加点与不加点没多大区别。所以美式音标不加两个点。它在浊辅音前发长音，清辅音前发短音。";
 "a_description" = "在英式英语中/ɑ/音标通常写作/ɑː/。注意在美式英语中它的发音与/ʌ/有很大区别。还有/ɑ/与汉语拼音中\"a\"也不同。（在国际音标中，汉语拼音的\"a\"写作/a/）。";
 "u_description" = "在英式英语中/u/音标通常写作/uː/，但是像/iː/、/aː/、/ɔː/这些长元音的点在美式英语中不必加。美式英语中所有重读的元音在浊辅音前发长音，清辅音前发短音。";
@@ -104,7 +106,6 @@
 "main_tab_practice" = "练习";
 "main_tab_test" = "测试";
 "practice_mode_single" = "单音标";
-"locale" = "zh";
 "history_test_details_type_double" = "双音标 （%d）";
 "history_test_details_type_single" = "单音标 （%d）";
 "history_tests_type_double" = "双音标： %d%%";

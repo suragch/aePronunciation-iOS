@@ -1,7 +1,11 @@
 import UIKit
 
-class TestViewController: UIViewController {
+class TestViewController: UIViewController, KeyboardDelegate {
+    
 
+    var userName = "test_default_name".localized
+    var testMode = MyUserDefaults.defaultTestMode
+    var totalNumberOfQuestions = MyUserDefaults.defaultNumberOfTestQuestions
     
     private var answers = [Answer]()
     private let player = Player()
@@ -11,8 +15,9 @@ class TestViewController: UIViewController {
     private var inputKeyCounter = 0
     private var readyForNewSound = true
     private var questionNumber = 0 // zero based
-    private var totalNumberOfQuestions = -1
-    private var startTime = Date()
+    private var startTime = Date().timeIntervalSince1970
+    
+    static let testToResultsSegue = "testToResults"
     
     
     // MARK: - Outlets
@@ -28,71 +33,48 @@ class TestViewController: UIViewController {
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
         
-        playIpa(currentIpa)
-        
-    }
-    
-    @IBAction func keyTapped(_ sender: UIButton) {
-        
-        // get ipa String for key tapped
-        let ipaTap = sender.titleLabel?.text ?? ""
-        
-        if examType != ExamType.doubles { // singles
-            
-            inputWindow.text = ipaTap
-            nextButton.isHidden = false
-            
-        } else { // doubles
-            
-            inputKeyCounter += 1
-            
-            if inputKeyCounter < 3 {
-                inputWindow.text = inputWindow.text! + ipaTap
-            }
-            
-            if inputKeyCounter > 1 {
-                nextButton.isHidden = false
-            }
+        if readyForNewSound {
+            prepareForNextSound()
         }
         
+        playSound(currentIpa)
+    }
+    
+    private func prepareForNextSound() {
+        currentIpa = getRandomIpa()
+        readyForNewSound = false
+        inputWindow.text = ""
+        questionNumberLabel.text = String(questionNumber + 1)
     }
     
     @IBAction func clearButtonTap(_ sender: UIButton) {
-        
         inputWindow.text = ""
         inputKeyCounter = 0
         nextButton.isHidden = true
     }
     
-    
-    
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
         // record correct answer and user answer
-        let userAnswer = inputWindow.text!
+        let userAnswer = inputWindow.text ?? ""
         let thisAnswer = Answer(correctAnswer: currentIpa, userAnswer: userAnswer)
         answers.append(thisAnswer)
         
         // update display
         inputWindow.text = ""
         inputKeyCounter = 0
+        readyForNewSound = true
         nextButton.isHidden = true
         
         questionNumber += 1
         
         if questionNumber == totalNumberOfQuestions {
-            
-            // TODO: Start Results View Controller with answers data
-            self.performSegue(withIdentifier: Segue.testToResults, sender: self)
-            
+            // start results view controller
+            self.performSegue(withIdentifier: TestViewController.testToResultsSegue, sender: self)
         } else {
-            
-            // play next sound
-            currentIpa = getRandomIpa()
-            playIpa(currentIpa)
-            
-            questionNumberLabel.text = String(questionNumber + 1)
-            
+            // auto play next sound
+            prepareForNextSound()
+            playSound(currentIpa)
         }
     }
     
@@ -101,95 +83,89 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get values set in test setup
-        let userDefaults = UserDefaults.standard
-        
-        
-        
-        // number of questions
-        let number = userDefaults.integer(forKey: Key.numberOfQuestions)
-        if number > 0 {
-            totalNumberOfQuestions = number
-        }
-        // content type
-        if let type = ExamType(rawValue: userDefaults.integer(forKey: Key.contentType)) {
-            examType = type
-        }
-        
-        
-        
         // set up display
         inputWindow.text = ""
         inputWindowView.layer.borderWidth = 2.0
         inputWindowView.layer.cornerRadius = 8
         inputWindowView.layer.masksToBounds = true
+        
+        // set mode label
+        if testMode == SoundMode.single {
+            testModeLabel.text = "practice_mode_single".localized
+        } else {
+            testModeLabel.text = "practice_mode_double".localized
+        }
+        
+        // question number
         questionNumberLabel.text = String(questionNumber + 1)
         
-        // play first sound
-        currentIpa = getRandomIpa()
-        nextButton.isHidden = true
-        playIpa(currentIpa)
+        // TODO: Start timing the test
         
+        
+        // hide the next button
+        nextButton.isHidden = true
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // pass the answers to the results view controller
-        let resultsViewController = segue.destination as! TestResultsViewController
-        resultsViewController.testAnswers = answers
-        resultsViewController.startTime = startTime
-        resultsViewController.examType = examType
+        if let testResultsVC = segue.destination as? TestResultsViewController {
+            testResultsVC.userName = userName
+            testResultsVC.answers = answers
+            testResultsVC.timeLength = getTestTime()
+            testResultsVC.testMode = testMode
+        }
     }
+    
+    // MARK:- Keyboard Delegate
+    
+    func keyWasTapped(_ character: String) {
+        if readyForNewSound {return}
+        
+        inputKeyCounter += 1
+        
+        if testMode == SoundMode.single {
+            inputWindow.text = character
+        } else if testMode == SoundMode.double && inputKeyCounter <= 2 {
+            let oldText = inputWindow.text ?? ""
+            let newText = oldText + character
+            inputWindow.text = newText
+            if oldText.isEmpty {return}
+        }
+        nextButton.isHidden = false
+    }
+    
+    func keyBackspace() {}
+    
     
     // MARK: - Other methods
     
     func getRandomIpa() -> String {
-        
-        var randomIpa = ""
-        
-        // don't allow repeated ipa sounds
+        var ipa = ""
         repeat {
-        
-            switch examType {
-            case ExamType.singles:
-                
-                randomIpa = singleSound.getRandomIpa()
-                
-            case ExamType.vowelsOnly:
-                
-                randomIpa = singleSound.getRandomIpa()
-                
-            case ExamType.consonantsOnly:
-                
-                randomIpa = singleSound.getRandomIpa()
-                
-            case ExamType.doubles:
-                
-                randomIpa = doubleSound.getRandomIpa()
+            if testMode == SoundMode.single {
+                ipa = singleSound.getRandomIpa()
+            } else {
+                ipa = doubleSound.getRandomIpa()
             }
-            
-        } while randomIpa == currentIpa
-        
-        return randomIpa
+        } while currentIpa == ipa // don't allow repeat sounds
+        return ipa
     }
     
-    func playIpa(_ ipa: String) {
-        
-        if examType == ExamType.doubles {
-            
-            if let fileName = DoubleSound.getSoundFileName(doubleSoundIpa: ipa) {
-                player.playSoundFrom(file: fileName)
-            }
-            
-        } else {
-            
-            if let fileName = SingleSound.getSoundFileName(ipa: ipa) {
-                player.playSoundFrom(file: fileName)
-            }
+    func playSound(_ ipa: String) {
+        var fileName: String?
+        if testMode == SoundMode.single {
+            fileName = SingleSound.getSoundFileName(ipa: ipa)
+        } else { // double mode
+            fileName = DoubleSound.getSoundFileName(doubleSoundIpa: ipa)
         }
-        
+        if let name = fileName {
+            player.playSoundFrom(file: name)
+        }
     }
 
+    private func getTestTime() -> TimeInterval {
+        let endTime = Date().timeIntervalSince1970
+        return endTime - startTime
+    }
 
 }

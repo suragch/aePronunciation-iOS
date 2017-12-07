@@ -313,11 +313,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         }
     }
     
-//    private func saveSelectedSoundState(vowels: [String], consonants: [String]) {
-//        previouslySelectedVowels = vowels
-//        previouslySelectedConsonants = consonants
-//    }
-    
     func playIpa(_ ipa: String) {
         var fileName: String?
         if practiceMode == SoundMode.single {

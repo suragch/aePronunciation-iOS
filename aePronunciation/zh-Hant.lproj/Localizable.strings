@@ -2,6 +2,8 @@
    Traditional Chinese
  */
 
+"locale" = "zh_Hant";
+
 "i_description" = "在英式英語中/i/音標通常寫作/i:/，兩個點代表發長音。但是在美式發音中加點與不加點沒多大區別。所以美式音標不加兩個點。它在濁輔音前發長音，清輔音前發短音。";
 "a_description" = "在英式英語中/ɑ/音標通常寫作/ɑː/。注意在美式英語中它的發音與/ʌ/有很大區別。還有/ɑ/與漢語拼音中\"a\"也不同。（在國際音標中，漢語拼音的\"a\"寫作/a/）。";
 "u_description" = "在英式英語中/u/音標通常寫作/uː/，但是像/iː/、/aː/、/ɔː/這些長元音的點在美式英語中不必加。美式英語中所有重讀的元音在濁輔音前發長音，清輔音前發短音。";
@@ -104,7 +106,6 @@
 "main_tab_practice" = "練習";
 "main_tab_test" = "測試";
 "practice_mode_single" = "單音標";
-"locale" = "zh";
 "history_test_details_type_double" = "雙音標 （%d）";
 "history_test_details_type_single" = "單音標 （%d）";
 "history_tests_type_double" = "雙音標： %d%%";

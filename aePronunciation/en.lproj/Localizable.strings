@@ -2,6 +2,8 @@
   English
 */
 
+"locale" = "en";
+
 /////////////////////////////
 //  Non-Translated strings //
 /////////////////////////////
@@ -166,7 +168,6 @@
 /////////////////////////////
 
 "app_name" = "ae Pronunciation";
-"locale" = "en";
 
 // Main menu
 "main_menu_keyboard" = "Keyboard";
