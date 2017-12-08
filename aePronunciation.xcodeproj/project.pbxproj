@@ -22,8 +22,10 @@
 		5094F1841FCD08DD00F5EF29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5094F1861FCD08DD00F5EF29 /* Localizable.strings */; };
 		5094F18B1FCF8BE600F5EF29 /* SoundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */; };
 		5094F18D1FCFACCE00F5EF29 /* MyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */; };
-		50A7D9CE1FD96A7800671847 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9CD1FD96A7800671847 /* DatabaseManager.swift */; };
+		50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */; };
 		50A7D9D11FD9708000671847 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A7D9D01FD9708000671847 /* SQLite.framework */; };
+		50A7D9D41FDA619300671847 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9D31FDA619300671847 /* Test.swift */; };
+		50A7D9D61FDA6CDB00671847 /* TestsDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9D51FDA6CDB00671847 /* TestsDataHelper.swift */; };
 		50CB442C1FCC01BB0071FFFA /* SpecialSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */; };
 		50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD41BBE5D8B003657A4 /* String+localized.swift */; };
 		50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD61BBE7E96003657A4 /* SingleSound.swift */; };
@@ -40,7 +42,6 @@
 		50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E420261BBF684C0092F74B /* DoubleSound.swift */; };
 		50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */; };
 		50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6431BD4ABBB002CC689 /* Answer.swift */; };
-		50E9E64A1BD50717002CC689 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6491BD50717002CC689 /* Key.swift */; };
 		50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E64B1BD50A50002CC689 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +88,10 @@
 		5094F1891FCD08F700F5EF29 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
 		5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefaults.swift; sourceTree = "<group>"; };
-		50A7D9CD1FD96A7800671847 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		50A7D9D01FD9708000671847 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		50A7D9D31FDA619300671847 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		50A7D9D51FDA6CDB00671847 /* TestsDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsDataHelper.swift; sourceTree = "<group>"; };
 		50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialSound.swift; sourceTree = "<group>"; };
 		50D64FD41BBE5D8B003657A4 /* String+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		50D64FD61BBE7E96003657A4 /* SingleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleSound.swift; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 		50E420261BBF684C0092F74B /* DoubleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSound.swift; sourceTree = "<group>"; };
 		50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
 		50E9E6431BD4ABBB002CC689 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
-		50E9E6491BD50717002CC689 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		50E9E64B1BD50A50002CC689 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,10 +208,11 @@
 				50E9E6431BD4ABBB002CC689 /* Answer.swift */,
 				5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */,
 				5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */,
-				50A7D9CD1FD96A7800671847 /* DatabaseManager.swift */,
-				50E9E6491BD50717002CC689 /* Key.swift */,
+				50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */,
+				50A7D9D51FDA6CDB00671847 /* TestsDataHelper.swift */,
 				5019E20C1FD8207F0021303D /* StudyTimer.swift */,
 				504200D21FC2D3010026FBCA /* Ipa.swift */,
+				50A7D9D31FDA619300671847 /* Test.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */,
+				50A7D9D61FDA6CDB00671847 /* TestsDataHelper.swift in Sources */,
 				50DC216F1BB8FF65000075AE /* AppDelegate.swift in Sources */,
 				504200D31FC2D3020026FBCA /* Ipa.swift in Sources */,
 				50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */,
@@ -472,14 +476,14 @@
 				50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */,
 				50483C351FC29BAD00B6E228 /* KeyboardImageKey.swift in Sources */,
 				50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */,
-				50E9E64A1BD50717002CC689 /* Key.swift in Sources */,
 				50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */,
+				50A7D9D41FDA619300671847 /* Test.swift in Sources */,
 				50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */,
 				508360591BC29ABA00A225E6 /* Player.swift in Sources */,
 				508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */,
 				50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */,
 				50DF5AC21FD2C26500DD7A04 /* UIColor+custom.swift in Sources */,
-				50A7D9CE1FD96A7800671847 /* DatabaseManager.swift in Sources */,
+				50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

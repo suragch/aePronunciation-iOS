@@ -69,12 +69,13 @@ class TestResultsViewController: UIViewController {
         dateLabel.text = getFormattedDate()
         
         // calculate score
-        let numberCorrect = calculateNumberCorrect()
+        let numberCorrect = Test.numberCorrect(inAnswers: answers, testMode: testMode)
         var totalNumber = answers.count
         if testMode == SoundMode.double {
             totalNumber *= 2
         }
         let score = (numberCorrect * 100) / totalNumber // round down
+        
         percentLabel.text = String.localizedStringWithFormat("test_results_percent".localized, score)
         rightLabel.text = String.localizedStringWithFormat("test_results_right".localized, numberCorrect)
         let numberWrong = totalNumber - numberCorrect
@@ -172,32 +173,7 @@ class TestResultsViewController: UIViewController {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
-    func calculateNumberCorrect() -> Int {
     
-        // count number correct
-        var numCorrect = 0
-        for answer in answers {
-            let correct = answer.correctAnswer
-            let user = answer.userAnswer
-            
-            // Single
-            if testMode == SoundMode.single && correct == user {
-                numCorrect += 1
-                continue
-            }
-            
-            // Double
-            guard let parsedCorrect = DoubleSound.parse(ipaDouble: correct) else {continue}
-            guard let parsedUser = DoubleSound.parse(ipaDouble: user) else {continue}
-            if parsedCorrect.0 == parsedUser.0 {
-                numCorrect += 1
-            }
-            if parsedCorrect.1 == parsedUser.1 {
-                numCorrect += 1
-            }
-        }
-        return numCorrect
-    }
     
     private func findNeedToPracticeSounds(answers: [Answer]) -> Set<String> {
         var practiceSet = Set<String>()

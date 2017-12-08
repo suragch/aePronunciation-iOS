@@ -168,6 +168,8 @@ class TestViewController: UIViewController, KeyboardDelegate {
         let endTime = Date().timeIntervalSince1970
         return endTime - startTime
     }
+    
+    
 
     private func saveTestToDatabase() {
         
@@ -184,16 +186,18 @@ class TestViewController: UIViewController, KeyboardDelegate {
                 correctAnswersConcat.append(answer.correctAnswer)
                 userAnswersConcat.append(answer.userAnswer)
             }
-            
-            // TODO: add things to database
+            let score = Test.getScorePercent(forAnswers: self.answers, testMode: self.testMode)
+            let test = Test(
+                id: -1,
+                username: userName,
+                date: Date(),
+                timelength: getTestTime(),
+                mode: testMode.rawValue,
+                score: score,
+                correctAnswers: correctAnswersConcat,
+                userAnswers: userAnswersConcat)
+            let db = SQLiteDatabase.instance
+            db.addTest(test)
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
