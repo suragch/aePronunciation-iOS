@@ -1,4 +1,5 @@
-import Foundation
+
+import UIKit
 
 //enum AnswerType {
 //    case Single
@@ -17,7 +18,22 @@ class Answer {
         //self.type = type
     }
     
-    static func getErrorMessage(doubleIpa: String) -> String {
+    static func showErrorMessageFor(_ ipa: String, in viewController: UIViewController) {
+        
+        let errorMessage = Answer.getErrorMessage(doubleIpa: ipa)
+        let ok = "error_dialog_ok_button".localized
+        
+        // create the alert
+        let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: ok, style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
+    private static func getErrorMessage(doubleIpa: String) -> String {
         
         // Types of errors:
         //

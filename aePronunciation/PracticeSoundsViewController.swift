@@ -1,22 +1,23 @@
 import UIKit
 
 class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
+    
+    //var difficultSounds
+    var practiceMode: SoundMode?
+    var selectedVowels = Ipa.getAllVowels()
+    var selectedConsonants = Ipa.getAllConsonants()
 
     private let player = Player()
     private lazy var singleSound = SingleSound()
     private lazy var doubleSound = DoubleSound()
     private var numberCorrect = 0
     private var numberWrong = 0
-    private var singleMode = true // false == double mode
+    //private var singleMode = true // false == double mode
     private var currentIpa = ""
     private var inputKeyCounter = 0
     private var readyForNewSound = true
     private var alreadyMadeWrongAnswerForThisIpa = false
-    private var practiceMode = SoundMode.single
-    private let selectSoundsSegueId = "selectSoundsSegueId"
-    //private var previouslySelectedVowels = Ipa.getAllVowels()
-    //private var previouslySelectedConsonants = Ipa.getAllConsonants()
-    //private let rightColor = UIColor(red: 0.031, green: 0.651, blue: 0, alpha: 1) // 08a600 green
+    //private let selectSoundsSegueId = "selectSoundsSegueId"
     private let MINIMUM_POPULATION_SIZE_FOR_WHICH_REPEATS_NOT_ALLOWED = 4
     
     
@@ -104,7 +105,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
             return
         }
         
-        if !singleMode && inputKeyCounter >= 2 {
+        if practiceMode == SoundMode.double && inputKeyCounter >= 2 {
             inputLabel.text = ""
             inputKeyCounter = 0
         }
@@ -154,6 +155,12 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         
     }
     
+    @IBAction func unwindFromTestResultsVC(segue:UIStoryboardSegue) {
+        if ipaKeyboard != nil {
+            updateUiForSelectedSounds()
+        }
+    }
+    
     // MARK: - Overrides
     
     override func viewDidLoad() {
@@ -161,9 +168,13 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
 
         ipaKeyboard.delegate = self
         addBorderToInputWindow()
-        practiceMode = MyUserDefaults.storedPracticeMode
-        resetToInitialValues()
-        updateStatLabels()
+        if practiceMode == nil {
+            practiceMode = MyUserDefaults.storedPracticeMode
+        }
+        updateUiForSelectedSounds()
+        
+        //resetToInitialValues()
+        //updateStatLabels()
     }
     
     private func addBorderToInputWindow() {
@@ -176,14 +187,13 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         
         if let selectSoundsVC = segue.destination as? SelectSoundsViewController {
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            selectSoundsVC.previouslySelectedMode = practiceMode
+            selectSoundsVC.previouslySelectedMode = practiceMode ?? SoundMode.single
             selectSoundsVC.previouslySelectedKeys = ipaKeyboard.getEnabledKeys()
-            //selectSoundsVC.previouslySelectedConsonants = ipaKeyboard.getEnabledConsonants
             selectSoundsVC.callback = { soundMode, vowels, consonants in
-                self.updateUiForSelectedSounds(
-                    soundMode: soundMode,
-                    selectedVowels: vowels,
-                    selectedConsonants: consonants)
+                self.practiceMode = soundMode
+                self.selectedVowels = vowels
+                self.selectedConsonants = consonants
+                self.updateUiForSelectedSounds()
             }
         }
     }
@@ -252,25 +262,25 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
 
     // MARK: - Other
     
-    private func updateUiForSelectedSounds(soundMode: SoundMode, selectedVowels: [String], selectedConsonants: [String]) {
+    func updateUiForSelectedSounds() {
         resetToInitialValues()
-        
-        practiceMode = soundMode
-        
-        // update keyboard
         updateKeyboard(selectedVowels: selectedVowels, selectedConsonants: selectedConsonants)
         updateUserPreferencesAndTime()
         updatePracticeModeLabel()
         updateAllowedSounds(vowels: selectedVowels, consonants: selectedConsonants)
-        //saveSelectedSoundState(vowels: selectedVowels, consonants: selectedConsonants)
     }
     
     private func updateKeyboard(selectedVowels: [String], selectedConsonants: [String]) {
-        ipaKeyboard.mode = practiceMode
+        ipaKeyboard.mode = practiceMode ?? SoundMode.single
         var allChosenSounds = [String]()
         allChosenSounds.append(contentsOf: selectedVowels)
         allChosenSounds.append(contentsOf: selectedConsonants)
-        if practiceMode == SoundMode.double {
+        if practiceMode == SoundMode.single {
+            if allChosenSounds.count == 0 {
+                allChosenSounds.append(contentsOf: Ipa.getAllVowels())
+                allChosenSounds.append(contentsOf: Ipa.getAllConsonants())
+            }
+        } else { // double
             if selectedVowels.count == 0 {
                 allChosenSounds.append(contentsOf: Ipa.getAllVowels())
             }
@@ -320,26 +330,11 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         } else { // double mode
             fileName = DoubleSound.getSoundFileName(doubleSoundIpa: ipa)
             
-            if fileName == nil {showErrorMessageFor(ipa)}
+            if fileName == nil {Answer.showErrorMessageFor(ipa, in: self)}
         }
         if let name = fileName {
             player.playSoundFrom(file: name)
         }
-    }
-    
-    private func showErrorMessageFor(_ ipa: String) {
-        
-        let errorMessage = Answer.getErrorMessage(doubleIpa: ipa)
-        let ok = "error_dialog_ok_button".localized
-        
-        // create the alert
-        let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
-        
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: ok, style: UIAlertActionStyle.default, handler: nil))
-        
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
     }
     
     func getAnswerFromInputWindow(_ newIpaGuess: String) -> String? {
@@ -348,7 +343,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         
         let windowText = inputLabel.text ?? ""
         
-        if singleMode {
+        if practiceMode == SoundMode.single {
             
             inputLabel.text = newIpaGuess
             return newIpaGuess
@@ -377,7 +372,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         inputKeyCounter = 0
         inputLabel.text = ""
         inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
-        ipaKeyboard.mode = practiceMode
+        ipaKeyboard.mode = practiceMode ?? SoundMode.single
         if practiceMode == SoundMode.single {
             practiceModeLabel.text = "practice_mode_single".localized
         } else {

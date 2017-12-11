@@ -84,6 +84,8 @@ class TestViewController: UIViewController, KeyboardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ipaKeyboard.delegate = self
+        
         // set up display
         inputWindow.text = ""
         inputWindowView.layer.borderWidth = 2.0
@@ -164,9 +166,9 @@ class TestViewController: UIViewController, KeyboardDelegate {
         }
     }
 
-    private func getTestTime() -> TimeInterval {
+    private func getTestTime() -> Int {
         let endTime = Date().timeIntervalSince1970
-        return endTime - startTime
+        return Int(endTime - startTime)
     }
     
     
@@ -186,18 +188,19 @@ class TestViewController: UIViewController, KeyboardDelegate {
                 correctAnswersConcat.append(answer.correctAnswer)
                 userAnswersConcat.append(answer.userAnswer)
             }
+            let date = Int64(Date().timeIntervalSinceNow)
             let score = Test.getScorePercent(forAnswers: self.answers, testMode: self.testMode)
             let test = Test(
                 id: -1,
-                username: userName,
-                date: Date(),
-                timelength: getTestTime(),
-                mode: testMode.rawValue,
-                score: score,
+                username: self.userName,
+                date: date,
+                timelength: Int64(self.getTestTime()),
+                mode: self.testMode,
+                score: Int64(score),
                 correctAnswers: correctAnswersConcat,
                 userAnswers: userAnswersConcat)
             let db = SQLiteDatabase.instance
-            db.addTest(test)
+            _ = db.addTest(test)
         }
     }
 }

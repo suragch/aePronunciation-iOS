@@ -43,8 +43,8 @@ class Test {
             let user = answer.userAnswer
             
             // Single
-            if testMode == SoundMode.single && correct == user {
-                numCorrect += 1
+            if testMode == SoundMode.single {
+                if correct == user {numCorrect += 1}
                 continue
             }
             

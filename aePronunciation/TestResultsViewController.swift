@@ -1,10 +1,10 @@
 import UIKit
 
-class TestResultsViewController: UIViewController {
+class TestResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // values passed in from previous view controller
     var userName = "test_default_name".localized
-    var timeLength: TimeInterval = 0
+    var timeLength = 0
     var answers = [Answer]()
     var testMode = MyUserDefaults.defaultTestMode
     
@@ -23,7 +23,6 @@ class TestResultsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    //@IBOutlet weak var timeButton: UIButton!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var wrongLabel: UILabel!
@@ -32,31 +31,10 @@ class TestResultsViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func practiceDifficultButtonTapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func timeButtonTapped(_ sender: UIButton) {
-        
-        // get the time strings
-        let formatter = DateFormatter()
-        formatter.timeStyle = DateFormatter.Style.medium
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        let startTimeString = formatter.string(from: startTime)
-        let endTimeString = formatter.string(from: endTime)
-        
-        // create the message from the time strings
-        let message = "Start time: \(startTimeString)\nEndTime: \(endTimeString)"
-        
-        // start an alert with start and stop time
-        let alert = UIAlertController(title: "Test Time Length", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
     // MARK: - Overrides
     
     override func viewDidLoad() {
@@ -84,28 +62,47 @@ class TestResultsViewController: UIViewController {
         // Show elapsed time
         timeLabel.text = getTimeString()
         
-        // register UITableViewCell for reuse
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        // practice button
+        if score == 100 {
+            practiceButton.isHidden = true
+        } else {
+            practiceButton.titleLabel?.text = "test_results_practice_difficult_button".localized
+        }
         
-        // Add test to database
+        
+        // register UITableViewCell for reuse
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        // hide extra lines in table view
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("preparing to segue")
+        if let practiceVC = segue.destination as? PracticeSoundsViewController {
+            practiceVC.practiceMode = testMode
+            let (vowels, consonants) = findNeedToPracticeSounds()
+            practiceVC.selectedVowels = vowels
+            practiceVC.selectedConsonants = consonants
+        }
     }
     
     // MARK: - Table View methods
     
     // number of rows in table view
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.testAnswers.count
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return self.answers.count
     }
     
     // create a cell for each table view row
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         
         // make attributes
-        let correctAnswer = self.testAnswers[indexPath.row].correctAnswer
+        let correctAnswer = self.answers[indexPath.row].correctAnswer
         let correctAnswerAttr = NSAttributedString(string: correctAnswer, attributes: [NSAttributedStringKey.foregroundColor: rightColor])
-        let userAnswer = self.testAnswers[indexPath.row].userAnswer
+        let userAnswer = self.answers[indexPath.row].userAnswer
         let userAnswerAttr = attributedTextForUserAnswer(userAnswer, correctAnswer: correctAnswer)
         
         // build string
@@ -121,7 +118,9 @@ class TestResultsViewController: UIViewController {
     }
     
     // method to run when table view cell is tapped
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // deselect row after user lifts finger
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         
         let answer = answers[indexPath.row]
         let correctAnswer = answer.correctAnswer
@@ -173,9 +172,7 @@ class TestResultsViewController: UIViewController {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
-    
-    
-    private func findNeedToPracticeSounds(answers: [Answer]) -> Set<String> {
+    private func findNeedToPracticeSounds() -> (vowels: [String], consonants: [String]) {
         var practiceSet = Set<String>()
         for answer in answers {
             let user = answer.userAnswer
@@ -193,13 +190,29 @@ class TestResultsViewController: UIViewController {
                     practiceSet.insert(parsedCorrect.0)
                     practiceSet.insert(parsedUser.0)
                 }
-                if parsedCorrect.1 == parsedUser.1 {
+                if parsedCorrect.1 != parsedUser.1 {
                     practiceSet.insert(parsedCorrect.1)
                     practiceSet.insert(parsedUser.1)
                 }
             }
         }
-        return practiceSet
+        return sortVowelsAndConsonants(sounds: practiceSet)
+    }
+    
+    private func sortVowelsAndConsonants(sounds: Set<String>) -> (vowels: [String], consonants: [String]) {
+        
+        var vowels = [String]()
+        var consonants = [String]()
+        
+        for sound in sounds {
+            if Ipa.isConsonant(ipa: sound) {
+                consonants.append(sound)
+            } else {
+                vowels.append(sound)
+            }
+        }
+        
+        return (vowels, consonants)
     }
     
     func attributedTextForUserAnswer(_ userAnswer: String, correctAnswer: String) -> NSAttributedString {
@@ -212,63 +225,64 @@ class TestResultsViewController: UIViewController {
         }
         
         // color user's wrong answer red
-        if examType == ExamType.doubles {
+        if testMode == SoundMode.double {
             
-            
-//            let (correctFirst, correctSecond) = doubleSound.parse(correctAnswer)!
-//            if let (userFirst, userSecond) = doubleSound.parse(userAnswer) {
-//
-//                // first part
-//                if userFirst != correctFirst {
-//                    // red
-//                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-//                } else {
-//                    // green
-//                    returnString.append(NSAttributedString(string: userFirst, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
-//                }
-//
-//                // second part
-//                if userSecond != correctSecond {
-//                    // red
-//                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-//                }else {
-//                    // green
-//                    returnString.append(NSAttributedString(string: userSecond, attributes: [NSAttributedStringKey.foregroundColor: rightColor]))
-//                }
-//            } else {
-//
-//                // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
-//
-//                // for now just color it all red (also in score counting)
-//                returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-//            }
-            
-            
+            let (correctFirst, correctSecond) = DoubleSound.parse(ipaDouble: correctAnswer) ?? ("","")
+            if let (userFirst, userSecond) = DoubleSound.parse(ipaDouble: userAnswer) {
+
+                // first part
+                if userFirst != correctFirst {
+                    // red
+                    returnString.append(wrongIpa(userFirst))
+                } else {
+                    // green
+                    returnString.append(rightIpa(userFirst))
+                }
+
+                // second part
+                if userSecond != correctSecond {
+                    // red
+                    returnString.append(wrongIpa(userSecond))
+                }else {
+                    // green
+                    returnString.append(rightIpa(userSecond))
+                }
+            } else {
+
+                // TODO: - Add better error handling if user entered oi, ar, ir, etc as two seperate sounds.
+
+                // for now just color it all red (also in score counting)
+                returnString.append(wrongIpa(userAnswer))
+            }
             
         } else { // single
             
             returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
-            
         }
         
         return returnString
     }
     
+    private func wrongIpa(_ ipa: String) -> NSAttributedString {
+        return NSAttributedString(string: ipa, attributes: [NSAttributedStringKey.foregroundColor: wrongColor])
+    }
+    
+    private func rightIpa(_ ipa: String) -> NSAttributedString {
+        return NSAttributedString(string: ipa, attributes: [NSAttributedStringKey.foregroundColor: rightColor])
+    }
+    
     func playIpa(_ ipa: String) {
-        
-//        if examType == ExamType.doubles {
-//            
-//            if let fileName = doubleSound.fileNameForIpa(ipa) {
-//                player.playSoundFromFile(fileName)
-//            }
-//            
-//        } else {
-//            
-//            if let fileName = singleSound.fileNameForIpa(ipa) {
-//                player.playSoundFromFile(fileName)
-//            }
-//        }
-        
+        var fileName: String?
+        if testMode == SoundMode.single {
+            fileName = SingleSound.getSoundFileName(ipa: ipa)
+        } else { // double mode
+            fileName = DoubleSound.getSoundFileName(doubleSoundIpa: ipa)
+            
+            if fileName == nil {Answer.showErrorMessageFor(ipa, in: self)}
+        }
+        if let name = fileName {
+            player.playSoundFrom(file: name)
+        }
     }
     
     func delay(_ delay:Double, closure:@escaping ()->()) {

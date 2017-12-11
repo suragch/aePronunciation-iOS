@@ -23,10 +23,16 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
             name: name, number: number, mode: mode)
     }
     
+//    @IBAction func unwindToTestSetupVC(segue:UIStoryboardSegue) {
+//        print("unwound")
+//    }
+    
     // MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //numberOfQuestionsSegControl.superview?.clipsToBounds = true
         
         // localize labels
         nameTextField.placeholder = "test_setup_name".localized
@@ -46,7 +52,7 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let testVC = segue.destination as? TestViewController {
-            testVC.studentName = getName()
+            testVC.userName = getName()
             testVC.totalNumberOfQuestions = getSelectedNumberOfQuestions()
             testVC.testMode = getSelectedMode()
         }
@@ -70,26 +76,26 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     func updateNumberOfQuestionsDisplay(number: Int) {
         switch number {
         case 5:
-            typeSegControl.selectedSegmentIndex = 0
+            numberOfQuestionsSegControl.selectedSegmentIndex = 0
         case 10:
-            typeSegControl.selectedSegmentIndex = 1
+            numberOfQuestionsSegControl.selectedSegmentIndex = 1
         case 25:
-            typeSegControl.selectedSegmentIndex = 2
+            numberOfQuestionsSegControl.selectedSegmentIndex = 2
         case 50:
-            typeSegControl.selectedSegmentIndex = 3
+            numberOfQuestionsSegControl.selectedSegmentIndex = 3
         case 100:
-            typeSegControl.selectedSegmentIndex = 4
+            numberOfQuestionsSegControl.selectedSegmentIndex = 4
         default:
-            typeSegControl.selectedSegmentIndex = 3
+            numberOfQuestionsSegControl.selectedSegmentIndex = 3
         }
     }
 
     func updateTypeButtonDisplay(mode: SoundMode) {
         switch mode {
         case SoundMode.single:
-            numberOfQuestionsSegControl.selectedSegmentIndex = 0
+            typeSegControl.selectedSegmentIndex = 0
         case SoundMode.double:
-            numberOfQuestionsSegControl.selectedSegmentIndex = 1
+            typeSegControl.selectedSegmentIndex = 1
         }
     }
     
