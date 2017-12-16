@@ -31,6 +31,8 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationController?.navigationBar.topItem?.title = "app_name".localized
+        self.title = "main_tab_test".localized
         
         //numberOfQuestionsSegControl.superview?.clipsToBounds = true
         

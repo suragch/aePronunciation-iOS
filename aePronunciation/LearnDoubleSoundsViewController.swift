@@ -11,6 +11,8 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = "title_activity_learn_double".localized
+        
         guard let singleSound = ipa else {return}
         doubleSound.restrictListToAllPairsContaining(ipa: singleSound)
     }

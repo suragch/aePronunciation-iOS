@@ -178,6 +178,7 @@
 "main_tab_learn" = "Learn";
 "main_tab_practice" = "Practice";
 "main_tab_test" = "Test";
+"main_tab_more" = "More";
 
 // Learn Single fragment
 "learn_single_show_doubles" = "more…";

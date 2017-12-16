@@ -22,6 +22,8 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.navigationController?.navigationBar.topItem?.title = "title_activity_learn_double".localized
+        
         //self.navigationItem.title = "select_sounds_title".localized
         self.title = "select_sounds_title".localized
         initPreviouslyChosenItems()

@@ -7,6 +7,7 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     var timeLength = 0
     var answers = [Answer]()
     var testMode = MyUserDefaults.defaultTestMode
+    var isTestDetails = false
     
     private var score = 0
     private var wrong = ""
@@ -40,11 +41,19 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // tittle
+        if isTestDetails {
+            self.navigationController?.navigationBar.topItem?.title = "title_activity_history_test_details".localized
+        } else {
+            self.navigationController?.navigationBar.topItem?.title = "title_activity_test_results".localized
+        }
+        
         // name
         userNameLabel.text = userName
         
         // date
-        dateLabel.text = getFormattedDate()
+        let now = Date()
+        dateLabel.text = AppLocale.getFormattedDate(date: now)
         
         // calculate score
         let numberCorrect = Test.numberCorrect(inAnswers: answers, testMode: testMode)
@@ -141,29 +150,8 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Other methods
     
-    private func getFormattedDate() -> String {
-        // Set the date
-        let now = Date()
-        let formatter = DateFormatter()
-        formatter.locale = getLocale()
-        formatter.dateStyle = DateFormatter.Style.long
-        return formatter.string(from: now)
-    }
-    
-    private func getLocale() -> Locale {
-        // This allows the date to only be formatted for the translated
-        // languages. All others will use the US English format.
-        let currentTranslationLocale = "locale".localized
-        switch currentTranslationLocale {
-        case "zh_Hans":
-            return Locale(identifier: "zh_Hans") // Simplified Chinese
-        case "zh_Hant":
-            return Locale(identifier: "zh_Hant") // Traditional Chinese
-        default:
-            return Locale(identifier: "en_US_POSIX") // US English
-        }
-    }
 
+    
     func getTimeString() -> String {
         let interval = Int(timeLength)
         let seconds = interval % 60

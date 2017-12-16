@@ -3,13 +3,16 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "PracticeSoundsViewController.playButtonTapped(_:):PracticeSoundsViewController.swift">
+         contextName = "closure #1 in TestViewController.saveTestToDatabase():TestViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "PracticeSoundsViewController.keyTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "currentIpa">
+               value = "numberCorrect">
             </PersistentString>
             <PersistentString
-               value = "doubleSound.getSoundCount()">
+               value = "numberWrong">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,10 +25,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LearnSingleSoundsViewController.keyWasTapped(_:):LearnSingleSoundsViewController.swift">
+         contextName = "TestResultsViewController.viewDidLoad():TestResultsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AllTestsViewController.tableView(_:didSelectRowAt:):AllTestsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "avPlayer">
+               value = "currentlySelectedTest">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Test.getAnswerArray():Test.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "0..&lt;correctAnswers.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PracticeSoundsViewController.playButtonTapped(_:):PracticeSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentIpa">
+            </PersistentString>
+            <PersistentString
+               value = "doubleSound.getSoundCount()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,13 +66,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "PracticeSoundsViewController.keyTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
+         contextName = "LearnSingleSoundsViewController.keyWasTapped(_:):LearnSingleSoundsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "numberCorrect">
-            </PersistentString>
-            <PersistentString
-               value = "numberWrong">
+               value = "avPlayer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

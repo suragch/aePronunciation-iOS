@@ -16,6 +16,12 @@
 		50483C2D1FC29A5700B6E228 /* aePronunciationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */; };
 		50483C351FC29BAD00B6E228 /* KeyboardImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */; };
 		504FD6681FC51AF100622B50 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = 504FD6671FC51AF100622B50 /* raw */; };
+		506480CE1FE48375006D7194 /* AllTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480CD1FE48375006D7194 /* AllTestsViewController.swift */; };
+		506480D01FE48C6C006D7194 /* AllTestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480CF1FE48C6C006D7194 /* AllTestsTableViewCell.swift */; };
+		506480D21FE4BDE4006D7194 /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480D11FE4BDE4006D7194 /* AppLocale.swift */; };
+		506480D61FE51E5B006D7194 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480D51FE51E5B006D7194 /* MoreTableViewController.swift */; };
+		506480D81FE52594006D7194 /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480D71FE52594006D7194 /* TimeViewController.swift */; };
+		506480DA1FE54D3A006D7194 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480D91FE54D3A006D7194 /* AboutViewController.swift */; };
 		5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */; };
 		508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */; };
 		508360591BC29ABA00A225E6 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508360581BC29ABA00A225E6 /* Player.swift */; };
@@ -76,6 +82,12 @@
 		50483C2E1FC29A5700B6E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardImageKey.swift; sourceTree = "<group>"; };
 		504FD6671FC51AF100622B50 /* raw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = raw; sourceTree = "<group>"; };
+		506480CD1FE48375006D7194 /* AllTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTestsViewController.swift; sourceTree = "<group>"; };
+		506480CF1FE48C6C006D7194 /* AllTestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTestsTableViewCell.swift; sourceTree = "<group>"; };
+		506480D11FE4BDE4006D7194 /* AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
+		506480D51FE51E5B006D7194 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		506480D71FE52594006D7194 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		506480D91FE54D3A006D7194 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnSingleSoundsViewController.swift; sourceTree = "<group>"; };
 		508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSoundsViewController.swift; sourceTree = "<group>"; };
 		508360581BC29ABA00A225E6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -171,6 +183,10 @@
 				50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */,
 				50E9E64B1BD50A50002CC689 /* TestViewController.swift */,
 				50E2EAF31BD6182600842ED3 /* TestResultsViewController.swift */,
+				506480D51FE51E5B006D7194 /* MoreTableViewController.swift */,
+				506480CD1FE48375006D7194 /* AllTestsViewController.swift */,
+				506480D91FE54D3A006D7194 /* AboutViewController.swift */,
+				506480D71FE52594006D7194 /* TimeViewController.swift */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -185,6 +201,7 @@
 				50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */,
 				50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */,
 				50483C161FC2966900B6E228 /* KeyboardKey.swift */,
+				506480CF1FE48C6C006D7194 /* AllTestsTableViewCell.swift */,
 				50E420241BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift */,
 			);
 			name = Views;
@@ -206,6 +223,7 @@
 				50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */,
 				508360581BC29ABA00A225E6 /* Player.swift */,
 				50E9E6431BD4ABBB002CC689 /* Answer.swift */,
+				506480D11FE4BDE4006D7194 /* AppLocale.swift */,
 				5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */,
 				5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */,
 				50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */,
@@ -456,10 +474,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506480CE1FE48375006D7194 /* AllTestsViewController.swift in Sources */,
 				50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */,
 				50A7D9D61FDA6CDB00671847 /* TestsDataHelper.swift in Sources */,
 				50DC216F1BB8FF65000075AE /* AppDelegate.swift in Sources */,
 				504200D31FC2D3020026FBCA /* Ipa.swift in Sources */,
+				506480D21FE4BDE4006D7194 /* AppLocale.swift in Sources */,
 				50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */,
 				50E420251BBF5DD40092F74B /* DoubleSoundsCollectionViewCell.swift in Sources */,
 				50D64FD91BBE912C003657A4 /* LearnDoubleSoundsViewController.swift in Sources */,
@@ -470,19 +490,23 @@
 				50DF5AC01FD2607300DD7A04 /* IpaChooserKeyboard.swift in Sources */,
 				50DF5ABC1FD1043700DD7A04 /* SelectSoundsViewController.swift in Sources */,
 				50CB442C1FCC01BB0071FFFA /* SpecialSound.swift in Sources */,
+				506480D81FE52594006D7194 /* TimeViewController.swift in Sources */,
 				50E2EAF41BD6182600842ED3 /* TestResultsViewController.swift in Sources */,
 				5074CC0A1BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift in Sources */,
+				506480D61FE51E5B006D7194 /* MoreTableViewController.swift in Sources */,
 				50483C171FC2966900B6E228 /* KeyboardKey.swift in Sources */,
 				50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */,
 				50483C351FC29BAD00B6E228 /* KeyboardImageKey.swift in Sources */,
 				50E420271BBF684C0092F74B /* DoubleSound.swift in Sources */,
 				50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */,
 				50A7D9D41FDA619300671847 /* Test.swift in Sources */,
+				506480DA1FE54D3A006D7194 /* AboutViewController.swift in Sources */,
 				50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */,
 				508360591BC29ABA00A225E6 /* Player.swift in Sources */,
 				508360571BC29A0A00A225E6 /* PracticeSoundsViewController.swift in Sources */,
 				50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */,
 				50DF5AC21FD2C26500DD7A04 /* UIColor+custom.swift in Sources */,
+				506480D01FE48C6C006D7194 /* AllTestsTableViewCell.swift in Sources */,
 				50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

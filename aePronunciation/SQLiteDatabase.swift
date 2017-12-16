@@ -63,7 +63,7 @@ class SQLiteDatabase {
         guard let db = dbConnection else {return allTests}
         
         do {
-            for test in try db.prepare(self.tests) {
+            for test in try db.prepare(self.tests).reversed() {
                 guard let soundMode = SoundMode(rawValue: test[mode]) else {
                     continue
                 }

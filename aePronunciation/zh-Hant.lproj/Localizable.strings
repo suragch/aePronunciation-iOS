@@ -105,6 +105,7 @@
 "main_tab_learn" = "學習";
 "main_tab_practice" = "練習";
 "main_tab_test" = "測試";
+"main_tab_more" = "更多選擇";
 "practice_mode_single" = "單音標";
 "history_test_details_type_double" = "雙音標 （%d）";
 "history_test_details_type_single" = "單音標 （%d）";

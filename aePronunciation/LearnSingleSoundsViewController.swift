@@ -48,6 +48,11 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.navigationController?.navigationBar.topItem?.title = "app_name".localized
+        
+        //self.tabBarController?.tabBar.items?[0].title = "main_tab_learn".localized
+        self.title = "main_tab_learn".localized
+        
         keyboard.delegate = self
         
         // Center button text
@@ -65,6 +70,11 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         updateDisplayForIpa(defaultIpaToShowFirst)
         loadVideoFor(ipa: defaultIpaToShowFirst)
     }
+    
+    
+
+    
+
     
     func updateDisplayForIpa(_ ipa: String) {
         guard ipaLabel.text != ipa else {return}

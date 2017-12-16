@@ -3,7 +3,7 @@ import UIKit
 class TestViewController: UIViewController, KeyboardDelegate {
     
 
-    var userName = "test_default_name".localized
+    var userName = ""
     var testMode = MyUserDefaults.defaultTestMode
     var totalNumberOfQuestions = MyUserDefaults.defaultNumberOfTestQuestions
     
@@ -177,6 +177,10 @@ class TestViewController: UIViewController, KeyboardDelegate {
         
         // save it in a background thread
         DispatchQueue.global(qos: .background).async {
+            var name = self.userName
+            if name == "" {
+                name = "test_default_name".localized
+            }
             var correctAnswersConcat = ""
             var userAnswersConcat = ""
             for answer in self.answers {
@@ -188,11 +192,11 @@ class TestViewController: UIViewController, KeyboardDelegate {
                 correctAnswersConcat.append(answer.correctAnswer)
                 userAnswersConcat.append(answer.userAnswer)
             }
-            let date = Int64(Date().timeIntervalSinceNow)
+            let date = Int64(Date().timeIntervalSince1970)
             let score = Test.getScorePercent(forAnswers: self.answers, testMode: self.testMode)
             let test = Test(
                 id: -1,
-                username: self.userName,
+                username: name,
                 date: date,
                 timelength: Int64(self.getTestTime()),
                 mode: self.testMode,

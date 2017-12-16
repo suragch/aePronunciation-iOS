@@ -55,6 +55,7 @@
 "main_menu_keyboard" = "输入音标";
 "main_menu_about" = "关于应用";
 "main_menu_history" = "历史记录";
+"main_tab_more" = "More";
 "title_activity_learn_double" = "/%@/的延伸";
 "practice_mode_double" = "双音标";
 "select_sounds_title" = "选择音标";
@@ -105,6 +106,7 @@
 "main_tab_learn" = "学习";
 "main_tab_practice" = "练习";
 "main_tab_test" = "测试";
+"main_tab_more" = "更多选择";
 "practice_mode_single" = "单音标";
 "history_test_details_type_double" = "双音标 （%d）";
 "history_test_details_type_single" = "单音标 （%d）";

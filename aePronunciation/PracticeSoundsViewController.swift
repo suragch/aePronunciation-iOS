@@ -165,6 +165,9 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.tabBarController?.tabBar.items?[1].title = "main_tab_practice".localized
+        self.title = "main_tab_practice".localized
 
         ipaKeyboard.delegate = self
         addBorderToInputWindow()

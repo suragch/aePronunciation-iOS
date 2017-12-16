@@ -34,6 +34,17 @@ class Test {
         self.userAnswers = userAnswers
     }
     
+    func getAnswerArray() -> [Answer] {
+        var answers = [Answer]()
+        let correct = correctAnswers.split(separator: ",")
+        let user = userAnswers.split(separator: ",")
+        for index in 0..<correct.count {
+            let answer = Answer(correctAnswer: String(correct[index]), userAnswer: String(user[index]))
+            answers.append(answer)
+        }
+        return answers
+    }
+    
     static func numberCorrect(inAnswers answers: [Answer], testMode: SoundMode) -> Int {
         
         // count number correct

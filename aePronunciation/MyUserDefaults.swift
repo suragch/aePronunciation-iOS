@@ -82,4 +82,36 @@ class MyUserDefaults {
         defaults.set(updatedTime, forKey: key)
     }
     
+    class func getSecondsLearningSingles() -> Int {
+        return getTimeInSeconds(forKey: TIME_LEARN_SINGLE_KEY)
+    }
+    
+    class func getSecondsLearningDoubles() -> Int {
+        return getTimeInSeconds(forKey: TIME_LEARN_DOUBLE_KEY)
+    }
+    
+    class func getSecondsPracticingSingles() -> Int {
+        return getTimeInSeconds(forKey: TIME_PRACTICE_SINGLE_KEY)
+    }
+    
+    class func getSecondsPracticingDoubles() -> Int {
+        return getTimeInSeconds(forKey: TIME_PRACTICE_DOUBLE_KEY)
+    }
+    
+    class func getSecondsTestingSingles() -> Int {
+        return getTimeInSeconds(forKey: TIME_TEST_SINGLE_KEY)
+    }
+    
+    class func getSecondsTestingDoubles() -> Int {
+        return getTimeInSeconds(forKey: TIME_TEST_DOUBLE_KEY)
+    }
+    
+    private class func getTimeInSeconds(forKey key: String) -> Int {
+        return defaults.integer(forKey: key)
+    }
+    
+    
+//    private class func formatTime(hours: Int, minutes: Int, seconds: Int) -> String{
+//        return "\(hours):\(minutes):\(seconds)"
+//    }
 }
