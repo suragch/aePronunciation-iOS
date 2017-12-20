@@ -390,7 +390,6 @@ class IpaKeyboard: UIView, KeyboardKeyDelegate {
     
     func keyBackspaceTapped() {
         self.delegate?.keyBackspace()
-        //print("key text: backspace")
     }
     
     // MARK: - Public update methods

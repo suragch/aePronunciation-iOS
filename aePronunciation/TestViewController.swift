@@ -127,15 +127,12 @@ class TestViewController: UIViewController, KeyboardDelegate {
     
     @objc func appWillEnterForeground() {
         if self.viewIfLoaded?.window != nil {
-            //print("start practicing")
             startTiming()
-            //timer.start(type: .learnDouble)
         }
     }
     
     @objc func appDidEnterBackground() {
         if self.viewIfLoaded?.window != nil {
-            print("stop timing test")
             timer.stop()
         }
     }
@@ -175,10 +172,8 @@ class TestViewController: UIViewController, KeyboardDelegate {
     private func startTiming() {
         if testMode == SoundMode.single {
             timer.start(type: .testSingle)
-            print("start testing single")
         } else {
             timer.start(type: .testDouble)
-            print("start testing double")
         }
     }
     

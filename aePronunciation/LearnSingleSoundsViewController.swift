@@ -86,14 +86,12 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     
     @objc func appWillEnterForeground() {
         if self.viewIfLoaded?.window != nil {
-            print("start learning single")
             timer.start(type: .learnSingle)
         }
     }
     
     @objc func appDidEnterBackground() {
         if self.viewIfLoaded?.window != nil {
-            print("stop timing learn single")
             timer.stop()
         }
     }
@@ -161,12 +159,6 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         self.tabBarController?.tabBar.items?[2].title = "main_tab_test".localized
         self.tabBarController?.tabBar.items?[3].title = "main_tab_more".localized
     }
-    
-//    private func startTimingIfStopped() {
-//        if timer.isTiming {return}
-//        timer.start(type: .learnSingle)
-//        print("start learning")
-//    }
     
     let ipaForNamePrefix = [
         "p":"p",

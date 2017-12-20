@@ -1,6 +1,6 @@
-/* 
-  English
-*/
+/*
+ English
+ */
 
 "locale" = "en";
 
@@ -224,7 +224,7 @@
 "test_results_right" = "Right: %d";
 "test_results_wrong" = "Wrong: %d";
 "test_results_time" = "Time length: %@";
-"test_results_practice_difficult_button" = "Practice the difficult sounds";
+"test_results_practice_difficult_button" = "Practice the\ndifficult sounds";
 
 // History Activity
 "title_activity_history" = "History";

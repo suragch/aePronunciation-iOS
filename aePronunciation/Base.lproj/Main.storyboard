@@ -812,23 +812,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6A-oa-wVI">
-                                        <rect key="frame" x="20" y="233" width="156" height="90"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmO-xl-M2b">
+                                        <rect key="frame" x="20" y="233" width="143.5" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="8yw-HW-yfF"/>
+                                            <constraint firstAttribute="height" constant="60" id="o2P-GK-U28"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="border">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Practice the difficult sounds">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Button" backgroundImage="border"/>
                                         <connections>
-                                            <segue destination="hym-Ir-Pje" kind="unwind" unwindAction="unwindFromTestResultsVCWithSegue:" id="dkt-Ff-UGb"/>
+                                            <segue destination="Czw-5v-m6W" kind="unwind" unwindAction="unwindFromTestResultsVCWithSegue:" id="waX-bh-y8I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -837,18 +829,18 @@
                                     <constraint firstItem="HBt-79-wem" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="Bue-IP-S3w"/>
                                     <constraint firstItem="yLF-3O-Lbo" firstAttribute="top" secondItem="13T-OP-RcX" secondAttribute="bottom" constant="8" id="DOr-NR-Xbx"/>
                                     <constraint firstItem="iYK-Az-59l" firstAttribute="top" secondItem="8KU-Pa-dTO" secondAttribute="bottom" constant="8" id="F37-ic-m4S"/>
-                                    <constraint firstItem="V6A-oa-wVI" firstAttribute="top" secondItem="HBt-79-wem" secondAttribute="bottom" constant="20" id="JOd-fK-qrE"/>
+                                    <constraint firstItem="lmO-xl-M2b" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="GbJ-p9-Xb5"/>
                                     <constraint firstItem="8KU-Pa-dTO" firstAttribute="top" secondItem="6z0-bv-0Jb" secondAttribute="bottom" constant="8" id="Oyp-6Z-uvT"/>
                                     <constraint firstItem="HBt-79-wem" firstAttribute="top" secondItem="yLF-3O-Lbo" secondAttribute="bottom" constant="8" id="Pq4-V0-IWk"/>
                                     <constraint firstItem="yLF-3O-Lbo" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="Ri5-7H-8MF"/>
+                                    <constraint firstItem="lmO-xl-M2b" firstAttribute="top" secondItem="HBt-79-wem" secondAttribute="bottom" constant="20" id="SRA-7X-ISW"/>
                                     <constraint firstItem="iYK-Az-59l" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="8" id="Wx2-5V-uZ4"/>
                                     <constraint firstItem="13T-OP-RcX" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="eCe-Cp-BOP"/>
                                     <constraint firstItem="6z0-bv-0Jb" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="jZT-dp-ftp"/>
                                     <constraint firstItem="6z0-bv-0Jb" firstAttribute="top" secondItem="Dqa-CY-liz" secondAttribute="top" constant="8" id="jxB-Pi-LHd"/>
                                     <constraint firstItem="8KU-Pa-dTO" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="nPQ-IV-CZD"/>
-                                    <constraint firstItem="V6A-oa-wVI" firstAttribute="leading" secondItem="Dqa-CY-liz" secondAttribute="leading" constant="20" id="os5-qd-56n"/>
                                     <constraint firstAttribute="trailing" secondItem="iYK-Az-59l" secondAttribute="trailing" constant="8" id="rXY-Kh-Usn"/>
-                                    <constraint firstAttribute="trailing" secondItem="V6A-oa-wVI" secondAttribute="trailing" constant="8" id="vG0-at-cqY"/>
+                                    <constraint firstAttribute="trailing" secondItem="lmO-xl-M2b" secondAttribute="trailing" constant="20" id="vfK-11-lQu"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-6O-4mm">
@@ -875,7 +867,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="8KU-Pa-dTO" id="elI-nZ-oLM"/>
                         <outlet property="percentLabel" destination="iYK-Az-59l" id="I7A-VM-saH"/>
-                        <outlet property="practiceButton" destination="V6A-oa-wVI" id="2Ig-lv-6AQ"/>
+                        <outlet property="practiceDificultButton" destination="lmO-xl-M2b" id="I4O-6l-7aS"/>
                         <outlet property="rightLabel" destination="13T-OP-RcX" id="IRh-x8-Qi7"/>
                         <outlet property="tableView" destination="8A5-6O-4mm" id="maD-E6-TqP"/>
                         <outlet property="timeLengthLabel" destination="HBt-79-wem" id="aUN-dH-DcU"/>
@@ -884,7 +876,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ng-6d-hES" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="hym-Ir-Pje" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="Czw-5v-m6W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3020" y="355.7721139430285"/>
         </scene>
@@ -1406,7 +1398,7 @@ Pronunciation</string>
         <!--All Tests View Controller-->
         <scene sceneID="w4b-Mr-JhJ">
             <objects>
-                <viewController id="tqi-RJ-Vas" customClass="AllTestsViewController" customModule="aePronunciation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tqi-RJ-Vas" customClass="AllTestsViewController" customModule="aePronunciation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TIv-zI-jXY"/>
                         <viewControllerLayoutGuide type="bottom" id="sbM-1b-Vag"/>
@@ -1535,6 +1527,6 @@ Pronunciation</string>
         <image name="test" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iU5-Gz-K8k"/>
+        <segue reference="WAW-I2-fEf"/>
     </inferredMetricsTieBreakers>
 </document>

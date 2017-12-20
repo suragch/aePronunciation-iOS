@@ -32,7 +32,6 @@
 		50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */; };
 		50A7D9D11FD9708000671847 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A7D9D01FD9708000671847 /* SQLite.framework */; };
 		50A7D9D41FDA619300671847 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9D31FDA619300671847 /* Test.swift */; };
-		50A7D9D61FDA6CDB00671847 /* TestsDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9D51FDA6CDB00671847 /* TestsDataHelper.swift */; };
 		50CB442C1FCC01BB0071FFFA /* SpecialSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */; };
 		50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD41BBE5D8B003657A4 /* String+localized.swift */; };
 		50D64FD71BBE7E96003657A4 /* SingleSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD61BBE7E96003657A4 /* SingleSound.swift */; };
@@ -70,7 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50156A9A1FEA937100311087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5019E20C1FD8207F0021303D /* StudyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimer.swift; sourceTree = "<group>"; };
+		503A9EEF1FEA4929001F69AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		503A9EF11FEA49DA001F69AA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		504200D21FC2D3010026FBCA /* Ipa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ipa.swift; sourceTree = "<group>"; };
 		50483C121FC295AB00B6E228 /* IpaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpaKeyboard.swift; sourceTree = "<group>"; };
 		50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextKey.swift; sourceTree = "<group>"; };
@@ -92,11 +94,8 @@
 		5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnSingleSoundsViewController.swift; sourceTree = "<group>"; };
 		508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeSoundsViewController.swift; sourceTree = "<group>"; };
 		508360581BC29ABA00A225E6 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		5094F1801FCD088800F5EF29 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		5094F1811FCD088800F5EF29 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		5094F1821FCD089900F5EF29 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		5094F1831FCD089900F5EF29 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		5094F1851FCD08DD00F5EF29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5094F1881FCD08F200F5EF29 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5094F1891FCD08F700F5EF29 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
@@ -105,7 +104,6 @@
 		50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		50A7D9D01FD9708000671847 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		50A7D9D31FDA619300671847 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		50A7D9D51FDA6CDB00671847 /* TestsDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsDataHelper.swift; sourceTree = "<group>"; };
 		50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialSound.swift; sourceTree = "<group>"; };
 		50D64FD41BBE5D8B003657A4 /* String+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 		50D64FD61BBE7E96003657A4 /* SingleSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleSound.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */,
 				5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */,
 				50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */,
-				50A7D9D51FDA6CDB00671847 /* TestsDataHelper.swift */,
 				5019E20C1FD8207F0021303D /* StudyTimer.swift */,
 				504200D21FC2D3010026FBCA /* Ipa.swift */,
 				50A7D9D31FDA619300671847 /* Test.swift */,
@@ -479,7 +476,6 @@
 			files = (
 				506480CE1FE48375006D7194 /* AllTestsViewController.swift in Sources */,
 				50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */,
-				50A7D9D61FDA6CDB00671847 /* TestsDataHelper.swift in Sources */,
 				50DC216F1BB8FF65000075AE /* AppDelegate.swift in Sources */,
 				504200D31FC2D3020026FBCA /* Ipa.swift in Sources */,
 				506480D21FE4BDE4006D7194 /* AppLocale.swift in Sources */,
@@ -534,9 +530,9 @@
 		5094F1861FCD08DD00F5EF29 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5094F1851FCD08DD00F5EF29 /* en */,
 				5094F1881FCD08F200F5EF29 /* zh-Hans */,
 				5094F1891FCD08F700F5EF29 /* zh-Hant */,
+				50156A9A1FEA937100311087 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -545,8 +541,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				50DC21751BB8FF65000075AE /* Base */,
-				5094F1801FCD088800F5EF29 /* zh-Hans */,
-				5094F1821FCD089900F5EF29 /* zh-Hant */,
+				503A9EEF1FEA4929001F69AA /* zh-Hans */,
+				503A9EF11FEA49DA001F69AA /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

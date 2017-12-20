@@ -189,7 +189,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //print("start practicing")
         startTiming()
     }
     
@@ -200,15 +199,12 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
     @objc func appWillEnterForeground() {
         if self.viewIfLoaded?.window != nil {
-            //print("start practicing")
             startTiming()
-            //timer.start(type: .learnDouble)
         }
     }
     
     @objc func appDidEnterBackground() {
         if self.viewIfLoaded?.window != nil {
-            print("stop timing practice")
             timer.stop()
         }
     }
@@ -301,10 +297,8 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     private func startTiming() {
         if practiceMode == SoundMode.single {
             timer.start(type: .practiceSingle)
-            print("start practicing single")
         } else {
             timer.start(type: .practiceDouble)
-            print("start practicing double")
         }
     }
     

@@ -38,14 +38,12 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     
     @objc func appWillEnterForeground() {
         if self.viewIfLoaded?.window != nil {
-            print("start learning double")
             timer.start(type: .learnDouble)
         }
     }
     
     @objc func appDidEnterBackground() {
         if self.viewIfLoaded?.window != nil {
-            print("stop timing learn double")
             timer.stop()
         }
     }
@@ -80,7 +78,7 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     // MARK:- Other
     
     private func setLocalizedStrings() {
-       
+        // FIXME: the title is blank. Need to add a title item?
         guard let currentIpa = ipa else {return}
         self.navigationController?.navigationBar.topItem?.title = String.localizedStringWithFormat("title_activity_learn_double".localized, currentIpa)
         

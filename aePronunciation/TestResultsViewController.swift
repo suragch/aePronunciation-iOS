@@ -29,14 +29,14 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var wrongLabel: UILabel!
     @IBOutlet weak var timeLengthLabel: UILabel!
-    @IBOutlet weak var practiceButton: UIButton!
+    @IBOutlet weak var practiceDificultButton: UIButton!
     
     // MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backButtonText = "done"
+        let backButtonText = "test_results_back_button".localized
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: backButtonText, style: .done, target: self, action: #selector(TestResultsViewController.backButtonTapped))
         
         
@@ -71,10 +71,13 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
         timeLengthLabel.text = getTimeString()
         
         // practice button
+        // Center button text
+        practiceDificultButton.titleLabel?.textAlignment = NSTextAlignment.center
+        practiceDificultButton.titleLabel?.numberOfLines = 0
         if score == 100 {
-            practiceButton.isHidden = true
+            practiceDificultButton.isHidden = true
         } else {
-            practiceButton.setTitle("test_results_practice_difficult_button".localized, for: .normal)
+            practiceDificultButton.setTitle("test_results_practice_difficult_button".localized, for: .normal)
         }
         
         
@@ -85,7 +88,6 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing to segue")
         if let practiceVC = segue.destination as? PracticeSoundsViewController {
             practiceVC.practiceMode = testMode
             let (vowels, consonants) = findNeedToPracticeSounds()

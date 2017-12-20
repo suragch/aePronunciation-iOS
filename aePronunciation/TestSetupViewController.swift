@@ -10,23 +10,7 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var typeSegControl: UISegmentedControl!
     @IBOutlet weak var beginButton: UIButton!
-    
-    // MARK: - Actions
-    
-//    @IBAction func beginButtonTapped(_ sender: UIButton) {
-//
-//        // save settings as defaults
-//        let name = getName()
-//        let number = getSelectedNumberOfQuestions()
-//        let mode = getSelectedMode()
-//        MyUserDefaults.saveTestSetupPreferences(
-//            name: name, number: number, mode: mode)
-//    }
-    
-//    @IBAction func unwindToTestSetupVC(segue:UIStoryboardSegue) {
-//        print("unwound")
-//    }
-    
+        
     // MARK: - Overrides
     
     override func viewDidLoad() {
