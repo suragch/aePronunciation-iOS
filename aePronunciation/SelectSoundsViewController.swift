@@ -25,9 +25,11 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
         //self.navigationController?.navigationBar.topItem?.title = "title_activity_learn_double".localized
         
         //self.navigationItem.title = "select_sounds_title".localized
-        self.title = "select_sounds_title".localized
+        //self.title = "select_sounds_title".localized
+        ipaChooserKeyboard.delegate = self
+        setLocalizedStrings()
         initPreviouslyChosenItems()
-        somethingWasChanged = false
+        //somethingWasChanged = false
     }
     
     override func viewWillDisappear(_ animated : Bool) {
@@ -78,6 +80,15 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     func keyBackspace() {}
     
     // MARK:- Other
+    
+    
+    private func setLocalizedStrings() {
+        self.title = "select_sounds_title".localized
+        singleDoubleSegmentedControl.setTitle("select_sounds_radio_single".localized, forSegmentAt: 0)
+        singleDoubleSegmentedControl.setTitle("select_sounds_radio_double".localized, forSegmentAt: 1)
+        vowelsLabel.text = "select_sounds_cb_vowels".localized
+        consonantsLabel.text = "select_sounds_cb_consonants".localized
+    }
     
     private func initPreviouslyChosenItems() {
         ipaChooserKeyboard.mode = previouslySelectedMode

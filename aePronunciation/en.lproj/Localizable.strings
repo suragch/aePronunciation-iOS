@@ -4,6 +4,18 @@
 
 "locale" = "en";
 
+// new for iOS version
+"main_tab_more" = "More";
+"main_tab_more_history_section_title" = "History";
+"main_tab_more_total_time" = "Total time";
+"main_tab_more_tests" = "Tests";
+"main_tab_more_about_section_title" = "About";
+"main_tab_more_app" = "App";
+"main_tab_more_contact" = "Contact";
+
+"test_results_back_button" = "Done";
+
+
 /////////////////////////////
 //  Non-Translated strings //
 /////////////////////////////
@@ -17,8 +29,6 @@
 //<!-- History Tests Activity-->
 "history_tests_item_score" = "%d%%";
 
-//<!-- About Activity -->
-"about_contact_url" = "http://www.aepronunciation.com/app/";
 
 //<!-- Learn sounds tab-->
 "p_example1" = "pass\n/pæs/";
@@ -178,7 +188,6 @@
 "main_tab_learn" = "Learn";
 "main_tab_practice" = "Practice";
 "main_tab_test" = "Test";
-"main_tab_more" = "More";
 
 // Learn Single fragment
 "learn_single_show_doubles" = "more…";
@@ -220,7 +229,7 @@
 // History Activity
 "title_activity_history" = "History";
 "history_time_title" = "Total time spent:";
-"history_test_title" = "Tests:";
+"history_test_title" = "Tests";
 "history_details" = "Details";
 
 // History Time Details Activity
@@ -246,10 +255,11 @@
 
 // About Activity
 "title_activity_about" = "About";
-"about_app_name" = "American English Pronunciation";
+"about_app_name" = "American\nEnglish\nPronunciation";
 "about_app_version" = "Version %@";
 "about_content" = "If you have any questions, comments, or suggestions, then please leave a message.";
 "about_contact" = "Contact";
+"about_contact_url" = "http://www.aepronunciation.com/app/";
 
 // Keyboard Input Activity
 "title_activity_keyboard_input" = "Write IPA";

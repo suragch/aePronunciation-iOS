@@ -9,6 +9,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     private let defaultIpaToShowFirst = "æ"
     private let singleSound = SingleSound()
     private let learnDoubleSegueId = "learnSingleToLearnDouble"
+    private let timer = StudyTimer.sharedInstance
     
     // MARK: - Outlets
     
@@ -19,6 +20,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     @IBOutlet weak var example3: UIButton!
     @IBOutlet weak var keyboard: IpaKeyboard!
     @IBOutlet weak var videoView: UIImageView!
+    @IBOutlet weak var moreButton: UIButton!
     
     // MARK: - Actions
     
@@ -48,10 +50,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationController?.navigationBar.topItem?.title = "app_name".localized
-        
-        //self.tabBarController?.tabBar.items?[0].title = "main_tab_learn".localized
-        self.title = "main_tab_learn".localized
+        setLocalizedStrings()
         
         keyboard.delegate = self
         
@@ -69,15 +68,38 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         
         updateDisplayForIpa(defaultIpaToShowFirst)
         loadVideoFor(ipa: defaultIpaToShowFirst)
+        
+        // listen for if the user leaves the app
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        timer.start(type: .learnSingle)
+    }
     
-
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.stop()
+    }
     
-
+    @objc func appWillEnterForeground() {
+        if self.viewIfLoaded?.window != nil {
+            print("start learning single")
+            timer.start(type: .learnSingle)
+        }
+    }
+    
+    @objc func appDidEnterBackground() {
+        if self.viewIfLoaded?.window != nil {
+            print("stop timing learn single")
+            timer.stop()
+        }
+    }
     
     func updateDisplayForIpa(_ ipa: String) {
-        guard ipaLabel.text != ipa else {return}
+        //guard ipaLabel.text != ipa else {return}
         guard let prefix = ipaForNamePrefix[ipa]
             else {return}
         
@@ -117,6 +139,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     // MARK:- KeyboardDelegate methods
     
     func keyWasTapped(_ character: String) {
+        //startTimingIfStopped()
         updateDisplayForIpa(character)
         loadVideoFor(ipa: character)
         avPlayer?.seek(to: kCMTimeZero)
@@ -126,6 +149,24 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     func keyBackspace() {
         // only conforming to keyboard delegate
     }
+    
+    // MARK:- Other
+    
+    private func setLocalizedStrings() {
+        self.title = "main_tab_learn".localized
+        moreButton.setTitle("learn_single_show_doubles".localized, for: .normal)
+        // initialize all tabs
+        self.tabBarController?.tabBar.items?[0].title = "main_tab_learn".localized
+        self.tabBarController?.tabBar.items?[1].title = "main_tab_practice".localized
+        self.tabBarController?.tabBar.items?[2].title = "main_tab_test".localized
+        self.tabBarController?.tabBar.items?[3].title = "main_tab_more".localized
+    }
+    
+//    private func startTimingIfStopped() {
+//        if timer.isTiming {return}
+//        timer.start(type: .learnSingle)
+//        print("start learning")
+//    }
     
     let ipaForNamePrefix = [
         "p":"p",

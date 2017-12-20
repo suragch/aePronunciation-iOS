@@ -9,6 +9,7 @@ class TestViewController: UIViewController, KeyboardDelegate {
     
     private var answers = [Answer]()
     private let player = Player()
+    private let timer = StudyTimer.sharedInstance
     private lazy var singleSound = SingleSound()
     private lazy var doubleSound = DoubleSound()
     private var currentIpa = ""
@@ -85,6 +86,7 @@ class TestViewController: UIViewController, KeyboardDelegate {
         super.viewDidLoad()
         
         ipaKeyboard.delegate = self
+        ipaKeyboard.mode = testMode
         
         // set up display
         inputWindow.text = ""
@@ -99,15 +101,43 @@ class TestViewController: UIViewController, KeyboardDelegate {
             testModeLabel.text = "practice_mode_double".localized
         }
         
+        // clear the back button item on the test results
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        
         // question number
         questionNumberLabel.text = String(questionNumber + 1)
-        
-        // TODO: Start timing the test
-        
         
         // hide the next button
         nextButton.isHidden = true
         
+        // listen for if the user leaves the app
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startTiming()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.stop()
+    }
+    
+    @objc func appWillEnterForeground() {
+        if self.viewIfLoaded?.window != nil {
+            //print("start practicing")
+            startTiming()
+            //timer.start(type: .learnDouble)
+        }
+    }
+    
+    @objc func appDidEnterBackground() {
+        if self.viewIfLoaded?.window != nil {
+            print("stop timing test")
+            timer.stop()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -141,6 +171,16 @@ class TestViewController: UIViewController, KeyboardDelegate {
     
     
     // MARK: - Other methods
+    
+    private func startTiming() {
+        if testMode == SoundMode.single {
+            timer.start(type: .testSingle)
+            print("start testing single")
+        } else {
+            timer.start(type: .testDouble)
+            print("start testing double")
+        }
+    }
     
     func getRandomIpa() -> String {
         var ipa = ""

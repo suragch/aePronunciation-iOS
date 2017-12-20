@@ -19,6 +19,7 @@ class IpaChooserKeyboard: IpaKeyboard {
     }
     
     override func keyTextEntered(sender: KeyboardKey, keyText: String) {
+        super.keyTextEntered(sender: sender, keyText: keyText)
         sender.isSelected = !sender.isSelected
     }
     

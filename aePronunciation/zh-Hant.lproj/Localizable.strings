@@ -4,6 +4,177 @@
 
 "locale" = "zh_Hant";
 
+// new for iOS version
+"main_tab_more" = "更多選擇";
+"main_tab_more_history_section_title" = "歷史記錄";
+"main_tab_more_total_time" = "總時長";
+"main_tab_more_tests" = "測試";
+"main_tab_more_about_section_title" = "關於應用";
+"main_tab_more_app" = "應用";
+"main_tab_more_contact" = "聯繫方式";
+
+"test_results_back_button" = "完成";
+
+/////////////////////////////
+//  Non-Translated strings //
+/////////////////////////////
+
+// <!-- Practice Tab -->
+"tell_me_button" = "\?";
+
+//<!-- Test results activity -->
+"test_results_percent" = "%d%%";
+
+//<!-- History Tests Activity-->
+"history_tests_item_score" = "%d%%";
+
+//<!-- Learn sounds tab-->
+"p_example1" = "pass\n/pæs/";
+"p_example2" = "speak\n/spik/";
+"p_example3" = "stop\n/stɑp/";
+"t_example1" = "toad\n/tod/";
+"t_example2" = "sting\n/stɪŋ/";
+"t_example3" = "it\n/ɪt/";
+"k_example1" = "cool\n/kul/";
+"k_example2" = "skill\n/skɪl/";
+"k_example3" = "week\n/wik/";
+"ch_example1" = "chairs\n/ʧɛrz/";
+"ch_example2" = "each of\n/\'iʧəv/";
+"ch_example3" = "church\n/ʧɝʧ/";
+"f_example1" = "father\n/\'fɑðɚ/";
+"f_example2" = "gift\n/gɪft/";
+"f_example3" = "if\n/ɪf/";
+"th_voiceless_example1" = "think\n/θɪŋk/";
+"th_voiceless_example2" = "Jonathan\n/\'ʤɑnəθən/";
+"th_voiceless_example3" = "earth\n/ɝθ/";
+"s_example1" = "set\n/sɛt/";
+"s_example2" = "raced\n/rest/";
+"s_example3" = "pass\n/pæs/";
+"sh_example1" = "shoot\n/ʃut/";
+"sh_example2" = "wished\n/wɪʃt/";
+"sh_example3" = "ash\n/æʃ/";
+"b_example1" = "bill\n/bɪl/";
+"b_example2" = "above\n/ə\'bʌv/";
+"b_example3" = "rib\n/rɪb/";
+"d_example1" = "delicious\n/də\'lɪʃəs/";
+"d_example2" = "cards\n/kɑrdz/";
+"d_example3" = "card\n/kɑrd/";
+"g_example1" = "good\n/gʊd/";
+"g_example2" = "again\n/ə\'gɛn/";
+"g_example3" = "pig\n/pɪg/";
+"dzh_example1" = "jump\n/ʤʌmp/";
+"dzh_example2" = "agile\n/\'æʤəl/";
+"dzh_example3" = "edge\n/ɛʤ/";
+"v_example1" = "very\n/\'vɛri/";
+"v_example2" = "every\n/\'ɛvri/";
+"v_example3" = "have\n/hæv/";
+"th_voiced_example1" = "they\'re\n/ðɛr/";
+"th_voiced_example2" = "father\n/fɑðɚ/";
+"th_voiced_example3" = "bathe\n/beð/";
+"z_example1" = "zoo\n/zu/";
+"z_example2" = "raised\n/rezd/";
+"z_example3" = "cars\n/kɑrz/";
+"zh_example1" = "usually\n/\'juʒli/";
+"zh_example2" = "pleasure\n/\'plɛʒɚ/";
+"zh_example3" = "beige\n/beʒ/";
+"m_example1" = "me\n/mi/";
+"m_example2" = "jump\n/ʤʌmp/";
+"m_example3" = "arm\n/ɑrm/";
+"n_example1" = "new\n/nu/";
+"n_example2" = "panda\n/\'pændə/";
+"n_example3" = "sun\n/sʌn/";
+"ng_example1" = "ringing\n/\'rɪŋɪŋ/";
+"ng_example2" = "think\n/θɪŋk/";
+"ng_example3" = "sung\n/sʌŋ/";
+"l_example1" = "loud\n/laʊd/";
+"l_example2" = "cool\n/kul/";
+"l_example3" = "bill\n/bɪl/";
+"w_example1" = "wary\n/\'wɛri/";
+"w_example2" = "twelve\n/twɛlv/";
+"w_example3" = "what\n/wʌt/";
+"j_example1" = "year\n/jɪr/";
+"j_example2" = "cube\n/kjub/";
+"j_example3" = "yellow\n/\'jɛlo/";
+"h_example1" = "her\n/hɝ/";
+"h_example2" = "have\n/hæv/";
+"h_example3" = "ahead\n/ə\'hɛd/";
+"r_example1" = "real\n/ril/";
+"r_example2" = "rib\n/rɪb/";
+"r_example3" = "roar\n/rɔr/";
+"i_example1" = "each\n/iʧ/";
+"i_example2" = "read\n/rid/";
+"i_example3" = "me\n/mi/";
+"i_short_example1" = "it\n/ɪt/";
+"i_short_example2" = "him\n/hɪm/";
+"i_short_example3" = "rib\n/rɪb/";
+"e_short_example1" = "edge\n/ɛʤ/";
+"e_short_example2" = "set\n/sɛt/";
+"e_short_example3" = "said\n/sɛd/";
+"ae_example1" = "ash\n/æʃ/";
+"ae_example2" = "bad\n/bæd/";
+"ae_example3" = "bat\n/bæt/";
+"a_example1" = "on\n/ɑn/";
+"a_example2" = "father\n/\'fɑðɚ/";
+"a_example3" = "ma\n/mɑ/";
+"c_backwards_example1" = "ought\n/ɔt/";
+"c_backwards_example2" = "call\n/kɔl/";
+"c_backwards_example3" = "saw\n/sɔ/";
+"u_short_example1" = "put\n/pʊt/";
+"u_short_example2" = "good\n/gʊd/";
+"u_short_example3" = "should\n/ʃʊd/";
+"u_example1" = "ooze\n/uz/";
+"u_example2" = "shoot\n/ʃut/";
+"u_example3" = "blue\n/blu/";
+"v_upsidedown_example1" = "up\n/ʌp/";
+"v_upsidedown_example2" = "sun\n/sʌn/";
+"v_upsidedown_example3" = "uh-huh\n/ə\'hʌ/";
+"schwa_example1" = "above\n/ə\'bʌv/";
+"schwa_example2" = "delicious\n/də\'lɪʃəs/";
+"schwa_example3" = "panda\n/\'pændə/";
+"ei_example1" = "age\n/eʤ/";
+"ei_example2" = "safe\n/sef/";
+"ei_example3" = "may\n/me/";
+"ai_example1" = "I\'m\n/aɪm/";
+"ai_example2" = "bite\n/baɪt/";
+"ai_example3" = "fly\n/flaɪ/";
+"au_example1" = "out\n/aʊt/";
+"au_example2" = "loud\n/laʊd/";
+"au_example3" = "cow\n/kaʊ/";
+"oi_example1" = "oil\n/ɔɪl/";
+"oi_example2" = "voice\n/vɔɪs/";
+"oi_example3" = "boy\n/bɔɪ/";
+"ou_example1" = "oath\n/oθ/";
+"ou_example2" = "cove\n/kov/";
+"ou_example3" = "low\n/lo/";
+"er_stressed_example1" = "earth\n/ɝθ/";
+"er_stressed_example2" = "birthday\n/\'bɝθde/";
+"er_stressed_example3" = "her\n/hɝ/";
+"er_unstressed_example1" = "mother\n/\'mʌðɚ/";
+"er_unstressed_example2" = "perform\n/pɚ\'fɔrm/";
+"er_unstressed_example3" = "wonderful\n/\'wʌndɚfəl/";
+"ar_example1" = "arm\n/ɑrm/";
+"ar_example2" = "part\n/pɑrt/";
+"ar_example3" = "car\n/kɑr/";
+"er_example1" = "aired\n/ɛrd/";
+"er_example2" = "chairs\n/ʧɛrz/";
+"er_example3" = "there\n/ðɛr/";
+"ir_example1" = "ear\n/ɪr/";
+"ir_example2" = "weird\n/wɪrd/";
+"ir_example3" = "here\n/hɪr/";
+"or_example1" = "oars\n/ɔrz/";
+"or_example2" = "north\n/nɔrθ/";
+"or_example3" = "roar\n/rɔr/";
+"glottal_stop_example1" = "put\n/pʊʔ/";
+"glottal_stop_example2" = "button\n/\'bʌʔn/";
+"glottal_stop_example3" = "uh-oh\n/\'ʌʔo/";
+"flap_t_example1" = "water\n/\'wɑɾɚ/";
+"flap_t_example2" = "little\n/\'lɪɾəl/";
+"flap_t_example3" = "thirty\n/\'θɝɾi/";
+
+/////////////////////////////
+//  Translated strings //////
+/////////////////////////////
+
 "i_description" = "在英式英語中/i/音標通常寫作/i:/，兩個點代表發長音。但是在美式發音中加點與不加點沒多大區別。所以美式音標不加兩個點。它在濁輔音前發長音，清輔音前發短音。";
 "a_description" = "在英式英語中/ɑ/音標通常寫作/ɑː/。注意在美式英語中它的發音與/ʌ/有很大區別。還有/ɑ/與漢語拼音中\"a\"也不同。（在國際音標中，漢語拼音的\"a\"寫作/a/）。";
 "u_description" = "在英式英語中/u/音標通常寫作/uː/，但是像/iː/、/aː/、/ɔː/這些長元音的點在美式英語中不必加。美式英語中所有重讀的元音在濁輔音前發長音，清輔音前發短音。";
@@ -52,6 +223,7 @@
 "glottal_stop_description" = "這個音被稱作為聲門塞音。在中國的英語課本中通常不講，但是它在美式發音中非常重要。注意例一put的不同發音，/pʊt/與/pʊʔ/。/ʔ/音經常代替/t/音，特別是在單詞詞尾和句子中間。";
 "flap_t_description" = "這個音標叫做齒齦閃音，在中國英語課本中通常不教，但是它在美式發音中非常重要。當/t/音出現在非重讀的音節中並在兩個元音之間，/ɾ/音通常會代替/t/音。儘管不準確，但是/ɾ/音標也可以寫成/d/。這種情況下，上述例子應該被寫成/ˈwɑdɚ/，/ˈlɪdəl/和/\'θɝdi/。";
 "app_name" = "美式發音";
+"app_name_long" = "美式發音";
 "main_menu_keyboard" = "輸入音標";
 "main_menu_about" = "關於應用";
 "main_menu_history" = "歷史記錄";
@@ -86,6 +258,7 @@
 "title_activity_about" = "關於應用";
 "about_content" = "如果你有任何問題或者建議，請聯繫我們。";
 "about_contact" = "聯繫方式";
+"about_contact_url" = "http://www.aepronunciation.com/app/";
 "keyboard_input_toast_text_copied" = "已複製";
 "keyboard_menu_clear" = "刪除";
 "keyboard_menu_copy" = "複製";
@@ -105,7 +278,6 @@
 "main_tab_learn" = "學習";
 "main_tab_practice" = "練習";
 "main_tab_test" = "測試";
-"main_tab_more" = "更多選擇";
 "practice_mode_single" = "單音標";
 "history_test_details_type_double" = "雙音標 （%d）";
 "history_test_details_type_single" = "單音標 （%d）";

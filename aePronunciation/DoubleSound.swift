@@ -28,21 +28,57 @@ class DoubleSound {
         }
     }
     
-    func restrictListToAllPairsContaining(ipa: String) {
+    
+    // This has the danger of getting out of sink with the dictionary
+    // of sounds, but it was easier than sorting the dictionary
+    func restrictListToAllOrderedPairsContaining(ipa: String) {
         if ipa.isEmpty {return}
         
         if Ipa.isSpecial(ipa: ipa) {
-            restrictListToSpecialSoundsContaining(ipa: ipa)
+            restrictListToOrderedSpecialSounds(specialIpa: ipa)
             return
         }
         
-        let singleItemArray = [ipa]
+        doubleSounds = [String]()
         if Ipa.isConsonant(ipa: ipa) {
-            restrictListToPairsContainingAtLeastOneSoundFrom(consonants: singleItemArray, vowels: [String]())
-        } else {
-            restrictListToPairsContainingAtLeastOneSoundFrom(consonants: [String](), vowels: singleItemArray)
+            let vowels = ["i", "ɪ", "ɛ", "æ", "ɑ", "ɔ", "ʊ", "u", "ʌ", "eɪ", "aɪ", "aʊ", "ɔɪ", "oʊ", "ɝ", "ɑr", "ɛr", "ɪr", "ɔr"]
+            if ipa != "ŋ" {
+                for vowel in vowels {
+                    doubleSounds?.append(ipa + vowel)
+                }
+            }
+            if !"wjhr".contains(ipa) {
+                for vowel in vowels {
+                    doubleSounds?.append(vowel + ipa)
+                }
+            }
+        } else { // vowel
+            let initialConsonants = ["p", "b", "t", "d", "k", "g", "ʧ", "ʤ", "f", "v", "θ", "ð", "s", "z", "ʃ", "ʒ", "m", "n", "l", "w", "j", "h", "r"]
+            let finalConsonants = ["p", "b", "t", "d", "k", "g", "ʧ", "ʤ", "f", "v", "θ", "ð", "s", "z", "ʃ", "ʒ", "m", "n", "ŋ", "l"]
+            for consonant in initialConsonants {
+                doubleSounds?.append(consonant + ipa)
+            }
+            for consonant in finalConsonants {
+                doubleSounds?.append(ipa + consonant)
+            }
         }
     }
+    
+//    func restrictListToAllPairsContaining(ipa: String) {
+//        if ipa.isEmpty {return}
+//        
+//        if Ipa.isSpecial(ipa: ipa) {
+//            restrictListToSpecialSoundsContaining(ipa: ipa)
+//            return
+//        }
+//        
+//        let singleItemArray = [ipa]
+//        if Ipa.isConsonant(ipa: ipa) {
+//            restrictListToPairsContainingAtLeastOneSoundFrom(consonants: singleItemArray, vowels: [String]())
+//        } else {
+//            restrictListToPairsContainingAtLeastOneSoundFrom(consonants: [String](), vowels: singleItemArray)
+//        }
+//    }
     
     func restrictListToPairsContainingBothSoundsFrom(
         consonants: [String],
@@ -62,14 +98,31 @@ class DoubleSound {
         }
     }
     
-    private func restrictListToSpecialSoundsContaining(ipa: String) {
-        doubleSounds = [String]()
-        for key in DoubleSound.specialSoundMap.keys {
-            if shouldInclude(specialSound: key, forIpa: ipa) {
-                doubleSounds!.append(key)
-            }
+    // This has the danger of getting out of sink with the dictionary
+    // of sounds, but it was easier than sorting the dictionary
+    private func restrictListToOrderedSpecialSounds(specialIpa: String) {
+        switch specialIpa {
+        case Ipa.er_unstressed:
+            doubleSounds = ["pɚ", "bɚ", "tɚ", "dɚ", "kɚ", "gɚ", "ʧɚ", "ʤɚ", "fɚ", "vɚ", "θɚ", "ðɚ", "sɚ", "zɚ", "ʃɚ", "ʒɚ", "mɚ", "nɚ", "lɚ", "wɚ", "jɚ", "hɚ", "rɚ", "ɚp", "ɚb", "ɚt", "ɚd", "ɚk", "ɚg", "ɚʧ", "ɚʤ", "ɚf", "ɚv", "ɚθ", "ɚð", "ɚs", "ɚz", "ɚʃ", "ɚʒ", "ɚm", "ɚn", "ɚŋ", "ɚl"]
+        case Ipa.schwa:
+            doubleSounds = ["pə", "bə", "tə", "də", "kə", "gə", "ʧə", "ʤə", "fə", "və", "θə", "ðə", "sə", "zə", "ʃə", "ʒə", "mə", "nə", "lə", "wə", "jə", "hə", "rə", "əp", "əb", "ət", "əd", "ək", "əg", "əʧ", "əʤ", "əf", "əv", "əθ", "əð", "əs", "əz", "əʃ", "əʒ", "əm", "ən", "əŋ", "əl"]
+        case Ipa.glottal_stop:
+            doubleSounds = ["iʔ", "ɪʔ", "ɛʔ", "æʔ", "ɑʔ", "ɔʔ", "ʊʔ", "uʔ", "ʌʔ", "eɪʔ", "aɪʔ", "aʊʔ", "ɔɪʔ", "oʊʔ", "ɝʔ", "ɑrʔ", "ɛrʔ", "ɪrʔ", "ɔrʔ"]
+        case Ipa.flap_t:
+            doubleSounds = ["ˈiɾə", "ˈɪɾə", "ˈɛɾə", "ˈæɾə", "ˈɑɾə", "ˈɔɾə", "ˈʊɾə", "ˈuɾə", "ˈʌɾə", "ˈeɪɾə", "ˈaɪɾə", "ˈaʊɾə", "ˈɔɪɾə", "ˈoʊɾə", "ˈɝɾə", "ˈɑrɾə", "ˈɛrɾə", "ˈɪrɾə", "ˈɔrɾə"]
+        default:
+            break
         }
     }
+    
+//    private func restrictListToSpecialSoundsContaining(ipa: String) {
+//        doubleSounds = [String]()
+//        for key in DoubleSound.specialSoundMap.keys {
+//            if shouldInclude(specialSound: key, forIpa: ipa) {
+//                doubleSounds!.append(key)
+//            }
+//        }
+//    }
     
     private func shouldInclude(specialSound: String, forIpa ipa: String) -> Bool {
         if !specialSound.contains(ipa) {return false}

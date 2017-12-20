@@ -26,15 +26,8 @@ class TimeViewController: UIViewController {
     
     
     
-    // my selector that was defined above
-    @objc func willEnterForeground() {
-        // do stuff
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
         
         timeLearningTitle.text = "history_time_details_learning".localized
         timeLearningSinglesTitle.text = "history_time_details_type_single".localized
@@ -47,6 +40,10 @@ class TimeViewController: UIViewController {
         timeTestingDoublesTitle.text = "history_time_details_type_double".localized
         totalTimeTitle.text = "history_time_details_total".localized
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let secondsLearnSingle = MyUserDefaults.getSecondsLearningSingles()
         let secondsLearnDouble = MyUserDefaults.getSecondsLearningDoubles()
         let secondsPracticeSingle = MyUserDefaults.getSecondsPracticingSingles()

@@ -13,15 +13,15 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Actions
     
-    @IBAction func beginButtonTapped(_ sender: UIButton) {
-        
-        // save settings as defaults
-        let name = getName()
-        let number = getSelectedNumberOfQuestions()
-        let mode = getSelectedMode()
-        MyUserDefaults.saveTestSetupPreferences(
-            name: name, number: number, mode: mode)
-    }
+//    @IBAction func beginButtonTapped(_ sender: UIButton) {
+//
+//        // save settings as defaults
+//        let name = getName()
+//        let number = getSelectedNumberOfQuestions()
+//        let mode = getSelectedMode()
+//        MyUserDefaults.saveTestSetupPreferences(
+//            name: name, number: number, mode: mode)
+//    }
     
 //    @IBAction func unwindToTestSetupVC(segue:UIStoryboardSegue) {
 //        print("unwound")
@@ -32,15 +32,13 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.topItem?.title = "app_name".localized
-        self.title = "main_tab_test".localized
+        
+        setLocalizedStrings()
         
         //numberOfQuestionsSegControl.superview?.clipsToBounds = true
         
         // localize labels
-        nameTextField.placeholder = "test_setup_name".localized
-        numberOfQuestionsLabel.text = "test_setup_number_of_questions".localized
-        typeLabel.text = "test_setup_type".localized
-        beginButton.titleLabel?.text = "test_setup_begin_button".localized
+        
         
         // update display with saved/default values
         let (name, number, mode) = MyUserDefaults.getTestSetupPreferences()
@@ -54,9 +52,17 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let testVC = segue.destination as? TestViewController {
-            testVC.userName = getName()
-            testVC.totalNumberOfQuestions = getSelectedNumberOfQuestions()
-            testVC.testMode = getSelectedMode()
+            
+            // save settings as defaults
+            let name = getName()
+            let number = getSelectedNumberOfQuestions()
+            let mode = getSelectedMode()
+            MyUserDefaults.saveTestSetupPreferences(
+                name: name, number: number, mode: mode)
+            
+            testVC.userName = name
+            testVC.totalNumberOfQuestions = number
+            testVC.testMode = mode
         }
     }
     
@@ -74,6 +80,16 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: - Other methods
+    
+    private func setLocalizedStrings() {
+        self.title = "main_tab_test".localized
+        nameTextField.placeholder = "test_setup_name".localized
+        numberOfQuestionsLabel.text = "test_setup_number_of_questions".localized
+        typeLabel.text = "test_setup_type".localized
+        typeSegControl.setTitle("test_setup_single".localized, forSegmentAt: 0)
+        typeSegControl.setTitle("test_setup_double".localized, forSegmentAt: 1)
+        beginButton.setTitle("test_setup_begin_button".localized, for: .normal) 
+    }
     
     func updateNumberOfQuestionsDisplay(number: Int) {
         switch number {

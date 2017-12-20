@@ -17,6 +17,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "LearnSingleSoundsViewController.keyWasTapped(_:):LearnSingleSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "avPlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PracticeSoundsViewController.playButtonTapped(UIButton) -&gt; ():PracticeSoundsViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -26,6 +34,14 @@
       </ContextState>
       <ContextState
          contextName = "TestResultsViewController.viewDidLoad():TestResultsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SelectSoundsViewController.viewWillDisappear(_:):SelectSoundsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "somethingWasChanged">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "AllTestsViewController.tableView(_:didSelectRowAt:):AllTestsViewController.swift">
@@ -66,10 +82,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "LearnSingleSoundsViewController.keyWasTapped(_:):LearnSingleSoundsViewController.swift">
+         contextName = "LearnSingleSoundsViewController.viewDidLoad():LearnSingleSoundsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "avPlayer">
+               value = "ipaLabel.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

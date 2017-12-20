@@ -24,24 +24,23 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    //@IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var wrongLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeLengthLabel: UILabel!
     @IBOutlet weak var practiceButton: UIButton!
-    
-    // MARK: - Actions
-    
-    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
     
     // MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // tittle
+        let backButtonText = "done"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: backButtonText, style: .done, target: self, action: #selector(TestResultsViewController.backButtonTapped))
+        
+        
+        // title
         if isTestDetails {
             self.navigationController?.navigationBar.topItem?.title = "title_activity_history_test_details".localized
         } else {
@@ -69,13 +68,13 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
         wrongLabel.text =  String.localizedStringWithFormat("test_results_wrong".localized, numberWrong)
         
         // Show elapsed time
-        timeLabel.text = getTimeString()
+        timeLengthLabel.text = getTimeString()
         
         // practice button
         if score == 100 {
             practiceButton.isHidden = true
         } else {
-            practiceButton.titleLabel?.text = "test_results_practice_difficult_button".localized
+            practiceButton.setTitle("test_results_practice_difficult_button".localized, for: .normal)
         }
         
         
@@ -150,7 +149,14 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: - Other methods
     
-
+    @objc func backButtonTapped() {
+        if isTestDetails {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        
+    }
     
     func getTimeString() -> String {
         let interval = Int(timeLength)

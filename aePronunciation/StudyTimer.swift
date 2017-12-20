@@ -17,6 +17,12 @@ class StudyTimer {
         case testDouble
     }
     
+    var isTiming: Bool {
+        get {
+            return startTime != nil
+        }
+    }
+    
     func start(type: StudyType) {
         
         // no need to restart the timer for the same type
@@ -42,4 +48,6 @@ class StudyTimer {
         self.studyType = nil
         self.startTime = nil
     }
+    
+    
 }

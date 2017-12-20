@@ -8,6 +8,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     var selectedConsonants = Ipa.getAllConsonants()
 
     private let player = Player()
+    private let timer = StudyTimer.sharedInstance
     private lazy var singleSound = SingleSound()
     private lazy var doubleSound = DoubleSound()
     private var numberCorrect = 0
@@ -34,6 +35,8 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     // MARK: - Actions
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        
+        //if !timer.isTiming {startTiming()}
         
         if readyForNewSound {
             var ipa: String?
@@ -98,62 +101,62 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
     
     
-    @IBAction func keyTapped(_ sender: UIButton) {
-        
-        // User must listen to practice sound before pressing a key
-        if readyForNewSound {
-            return
-        }
-        
-        if practiceMode == SoundMode.double && inputKeyCounter >= 2 {
-            inputLabel.text = ""
-            inputKeyCounter = 0
-        }
-        inputKeyCounter += 1
-        
-        // get ipa String for key tapped
-        let ipaTap = sender.titleLabel?.text ?? ""
-        
-        // get answer
-        let answer = getAnswerFromInputWindow(ipaTap)
-        if answer == nil {return}
-        
-        // check if answer is correct
-        if answer! == currentIpa {
-            
-            // turn the input window green
-            animateCorrectAnswer()
-            
-            // update label
-            if !alreadyMadeWrongAnswerForThisIpa {
-                numberCorrect += 1
-            }
-            
-            // reset values
-            readyForNewSound = true
-            
-            
-        } else { // wrong answer
-            
-            // turn the input window red
-            animateWrongAnswer()
-            //animateAnswerThatIs(false)
-            //inputWindow.backgroundColor = UIColor.redColor()
-            
-            // update label
-            if !alreadyMadeWrongAnswerForThisIpa {
-                numberWrong += 1
-                alreadyMadeWrongAnswerForThisIpa = true
-            }
-            
-            // play wrong sound
-            playIpa(answer!)
-            
-        }
-        
-        updateStatLabels()
-        
-    }
+//    @IBAction func keyTapped(_ sender: UIButton) {
+//        
+//        // User must listen to practice sound before pressing a key
+//        if readyForNewSound {
+//            return
+//        }
+//        
+//        if practiceMode == SoundMode.double && inputKeyCounter >= 2 {
+//            inputLabel.text = ""
+//            inputKeyCounter = 0
+//        }
+//        inputKeyCounter += 1
+//        
+//        // get ipa String for key tapped
+//        let ipaTap = sender.titleLabel?.text ?? ""
+//        
+//        // get answer
+//        let answer = getAnswerFromInputWindow(ipaTap)
+//        if answer == nil {return}
+//        
+//        // check if answer is correct
+//        if answer! == currentIpa {
+//            
+//            // turn the input window green
+//            animateCorrectAnswer()
+//            
+//            // update label
+//            if !alreadyMadeWrongAnswerForThisIpa {
+//                numberCorrect += 1
+//            }
+//            
+//            // reset values
+//            readyForNewSound = true
+//            
+//            
+//        } else { // wrong answer
+//            
+//            // turn the input window red
+//            animateWrongAnswer()
+//            //animateAnswerThatIs(false)
+//            //inputWindow.backgroundColor = UIColor.redColor()
+//            
+//            // update label
+//            if !alreadyMadeWrongAnswerForThisIpa {
+//                numberWrong += 1
+//                alreadyMadeWrongAnswerForThisIpa = true
+//            }
+//            
+//            // play wrong sound
+//            playIpa(answer!)
+//            
+//        }
+//        
+//        updateStatLabels()
+//        
+//    }
     
     @IBAction func unwindFromTestResultsVC(segue:UIStoryboardSegue) {
         if ipaKeyboard != nil {
@@ -178,12 +181,36 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         
         //resetToInitialValues()
         //updateStatLabels()
+        
+        // listen for if the user leaves the app
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
-    private func addBorderToInputWindow() {
-        inputWindowBorderView.layer.borderWidth = 2.0
-        inputWindowBorderView.layer.cornerRadius = 8
-        inputWindowBorderView.layer.masksToBounds = true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //print("start practicing")
+        startTiming()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer.stop() 
+    }
+    
+    @objc func appWillEnterForeground() {
+        if self.viewIfLoaded?.window != nil {
+            //print("start practicing")
+            startTiming()
+            //timer.start(type: .learnDouble)
+        }
+    }
+    
+    @objc func appDidEnterBackground() {
+        if self.viewIfLoaded?.window != nil {
+            print("stop timing practice")
+            timer.stop()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -265,10 +292,26 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
 
     // MARK: - Other
     
+    private func addBorderToInputWindow() {
+        inputWindowBorderView.layer.borderWidth = 2.0
+        inputWindowBorderView.layer.cornerRadius = 8
+        inputWindowBorderView.layer.masksToBounds = true
+    }
+    
+    private func startTiming() {
+        if practiceMode == SoundMode.single {
+            timer.start(type: .practiceSingle)
+            print("start practicing single")
+        } else {
+            timer.start(type: .practiceDouble)
+            print("start practicing double")
+        }
+    }
+    
     func updateUiForSelectedSounds() {
         resetToInitialValues()
         updateKeyboard(selectedVowels: selectedVowels, selectedConsonants: selectedConsonants)
-        updateUserPreferencesAndTime()
+        //updateUserPreferencesAndTime()
         updatePracticeModeLabel()
         updateAllowedSounds(vowels: selectedVowels, consonants: selectedConsonants)
     }
@@ -294,9 +337,9 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         ipaKeyboard.updateKeyAppearanceFor(selectedSounds: allChosenSounds)
     }
     
-    private func updateUserPreferencesAndTime() {
-        // TODO
-    }
+//    private func updateUserPreferencesAndTime() {
+//        // TODO
+//    }
     
     private func updatePracticeModeLabel() {
         if practiceMode == SoundMode.single {
