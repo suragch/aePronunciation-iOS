@@ -15,15 +15,9 @@ class TestSetupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.topItem?.title = "app_name".localized
         
         setLocalizedStrings()
-        
-        //numberOfQuestionsSegControl.superview?.clipsToBounds = true
-        
-        // localize labels
-        
-        
+               
         // update display with saved/default values
         let (name, number, mode) = MyUserDefaults.getTestSetupPreferences()
         nameTextField.text = name

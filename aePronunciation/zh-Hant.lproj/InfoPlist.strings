@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "美式英語發音";
+CFBundleDisplayName = "美式發音";

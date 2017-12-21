@@ -63,23 +63,7 @@ class DoubleSound {
             }
         }
     }
-    
-//    func restrictListToAllPairsContaining(ipa: String) {
-//        if ipa.isEmpty {return}
-//        
-//        if Ipa.isSpecial(ipa: ipa) {
-//            restrictListToSpecialSoundsContaining(ipa: ipa)
-//            return
-//        }
-//        
-//        let singleItemArray = [ipa]
-//        if Ipa.isConsonant(ipa: ipa) {
-//            restrictListToPairsContainingAtLeastOneSoundFrom(consonants: singleItemArray, vowels: [String]())
-//        } else {
-//            restrictListToPairsContainingAtLeastOneSoundFrom(consonants: [String](), vowels: singleItemArray)
-//        }
-//    }
-    
+        
     func restrictListToPairsContainingBothSoundsFrom(
         consonants: [String],
         vowels: [String]) {
@@ -113,21 +97,6 @@ class DoubleSound {
         default:
             break
         }
-    }
-    
-//    private func restrictListToSpecialSoundsContaining(ipa: String) {
-//        doubleSounds = [String]()
-//        for key in DoubleSound.specialSoundMap.keys {
-//            if shouldInclude(specialSound: key, forIpa: ipa) {
-//                doubleSounds!.append(key)
-//            }
-//        }
-//    }
-    
-    private func shouldInclude(specialSound: String, forIpa ipa: String) -> Bool {
-        if !specialSound.contains(ipa) {return false}
-        if specialSound.contains(Ipa.flap_t) && ipa == Ipa.schwa {return false}
-        return true
     }
     
     func includeAllSounds() {

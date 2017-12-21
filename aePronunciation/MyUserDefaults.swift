@@ -109,9 +109,5 @@ class MyUserDefaults {
     private class func getTimeInSeconds(forKey key: String) -> Int {
         return defaults.integer(forKey: key)
     }
-    
-    
-//    private class func formatTime(hours: Int, minutes: Int, seconds: Int) -> String{
-//        return "\(hours):\(minutes):\(seconds)"
-//    }
+
 }

@@ -2,7 +2,6 @@ import UIKit
 
 class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
-    //var difficultSounds
     var practiceMode: SoundMode?
     var selectedVowels = Ipa.getAllVowels()
     var selectedConsonants = Ipa.getAllConsonants()
@@ -13,12 +12,10 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     private lazy var doubleSound = DoubleSound()
     private var numberCorrect = 0
     private var numberWrong = 0
-    //private var singleMode = true // false == double mode
     private var currentIpa = ""
     private var inputKeyCounter = 0
     private var readyForNewSound = true
     private var alreadyMadeWrongAnswerForThisIpa = false
-    //private let selectSoundsSegueId = "selectSoundsSegueId"
     private let MINIMUM_POPULATION_SIZE_FOR_WHICH_REPEATS_NOT_ALLOWED = 4
     
     
@@ -35,8 +32,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     // MARK: - Actions
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        
-        //if !timer.isTiming {startTiming()}
         
         if readyForNewSound {
             var ipa: String?
@@ -69,8 +64,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
             inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
             inputLabel.text = ""
         }
-        
-        // play sound
+
         playIpa(currentIpa)
         
     }
@@ -87,7 +81,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         }
         
         inputLabel.text = currentIpa
-        //animateAnswerThatIs(true)
         animateCorrectAnswer()
         playIpa(currentIpa)
         readyForNewSound = true
@@ -99,65 +92,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
     }
     
-    
-    
-//    @IBAction func keyTapped(_ sender: UIButton) {
-//        
-//        // User must listen to practice sound before pressing a key
-//        if readyForNewSound {
-//            return
-//        }
-//        
-//        if practiceMode == SoundMode.double && inputKeyCounter >= 2 {
-//            inputLabel.text = ""
-//            inputKeyCounter = 0
-//        }
-//        inputKeyCounter += 1
-//        
-//        // get ipa String for key tapped
-//        let ipaTap = sender.titleLabel?.text ?? ""
-//        
-//        // get answer
-//        let answer = getAnswerFromInputWindow(ipaTap)
-//        if answer == nil {return}
-//        
-//        // check if answer is correct
-//        if answer! == currentIpa {
-//            
-//            // turn the input window green
-//            animateCorrectAnswer()
-//            
-//            // update label
-//            if !alreadyMadeWrongAnswerForThisIpa {
-//                numberCorrect += 1
-//            }
-//            
-//            // reset values
-//            readyForNewSound = true
-//            
-//            
-//        } else { // wrong answer
-//            
-//            // turn the input window red
-//            animateWrongAnswer()
-//            //animateAnswerThatIs(false)
-//            //inputWindow.backgroundColor = UIColor.redColor()
-//            
-//            // update label
-//            if !alreadyMadeWrongAnswerForThisIpa {
-//                numberWrong += 1
-//                alreadyMadeWrongAnswerForThisIpa = true
-//            }
-//            
-//            // play wrong sound
-//            playIpa(answer!)
-//            
-//        }
-//        
-//        updateStatLabels()
-//        
-//    }
-    
     @IBAction func unwindFromTestResultsVC(segue:UIStoryboardSegue) {
         if ipaKeyboard != nil {
             updateUiForSelectedSounds()
@@ -168,8 +102,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.tabBarController?.tabBar.items?[1].title = "main_tab_practice".localized
+
         self.title = "main_tab_practice".localized
 
         ipaKeyboard.delegate = self
@@ -178,9 +111,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
             practiceMode = MyUserDefaults.storedPracticeMode
         }
         updateUiForSelectedSounds()
-        
-        //resetToInitialValues()
-        //updateStatLabels()
         
         // listen for if the user leaves the app
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
@@ -305,7 +235,6 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     func updateUiForSelectedSounds() {
         resetToInitialValues()
         updateKeyboard(selectedVowels: selectedVowels, selectedConsonants: selectedConsonants)
-        //updateUserPreferencesAndTime()
         updatePracticeModeLabel()
         updateAllowedSounds(vowels: selectedVowels, consonants: selectedConsonants)
     }
@@ -330,11 +259,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         }
         ipaKeyboard.updateKeyAppearanceFor(selectedSounds: allChosenSounds)
     }
-    
-//    private func updateUserPreferencesAndTime() {
-//        // TODO
-//    }
-    
+        
     private func updatePracticeModeLabel() {
         if practiceMode == SoundMode.single {
             practiceModeLabel.text = "practice_mode_single".localized

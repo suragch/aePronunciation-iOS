@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50156A9D1FEB58C000311087 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50156A9F1FEB58C000311087 /* InfoPlist.strings */; };
 		5019E20D1FD820800021303D /* StudyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5019E20C1FD8207F0021303D /* StudyTimer.swift */; };
 		504200D31FC2D3020026FBCA /* Ipa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504200D21FC2D3010026FBCA /* Ipa.swift */; };
 		50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C121FC295AB00B6E228 /* IpaKeyboard.swift */; };
@@ -28,7 +29,6 @@
 		5094F1841FCD08DD00F5EF29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5094F1861FCD08DD00F5EF29 /* Localizable.strings */; };
 		5094F18B1FCF8BE600F5EF29 /* SoundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */; };
 		5094F18D1FCFACCE00F5EF29 /* MyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */; };
-		509A59571FE7646A0021D256 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A59561FE7646A0021D256 /* MyTabBarController.swift */; };
 		50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */; };
 		50A7D9D11FD9708000671847 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A7D9D01FD9708000671847 /* SQLite.framework */; };
 		50A7D9D41FDA619300671847 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9D31FDA619300671847 /* Test.swift */; };
@@ -70,6 +70,9 @@
 
 /* Begin PBXFileReference section */
 		50156A9A1FEA937100311087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50156AA21FEB878800311087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50156AA31FEBD1C100311087 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		50156AA41FEBD1CD00311087 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5019E20C1FD8207F0021303D /* StudyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimer.swift; sourceTree = "<group>"; };
 		503A9EEF1FEA4929001F69AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		503A9EF11FEA49DA001F69AA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		5094F1891FCD08F700F5EF29 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
 		5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefaults.swift; sourceTree = "<group>"; };
-		509A59561FE7646A0021D256 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
 		50A7D9D01FD9708000671847 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		50A7D9D31FDA619300671847 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -177,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				5074CC091BBCCDAF005B0871 /* LearnSingleSoundsViewController.swift */,
-				509A59561FE7646A0021D256 /* MyTabBarController.swift */,
 				50D64FD81BBE912C003657A4 /* LearnDoubleSoundsViewController.swift */,
 				508360561BC29A0A00A225E6 /* PracticeSoundsViewController.swift */,
 				50DF5ABB1FD1043600DD7A04 /* SelectSoundsViewController.swift */,
@@ -241,6 +242,7 @@
 				50DC216E1BB8FF65000075AE /* AppDelegate.swift */,
 				504FD6671FC51AF100622B50 /* raw */,
 				50DC217C1BB8FF65000075AE /* Info.plist */,
+				50156A9F1FEB58C000311087 /* InfoPlist.strings */,
 				50DC21771BB8FF65000075AE /* Assets.xcassets */,
 				5094F1861FCD08DD00F5EF29 /* Localizable.strings */,
 				50D64FD41BBE5D8B003657A4 /* String+localized.swift */,
@@ -427,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DC217B1BB8FF65000075AE /* LaunchScreen.storyboard in Resources */,
+				50156A9D1FEB58C000311087 /* InfoPlist.strings in Resources */,
 				5094F1841FCD08DD00F5EF29 /* Localizable.strings in Resources */,
 				504FD6681FC51AF100622B50 /* raw in Resources */,
 				50DC21781BB8FF65000075AE /* Assets.xcassets in Resources */,
@@ -507,7 +510,6 @@
 				50DF5AC21FD2C26500DD7A04 /* UIColor+custom.swift in Sources */,
 				506480D01FE48C6C006D7194 /* AllTestsTableViewCell.swift in Sources */,
 				50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */,
-				509A59571FE7646A0021D256 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +529,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		50156A9F1FEB58C000311087 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50156AA21FEB878800311087 /* Base */,
+				50156AA31FEBD1C100311087 /* zh-Hans */,
+				50156AA41FEBD1CD00311087 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5094F1861FCD08DD00F5EF29 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

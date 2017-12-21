@@ -9,16 +9,16 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     var doubleSound = DoubleSound()
     private let timer = StudyTimer.sharedInstance
     
+    @IBOutlet weak var titleNavBar: UINavigationItem!
+    
     // MARK:- Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationController?.navigationBar.topItem?.title = "title_activity_learn_double".localized
         setLocalizedStrings()
         
         guard let singleSound = ipa else {return}
-        //doubleSound.restrictListToAllPairsContaining(ipa: singleSound)
         doubleSound.restrictListToAllOrderedPairsContaining(ipa: singleSound)
         
         // listen for if the user leaves the app
@@ -71,17 +71,14 @@ class LearnDoubleSoundsViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //startTimingIfStopped()
         playSound(at: indexPath)
     }
     
     // MARK:- Other
     
     private func setLocalizedStrings() {
-        // FIXME: the title is blank. Need to add a title item?
         guard let currentIpa = ipa else {return}
-        self.navigationController?.navigationBar.topItem?.title = String.localizedStringWithFormat("title_activity_learn_double".localized, currentIpa)
-        
+        titleNavBar.title = String.localizedStringWithFormat("title_activity_learn_double".localized, currentIpa)
     }
     
     private func playSound(at indexPath: IndexPath) {

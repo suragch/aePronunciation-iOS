@@ -23,14 +23,8 @@ class AppLocale {
         //return formatter.string(from: date)
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-M-d H:mm"
+        formatter.dateFormat = "yyyy/M/d H:mm"
         return formatter.string(from: date)
     }
-    
-//    class func getFormattedTime(date: Date) -> String {
-//        let formatter =()
-//        formatter.locale = getLocale()
-//        formatter.dateStyle = DateFormatter.Style.long
-//        return formatter.string(from: date)
-//    }
+
 }

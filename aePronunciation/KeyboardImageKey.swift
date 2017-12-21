@@ -80,9 +80,6 @@ class KeyboardImageKey: KeyboardKey {
         if self.secondaryString != "" {
             delegate?.keyTextEntered(sender: self, keyText: self.secondaryString)
         } else {
-            // enter primary string if this key has no seconary string
-            //delegate?.keyTextEntered(self.primaryString)
-            
             if keyType == KeyType.backspace {
                 delegate?.keyBackspaceTapped()
             } else {

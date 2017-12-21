@@ -7,7 +7,6 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     
     var previouslySelectedMode = SoundMode.single
     var previouslySelectedKeys = [String]()
-    // var previouslySelectedConsonants: [String]?
     var callback : ((SoundMode, [String], [String]) -> Void)?
     
     @IBOutlet weak var singleDoubleSegmentedControl: UISegmentedControl!
@@ -22,14 +21,9 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationController?.navigationBar.topItem?.title = "title_activity_learn_double".localized
-        
-        //self.navigationItem.title = "select_sounds_title".localized
-        //self.title = "select_sounds_title".localized
         ipaChooserKeyboard.delegate = self
         setLocalizedStrings()
         initPreviouslyChosenItems()
-        //somethingWasChanged = false
     }
     
     override func viewWillDisappear(_ animated : Bool) {
@@ -81,7 +75,6 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     
     // MARK:- Other
     
-    
     private func setLocalizedStrings() {
         self.title = "select_sounds_title".localized
         singleDoubleSegmentedControl.setTitle("select_sounds_radio_single".localized, forSegmentAt: 0)
@@ -97,9 +90,6 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
         } else {
             singleDoubleSegmentedControl.selectedSegmentIndex = 1
         }
-        //let vowels = previouslySelectedVowels ?? Ipa.getAllVowels()
-        //let consonants = previouslySelectedConsonants ?? Ipa.getAllConsonants()
-        //let previouslySelected = previouslySelected
         ipaChooserKeyboard.setKeySelectedFor(selectedSounds: previouslySelectedKeys)
         if !ipaChooserKeyboard.hasSelectedVowels() {
             vowelsSwitch.setOn(false, animated: false)

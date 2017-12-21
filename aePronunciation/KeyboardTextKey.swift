@@ -1,6 +1,3 @@
-// This keyboard key has two text string locations for IPA, one centered and one in the bottom right.
-
-
 import UIKit
 
 @IBDesignable

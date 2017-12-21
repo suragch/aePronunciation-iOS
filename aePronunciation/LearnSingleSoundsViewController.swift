@@ -77,6 +77,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         timer.start(type: .learnSingle)
+        ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
