@@ -1,0 +1,237 @@
+
+/* Class = "UILabel"; text = "Right: 20"; ObjectID = "13T-OP-RcX"; */
+"13T-OP-RcX.text" = "Right: 20";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "1wR-2j-ymD"; */
+"1wR-2j-ymD.title" = " ";
+
+/* Class = "UILabel"; text = "App"; ObjectID = "3JE-2a-Xih"; */
+"3JE-2a-Xih.text" = "App";
+
+/* Class = "UITabBarItem"; title = "Test"; ObjectID = "49K-ff-gzd"; */
+"49K-ff-gzd.title" = "Test";
+
+/* Class = "UIButton"; normalTitle = "more..."; ObjectID = "5uR-8T-Nlc"; */
+"5uR-8T-Nlc.normalTitle" = "more...";
+
+/* Class = "UILabel"; text = "x"; ObjectID = "6cc-FV-0RL"; */
+"6cc-FV-0RL.text" = "x";
+
+/* Class = "UITableViewSection"; headerTitle = "About"; ObjectID = "6d3-U8-0HJ"; */
+"6d3-U8-0HJ.headerTitle" = "About";
+
+/* Class = "UINavigationItem"; title = "Practice Single Sounds"; ObjectID = "6gM-6j-yO8"; */
+"6gM-6j-yO8.title" = "Practice Single Sounds";
+
+/* Class = "UILabel"; text = "Sally"; ObjectID = "6z0-bv-0Jb"; */
+"6z0-bv-0Jb.text" = "Sally";
+
+/* Class = "UILabel"; text = "October 20, 2015"; ObjectID = "8KU-Pa-dTO"; */
+"8KU-Pa-dTO.text" = "October 20, 2015";
+
+/* Class = "UILabel"; text = "Singles"; ObjectID = "8jj-7H-dMn"; */
+"8jj-7H-dMn.text" = "Singles";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "96L-oX-rKC"; */
+"96L-oX-rKC.text" = "   ";
+
+/* Class = "UILabel"; text = "Version 2.0.0"; ObjectID = "BGu-Fl-fVM"; */
+"BGu-Fl-fVM.text" = "Version 2.0.0";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "BdL-gT-Jta"; */
+"BdL-gT-Jta.title" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "History"; ObjectID = "CKi-In-8L4"; */
+"CKi-In-8L4.headerTitle" = "History";
+
+/* Class = "UILabel"; text = "Total time"; ObjectID = "ElN-Dh-NSm"; */
+"ElN-Dh-NSm.text" = "Total time";
+
+/* Class = "UILabel"; text = "Single Sounds"; ObjectID = "GyD-J4-c5i"; */
+"GyD-J4-c5i.text" = "Single Sounds";
+
+/* Class = "UILabel"; text = "Time length: 0:02:45"; ObjectID = "HBt-79-wem"; */
+"HBt-79-wem.text" = "Time length: 0:02:45";
+
+/* Class = "UILabel"; text = "Type:"; ObjectID = "I4Q-sc-lUB"; */
+"I4Q-sc-lUB.text" = "Type:";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "J5Q-C1-QF6"; */
+"J5Q-C1-QF6.text" = "   ";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "L5e-x1-g9j"; */
+"L5e-x1-g9j.text" = "   ";
+
+/* Class = "UILabel"; text = "Doubes"; ObjectID = "M1D-WS-a6W"; */
+"M1D-WS-a6W.text" = "Doubes";
+
+/* Class = "UILabel"; text = "87%"; ObjectID = "M5Q-zg-wER"; */
+"M5Q-zg-wER.text" = "87%";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "Mwm-2Q-gTq"; */
+"Mwm-2Q-gTq.text" = "5";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "O1e-K8-Kt3"; */
+"O1e-K8-Kt3.text" = "name";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "OJN-tY-Dqe"; */
+"OJN-tY-Dqe.text" = "   ";
+
+/* Class = "UILabel"; text = "Doubles"; ObjectID = "PXO-4g-yb0"; */
+"PXO-4g-yb0.text" = "Doubles";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "Pqf-FY-B1J"; */
+"Pqf-FY-B1J.text" = "   ";
+
+/* Class = "UILabel"; text = "Single Sounds"; ObjectID = "Q18-YE-vYF"; */
+"Q18-YE-vYF.text" = "Single Sounds";
+
+/* Class = "UINavigationItem"; title = "Learn Single Sounds"; ObjectID = "QMt-tm-syM"; */
+"QMt-tm-syM.title" = "Learn Single Sounds";
+
+/* Class = "UISegmentedControl"; RgW-sX-lep.segmentTitles[0] = "5"; ObjectID = "RgW-sX-lep"; */
+"RgW-sX-lep.segmentTitles[0]" = "5";
+
+/* Class = "UISegmentedControl"; RgW-sX-lep.segmentTitles[1] = "10"; ObjectID = "RgW-sX-lep"; */
+"RgW-sX-lep.segmentTitles[1]" = "10";
+
+/* Class = "UISegmentedControl"; RgW-sX-lep.segmentTitles[2] = "25"; ObjectID = "RgW-sX-lep"; */
+"RgW-sX-lep.segmentTitles[2]" = "25";
+
+/* Class = "UISegmentedControl"; RgW-sX-lep.segmentTitles[3] = "50"; ObjectID = "RgW-sX-lep"; */
+"RgW-sX-lep.segmentTitles[3]" = "50";
+
+/* Class = "UISegmentedControl"; RgW-sX-lep.segmentTitles[4] = "100"; ObjectID = "RgW-sX-lep"; */
+"RgW-sX-lep.segmentTitles[4]" = "100";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "Rm8-2S-t7s"; */
+"Rm8-2S-t7s.title" = " ";
+
+/* Class = "UILabel"; text = "97%"; ObjectID = "T7Y-sf-3Zq"; */
+"T7Y-sf-3Zq.text" = "97%";
+
+/* Class = "UILabel"; text = "Tests"; ObjectID = "Tsg-Nw-ycT"; */
+"Tsg-Nw-ycT.text" = "Tests";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "Uax-Io-2yb"; */
+"Uax-Io-2yb.text" = "   ";
+
+/* Class = "UILabel"; text = "Vowels"; ObjectID = "Xgl-bk-DdZ"; */
+"Xgl-bk-DdZ.text" = "Vowels";
+
+/* Class = "UITabBarItem"; title = "More"; ObjectID = "YLT-vm-KdY"; */
+"YLT-vm-KdY.title" = "More";
+
+/* Class = "UITabBarItem"; title = "Learn"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Learn";
+
+/* Class = "UILabel"; text = "23"; ObjectID = "b0I-Ug-9BE"; */
+"b0I-Ug-9BE.text" = "23";
+
+/* Class = "UILabel"; text = "Number of questions:"; ObjectID = "c4H-XM-Skx"; */
+"c4H-XM-Skx.text" = "Number of questions:";
+
+/* Class = "UITabBarItem"; title = "Practice"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Practice";
+
+/* Class = "UIButton"; normalTitle = "Example 1"; ObjectID = "fWm-5R-0Px"; */
+"fWm-5R-0Px.normalTitle" = "Example 1";
+
+/* Class = "UILabel"; text = "Time Practicing"; ObjectID = "gFD-cR-qct"; */
+"gFD-cR-qct.text" = "Time Practicing";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "h2o-DD-V8z"; */
+"h2o-DD-V8z.text" = "a";
+
+/* Class = "UILabel"; text = "Total Time"; ObjectID = "hBG-jm-agd"; */
+"hBG-jm-agd.text" = "Total Time";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "ha6-xx-hNh"; */
+"ha6-xx-hNh.text" = "   ";
+
+/* Class = "UILabel"; text = "96%"; ObjectID = "iYK-Az-59l"; */
+"iYK-Az-59l.text" = "96%";
+
+/* Class = "UILabel"; text = "American\nEnglish\nPronunciation"; ObjectID = "iiO-iN-o5H"; */
+"iiO-iN-o5H.text" = "American\nEnglish\nPronunciation";
+
+/* Class = "UILabel"; text = "Single (50)"; ObjectID = "jP1-UR-iJa"; */
+"jP1-UR-iJa.text" = "Single (50)";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "jl0-Ik-Qri"; */
+"jl0-Ik-Qri.text" = "A";
+
+/* Class = "UIButton"; normalTitle = "Example 3"; ObjectID = "lHf-se-lYr"; */
+"lHf-se-lYr.normalTitle" = "Example 3";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "nMN-F4-UWg"; */
+"nMN-F4-UWg.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "a"; ObjectID = "nOQ-BZ-4ik"; */
+"nOQ-BZ-4ik.text" = "a";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "ntq-R0-R4f"; */
+"ntq-R0-R4f.text" = "   ";
+
+/* Class = "UILabel"; text = "Consonants"; ObjectID = "ocp-nT-sdi"; */
+"ocp-nT-sdi.text" = "Consonants";
+
+/* Class = "UILabel"; text = "Singles"; ObjectID = "oq6-vQ-XBM"; */
+"oq6-vQ-XBM.text" = "Singles";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "qI7-6y-LDh"; */
+"qI7-6y-LDh.text" = "   ";
+
+/* Class = "UILabel"; text = "Doubles"; ObjectID = "sKt-Zk-pu2"; */
+"sKt-Zk-pu2.text" = "Doubles";
+
+/* Class = "UILabel"; text = "Singles"; ObjectID = "sQb-Wn-gkK"; */
+"sQb-Wn-gkK.text" = "Singles";
+
+/* Class = "UILabel"; text = "Time learning"; ObjectID = "tx2-Av-K8N"; */
+"tx2-Av-K8N.text" = "Time learning";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "u4O-fx-1IW"; */
+"u4O-fx-1IW.text" = "   ";
+
+/* Class = "UILabel"; text = "5"; ObjectID = "uih-6n-HgL"; */
+"uih-6n-HgL.text" = "5";
+
+/* Class = "UILabel"; text = "Contact"; ObjectID = "v0u-qb-YCw"; */
+"v0u-qb-YCw.text" = "Contact";
+
+/* Class = "UISegmentedControl"; vMo-xo-sDK.segmentTitles[0] = "Single"; ObjectID = "vMo-xo-sDK"; */
+"vMo-xo-sDK.segmentTitles[0]" = "Single";
+
+/* Class = "UISegmentedControl"; vMo-xo-sDK.segmentTitles[1] = "Double"; ObjectID = "vMo-xo-sDK"; */
+"vMo-xo-sDK.segmentTitles[1]" = "Double";
+
+/* Class = "UILabel"; text = "23"; ObjectID = "xLN-vD-eb6"; */
+"xLN-vD-eb6.text" = "23";
+
+/* Class = "UISegmentedControl"; xPa-DK-qhp.segmentTitles[0] = "First"; ObjectID = "xPa-DK-qhp"; */
+"xPa-DK-qhp.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; xPa-DK-qhp.segmentTitles[1] = "Second"; ObjectID = "xPa-DK-qhp"; */
+"xPa-DK-qhp.segmentTitles[1]" = "Second";
+
+/* Class = "UILabel"; text = "Wrong: 2"; ObjectID = "yLF-3O-Lbo"; */
+"yLF-3O-Lbo.text" = "Wrong: 2";
+
+/* Class = "UINavigationItem"; title = "Test Setup"; ObjectID = "yW7-yZ-Ucj"; */
+"yW7-yZ-Ucj.title" = "Test Setup";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "ycJ-o2-zDZ"; */
+"ycJ-o2-zDZ.title" = " ";
+
+/* Class = "UILabel"; text = "Time Testing"; ObjectID = "yf6-gE-vv6"; */
+"yf6-gE-vv6.text" = "Time Testing";
+
+/* Class = "UIButton"; normalTitle = "Begin"; ObjectID = "yvz-To-sYT"; */
+"yvz-To-sYT.normalTitle" = "Begin";
+
+/* Class = "UILabel"; text = "date"; ObjectID = "yxb-k7-21x"; */
+"yxb-k7-21x.text" = "date";
+
+/* Class = "UIButton"; normalTitle = "Example 2"; ObjectID = "zH7-Rg-MTT"; */
+"zH7-Rg-MTT.normalTitle" = "Example 2";
