@@ -259,7 +259,7 @@
 "about_app_version" = "Version %@";
 "about_content" = "If you have any questions, comments, or suggestions, then please leave a message.";
 "about_contact" = "Contact";
-"about_contact_url" = "http://www.aepronunciation.com/app/";
+"about_contact_url" = "http://www.aepronunciation.com/contact/";
 
 // Keyboard Input Activity
 "title_activity_keyboard_input" = "Write IPA";

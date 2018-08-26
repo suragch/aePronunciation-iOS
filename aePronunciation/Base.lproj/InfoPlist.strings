@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "ae Pronunciation";
+CFBundleDisplayName = "Pronunciation";

@@ -258,7 +258,7 @@
 "title_activity_about" = "關於應用";
 "about_content" = "如果你有任何問題或者建議，請聯繫我們。";
 "about_contact" = "聯繫方式";
-"about_contact_url" = "http://www.aepronunciation.com/app/";
+"about_contact_url" = "http://www.aepronunciation.com/contact/";
 "keyboard_input_toast_text_copied" = "已複製";
 "keyboard_menu_clear" = "刪除";
 "keyboard_menu_copy" = "複製";

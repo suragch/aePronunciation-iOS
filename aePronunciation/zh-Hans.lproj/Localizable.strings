@@ -259,7 +259,7 @@
 "title_activity_about" = "关于应用";
 "about_content" = "如果你有任何问题或者建议，请联系我们。";
 "about_contact" = "联系方式";
-"about_contact_url" = "http://www.aepronunciation.com/app/";
+"about_contact_url" = "http://www.aepronunciation.com/contact/";
 "keyboard_input_toast_text_copied" = "已复制";
 "keyboard_menu_clear" = "删除";
 "keyboard_menu_copy" = "复制";

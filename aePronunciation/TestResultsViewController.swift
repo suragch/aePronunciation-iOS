@@ -106,7 +106,7 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
+        let cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier))!
         
         // make attributes
         let correctAnswer = self.answers[indexPath.row].correctAnswer
