@@ -6,4 +6,4 @@ This app helps students learn to distinguish the various sounds of American Engl
 
 Students can learn, practice, and take tests on both individual sounds and double sounds. The double sounds, which consist of a consonant and a vowel, were added to help students differenciate sounds in context.
 
-If you find any problems, help improve this app by reporting them at www.aepronunciation.com/app/.
+If you find any problems, help improve this app by reporting them at www.aepronunciation.com.
