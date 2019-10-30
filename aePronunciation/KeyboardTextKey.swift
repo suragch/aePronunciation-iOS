@@ -99,9 +99,9 @@ class KeyboardTextKey: KeyboardKey {
     
     func updatePrimaryLayerFrame() {
         
-        let myAttribute: [NSAttributedStringKey : Any] = [
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: primaryStringFontSize),
-            NSAttributedStringKey.foregroundColor: primaryStringFontColor ]
+        let myAttribute: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: primaryStringFontSize),
+            NSAttributedString.Key.foregroundColor: primaryStringFontColor ]
         let attrString = NSMutableAttributedString(string: primaryString, attributes: myAttribute )
         let size = dimensionsForAttributedString(attrString)
         
@@ -112,7 +112,7 @@ class KeyboardTextKey: KeyboardKey {
     }
     
     func updateSecondaryLayerFrame() {
-        let myAttribute = [ NSAttributedStringKey.font: UIFont.systemFont(ofSize: secondaryStringFontSize) ]
+        let myAttribute = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: secondaryStringFontSize) ]
         let attrString = NSMutableAttributedString(string: secondaryString, attributes: myAttribute )
         let size = dimensionsForAttributedString(attrString)
         

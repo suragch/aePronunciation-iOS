@@ -110,7 +110,7 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
         
         // make attributes
         let correctAnswer = self.answers[indexPath.row].correctAnswer
-        let correctAnswerAttr = NSAttributedString(string: correctAnswer, attributes: [NSAttributedStringKey.foregroundColor: rightColor])
+        let correctAnswerAttr = NSAttributedString(string: correctAnswer, attributes: [NSAttributedString.Key.foregroundColor: rightColor])
         let userAnswer = self.answers[indexPath.row].userAnswer
         let userAnswerAttr = attributedTextForUserAnswer(userAnswer, correctAnswer: correctAnswer)
         
@@ -252,18 +252,18 @@ class TestResultsViewController: UIViewController, UITableViewDelegate, UITableV
             
         } else { // single
             
-            returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedStringKey.foregroundColor: wrongColor]))
+            returnString.append(NSAttributedString(string: userAnswer, attributes: [NSAttributedString.Key.foregroundColor: wrongColor]))
         }
         
         return returnString
     }
     
     private func wrongIpa(_ ipa: String) -> NSAttributedString {
-        return NSAttributedString(string: ipa, attributes: [NSAttributedStringKey.foregroundColor: wrongColor])
+        return NSAttributedString(string: ipa, attributes: [NSAttributedString.Key.foregroundColor: wrongColor])
     }
     
     private func rightIpa(_ ipa: String) -> NSAttributedString {
-        return NSAttributedString(string: ipa, attributes: [NSAttributedStringKey.foregroundColor: rightColor])
+        return NSAttributedString(string: ipa, attributes: [NSAttributedString.Key.foregroundColor: rightColor])
     }
     
     func playIpa(_ ipa: String) {

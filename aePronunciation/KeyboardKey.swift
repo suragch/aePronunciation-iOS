@@ -102,17 +102,17 @@ class KeyboardKey: UIControl {
     // MARK: - Other methods
     
     @objc func longPress(_ guesture: UILongPressGestureRecognizer) {
-        if guesture.state == UIGestureRecognizerState.began {
+        if guesture.state == UIGestureRecognizer.State.began {
             
             backgroundLayer.highlighted = false
             longPressBegun(guesture)
             
-        } else if guesture.state == UIGestureRecognizerState.changed {
+        } else if guesture.state == UIGestureRecognizer.State.changed {
             
             longPressStateChanged(guesture)
-        } else if guesture.state == UIGestureRecognizerState.ended {
+        } else if guesture.state == UIGestureRecognizer.State.ended {
             longPressEnded()
-        } else if guesture.state == UIGestureRecognizerState.cancelled {
+        } else if guesture.state == UIGestureRecognizer.State.cancelled {
             longPressCancelled()
         }
     }

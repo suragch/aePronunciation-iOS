@@ -70,8 +70,8 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         loadVideoFor(ipa: defaultIpaToShowFirst)
         
         // listen for if the user leaves the app
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,9 +106,9 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         videoView.image = UIImage(named: "\(prefix)_placeholder")
         ipaDescription.text = "\(prefix)_description".localized
         ipaDescription.scrollRangeToVisible(NSRange(location: 0, length: 0))
-        example1.setTitle("\(prefix)_example1".localized, for: UIControlState())
-        example2.setTitle("\(prefix)_example2".localized, for: UIControlState())
-        example3.setTitle("\(prefix)_example3".localized, for: UIControlState())
+        example1.setTitle("\(prefix)_example1".localized, for: UIControl.State())
+        example2.setTitle("\(prefix)_example2".localized, for: UIControl.State())
+        example3.setTitle("\(prefix)_example3".localized, for: UIControl.State())
     }
     
     func loadVideoFor(ipa: String) {
@@ -141,7 +141,7 @@ class LearnSingleSoundsViewController: UIViewController, KeyboardDelegate {
         //startTimingIfStopped()
         updateDisplayForIpa(character)
         loadVideoFor(ipa: character)
-        avPlayer?.seek(to: kCMTimeZero)
+        avPlayer?.seek(to: CMTime.zero)
         avPlayer?.play()
     }
     

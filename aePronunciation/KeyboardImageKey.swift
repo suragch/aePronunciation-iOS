@@ -66,9 +66,9 @@ class KeyboardImageKey: KeyboardKey {
             
             // shrink image if larger than bounds
             if unwrappedImage.size.height > bounds.height || unwrappedImage.size.width > bounds.width {
-                imageLayer.contentsGravity = kCAGravityResizeAspect
+                imageLayer.contentsGravity = CALayerContentsGravity.resizeAspect
             } else {
-                imageLayer.contentsGravity = kCAGravityCenter
+                imageLayer.contentsGravity = CALayerContentsGravity.center
             }
             
         }

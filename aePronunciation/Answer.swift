@@ -17,10 +17,10 @@ class Answer {
         let ok = "error_dialog_ok_button".localized
         
         // create the alert
-        let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: nil, message: errorMessage, preferredStyle: UIAlertController.Style.alert)
         
         // add an action (button)
-        alert.addAction(UIAlertAction(title: ok, style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: ok, style: UIAlertAction.Style.default, handler: nil))
         
         // show the alert
         viewController.present(alert, animated: true, completion: nil)

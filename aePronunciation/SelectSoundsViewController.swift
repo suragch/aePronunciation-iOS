@@ -29,7 +29,7 @@ class SelectSoundsViewController: UIViewController, KeyboardDelegate {
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         
-        if self.isMovingFromParentViewController {
+        if self.isMovingFromParent {
             if somethingWasChanged {
                 let (vowels, consonants) = getSelectedVowelsConsonants()
                 callback?(getSoundMode(), vowels, consonants)
