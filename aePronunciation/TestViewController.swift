@@ -92,6 +92,7 @@ class TestViewController: UIViewController, KeyboardDelegate {
         inputWindow.text = ""
         inputWindowView.layer.borderWidth = 2.0
         inputWindowView.layer.cornerRadius = 8
+        inputWindowView.layer.borderColor = UIColor.gray.cgColor
         inputWindowView.layer.masksToBounds = true
         
         // set mode label

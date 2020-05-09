@@ -9,7 +9,7 @@ class KeyboardTextKey: KeyboardKey {
     private var oldFrame = CGRect.zero
     private static let selectedTextColor = UIColor.white
     private static let disabledTextColor = UIColor.lightGray
-    private static let normalTextColor = UIColor.black
+    private static let normalTextColor = UIColor.systemDefaultTextColor
     
     // MARK: Primary input value
     

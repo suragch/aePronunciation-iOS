@@ -34,7 +34,7 @@
 "p_example1" = "pass\n/pæs/";
 "p_example2" = "speak\n/spik/";
 "p_example3" = "stop\n/stɑp/";
-"t_example1" = "toad\n/tod/";
+"t_example1" = "toad\n/toʊd/";
 "t_example2" = "sting\n/stɪŋ/";
 "t_example3" = "it\n/ɪt/";
 "k_example1" = "cool\n/kul/";
@@ -50,7 +50,7 @@
 "th_voiceless_example2" = "Jonathan\n/\'ʤɑnəθən/";
 "th_voiceless_example3" = "earth\n/ɝθ/";
 "s_example1" = "set\n/sɛt/";
-"s_example2" = "raced\n/rest/";
+"s_example2" = "raced\n/reɪst/";
 "s_example3" = "pass\n/pæs/";
 "sh_example1" = "shoot\n/ʃut/";
 "sh_example2" = "wished\n/wɪʃt/";
@@ -72,13 +72,13 @@
 "v_example3" = "have\n/hæv/";
 "th_voiced_example1" = "they\'re\n/ðɛr/";
 "th_voiced_example2" = "father\n/fɑðɚ/";
-"th_voiced_example3" = "bathe\n/beð/";
+"th_voiced_example3" = "bathe\n/beɪð/";
 "z_example1" = "zoo\n/zu/";
-"z_example2" = "raised\n/rezd/";
+"z_example2" = "raised\n/reɪzd/";
 "z_example3" = "cars\n/kɑrz/";
 "zh_example1" = "usually\n/\'juʒli/";
 "zh_example2" = "pleasure\n/\'plɛʒɚ/";
-"zh_example3" = "beige\n/beʒ/";
+"zh_example3" = "beige\n/beɪʒ/";
 "m_example1" = "me\n/mi/";
 "m_example2" = "jump\n/ʤʌmp/";
 "m_example3" = "arm\n/ɑrm/";
@@ -133,9 +133,9 @@
 "schwa_example1" = "above\n/ə\'bʌv/";
 "schwa_example2" = "delicious\n/də\'lɪʃəs/";
 "schwa_example3" = "panda\n/\'pændə/";
-"ei_example1" = "age\n/eʤ/";
-"ei_example2" = "safe\n/sef/";
-"ei_example3" = "may\n/me/";
+"ei_example1" = "age\n/eɪʤ/";
+"ei_example2" = "safe\n/seɪf/";
+"ei_example3" = "may\n/meɪ/";
 "ai_example1" = "I\'m\n/aɪm/";
 "ai_example2" = "bite\n/baɪt/";
 "ai_example3" = "fly\n/flaɪ/";
@@ -145,11 +145,11 @@
 "oi_example1" = "oil\n/ɔɪl/";
 "oi_example2" = "voice\n/vɔɪs/";
 "oi_example3" = "boy\n/bɔɪ/";
-"ou_example1" = "oath\n/oθ/";
-"ou_example2" = "cove\n/kov/";
-"ou_example3" = "low\n/lo/";
+"ou_example1" = "oath\n/oʊθ/";
+"ou_example2" = "cove\n/koʊv/";
+"ou_example3" = "low\n/loʊ/";
 "er_stressed_example1" = "earth\n/ɝθ/";
-"er_stressed_example2" = "birthday\n/\'bɝθde/";
+"er_stressed_example2" = "birthday\n/\'bɝθdeɪ/";
 "er_stressed_example3" = "her\n/hɝ/";
 "er_unstressed_example1" = "mother\n/\'mʌðɚ/";
 "er_unstressed_example2" = "perform\n/pɚ\'fɔrm/";
@@ -177,7 +177,7 @@
 //  Translated strings //////
 /////////////////////////////
 
-"app_name" = "ae Pronunciation";
+"app_name" = "ae";
 
 // Main menu
 "main_menu_keyboard" = "Keyboard";
@@ -190,7 +190,7 @@
 "main_tab_test" = "Test";
 
 // Learn Single fragment
-"learn_single_show_doubles" = "more…";
+"learn_single_show_doubles" = "Double sounds";
 
 // Learn Double sounds dialog
 "title_activity_learn_double" = "Double sounds with /%@/";
@@ -284,52 +284,50 @@
 "dialog_cancel_button" = "Cancel";
 
 // Learn sounds tab
-"p_description" = "/p/ is aspirated ([pʰ]) at the beginning of words but it is unaspirated ([p]) after /s/ and at the end of a word. Be careful not to read the third example /stɑpə/.";
-"t_description" = "/t/ is aspirated ([tʰ]) at the beginning of words but it is unaspirated ([t]) after /s/ and at the end of a word. Be careful not to read the third example [ɪtə] or [ɪtʰ] or [ɪts]. Also note that the letter \"t\" often changes its pronunciation in American English. See /ʔ/ and /ɾ/.";
-"k_description" = "/k/ is aspirated ([kʰ]) at the beginning of words but it is unaspirated ([k]) after /s/ and at the end of a word. Be careful not to read the third example /wikə/.";
-"ch_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ʧɝʧə/.";
-"f_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ɪfə/.";
-"th_voiceless_description" = "In this sound the tongue lightly touches the bottom of the top teeth. Do not say /s/.";
-"s_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /pæsə/.";
-"sh_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /æʃə/.";
-"b_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /rɪbə/ or /rɪp/.";
-"d_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /kɑrdə/ or /kɑrt/.";
-"g_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /pɪgə/ or /pɪk/.";
-"dzh_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ɛʤə/.";
-"v_description" = "Note the difference between /v/ and /w/. In the /v/ sound the top teeth touch the bottom lip. This is the same mouth position as /f/. The only difference is that /v/ is voiced. Also be careful not to read the third example /hævə/.";
-"th_voiced_description" = "In this sound the tongue lightly touches the bottom of the top teeth. This is the same mouth position as /θ/. The main difference is that /ð/ is voiced.";
-"z_description" = "This sound uses the same mouth position as /s/. The only difference is that /z/ is voiced.";
-"zh_description" = "This sound uses the same mouth position as /ʃ/. The only difference is that /ʒ/ is voiced.";
-"m_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /ɑrmə/.";
-"n_description" = "Make special note of the pronunciation at the end of words. Be careful not to read the third example /sʌnə/.";
-"ng_description" = "This sound does not begin any words in English.";
-"l_description" = "At the beginning of words, [l] is the proper IPA symbol. However, at the end of words it is pronounced differently. The IPA for this sound is written [ɫ] but we use the /l/ symbol for both [l] and [ɫ] in this app (as do many textbooks and dictionaries). Example 2 could also be written /kuəl/.";
-"w_description" = "Note the difference between /w/ and /v/. In the /w/ sound the lips make a small circle and do not touch the teeth. A minority of Americans pronounce \"wh\" as /hw/ (in IPA this is /ʍ/).";
-"j_description" = "This sound does not come at the end of any words in English. Note the difference between \"year\" and \"ear\".";
-"h_description" = "This sound does not come at the end of any words in English.";
-"r_description" = "This sound should be written /ɹ/ according to IPA. (The IPA /r/ is actually a trilled r.) However, in order to maintain consistency with many dictionaries and textbooks, the symbol /r/ is used here.";
-"i_description" = "In British English pronunciation this sound is usually written as /iː/, where the two dots represent a long vowel sound. Long and short vowels are not differentiated as much in American English and so the two dots are not written. If a vowel is before a voiced consonant then it is long. If it is before a voiceless consonant then it is short.";
-"i_short_description" = "This is a different sound than /i/. The difference is not so much one of long and short, but of a different position of the mouth and tongue. The mouth is open just a little wider and the tongue is just a little further back than /i/.";
+"p_description" = "/p/ is a voiceless consonant. /p/ is aspirated ([pʰ]) at the beginning of words but it is unaspirated ([p]) after /s/ and at the end of a word. Vowels have a shorter sound when they come before /p/.";
+"t_description" = "/t/ is a voiceless consonant. /t/ is aspirated ([tʰ]) at the beginning of words but it is unaspirated ([t]) after /s/ and at the end of a word. Be careful not to read the third example [ɪtə] or [ɪtʰ] or [ɪts]. Also note that the letter \"t\" often changes its pronunciation in American English. See /ʔ/ and /ɾ/. Vowels have a shorter sound when they come before /t/.";
+"k_description" = "/k/ is a voiceless consonant. /k/ is aspirated ([kʰ]) at the beginning of words but it is unaspirated ([k]) after /s/ and at the end of a word. Vowels have a shorter sound when they come before /k/.";
+"ch_description" = "/ʧ/ is a voiceless consonant. Your tongue starts at the top of your mouth behind your teeth. Vowels have a shorter sound when they come before /ʧ/.";
+"f_description" = "/f/ is a voiceless consonant. Lightly touch your top teeth to the inside of your bottom lip. Vowels have a shorter sound when they come before /f/.";
+"th_voiceless_description" = "/θ/ is a voiceless consonant. In this sound the tongue lightly touches the bottom of the top teeth. Do not say /s/ or /t/. Vowels have a shorter sound when they come before /θ/.";
+"s_description" = "/s/ is a voiceless consonant. Place your tongue at the top of your mouth just behind your teeth. Vowels have a shorter sound when they come before /s/.";
+"sh_description" = "/ʃ/ is a voiceless consonant. Your tongue is slightly curled up to the top of your mouth further back from where /s/ would be. Vowels have a shorter sound when they come before /ʃ/.";
+"b_description" = "/b/ is a voiced consonant. Your lips and mouth are in the same position as the /p/ sound. Vowels have a longer sound when they come before /b/.";
+"d_description" = "/d/ is a voiced consonant. Your lips and mouth are in the same position as the /t/ sound. Be careful not to read the third example /kɑrdə/ or /kɑrt/. Vowels have a longer sound when they come before /d/.";
+"g_description" = "/g/ is a voiced consonant. Your lips and mouth are in the same position as the /k/ sound. Be careful not to read the third example /pɪgə/ or /pɪk/. Vowels have a longer sound when they come before /g/.";
+"dzh_description" = "/ʤ/ is a voiced consonant. Your lips and mouth are in the same position as the /ʧ/ sound. Be careful not to read the third example /ɛʤə/. Vowels have a longer sound when they come before /ʤ/.";
+"v_description" = "/v/ is a voiced consonant. Note the difference between /v/ and /w/. In the /v/ sound the top teeth touch the bottom lip. This is the same mouth position as /f/. The only difference is that /v/ is voiced. Vowels have a longer sound when they come before /v/.";
+"th_voiced_description" = "/ð/ is a voiced consonant. Your tongue is in the same position as the /θ/ sound. The tongue lightly touches the bottom of the top teeth. Vowels have a longer sound when they come before /ð/.";
+"z_description" = "/z/ is a voiced consonant. Your tongue is in the same position as the /s/ sound. Vowels have a longer sound when they come before /z/.";
+"zh_description" = "/ʒ/ is a voiced consonant. It uses the same mouth position as /ʃ/. Vowels have a longer sound when they come before /ʒ/.";
+"m_description" = "/m/ is a nasal voiced consonant. Your lips are in the same position as /b/, but for /m/ the air goes through your nose. Vowels have a longer sound when they come before /m/.";
+"n_description" = "/n/ is a nasal voiced consonant. Your tongue and mouth is in the same position as /d/, but for /n/ the air goes through your nose. Vowels have a longer sound when they come before /n/.";
+"ng_description" = "/ŋ/ is a nasal voiced consonant. Your tongue is in the same position as /g/, but for /ŋ/ the air goes through your nose. Don\'t make a /g/ sound after it. /ŋ/ does not begin any words in English. Vowels have a longer sound when they come before /ŋ/.";
+"l_description" = "/l/ is a voiced consonant. At the beginning of words, [l] is the proper IPA symbol. However, at the end of words it is pronounced differently. The IPA for this sound is written [ɫ] but we use the /l/ symbol for both [l] and [ɫ] in this app (as do many textbooks and dictionaries). Example 2 could also be written /kuəl/.";
+"w_description" = "/w/ is a voiced consonant. Note the difference between /w/ and /v/. In the /w/ sound the lips make a small circle and do not touch the teeth. A minority of Americans pronounce \"wh\" as /hw/ (in IPA this is /ʍ/). /w/ never comes at the end of words in English.";
+"j_description" = "/j/ is a voiced consonant. Your tongue starts a little closer to the top of the mouth than the /i/ sound. Note the difference between \"year\" and \"ear\". /j/ does not come at the end of any words in English.";
+"h_description" = "/h/ is a voiceless consonant. It is a very light sound that you make in your throat, not in the back of your mouth. /h/ does not come at the end of any words in English.";
+"r_description" = "/r/ is a voiced consonant. This sound should be written /ɹ/ according to IPA. (The IPA /r/ is actually a trilled r.) However, in order to maintain consistency with many dictionaries and textbooks, the symbol /r/ is used here. For \"r\" at the end of syllables and words this app uses /ɝ/, /ɚ/, and /r/ (as in /ɑr/, /ɛr/, /ɪr/, and /ɔr/).";
+"i_description" = "Make the /i/ sound with your tongue high in your mouth and just behind your bottom teeth. In British English pronunciation this sound is usually written as /iː/, where the two dots represent a long vowel sound. Long and short vowels are not differentiated as much in American English and so the two dots are not written. If a vowel is before a voiced consonant then it is long. If it is before a voiceless consonant then it is short.";
+"i_short_description" = "/ɪ/ is a different sound than /i/. The difference is not so much one of long and short, but of a different position of the mouth and tongue. The mouth is open just a little wider and the tongue is just a little further back and lower than /i/.";
 "e_short_description" = "Many dictionaries and textbooks that describe British English use the symbol /e/ for this sound. According to IPA, though, it should be written /ɛ/. The mouth is open less than with /æ/ and the tongue is a little more forward.";
 "ae_description" = "Stretch your lips wide like the /ɛ/ but open your mouth big like the /ɑ/. Your tongue should be further back than with /ɛ/.";
-"a_description" = "Also written as /ɑː/ in British English. Note that this is a very different sound than /ʌ/ in American English.";
-"c_backwards_description" = "This sound should be written /ɒ/ according to IPA. However, to be consistent with most dictionaries, /ɔ/ is used here. Note, though, that it is not the same sound as when /ɔː/ is used to describe British pronunciation. About 40% of Americans do not pronounce the /ɔ/ sound. They replace it with the /ɑ/ sound. The above examples would be pronounced /ɑt/, /kɑl/, ɑnd /sɑ/. The words \"cot\" and \"caught\" would also be pronounced the same (/kɑt/).";
-"u_short_description" = "Sometimes it is written incorrectly as /u/, but it should be written /ʊ/ (without the \"tail\"). /u/ and /ʊ/ are two very different vowels.";
-"u_description" = "Also written /uː/, but like /iː/, /ɑː/, ɑnd /ɔː/, the long vowel dots are not needed in American English.";
-"v_upsidedown_description" = "This is a different sound than /ɑ/. The difference is not so much one of long and short, but of a different position of the mouth and tongue. Note that it is also pronounced somewhat differently than the British sound that is also usually written /ʌ/. When this sound is in an unstressed syllable it is written /ə/.";
+"a_description" = "Open your mouth wide and relax your lips. You tongue is low and far back in your mouth. /ɑ/ is also written as /ɑː/ in British English. In American English, though, sometimes /ɑ/ is long (before voiced consonants) and sometimes it is short (before voiceless consonants). Note that this is a very different sound than /ʌ/ in American English.";
+"c_backwards_description" = "/ɔ/ should be written /ɒ/ according to IPA. However, to be consistent with most dictionaries, /ɔ/ is used here. Note, though, that it is not the same sound as when /ɔː/ is used to describe British pronunciation. It is also not the same sound as the ɔ in /ɔɪ/ or /ɔr/ (The British English /ɔː/ is the same as the ɔ in /ɔɪ/ or /ɔr/). About 40% of Americans do not pronounce the /ɔ/ sound. They replace it with the /ɑ/ sound. The given examples would be pronounced /ɑt/, /kɑl/, ɑnd /sɑ/. The words \"cot\" and \"caught\" would also be pronounced the same (/kɑt/).";
+"u_short_description" = "To say /ʊ/, make your lips round, about as big around as if you were sucking your thumb. Sometimes /ʊ/ is written incorrectly as /u/, but it should be written /ʊ/ (without the \"tail\"). /u/ and /ʊ/ are two very different vowels.";
+"u_description" = "/u/ is also written /uː/ for British English, but like /iː/, /ɑː/, ɑnd /ɔː/, the long vowel dots are not needed in American English. /u/ is long before voiced consonants and short before voiceless consonants.";
+"v_upsidedown_description" = "Make /ʌ/ with your mouth open about one finger\'s width. However, your lips and tongue should be relaxed. This is a different sound than /ɑ/. The difference is not so much one of long and short, but of a different position of the mouth and tongue. Note that it is also pronounced somewhat differently than the British sound that is also usually written /ʌ/. When this sound is in an unstressed syllable it is written /ə/.";
 "schwa_description" = "The vowel /ə/ is the most common sound in American English because of its use in unstressed syllables and words. It is called a schwa. When this sound is in a stressed syllable it is written /ʌ/.";
-"ei_description" = "This is a diphthong, a combination of the /e/ and /ɪ/ sounds. It is sometimes also written as /e/ in some American English dictionaries. (Do not confuse this with the British English symbol /e/, which is actually pronounced /ɛ/.) Words with the American English /eɪ/ sound are pronounced /ɛɪ/ in British English. However, they still write it as /eɪ/.";
-"ai_description" = "This is a diphthong, a combination of the /a/ and /ɪ/ sounds. Note the difference from /æ/.";
-"au_description" = "This is a diphthong, a combination of the /a/ and /ʊ/ sounds. Note the difference from /ɔ/.";
-"oi_description" = "The \"ɔ\" used in /ɔɪ/ is not the same sound as the /ɔ/ in this app. (This is because the /ɔ/ used to describe many American English words should actually be written /ɒ/.) The /ɔɪ/ sound begins with small rounded lips.";
-"ou_description" = "This is a diphthong, a combination of the /o/ and /ʊ/ sounds. Note that there is a slight difference from the British pronunciation of /əʊ/.";
+"ei_description" = "/eɪ/ is a diphthong, a combination of the /e/ and /ɪ/ sounds. It is sometimes also written as /e/ in some American English dictionaries. (Do not confuse this with the British English symbol /e/, which is actually pronounced /ɛ/.) Words with the American English /eɪ/ sound are pronounced /ɛɪ/ in British English. However, they still write it as /eɪ/.";
+"ai_description" = "/aɪ/ is a diphthong, a combination of the /a/ and /ɪ/ sounds. Note that /a/ is not quite the same sound as /ɑ/.";
+"au_description" = "/aʊ/ is a diphthong, a combination of the /a/ and /ʊ/ sounds. Note how the mouths starts big and wide and gets small and round.";
+"oi_description" = "/ɔɪ/ is a diphthong, a combination of the /ɔ/ and /ɪ/ sounds. The \"ɔ\" used in /ɔɪ/ is not the same sound as the /ɔ/ in this app. (This is because the /ɔ/ used to describe many American English words should actually be written /ɒ/.) The /ɔɪ/ sound begins with small rounded lips.";
+"ou_description" = "/oʊ/ is a diphthong, a combination of the /o/ and /ʊ/ sounds. Some dictionaries just write it as /o/, and in fact it would be more accurate to use /o/ rather than the diphthong for some words. Note that there is a slight difference from the British pronunciation of /əʊ/.";
 "er_stressed_description" = "The /ɝ/ sound is sometimes written /ər/ or /əɹ/. This is the sound in a stressed syllable or a one-syllable word. When /ɝ/ is unstressed it is written /ɚ/. In British English /ɝ/ is pronounced as /ɜː/.";
 "er_unstressed_description" = "The /ɚ/ sound is the same as /ɝ/ except that /ɚ/ is used for unstressed syllables. It is sometimes also written as /ər/ or /əɹ/. In British English /ɚ/ is pronounced as /ə/.";
 "ar_description" = "The /ɑr/ sound is more correctly written /ɑɹ/ or /ɑɚ/ according to IPA. It is pronounced as /ɑː/ in British English.";
 "er_description" = "The /ɛr/ sound is more correctly written /ɛɹ/ or /ɛɚ/ according to IPA. It is pronounced and written as /eə/ in British English.";
 "ir_description" = "The /ɪr/ sound is more correctly written /ɪɹ/ or /ɪɚ/ according to IPA. It is pronounced as /ɪə/ in British English.";
-"or_description" = "The \"ɔ\" used in /ɔr/ is not the same sound as the /ɔ/ in this app. (This is because the /ɔ/ used to describe many American English words should be written /ɒ/.) The /ɔr/ sound begins with small rounded lips. It is more correctly written /ɔɹ/ according to IPA. It is pronounced as /ɔː/ in British English.";
-"glottal_stop_description" = "This sound is called a glottal stop. It is not always taught in English textbooks, but it is an important part of American English pronunciation. Note the difference in the pronunciation of \"put\" here and in the example for the /ʊ/ sound. The /ʔ/ sound often replaces /t/, especially at the end of words and in middle of sentences.";
+"or_description" = "The \"ɔ\" used in /ɔr/ is not the same sound as the /ɔ/ in this app. (This is because the /ɔ/ used to describe many American English words should be written /ɒ/.) The /ɔr/ sound begins with small rounded lips. It is more correctly written /ɔɹ/ or /ɔɚ/ according to IPA. It is pronounced as /ɔː/ in British English.";
+"glottal_stop_description" = "The /ʔ/ sound is called a glottal stop. It is not always taught in English textbooks, but it is an important part of American English pronunciation. Note the difference in the pronunciation of \"put\" here and in the example for the /ʊ/ sound. The /ʔ/ sound often replaces /t/, especially at the end of words and in middle of sentences.";
 "flap_t_description" = "The /ɾ/ sound (not /r/) is called a flap t or an alveolar tap. It is not usually taught in English textbooks, but it is an important part of American English pronunciation. The /ɾ/ sound often replaces /t/, especially when /t/ comes between vowels in an unstressed syllable. The /ɾ/ sound can also be written /d/, though this is not as accurate. In that case, the examples would be written /\'wɑdɚ/, /\'lɪdəl/, ɑnd /\'θɝdi/.";
-
-

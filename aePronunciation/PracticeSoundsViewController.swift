@@ -17,6 +17,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     private var readyForNewSound = true
     private var alreadyMadeWrongAnswerForThisIpa = false
     private let MINIMUM_POPULATION_SIZE_FOR_WHICH_REPEATS_NOT_ALLOWED = 4
+    private let backgroundColor = UIColor.clear.cgColor
     
     
     // MARK: - Outlets
@@ -61,7 +62,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
             // reset things
             readyForNewSound = false
             alreadyMadeWrongAnswerForThisIpa = false
-            inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
+            inputWindowBorderView.layer.backgroundColor = backgroundColor
             inputLabel.text = ""
         }
 
@@ -89,7 +90,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     @IBAction func clearButtonTapped(_ sender: UIButton) {
         inputLabel.text = ""
         inputKeyCounter = 0
-        inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
+        inputWindowBorderView.layer.backgroundColor = backgroundColor
     }
     
     @IBAction func unwindFromTestResultsVC(segue:UIStoryboardSegue) {
@@ -220,6 +221,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
     
     private func addBorderToInputWindow() {
         inputWindowBorderView.layer.borderWidth = 2.0
+        inputWindowBorderView.layer.borderColor = UIColor.gray.cgColor
         inputWindowBorderView.layer.cornerRadius = 8
         inputWindowBorderView.layer.masksToBounds = true
     }
@@ -336,7 +338,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         updateStatLabels()
         inputKeyCounter = 0
         inputLabel.text = ""
-        inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
+        inputWindowBorderView.layer.backgroundColor = backgroundColor
         ipaKeyboard.mode = practiceMode ?? SoundMode.single
         if practiceMode == SoundMode.single {
             practiceModeLabel.text = "practice_mode_single".localized
@@ -370,7 +372,7 @@ class PracticeSoundsViewController: UIViewController, KeyboardDelegate {
         })
         // fade out
         UIView.animate(withDuration: 0.7, delay: 0, options: [.curveEaseOut], animations: { () -> Void in
-            self.inputWindowBorderView.layer.backgroundColor = UIColor.white.cgColor
+            self.inputWindowBorderView.layer.backgroundColor = self.backgroundColor
         }, completion: { Void in
             self.inputLabel.text = ""
         })

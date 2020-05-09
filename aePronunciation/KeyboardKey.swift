@@ -27,7 +27,7 @@ class KeyboardKey: UIControl {
         }
     }
     
-    var fillColor = UIColor.white {
+    var fillColor = UIColor.clear {
         didSet {
             backgroundLayer.setNeedsDisplay()
         }
@@ -164,7 +164,6 @@ class KeyboardKeyBackgroundLayer: CALayer {
             
             let keyFrame = bounds.insetBy(dx: padding, dy: padding)
             let keyPath = UIBezierPath(roundedRect: keyFrame, cornerRadius: key.cornerRadius)
-            //let borderColor = key.borderColor.CGColor
             
             // Fill
             if key.isSelected {
