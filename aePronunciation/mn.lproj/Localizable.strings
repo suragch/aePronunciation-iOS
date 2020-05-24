@@ -1,0 +1,334 @@
+/*
+ Mongolian
+ */
+
+"locale" = "mn";
+
+// new for iOS version
+"main_tab_more" = "Илүү";
+"main_tab_more_history_section_title" = "Түүх";
+"main_tab_more_total_time" = "Нийт хугацаа";
+"main_tab_more_tests" = "Шалгалтууд";
+"main_tab_more_about_section_title" = "Бидний тухай";
+"main_tab_more_app" = "Апп";
+"main_tab_more_contact" = "Холбоо барих";
+
+"test_results_back_button" = "Гүйцсэн";
+
+
+/////////////////////////////
+//  Non-Translated strings //
+/////////////////////////////
+
+// <!-- Practice Tab -->
+"tell_me_button" = "\?";
+
+//<!-- Test results activity -->
+"test_results_percent" = "%d%%";
+
+//<!-- History Tests Activity-->
+"history_tests_item_score" = "%d%%";
+
+
+//<!-- Learn sounds tab-->
+"p_example1" = "pass\n/pæs/";
+"p_example2" = "speak\n/spik/";
+"p_example3" = "stop\n/stɑp/";
+"t_example1" = "toad\n/toʊd/";
+"t_example2" = "sting\n/stɪŋ/";
+"t_example3" = "it\n/ɪt/";
+"k_example1" = "cool\n/kul/";
+"k_example2" = "skill\n/skɪl/";
+"k_example3" = "week\n/wik/";
+"ch_example1" = "chairs\n/ʧɛrz/";
+"ch_example2" = "each of\n/\'iʧəv/";
+"ch_example3" = "church\n/ʧɝʧ/";
+"f_example1" = "father\n/\'fɑðɚ/";
+"f_example2" = "gift\n/gɪft/";
+"f_example3" = "if\n/ɪf/";
+"th_voiceless_example1" = "think\n/θɪŋk/";
+"th_voiceless_example2" = "Jonathan\n/\'ʤɑnəθən/";
+"th_voiceless_example3" = "earth\n/ɝθ/";
+"s_example1" = "set\n/sɛt/";
+"s_example2" = "raced\n/reɪst/";
+"s_example3" = "pass\n/pæs/";
+"sh_example1" = "shoot\n/ʃut/";
+"sh_example2" = "wished\n/wɪʃt/";
+"sh_example3" = "ash\n/æʃ/";
+"b_example1" = "bill\n/bɪl/";
+"b_example2" = "above\n/ə\'bʌv/";
+"b_example3" = "rib\n/rɪb/";
+"d_example1" = "delicious\n/də\'lɪʃəs/";
+"d_example2" = "cards\n/kɑrdz/";
+"d_example3" = "card\n/kɑrd/";
+"g_example1" = "good\n/gʊd/";
+"g_example2" = "again\n/ə\'gɛn/";
+"g_example3" = "pig\n/pɪg/";
+"dzh_example1" = "jump\n/ʤʌmp/";
+"dzh_example2" = "agile\n/\'æʤəl/";
+"dzh_example3" = "edge\n/ɛʤ/";
+"v_example1" = "very\n/\'vɛri/";
+"v_example2" = "every\n/\'ɛvri/";
+"v_example3" = "have\n/hæv/";
+"th_voiced_example1" = "they\'re\n/ðɛr/";
+"th_voiced_example2" = "father\n/fɑðɚ/";
+"th_voiced_example3" = "bathe\n/beɪð/";
+"z_example1" = "zoo\n/zu/";
+"z_example2" = "raised\n/reɪzd/";
+"z_example3" = "cars\n/kɑrz/";
+"zh_example1" = "usually\n/\'juʒli/";
+"zh_example2" = "pleasure\n/\'plɛʒɚ/";
+"zh_example3" = "beige\n/beɪʒ/";
+"m_example1" = "me\n/mi/";
+"m_example2" = "jump\n/ʤʌmp/";
+"m_example3" = "arm\n/ɑrm/";
+"n_example1" = "new\n/nu/";
+"n_example2" = "panda\n/\'pændə/";
+"n_example3" = "sun\n/sʌn/";
+"ng_example1" = "ringing\n/\'rɪŋɪŋ/";
+"ng_example2" = "think\n/θɪŋk/";
+"ng_example3" = "sung\n/sʌŋ/";
+"l_example1" = "loud\n/laʊd/";
+"l_example2" = "cool\n/kul/";
+"l_example3" = "bill\n/bɪl/";
+"w_example1" = "wary\n/\'wɛri/";
+"w_example2" = "twelve\n/twɛlv/";
+"w_example3" = "what\n/wʌt/";
+"j_example1" = "year\n/jɪr/";
+"j_example2" = "cube\n/kjub/";
+"j_example3" = "yellow\n/\'jɛlo/";
+"h_example1" = "her\n/hɝ/";
+"h_example2" = "have\n/hæv/";
+"h_example3" = "ahead\n/ə\'hɛd/";
+"r_example1" = "real\n/ril/";
+"r_example2" = "rib\n/rɪb/";
+"r_example3" = "roar\n/rɔr/";
+"i_example1" = "each\n/iʧ/";
+"i_example2" = "read\n/rid/";
+"i_example3" = "me\n/mi/";
+"i_short_example1" = "it\n/ɪt/";
+"i_short_example2" = "him\n/hɪm/";
+"i_short_example3" = "rib\n/rɪb/";
+"e_short_example1" = "edge\n/ɛʤ/";
+"e_short_example2" = "set\n/sɛt/";
+"e_short_example3" = "said\n/sɛd/";
+"ae_example1" = "ash\n/æʃ/";
+"ae_example2" = "bad\n/bæd/";
+"ae_example3" = "bat\n/bæt/";
+"a_example1" = "on\n/ɑn/";
+"a_example2" = "father\n/\'fɑðɚ/";
+"a_example3" = "ma\n/mɑ/";
+"c_backwards_example1" = "ought\n/ɔt/";
+"c_backwards_example2" = "call\n/kɔl/";
+"c_backwards_example3" = "saw\n/sɔ/";
+"u_short_example1" = "put\n/pʊt/";
+"u_short_example2" = "good\n/gʊd/";
+"u_short_example3" = "should\n/ʃʊd/";
+"u_example1" = "ooze\n/uz/";
+"u_example2" = "shoot\n/ʃut/";
+"u_example3" = "blue\n/blu/";
+"v_upsidedown_example1" = "up\n/ʌp/";
+"v_upsidedown_example2" = "sun\n/sʌn/";
+"v_upsidedown_example3" = "uh-huh\n/ə\'hʌ/";
+"schwa_example1" = "above\n/ə\'bʌv/";
+"schwa_example2" = "delicious\n/də\'lɪʃəs/";
+"schwa_example3" = "panda\n/\'pændə/";
+"ei_example1" = "age\n/eɪʤ/";
+"ei_example2" = "safe\n/seɪf/";
+"ei_example3" = "may\n/meɪ/";
+"ai_example1" = "I\'m\n/aɪm/";
+"ai_example2" = "bite\n/baɪt/";
+"ai_example3" = "fly\n/flaɪ/";
+"au_example1" = "out\n/aʊt/";
+"au_example2" = "loud\n/laʊd/";
+"au_example3" = "cow\n/kaʊ/";
+"oi_example1" = "oil\n/ɔɪl/";
+"oi_example2" = "voice\n/vɔɪs/";
+"oi_example3" = "boy\n/bɔɪ/";
+"ou_example1" = "oath\n/oʊθ/";
+"ou_example2" = "cove\n/koʊv/";
+"ou_example3" = "low\n/loʊ/";
+"er_stressed_example1" = "earth\n/ɝθ/";
+"er_stressed_example2" = "birthday\n/\'bɝθdeɪ/";
+"er_stressed_example3" = "her\n/hɝ/";
+"er_unstressed_example1" = "mother\n/\'mʌðɚ/";
+"er_unstressed_example2" = "perform\n/pɚ\'fɔrm/";
+"er_unstressed_example3" = "wonderful\n/\'wʌndɚfəl/";
+"ar_example1" = "arm\n/ɑrm/";
+"ar_example2" = "part\n/pɑrt/";
+"ar_example3" = "car\n/kɑr/";
+"er_example1" = "aired\n/ɛrd/";
+"er_example2" = "chairs\n/ʧɛrz/";
+"er_example3" = "there\n/ðɛr/";
+"ir_example1" = "ear\n/ɪr/";
+"ir_example2" = "weird\n/wɪrd/";
+"ir_example3" = "here\n/hɪr/";
+"or_example1" = "oars\n/ɔrz/";
+"or_example2" = "north\n/nɔrθ/";
+"or_example3" = "roar\n/rɔr/";
+"glottal_stop_example1" = "put\n/pʊʔ/";
+"glottal_stop_example2" = "button\n/\'bʌʔn/";
+"glottal_stop_example3" = "uh-oh\n/\'ʌʔo/";
+"flap_t_example1" = "water\n/\'wɑɾɚ/";
+"flap_t_example2" = "little\n/\'lɪɾəl/";
+"flap_t_example3" = "thirty\n/\'θɝɾi/";
+
+/////////////////////////////
+//  Translated strings //////
+/////////////////////////////
+
+"app_name" = "ae";
+
+// Main menu
+"main_menu_keyboard" = "Гар товчлуур";
+"main_menu_history" = "Түүх";
+"main_menu_about" = "Бидний тухай";
+
+// Tabs
+"main_tab_learn" = "Сурах";
+"main_tab_practice" = "Дасгал";
+"main_tab_test" = "Шалгалт";
+
+// Learn Single fragment
+"learn_single_show_doubles" = "Давхар авиа";
+
+// Learn Double sounds dialog
+"title_activity_learn_double" = "Давхар авиа /%@/";
+
+// Practice Tab
+"practice_mode_single" = "Дан";
+"practice_mode_double" = "Давхар";
+
+// Select Sounds dialog
+"select_sounds_title" = "Давтах авиагаа сонгоно уу";
+"select_sounds_radio_single" = "Дан";
+"select_sounds_radio_double" = "Давхар";
+"select_sounds_cb_vowels" = "Эгшиг";
+"select_sounds_cb_consonants" = "Гийгүүлэгч";
+"select_sounds_positive_button" = "За";
+
+// Test setup tab
+"test_setup_name" = "Нэр";
+"test_default_name" = "Би";
+"test_setup_number_of_questions" = "Асуултууд:";
+"test_setup_type" = "Төрөл:";
+"test_setup_single" = "Дан";
+"test_setup_double" = "Давхар";
+"test_setup_begin_button" = "Эхлэх";
+
+// Test Activity
+"title_activity_test" = "Шалгалт";
+
+// Test results activity
+"title_activity_test_results" = "Шалгалтын дүн";
+"test_results_right" = "Зөв: %d";
+"test_results_wrong" = "Буруу: %d";
+"test_results_time" = "Хугацаа: %@";
+"test_results_practice_difficult_button" = "Хэцүү авиаг давтах";
+
+// History Activity
+"title_activity_history" = "Түүх";
+"history_time_title" = "Нийт хугацаа:";
+"history_test_title" = "Шалгалтууд:";
+"history_details" = "Дэлгэрэнгүй";
+
+// History Time Details Activity
+"title_activity_history_time" = "Нийт зарцуулсан хугацаа";
+"history_time_details_learning" = "Сурсан цаг";
+"history_time_details_practicing" = "Давтсан цаг";
+"history_time_details_testing" = "Шалгалтын цаг";
+"history_time_details_total" = "Нийт хугацаа";
+"history_time_details_type_single" = "Дан";
+"history_time_details_type_double" = "Давхар";
+
+// History Test Details Activity
+"title_activity_history_tests" = "Өмнөх шалгалтууд";
+"history_test_details_type_single" = "Дан (%d)";
+"history_test_details_type_double" = "Давхар (%d)";
+"history_test_details_specific_test_number_of_questions" = "Асуултууд: %d";
+
+
+// History Tests Activity
+"title_activity_history_test_details" = "Шалгалтын дэлгэрэнгүй";
+"history_tests_type_single" = "Дан: %d%%";
+"history_tests_type_double" = "Давхар: %d%%";
+
+// About Activity
+"title_activity_about" = "Бидний тухай";
+"about_app_name" = "Америкийн\nАнгли Хэлний\nДуудлага";
+"about_app_version" = "Хувилбар %@";
+"about_content" = "Хэрэв танд асуулт, сэтгэгдэл, санал хүсэлт байвал мессеж үлдээнэ үү.";
+"about_contact" = "Холбоо барих";
+"about_contact_url" = "http://www.aepronunciation.com/contact/";
+
+// Keyboard Input Activity
+"title_activity_keyboard_input" = "IPA бичих";
+"keyboard_input_toast_text_copied" = "IPA текст хуулсан";
+"keyboard_menu_copy" = "Хуулах";
+"keyboard_menu_clear" = "Арилгах";
+"keyboard_menu_share" = "Түгээх";
+"keyboard_menu_share_chooser_title" = "Текстийг түгээх";
+"keyboard_menu_alert_message" = "Бүх текстийг устгахдаа итгэлтэй байна уу?";
+"keyboard_menu_alert_clear_all_button" = "Устгах";
+
+// Error dialog
+"error_dialog_title" = "Асуудал";
+"error_two_consonants" = "Та %@ + %@ (хоёр гийгүүлэгч авиа) бичсэн байна. Та нэг гийгүүлэгч, нэг эгшиг сонгох хэрэгтэй.";
+"error_two_vowels" = "Та %@ + %@ (хоёр эгшиг) бичсэн байна. Та нэг гийгүүлэгч, нэг эгшиг сонгох хэрэгтэй.";
+"error_initial_ng" = "Та %@ + %@ гэж бичсэн байна. Гэвч Англи хэлэнд үгийн үе /ŋ/-ээр хэзээ ч эхэлдэггүй.";
+"error_final_r" = "Хэрэв та /r/ авиагаар төгсгөхийг хүсвэл R эгшиг авиа бүхий товчлуурыг ашиглах хэрэгтэй (ɝ, ɑr, ɛr, ɪr, ɔr). Мөн өөр нэг гийгүүлэгч байх хэрэгтэй.";
+"error_final_wjh" = "Та %@ + %@ гэж бичсэн байна. Гэвч Англи хэлэнд үе хэзээ ч /%@/ авиагаар төгсдөггүй.";
+"error_dialog_ok_button" = "За";
+
+// general dialog buttons
+"dialog_cancel_button" = "Цуцлах";
+
+// Learn sounds tab
+"p_description" = "/p/ бол дүүгүй гийгүүлэгч авиа. /p/ нь үгийн эхэнд хийн түрлэгтэй ([pʰ]) байх ч /s/-ын дараа болон үгийн эцэст хийн түрлэггүй байна. /p/-ын өмнөх эгшгийг богино дуудна.";
+"t_description" = "/t/ бол дүүгүй гийгүүлэгч авиа. /t/ нь үгийн эхэнд хийн түрлэгтэй ([tʰ]) байх ч /s/-ын дараа болон үгийн эцэст хийн түрлэггүй байна. [ɪtə] эсвэл [ɪtʰ] эсвэл [ɪts] гэж гурав дахь жишээг уншихгүй гэдгийг анхаарна уу. Мөн Америкийн Англи хэлэнд ихэнхдээ \"t\" дуудлага өөрчлөгддөг гэдгийг санаарай. /ʔ/ болон /ɾ/-ыг харна уу. /t/-ын өмнөх эгшгийг богино дуудна.";
+"k_description" = "/k/ бол дүүгүй гийгүүлэгч авиа. /k/ нь үгийн эхэнд хийн түрлэгтэй ([kʰ]) байх ч /s/-ын дараа болон үгийн эцэст хийн түрлэггүй байна. /k/-ын өмнөх эгшгийг богино дуудна.";
+"ch_description" = " /ʧ/ бол дүүгүй гийгүүлэгч авиа. Таны хэл шүдний ард, тагнайд хүрнэ. /ʧ/-ын өмнөх эгшгийг богино дуудна.";
+"f_description" = "/f/ бол дүүгүй гийгүүлэгч авиа. Доод уруулын дотор хэсэг дээд шүдэнд үл ялиг хүрнэ. /f/-ын өмнөх эгшгийг богино дуудна.";
+"th_voiceless_description" = "/θ/ бол дүүгүй гийгүүлэгч авиа. Хэл дээд шүдний доод хэсэг үл ялиг хүрнэ. /s/ эсвэл /t/ гэж хэлж болохгүй. /θ/-ын өмнөх эгшгийг богино дуудна.";
+"s_description" = "/s/ бол дүүгүй гийгүүлэгч авиа. Хэлээ шүдний ард тагнайд хүргэнэ. /s/-ын өмнөх эгшгийг богино дуудна.";
+"sh_description" = "/ʃ/ бол дүүгүй гийгүүлэгч авиа. Таны хэл бага зэрэг дугуйрч /s/ хэлдгээс бага зэрэг хойно тагнайд хүрнэ. /ʃ/-ын өмнөх эгшгийг уртаар дуудна.";
+"b_description" = "/b/ бол дуутай гийгүүлэгч авиа. Таны уруул, ам /p/ авиаг гаргаж буйтай ижил байна. /b/-ын өмнөх эгшгийг уртаар дуудна.";
+"d_description" = "/d/ бол дуутай гийгүүлэгч авиа. Таны уруул, ам /t/ авиаг гаргаж буйтай ижил байна. /kɑrdə/ эсвэл /kɑrt/ гэж гурав дахь жишээг уншихгүйг анхаарна уу. /d/-ын өмнөх эгшгийг уртаар дуудна.";
+"g_description" = "/g/ бол дуутай гийгүүлэгч авиа. Таны уруул, ам /k/ авиаг гаргаж буйтай ижил байна. /pɪgə/ эсвэл /pɪk/ гэж гурав дахь жишээг уншихгүйг анхаарна уу. /g/-ын өмнөх эгшгийг уртаар дуудна.";
+"dzh_description" = "/ʤ/ бол дуутай гийгүүлэгч авиа. Таны уруул, ам /ʧ/ авиаг гаргаж буйтай ижил байна. /ɛʤə/ гэж гурав дахь жишээг уншихгүйг анхаарна уу. /ʤ/-ын өмнөх эгшгийг уртаар дуудна.";
+"v_description" = "/v/ бол дуутай гийгүүлэгч авиа. /v/ болон /w/ ялгаатай гэдгийг анхаарна уу. /v/ авианд дээд шүд доод уруулд хүрнэ. /f/-тай адил амны хэв үүснэ. /v/ нь дуутай гэдгээрээ ялгаатай. /v/-ын өмнөх эгшгийг уртаар дуудна.";
+"th_voiced_description" = "/ð/ бол дуутай гийгүүлэгч авиа. /θ/ авиаг гаргахтай адил байрлалд таны хэл байна. Таны хэл дээд шүдний доор үл ялиг хүрнэ. /ð/-ын өмнөх эгшгийг уртаар дуудна.";
+"z_description" = "/z/ бол дуутай гийгүүлэгч авиа. /s/ авиаг гаргахтай адил байрлалд таны хэл байна. /z/-ын өмнөх эгшгийг уртаар дуудна.";
+"zh_description" = "/ʒ/ бол дуутай гийгүүлэгч авиа. /ʃ/ авиаг гаргахтай адил байрлалд таны хэл байна. /ʒ/-ын өмнөх эгшгийг уртаар дуудна.";
+"m_description" = "/m/ нь хамрын гийгүүлэгч авиа. Таны хэл /b/ авиаг гаргахтай адил байрлалд байна. Гэхдээ /m/-ыг хэлэхэд агаар хамраар гарна. /m/-ын өмнөх эгшгийг уртаар дуудна.";
+"n_description" = "/n/ нь хамрын гийгүүлэгч авиа. Таны хэл, ам /d/ авиаг гаргахтай адил байна. Гэхдээ /n/-ыг хэлэхэд агаар хамраар гарна. /n/-ын өмнөх эгшгийг уртаар дуудна.";
+"ng_description" = "/ŋ/ нь хамрын гийгүүлэгч авиа. Таны хэл /g/ авиаг гаргахтай адил байна. Гэхдээ /ŋ/-ыг хэлэхэд агаар хамраар гарна. Дараа нь /g/ авиа гаргаж болохгүй. /ŋ/ авиагаар эхэлсэн үг үг Англи хэлэнд байхгүй. /ŋ/-ын өмнөх эгшгийг уртаар дуудна.";
+"l_description" = "/l/ бол дуутай гийгүүлэгч авиа. Үгийн эхэнд бол зохих IPA тэмдэглээ нь [l] юм. Гэхдээ үгийн төгсгөлд өөрөөр дуудна. IPA тэмдэглэгээг [ɫ] гэж бичдэг ч бид аппдаа аль алинд нь /l/ тэмдэглэгээг ашиглана (олон ном, толь бичгийн адил). Жишээ 2-ыг /kuəl/ гэж бас бичиж болно.";
+"w_description" = "/w/ бол дуутай гийгүүлэгч авиа. /v/ болон /w/ ялгаатай гэдгийг анхаарна уу. /w/ авианд уруул жижиг дугуй үүсгэнэ. Шүдэнд хүрэхгүй. Цөөнх америкчууд \"wh\" -ыг /hw/ гэж дууддаг (IPA дээр /ʍ/). Англи хэлэнд /w/ нь үгийн төгсгөлд хэзээ ч байдаггүй.";
+"j_description" = "/j/ бол дуутай гийгүүлэгч авиа. /i/ авиаг бодвол таны хэл тагнайд бага зэрэг ойрхон байна. \"year\", \"ear\" гэх үгсийн ялгааг анзаарна уу. Англи хэлэнд /j/ нь үгийн төгсгөлд байдаггүй.";
+"h_description" = "/h/ бол дуугүй гийгүүлэгч авиа. Амны ар хэсэгт биш, хоолойны зөөлөн авиа юм. Англи хэлэнд /h/ авиа нь үгийн төгсгөлд байдаггүй.";
+"r_description" = "/r/ нь дуутай гийгүүлэгч авиа. IPA-гаар бол /ɹ/ гэж бичигдэнэ. (IPA-гийн /r/ бага зэрэг чичирхийлэлтэй r.) Гэхдээ олонх толь бичиг, номын адил /r/ тэмдгийг энд ашигласан болно. Үеийн болон үгийн төгсгөлийн болон /r/ -д энэхүү апп /ɝ/, /ɚ/ болон /r/ ашигласан ( /ɑr/, /ɛr/, /ɪr/ болон /ɔr/ шиг).";
+"glottal_stop_description" = "/ʔ/ авиаг төвөнх хамжих гийгүүлэгч гэдэг. Англи хэлний ном, сурах бичигт үүнийг заасан ховор ч гэсэн Англи хэлний дуудлагын чухал хэсэг юм. \"put\" гэдгийн дуудлага болон /ʊ/ авианы жишээний дуудлагын ялгааг анзаарна уу. /ʔ/ авиа нь ихэвчлэн /t/-ыг орлодог. Ялангуяа үгийн төгсгөл болон өгүүлбэрийн дунд.";
+"flap_t_description" = "/ɾ/ авиаг (/r/ биш) тагнайн t эсвэл түншүүрийн шүргэлт гэж нэрлэдэг. Англи хэлний ном, сурах бичигт үүнийг заасан ховор ч гэсэн Англи хэлний дуудлагын чухал хэсэг юм. /ɾ/ авиа нь ихэвчлэн /t/-ыг орлодог. Ялангуяа өргөлтгүй үед эгшиг хооронд орсон бол. /ɾ/ авиаг /d/ гэж бичиж болох ч тийм зүйтэй биш. Энэ тохиолдолд жишээ нь /\'wɑdɚ/, /\'lɪdəl/ болон /\'θɝdi/ гэж бичнэ.";
+
+"i_description" = "/i/ авиаг гаргахдаа доод шүдний ард хэлээ өргөнө. Британийн англи хэлний дуудлагад уг авиаг ихэвчлэн /iː/ гэж бичдэг. Хоёр цэг нь уртаар дуудахыг илэрхийлж буй юм. Америкийн англи хэлтэй харьцуулахад урт, богино эгшгийг нарийн ялгадаггүй. Хэрэв дуутай гийгүүлэгч авиан урд эгшиг байвал уртаар дуудна. Хэрэв дуугүй гийгүүлэгч авианы урд байвал богино дуудна.";
+"i_short_description" = "/ɪ/ нь /i/-аас өөр. Урт, богиноор дуудахдаа ялгаа нь бус харин ам, хэлний байрлалаараа ялгаатай. Ам илүү том ангайх ба /i/-ыг хэлэхээс хэл нь бага зэрэг хол, доор байна.";
+"e_short_description" = "Олон толь бичиг, номд Британийн англи хэлэнд энэ авиаг /e/ гэж бичдэг. IPA-гаар бол /ɛ/ гэж бичигдэнэ. Ам нь /æ/-ыг хэлэхээс бага зэрэг нээлттэй, хэл нь бага зэрэг урагшаа байна.";
+"ae_description" = "/ɛ/ шиг уруулаа сунгана. Гэхдээ ам /ɑ/ шиг том ангайна. Хэл тань /ɛ/ авиаг хэлэхээс илүү хойно байрлана.";
+"a_description" = "Амаа том ангайн, уруулаа сул тавина. Хэл доор, амын арын хэсэгт байна. /ɑ/-ыг Британийн Англи хэлэнд /ɑː/ гэж бас бичдэг. Америкийн Англи хэлэнд заримдаа /ɑ/ нь урт (дуутай гийгүүлэгч авианы өмнө), заримдаа богино (дуугүй гийгүүлэгч авианы өмнө) дуудна. Америкийн Англи хэлэнд /ʌ/-аас тэс өөр сонсогдоно гэдгийг анхаарна уу.";
+"c_backwards_description" = "IPA-гаар бол /ɔ/-ыг /ɒ/ гэж бичнэ. Гэхдээ ихэнх толь бичгийг даган /ɔ/ гэж тэмдэглэсэн болно. Британи дуудлагын /ɔː/-аас өөр гэдгийг гэхдээ анхаарна уу. Мөн /ɔɪ/ эсвэл /ɔr/-ын ɔ-ээс өөр (Британи Англи хэлэнд /ɔː/ нь /ɔɪ/ эсвэл /ɔr/-ын ɔ-тай адил байдаг). Америкчуудын 40% орчим нь /ɔ/ авиаг дууддаггүй. Тэд /ɑ/ авиаг оронд нь ашигладаг. Өгөгдсөн жишээнүүдийг /ɑt/, /kɑl/ болон /sɑ/ гэж дуудна. \"cot\" болон \"caught\"-ыг мөн (/kɑt/)-тай адил дуудна.";
+"u_short_description" = "/ʊ/ гэж хэлэхийн тулд уруулаа эрхий хуруугаа хөхөх гэж буй мэт бөөрөнхий болгоно. Заримдаа /ʊ/-ыг /u/ гэж буруу бичдэг. Гэхдээ (сүүлгүй) /ʊ/ гэж бичих нь зөв. /u/ болон /ʊ/ нь тэс өөр эгшиг авиа юм.";
+"u_description" = "/u/ нь Британийн Англи хэлэнд /iː/, /ɑː/ болон /ɔː/-ын адил /uː/ гэж бичигддэг. Америкийн Англи хэлэнд уртаар дуудахыг тэмдэглэх цэг шаардлагагүй байдаг. Дуутай гийгүүлэгч авиан өмнөх /u/-г уртаар, дуугүй гийгүүлэгч авиан өмнөхийг богиноор дуудна.";
+"v_upsidedown_description" = "/ʌ/ авиаг гаргахдаа амаа нэг хурууны өргөнтэй нээнэ. Гэхдээ уруул, хэл сул байна. /ɑ/-аас өөр сонсогдоно. Урт, богинын ялгаа биш, ам, хэлний байрлал нь өөр болно. Британийн дуудлагад /ʌ/ гэж тэмдэглэдгээс бага зэрэг өөрөөр дуудна гэдгийг анхаарна уу. Өргөлтгүй үед энэхүү эгшиг авиа байх юм бол /ə/ гэж тэмдэглэнэ.";
+"schwa_description" = "/ə/ нь Америкийн Англи хэлний хамгийн түгээмэл эгшиг авиа юм. Өргөлтгүй үе, үгнүүдэд ашиглагддаг. Дундын авиа гэж нэрлэдэг. Өргөлттэй үед энэхүү авиа байвал /ʌ/ гэж тэмдэглэнэ.";
+"ei_description" = "/eɪ/ бол хос эгшиг. /e/ болон /ɪ/ авианы хослол. Зарим Америкийн Англи хэлний толь бичгүүдэд /e/ гэж бичсэн байдаг. (Британийн Англи хэлний /e/-тай андуурч болохгүй, үүнийг /ɛ/ гэж дууддаг). Америкийн Англи хэлний /eɪ/ авиатай үгийг Британийн Англи хэлэнд /ɛɪ/ гэж дууддаг. Гэхдээ одоо ч тэд /eɪ/ гэж бичдэг.";
+"ai_description" = "/aɪ/ нь хос эгшиг. /a/ болон /ɪ/ авианы хослол. /a/ авианы дуудлага нь /ɑ/-аас арай өөр болохыг анхаарна уу.";
+"au_description" = "/aʊ/ нь хос эгшиг. /a/ болон /ʊ/ авианы хослол. Амаа эхлээд том ангайн дараа нь жижиг дугуй болж буйг анзаарна уу.";
+"oi_description" = "/ɔɪ/ нь хос эгшиг. /ɔ/ болон /ɪ/ авианы хослол. /ɔɪ/-гийн \"ɔ\" нь энэ аппын /ɔ/-ээс өөр болно. (Яагаад гэвэл Америкийн Англи хэлний ихэнх үгэнд ашиглагддаг /ɔ/ нь үнэндээ /ɒ/ гэж бичигдэх учиртай). /ɔɪ/ авиаг уруулаараа жижиг, дугуй үүсгэж хэлнэ.";
+"ou_description" = "/oʊ/ нь хос эгшиг. /o/ болон /ʊ/ авианы хослол. Зарим толь бичигт /o/ гэж бичигдсэн байдаг ч зарим үгийн хувьд хос эгшгийн оронд /o/-г ашиглах нь илүү зүйтэй. Британийн /əʊ/ дуудлагаас бага зэрэг өөр болохыг анзаарна уу.";
+"er_stressed_description" = "/ɝ/ эгшиг авиаг заримдаа /ər/ эсвэл /əɹ/ гэж бичдэг. Өргөлттэй үе эсвэл нэг үетэй үгэнд ийм авиа байна. /ɝ/ өргөлтгүй бол /ɚ/ гэж бичигдэнэ. Британийн англи хэлэнд /ɝ/-ыг /ɜː/ гэж дуудна.";
+"er_unstressed_description" = "/ɚ/ авиа нь /ɝ/-тай адил дуудна. /ɚ/-ыг өргөлтгүй үед ашигладаг. Заримдаа /ər/ эсвэл /əɹ/ гэж бичигдэх нь бий. Британийн англи хэлний /ɚ/-г /ə/ дуудна.";
+"ar_description" = "IPA-гаар бол /ɑr/ авиаг /ɑɹ/ эсвэл /ɑɚ/ гэж бичих нь илүү зүйтэй. Британийн Англи хэлэнд /ɑː/ гэж дуудна.";
+"er_description" = "IPA-гаар бол /ɛr/ авиаг /ɛɹ/ эсвэл /ɛɚ/ гэж бичих нь илүү зүйтэй. Британийн Англи хэлэнд /eə/ гэж бичиж, дуудна.";
+"ir_description" = "IPA-гаар бол /ɪr/ авиаг /ɪɹ/ эсвэл /ɪɚ/ гэж бичих нь илүү зүйтэй. Британийн Англи хэлэнд /ɪə/ гэж дуудна.";
+"or_description" = "/ɔr/-ын \"ɔ\" нь энэхүү аппын /ɔ/-ээс өөр. (Яагаад гэвэл Америкийн Англи хэлний олон үгэнд ашиглагддаг /ɔ/-ыг /ɒ/ гэж бичих учиртай). /ɔr/ авиаг хэлэхдээ уруулаараа жижиг дугуй үүсгэнэ. IPA-гаар бол /ɔɹ/ эсвэл /ɔɚ/ гэж бичигдэх нь илүү зөв. Британийн Англи хэлэнд /ɔː/ гэж дууддаг.";

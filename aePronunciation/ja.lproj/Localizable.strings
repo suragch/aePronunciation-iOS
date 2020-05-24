@@ -1,0 +1,334 @@
+/*
+ Japanese
+ */
+
+"locale" = "ja";
+
+// new for iOS version
+"main_tab_more" = "もっと";
+"main_tab_more_history_section_title" = "履歴";
+"main_tab_more_total_time" = "合計時間";
+"main_tab_more_tests" = "テスト";
+"main_tab_more_about_section_title" = "について";
+"main_tab_more_app" = "アプリ";
+"main_tab_more_contact" = "お問い合わせ";
+
+"test_results_back_button" = "できた";
+
+
+/////////////////////////////
+//  Non-Translated strings //
+/////////////////////////////
+
+// <!-- Practice Tab -->
+"tell_me_button" = "\?";
+
+//<!-- Test results activity -->
+"test_results_percent" = "%d%%";
+
+//<!-- History Tests Activity-->
+"history_tests_item_score" = "%d%%";
+
+
+//<!-- Learn sounds tab-->
+"p_example1" = "pass\n/pæs/";
+"p_example2" = "speak\n/spik/";
+"p_example3" = "stop\n/stɑp/";
+"t_example1" = "toad\n/toʊd/";
+"t_example2" = "sting\n/stɪŋ/";
+"t_example3" = "it\n/ɪt/";
+"k_example1" = "cool\n/kul/";
+"k_example2" = "skill\n/skɪl/";
+"k_example3" = "week\n/wik/";
+"ch_example1" = "chairs\n/ʧɛrz/";
+"ch_example2" = "each of\n/\'iʧəv/";
+"ch_example3" = "church\n/ʧɝʧ/";
+"f_example1" = "father\n/\'fɑðɚ/";
+"f_example2" = "gift\n/gɪft/";
+"f_example3" = "if\n/ɪf/";
+"th_voiceless_example1" = "think\n/θɪŋk/";
+"th_voiceless_example2" = "Jonathan\n/\'ʤɑnəθən/";
+"th_voiceless_example3" = "earth\n/ɝθ/";
+"s_example1" = "set\n/sɛt/";
+"s_example2" = "raced\n/reɪst/";
+"s_example3" = "pass\n/pæs/";
+"sh_example1" = "shoot\n/ʃut/";
+"sh_example2" = "wished\n/wɪʃt/";
+"sh_example3" = "ash\n/æʃ/";
+"b_example1" = "bill\n/bɪl/";
+"b_example2" = "above\n/ə\'bʌv/";
+"b_example3" = "rib\n/rɪb/";
+"d_example1" = "delicious\n/də\'lɪʃəs/";
+"d_example2" = "cards\n/kɑrdz/";
+"d_example3" = "card\n/kɑrd/";
+"g_example1" = "good\n/gʊd/";
+"g_example2" = "again\n/ə\'gɛn/";
+"g_example3" = "pig\n/pɪg/";
+"dzh_example1" = "jump\n/ʤʌmp/";
+"dzh_example2" = "agile\n/\'æʤəl/";
+"dzh_example3" = "edge\n/ɛʤ/";
+"v_example1" = "very\n/\'vɛri/";
+"v_example2" = "every\n/\'ɛvri/";
+"v_example3" = "have\n/hæv/";
+"th_voiced_example1" = "they\'re\n/ðɛr/";
+"th_voiced_example2" = "father\n/fɑðɚ/";
+"th_voiced_example3" = "bathe\n/beɪð/";
+"z_example1" = "zoo\n/zu/";
+"z_example2" = "raised\n/reɪzd/";
+"z_example3" = "cars\n/kɑrz/";
+"zh_example1" = "usually\n/\'juʒli/";
+"zh_example2" = "pleasure\n/\'plɛʒɚ/";
+"zh_example3" = "beige\n/beɪʒ/";
+"m_example1" = "me\n/mi/";
+"m_example2" = "jump\n/ʤʌmp/";
+"m_example3" = "arm\n/ɑrm/";
+"n_example1" = "new\n/nu/";
+"n_example2" = "panda\n/\'pændə/";
+"n_example3" = "sun\n/sʌn/";
+"ng_example1" = "ringing\n/\'rɪŋɪŋ/";
+"ng_example2" = "think\n/θɪŋk/";
+"ng_example3" = "sung\n/sʌŋ/";
+"l_example1" = "loud\n/laʊd/";
+"l_example2" = "cool\n/kul/";
+"l_example3" = "bill\n/bɪl/";
+"w_example1" = "wary\n/\'wɛri/";
+"w_example2" = "twelve\n/twɛlv/";
+"w_example3" = "what\n/wʌt/";
+"j_example1" = "year\n/jɪr/";
+"j_example2" = "cube\n/kjub/";
+"j_example3" = "yellow\n/\'jɛlo/";
+"h_example1" = "her\n/hɝ/";
+"h_example2" = "have\n/hæv/";
+"h_example3" = "ahead\n/ə\'hɛd/";
+"r_example1" = "real\n/ril/";
+"r_example2" = "rib\n/rɪb/";
+"r_example3" = "roar\n/rɔr/";
+"i_example1" = "each\n/iʧ/";
+"i_example2" = "read\n/rid/";
+"i_example3" = "me\n/mi/";
+"i_short_example1" = "it\n/ɪt/";
+"i_short_example2" = "him\n/hɪm/";
+"i_short_example3" = "rib\n/rɪb/";
+"e_short_example1" = "edge\n/ɛʤ/";
+"e_short_example2" = "set\n/sɛt/";
+"e_short_example3" = "said\n/sɛd/";
+"ae_example1" = "ash\n/æʃ/";
+"ae_example2" = "bad\n/bæd/";
+"ae_example3" = "bat\n/bæt/";
+"a_example1" = "on\n/ɑn/";
+"a_example2" = "father\n/\'fɑðɚ/";
+"a_example3" = "ma\n/mɑ/";
+"c_backwards_example1" = "ought\n/ɔt/";
+"c_backwards_example2" = "call\n/kɔl/";
+"c_backwards_example3" = "saw\n/sɔ/";
+"u_short_example1" = "put\n/pʊt/";
+"u_short_example2" = "good\n/gʊd/";
+"u_short_example3" = "should\n/ʃʊd/";
+"u_example1" = "ooze\n/uz/";
+"u_example2" = "shoot\n/ʃut/";
+"u_example3" = "blue\n/blu/";
+"v_upsidedown_example1" = "up\n/ʌp/";
+"v_upsidedown_example2" = "sun\n/sʌn/";
+"v_upsidedown_example3" = "uh-huh\n/ə\'hʌ/";
+"schwa_example1" = "above\n/ə\'bʌv/";
+"schwa_example2" = "delicious\n/də\'lɪʃəs/";
+"schwa_example3" = "panda\n/\'pændə/";
+"ei_example1" = "age\n/eɪʤ/";
+"ei_example2" = "safe\n/seɪf/";
+"ei_example3" = "may\n/meɪ/";
+"ai_example1" = "I\'m\n/aɪm/";
+"ai_example2" = "bite\n/baɪt/";
+"ai_example3" = "fly\n/flaɪ/";
+"au_example1" = "out\n/aʊt/";
+"au_example2" = "loud\n/laʊd/";
+"au_example3" = "cow\n/kaʊ/";
+"oi_example1" = "oil\n/ɔɪl/";
+"oi_example2" = "voice\n/vɔɪs/";
+"oi_example3" = "boy\n/bɔɪ/";
+"ou_example1" = "oath\n/oʊθ/";
+"ou_example2" = "cove\n/koʊv/";
+"ou_example3" = "low\n/loʊ/";
+"er_stressed_example1" = "earth\n/ɝθ/";
+"er_stressed_example2" = "birthday\n/\'bɝθdeɪ/";
+"er_stressed_example3" = "her\n/hɝ/";
+"er_unstressed_example1" = "mother\n/\'mʌðɚ/";
+"er_unstressed_example2" = "perform\n/pɚ\'fɔrm/";
+"er_unstressed_example3" = "wonderful\n/\'wʌndɚfəl/";
+"ar_example1" = "arm\n/ɑrm/";
+"ar_example2" = "part\n/pɑrt/";
+"ar_example3" = "car\n/kɑr/";
+"er_example1" = "aired\n/ɛrd/";
+"er_example2" = "chairs\n/ʧɛrz/";
+"er_example3" = "there\n/ðɛr/";
+"ir_example1" = "ear\n/ɪr/";
+"ir_example2" = "weird\n/wɪrd/";
+"ir_example3" = "here\n/hɪr/";
+"or_example1" = "oars\n/ɔrz/";
+"or_example2" = "north\n/nɔrθ/";
+"or_example3" = "roar\n/rɔr/";
+"glottal_stop_example1" = "put\n/pʊʔ/";
+"glottal_stop_example2" = "button\n/\'bʌʔn/";
+"glottal_stop_example3" = "uh-oh\n/\'ʌʔo/";
+"flap_t_example1" = "water\n/\'wɑɾɚ/";
+"flap_t_example2" = "little\n/\'lɪɾəl/";
+"flap_t_example3" = "thirty\n/\'θɝɾi/";
+
+/////////////////////////////
+//  Translated strings //////
+/////////////////////////////
+
+"app_name" = "アメリカ英語の発音";
+
+// Main menu
+"main_menu_keyboard" = "キーボード";
+"main_menu_history" = "履歴";
+"main_menu_about" = "について";
+
+// Tabs
+"main_tab_learn" = "学ぶ";
+"main_tab_practice" = "練習";
+"main_tab_test" = "テスト";
+
+// Learn Single fragment
+"learn_single_show_doubles" = "二重音";
+
+// Learn Double sounds dialog
+"title_activity_learn_double" = "/%@/で二重の音";
+
+// Practice Tab
+"practice_mode_single" = "一重音";
+"practice_mode_double" = "二重音";
+
+// Select Sounds dialog
+"select_sounds_title" = "練習する音を選択してください";
+"select_sounds_radio_single" = "一重音";
+"select_sounds_radio_double" = "二重音";
+"select_sounds_cb_vowels" = "母音";
+"select_sounds_cb_consonants" = "子音";
+"select_sounds_positive_button" = "OK";
+
+// Test setup tab
+"test_setup_name" = "名前";
+"test_default_name" = "私";
+"test_setup_number_of_questions" = "問題：";
+"test_setup_type" = "タイプ：";
+"test_setup_single" = "一重音";
+"test_setup_double" = "二重音";
+"test_setup_begin_button" = "始める";
+
+// Test Activity
+"title_activity_test" = "テスト";
+
+// Test results activity
+"title_activity_test_results" = "テスト結果";
+"test_results_right" = "正解：%d";
+"test_results_wrong" = "誤り：%d";
+"test_results_time" = "時間の長さ：%@";
+"test_results_practice_difficult_button" = "難しい音を練習する";
+
+// History Activity
+"title_activity_history" = "履歴";
+"history_time_title" = "費やした合計時間：";
+"history_test_title" = "テスト";
+"history_details" = "詳細";
+
+// History Time Details Activity
+"title_activity_history_time" = "費やした合計時間";
+"history_time_details_learning" = "時間制限学習";
+"history_time_details_practicing" = "時間制限練習";
+"history_time_details_testing" = "時間制限テスト";
+"history_time_details_total" = "合計時間";
+"history_time_details_type_single" = "一重音";
+"history_time_details_type_double" = "二重音";
+
+// History Test Details Activity
+"title_activity_history_tests" = "過去のテスト";
+"history_test_details_type_single" = "一重音（%d）";
+"history_test_details_type_double" = "二重音（%d）";
+"history_test_details_specific_test_number_of_questions" = "質問：%d";
+
+
+// History Tests Activity
+"title_activity_history_test_details" = "テストの詳細";
+"history_tests_type_single" = "一重音：%d%%";
+"history_tests_type_double" = "二重音：%d%%";
+
+// About Activity
+"title_activity_about" = "について";
+"about_app_name" = "アメリカ\n英語の発音";
+"about_app_version" = "バージョン%@";
+"about_content" = "質問、コメント、提案がある場合は、メッセージを残してください。";
+"about_contact" = "お問い合わせ";
+"about_contact_url" = "http://www.aepronunciation.com/contact/";
+
+// Keyboard Input Activity
+"title_activity_keyboard_input" = "IPAを入力";
+"keyboard_input_toast_text_copied" = "IPAテキストがコピーされました";
+"keyboard_menu_copy" = "コピー";
+"keyboard_menu_clear" = "クリア";
+"keyboard_menu_share" = "共有";
+"keyboard_menu_share_chooser_title" = "テキストを共有…";
+"keyboard_menu_alert_message" = "すべてのテキストを削除してもよろしいですか？";
+"keyboard_menu_alert_clear_all_button" = "削除する";
+
+// Error dialog
+"error_dialog_title" = "Problem";
+"error_two_consonants" = "あなたは %@ + %@（2つの子音）を書きました。 子音と母音を1つずつ選択する必要があります。";
+"error_two_vowels" = "あなたは %@ + %@ （2つの母音）を書きました。 子音と母音を1つずつ選択する必要があります。";
+"error_initial_ng" = "あなたは %@ + %@ を書きましたが、/ŋ/が英語の音節を始めることありません。";
+"error_final_r" = "/r/で音を終了する場合は、R母音の1つ（ɝ, ɑr, ɛr, ɪr, ɔr）のキーを使用する必要があります。 別の子音もあるはずです。";
+"error_final_wjh" = "あなたは %@ + %@ と書きましたが、音節は英語の/%@/音で終わることはありません。";
+"error_dialog_ok_button" = "OK";
+
+// general dialog buttons
+"dialog_cancel_button" = "キャンセル";
+
+// Learn sounds tab
+"p_description" = "/p/は無声子音です。/p/は、単語の先頭で吸引（[pʰ]）されますが、/s/の後および単語の末尾では吸引されません（[p]）。/p/の前に来ると、母音の音は短くなります。";
+"t_description" = "/t/は無声子音です。/t/は、単語の先頭で吸引（[tʰ]）されますが、/s/の後および単語の末尾では吸引されません（[t]）。 3番目の例[ɪtə]や[ɪtʰ]または[ɪts]を読まないように注意してください。 また、 \"t\"の文字はアメリカ英語の発音をしばしば変えることに注意してください。/ʔ/および/ɾ/を参照してください。/t/の前に来ると、母音の音は短くなります。";
+"k_description" = "/k/は無声子音です。/k/は、単語の先頭で吸引（[kʰ]）されますが、/s/の後および単語の末尾では吸引されません（[k]）。/k/の前に来ると、母音の音は短くなります。";
+"ch_description" = "/ʧ/は無声子音です。 舌は口の上と歯の後ろから始まります。/ʧ/の前に来ると、母音の音が短くなります。";
+"f_description" = "/f/は無声子音です。 上唇の歯を下唇の内側に軽く当てます。/f/の前に来ると、母音の音は短くなります。";
+"th_voiceless_description" = "/θ/は無声子音です。 この音では、舌が上歯の底に軽く触れます。/s/や/t/は言わないでください。/θ/の前に来ると、母音の音は短くなります。";
+"s_description" = "/s/は無声子音です。 歯のすぐ後ろで口の上部に舌を置きます。/s/の前に来ると、母音の音は短くなります。";
+"sh_description" = "/ʃ/は無声子音です。 舌は、/s/がある場所からさらに奥の口の上部までわずかに丸まっています。/ʃ/の前に来ると、母音の音が短くなります。";
+"b_description" = "/b/は有声子音です。 唇と口が/p/の音と同じ位置にあります。/b/の前に来ると、母音の音が長くなります。";
+"d_description" = "/d/は有声子音です。 唇と口が/t/の音と同じ位置にあります。 3番目の例/kɑrdə/または/kɑrt/を読まないように注意してください。/d/の前に来ると、母音の音が長くなります。";
+"g_description" = "/g/は有声子音です。 唇と口は/k/の音と同じ位置にあります。 3番目の例/pɪgə/または/pɪk/を読まないように注意してください。/g/の前に来ると、母音の音が長くなります。";
+"dzh_description" = "/ʤ/は有声子音です。 唇と口が/ʧ/の音と同じ位置にあります。 3番目の例/ɛʤə/を読まないように注意してください。/ʤ/の前に来ると、母音の音が長くなります。";
+"v_description" = "/v/は有声子音です。/v/と/w/の違いに注意してください。/v/の音では、上の歯が下の唇に触れます。 これは/f/と同じ口の位置です。 唯一の違いは、/v/が発声されることです。/v/の前に来ると、母音の音が長くなります。";
+"th_voiced_description" = "/ð/は有声子音です。 舌は/θ/音と同じ位置にあります。 舌は上歯の底に軽く触れます。/ð/の前に来ると、母音の音が長くなります。";
+"z_description" = "/z/は有声子音です。 舌は/s/音と同じ位置にあります。/z/の前に来ると、母音の音が長くなります。";
+"zh_description" = "/ʒ/は有声子音です。/ʃ/と同じ口の位置を使用します。/ʒ/の前に来ると、母音の音が長くなります。";
+"m_description" = "/m/は、鼻声の子音です。 唇は/b/と同じ位置にありますが、/m/の場合、空気は鼻を通過します。/m/の前に来ると、母音の音が長くなります。";
+"n_description" = "/n/は、鼻声の子音です。 舌と口は/d/と同じ位置にありますが、/n/の場合、空気は鼻を通過します。/n/の前に来ると、母音の音が長くなります。";
+"ng_description" = "/ŋ/は、鼻声の子音です。 舌は/g/と同じ位置にありますが、/ŋ/の場合、空気は鼻を通過します。 その後に/g/の音を発音しないでください。/ŋ/は英語で単語を開始しません。/ŋ/の前に来ると、母音の音が長くなります。";
+"l_description" = "/l/は有声子音です。 単語の最初の[l]は適切なIPA記号です。 ただし、単語の最後では、発音が異なります。 この音のIPAは[ɫ]と書かれていますが、このアプリでは[l]と[ɫ]の両方に/l/記号を使用しています（多くの教科書や辞書と同様）。 例2は/kuəl/と書くこともできます。";
+"w_description" = "/w/は有声子音です。/w/と/v/の違いに注意してください。/w/の音では、唇は小さな円を作り、歯には触れません。 少数のアメリカ人はwhを/hw/と発音します（IPAではこれは/ʍ/です）。/w/は英語の単語の最後に来ることはありません。";
+"j_description" = "/j/は有声子音です。 舌は/i/の音より少し口の上部に近いところから始まります。 yearとearの違いに注意してください。/j/は、英語の単語の最後来ることはありません。";
+"h_description" = "/h/は無声子音です。 口の奥ではなく喉の中で鳴る非常に軽い音です。/h/は、英語の単語の最後に来ることはありません。";
+"r_description" = "/r/は有声子音です。 この音はIPAに従って/ɹ/と書く必要があります。 （IPA/r/は実際にはトリル付きのrです。）ただし、多くの辞書や教科書との一貫性を保つために、ここでは記号/r/を使用しています。 音節と単語の最後の「r」には、このアプリは/ɝ/,/ɚ/, と/r/（/ɑr/,/ɛr/,/ɪr/, を/ɔr/）使用しています。";
+"glottal_stop_description" = "/ʔ/音は声門停止と呼ばれます。 常に、英語の教科書では教えられていませんが、アメリカ英語の発音の重要な部分です。 ここでのputの発音と/ʊ/の音の例の違いに注意してください。/ʔ/の音は、特に単語の終わりや文の途中で/t/を置き換えることがよくあります。";
+"flap_t_description" = "/ɾ/の音は（/r/ではない）、フラップtまたは歯槽タップと呼ばれます。 通常、英語の教科書では教えられていませんが、アメリカ英語の発音の重要な部分です。 特に/t/が強調されていない音節の母音の間にある場合、/ɾ/の音は、しばしば/t/を置き換えます。/ɾ/の音は/d/と書くこともできますが、これは正確ではありません。 その場合、例は/\'wɑdɚ/,/\'lɪdəl/, と/\'θɝdi/.のように書かれます。";
+
+"i_description" = "舌を口に入れ、下の歯のすぐ後ろで/i/の音を出します。 イギリス英語の発音では、この音は通常/iː/と表記され、2つの点は長い母音を表します。 長い母音と短い母音はアメリカ英語ではそれほど区別されないため、2つの点は書かれていません。 母音が有声子音の前にある場合、それは長くなります。 それが無声子音の前にある場合、それは短いです。";
+"i_short_description" = "/ɪ/は/i/とは異なる音です。 違いは長いものと短いものではなく、口と舌の位置が異なります。 口は少し広く開いており、舌は/i/より少し奥にあります。";
+"e_short_description" = "イギリス英語を説明する多くの辞書や教科書では、この音に/e/という記号を使用しています。 しかし、IPAによると、それは/ɛ/と書く必要があります。 口は/æ/よりも開いており、舌は少し前方にあります。";
+"ae_description" = "/ɛ/のように唇を大きく伸ばしますが、/ɑ/のように口を大きく広げます。 舌は/ɛ/よりも奥にあるはずです。";
+"a_description" = "口を大きく開き、唇をリラックスさせます。 舌は低く、口の奥にあります。/ɑ/は、イギリス英語では/ɑː/とも表記されます。 ただし、アメリカ英語では、/ɑ/は長い（有声の子音の前）場合もあれば、短い（無声の子音の前）場合もあります。 これはアメリカ英語の/ʌ/とは非常に異なる音であることに注意してください。";
+"c_backwards_description" = "/ɔ/は、IPAに従って/ɒ/と記述する必要があります。 ただし、ほとんどの辞書と一致するように、ここでは/ɔ/を使用しています。 ただし、/ɔː/を使用してイギリスの発音を説明する場合と同じ音ではないことに注意してください。 また、/ɔɪ/または/ɔr/のɔと同じ音ではありません（イギリス英語の/ɔː/は/ɔɪ/または/ɔr/のɔと同じです）。 アメリカ人の約40％は/ɔ/の音を発音しません。 彼らはそれを/ɑ/の音に置き換えます。 与えられた例は、/ɑt/、/kɑl/、と/sɑ/と発音されます。cotとcaughtも同じように発音されます（/kɑt/）。";
+"u_short_description" = "/ʊ/と言うには、唇を丸くします。親指をしゃぶっているような大きさにします。/ʊ/は/u/と誤って記述されることがありますが、/ʊ/（「尾」なし）と記述する必要があります。/u/と/ʊ/は2つの非常に異なる母音です。";
+"u_description" = "/u/はイギリス英語でも/uː/と書かれていますが、/iː/、/ɑː/、と/ɔː/のように、アメリカ英語では長い母音点は必要ありません。/u/は有声子音のかなり前で、無声子音の前です。";
+"v_upsidedown_description" = "口を開いた状態で/ʌ/を1本の指の幅程度にします。 ただし、唇と舌はリラックスさせる必要があります。 これは/ɑ/とは異なる音です。 違いは長いものと短いものではなく、口と舌の位置が異なります。 また、通常/ʌ/と書かれるイギリスの音とは発音が多少異なることに注意してください。 この音が強調されていない音節の場合、/ə/と表記されます。";
+"schwa_description" = "母音/ə/は、ストレスのない音節や単語で使用されるため、アメリカ英語で最も一般的な音です。 それはシュワと呼ばれています。 この音が強調された音節の場合、/ʌ/と表記されます。";
+"ei_description" = "/eɪ/は複音で、/e/と/ɪ/の音の組み合わせです。 一部のアメリカ英語の辞書では/e/と書かれることもあります。 （これをイギリス英語の記号/e/と混同しないでください。/e/は実際には/ɛ/と発音されます。）アメリカ英語/eɪ/の音の単語は、イギリス英語では/ɛɪ/と発音されます。 しかし、彼らはそれを/eɪ/と書きます。";
+"ai_description" = "/aɪ/は複音で、/a/と/ɪ/の音の組み合わせです。/a/は/ɑ/とまったく同じ音ではないことに注意してください。";
+"au_description" = "/aʊ/は複音で、/a/と/ʊ/の音の組み合わせです。 口が大きくて広く、小さくて丸くなっていることに注目してください。";
+"oi_description" = "/ɔɪ/は複音で、/ɔ/と/ɪ/の音の組み合わせです。/ɔɪ/で使用されるɔは、このアプリの/ɔ/と同じ音ではありません。 （これは、多くのアメリカ英語の単語を説明するために使用される/ɔ/は、実際には/ɒ/と書かれる必要があるためです。）/ɔɪ/の音は、小さな丸い唇で始まります。";
+"ou_description" = "/oʊ/は複音で、/o/と/ʊ/の音を組み合わせたものです。 辞書によっては/o/とだけ書いており、実際には、一部の単語に対して複母音よりも/o/を使用する方が正確です。 イギリスの/əʊ/の発音とはわずかに異なることに注意してください。";
+"er_stressed_description" = "/ɝ/サウンドは、/ər/または/əɹ/と書かれることがあります。 これは、強調された音節または1音節の単語の音です。/ɝ/が強調されていない場合、/ɚ/と表記されます。 イギリス英語では、/ɝ/は/ɜː/と発音されます。";
+"er_unstressed_description" = "/ɚ/サウンドは/ɚ/と同じですが、/ɚ/は強調されていない音節に使用されます。/ər/または/əɹ/と表記されることもあります。 イギリス英語では、/ɚ/は/ə/と発音されます。";
+"ar_description" = "/ɑr/の音は、IPAに応じて、より正確に/ɑɹ/または/ɑɚ/と書かれます。 イギリス英語では/ɑː/と発音されます。";
+"er_description" = "/ɛr/の音は、IPAに応じて、より正確に/ɛɹ/または/ɛɚ/と書かれます。 それはイギリス英語では/eə/と発音され、書かれています。";
+"ir_description" = "/ɪr/の音は、IPAに応じて、より正確に/ɪɹ/または/ɪɚ/と書かれます。 イギリス英語では/ɪə/と発音されます。";
+"or_description" = "/ɔr/で使用されるɔは、このアプリの/ɔ/と同じ音ではありません。 （これは、多くのアメリカ英語の単語を説明するために使用される/ɔ/は/ɒ/と書く必要があるためです。）/ɔr/の音は、小さな丸い唇で始まります。 IPAによれば、より正確に/ɔɹ/または/ɔɚ/と書かれています。 イギリス英語では/ɔː/と発音されます。";
