@@ -9,7 +9,7 @@ class KeyboardTextKey: KeyboardKey {
     private var oldFrame = CGRect.zero
     private static let selectedTextColor = UIColor.white
     private static let disabledTextColor = UIColor.lightGray
-    private static let normalTextColor = UIColor.systemDefaultTextColor
+    private static var normalTextColor = UIColor.systemDefaultTextColor
     
     // MARK: Primary input value
     
@@ -53,7 +53,6 @@ class KeyboardTextKey: KeyboardKey {
     
     @IBInspectable var secondaryString: String = "" {
         didSet {
-            //secondaryLayer.displayString = secondaryString
             updateSecondaryLayerFrame()
         }
     }
@@ -83,6 +82,15 @@ class KeyboardTextKey: KeyboardKey {
                 updatePrimaryLayerFrame()
                 updateSecondaryLayerFrame()
                 oldFrame = frame
+            }
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if #available(iOS 13.0, *) {
+            if self.traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+                primaryStringFontColor = UIColor.systemDefaultTextColor
             }
         }
     }
