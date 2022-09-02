@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,6 @@
 		50483C131FC295AB00B6E228 /* IpaKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C121FC295AB00B6E228 /* IpaKeyboard.swift */; };
 		50483C151FC2963F00B6E228 /* KeyboardTextKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */; };
 		50483C171FC2966900B6E228 /* KeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C161FC2966900B6E228 /* KeyboardKey.swift */; };
-		50483C1F1FC29A3300B6E228 /* aePronunciationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C1E1FC29A3300B6E228 /* aePronunciationTests.swift */; };
-		50483C2D1FC29A5700B6E228 /* aePronunciationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */; };
 		50483C351FC29BAD00B6E228 /* KeyboardImageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */; };
 		504FD6681FC51AF100622B50 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = 504FD6671FC51AF100622B50 /* raw */; };
 		506480CE1FE48375006D7194 /* AllTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506480CD1FE48375006D7194 /* AllTestsViewController.swift */; };
@@ -30,7 +28,6 @@
 		5094F18B1FCF8BE600F5EF29 /* SoundMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */; };
 		5094F18D1FCFACCE00F5EF29 /* MyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */; };
 		50A7D9CE1FD96A7800671847 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */; };
-		50A7D9D11FD9708000671847 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A7D9D01FD9708000671847 /* SQLite.framework */; };
 		50A7D9D41FDA619300671847 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7D9D31FDA619300671847 /* Test.swift */; };
 		50CB442C1FCC01BB0071FFFA /* SpecialSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */; };
 		50D64FD51BBE5D8B003657A4 /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D64FD41BBE5D8B003657A4 /* String+localized.swift */; };
@@ -49,24 +46,8 @@
 		50E9E6421BD4A577002CC689 /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */; };
 		50E9E6441BD4ABBB002CC689 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E6431BD4ABBB002CC689 /* Answer.swift */; };
 		50E9E64C1BD50A50002CC689 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E9E64B1BD50A50002CC689 /* TestViewController.swift */; };
+		710944E428C0344700876988 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 710944E328C0344700876988 /* SQLite */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		50483C211FC29A3300B6E228 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50DC21631BB8FF65000075AE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50DC216A1BB8FF65000075AE;
-			remoteInfo = aePronunciation;
-		};
-		50483C2F1FC29A5700B6E228 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50DC21631BB8FF65000075AE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50DC216A1BB8FF65000075AE;
-			remoteInfo = aePronunciation;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		50156A9A1FEA937100311087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -80,12 +61,6 @@
 		50483C121FC295AB00B6E228 /* IpaKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpaKeyboard.swift; sourceTree = "<group>"; };
 		50483C141FC2963F00B6E228 /* KeyboardTextKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextKey.swift; sourceTree = "<group>"; };
 		50483C161FC2966900B6E228 /* KeyboardKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKey.swift; sourceTree = "<group>"; };
-		50483C1C1FC29A3200B6E228 /* aePronunciationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aePronunciationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50483C1E1FC29A3300B6E228 /* aePronunciationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationTests.swift; sourceTree = "<group>"; };
-		50483C201FC29A3300B6E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50483C2A1FC29A5700B6E228 /* aePronunciationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aePronunciationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationUITests.swift; sourceTree = "<group>"; };
-		50483C2E1FC29A5700B6E228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50483C341FC29BAD00B6E228 /* KeyboardImageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardImageKey.swift; sourceTree = "<group>"; };
 		504FD6671FC51AF100622B50 /* raw */ = {isa = PBXFileReference; lastKnownFileType = folder; path = raw; sourceTree = "<group>"; };
 		506480CD1FE48375006D7194 /* AllTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTestsViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +79,6 @@
 		5094F18A1FCF8BE500F5EF29 /* SoundMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundMode.swift; sourceTree = "<group>"; };
 		5094F18C1FCFACCE00F5EF29 /* MyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefaults.swift; sourceTree = "<group>"; };
 		50A7D9CD1FD96A7800671847 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
-		50A7D9D01FD9708000671847 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		50A7D9D31FDA619300671847 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		50CB442B1FCC01BB0071FFFA /* SpecialSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialSound.swift; sourceTree = "<group>"; };
 		50D64FD41BBE5D8B003657A4 /* String+localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
@@ -116,10 +90,6 @@
 		50DC21771BB8FF65000075AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50DC217A1BB8FF65000075AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50DC217C1BB8FF65000075AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50DC21851BB8FF65000075AE /* aePronunciationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationTests.swift; sourceTree = "<group>"; };
-		50DC21871BB8FF65000075AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50DC21901BB8FF65000075AE /* aePronunciationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aePronunciationUITests.swift; sourceTree = "<group>"; };
-		50DC21921BB8FF65000075AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50DF5ABB1FD1043600DD7A04 /* SelectSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSoundsViewController.swift; sourceTree = "<group>"; };
 		50DF5ABF1FD2607300DD7A04 /* IpaChooserKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpaChooserKeyboard.swift; sourceTree = "<group>"; };
 		50DF5AC11FD2C26500DD7A04 /* UIColor+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+custom.swift"; sourceTree = "<group>"; };
@@ -129,6 +99,10 @@
 		50E9E6411BD4A577002CC689 /* TestSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
 		50E9E6431BD4ABBB002CC689 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		50E9E64B1BD50A50002CC689 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		710944DB28C0083300876988 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		710944DC28C0083300876988 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		710944DD28C0083300876988 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		710944DE28C0083300876988 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB3FF30024655A6500C6FEEF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		AB3FF30124655A6500C6FEEF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AB3FF30224655A6600C6FEEF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -148,49 +122,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		50483C191FC29A3200B6E228 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50483C271FC29A5700B6E228 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		50DC21681BB8FF65000075AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50A7D9D11FD9708000671847 /* SQLite.framework in Frameworks */,
+				710944E428C0344700876988 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50483C1D1FC29A3200B6E228 /* aePronunciationTests */ = {
-			isa = PBXGroup;
-			children = (
-				50483C1E1FC29A3300B6E228 /* aePronunciationTests.swift */,
-				50483C201FC29A3300B6E228 /* Info.plist */,
-			);
-			path = aePronunciationTests;
-			sourceTree = "<group>";
-		};
-		50483C2B1FC29A5700B6E228 /* aePronunciationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				50483C2C1FC29A5700B6E228 /* aePronunciationUITests.swift */,
-				50483C2E1FC29A5700B6E228 /* Info.plist */,
-			);
-			path = aePronunciationUITests;
-			sourceTree = "<group>";
-		};
 		5074CC0B1BBCCDE2005B0871 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +170,6 @@
 		50A7D9CF1FD9707F00671847 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				50A7D9D01FD9708000671847 /* SQLite.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,10 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				50DC216D1BB8FF65000075AE /* aePronunciation */,
-				50DC21841BB8FF65000075AE /* aePronunciationTests */,
-				50DC218F1BB8FF65000075AE /* aePronunciationUITests */,
-				50483C1D1FC29A3200B6E228 /* aePronunciationTests */,
-				50483C2B1FC29A5700B6E228 /* aePronunciationUITests */,
 				50DC216C1BB8FF65000075AE /* Products */,
 				50A7D9CF1FD9707F00671847 /* Frameworks */,
 			);
@@ -284,8 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				50DC216B1BB8FF65000075AE /* aePronunciation.app */,
-				50483C1C1FC29A3200B6E228 /* aePronunciationTests.xctest */,
-				50483C2A1FC29A5700B6E228 /* aePronunciationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,63 +236,9 @@
 			path = aePronunciation;
 			sourceTree = "<group>";
 		};
-		50DC21841BB8FF65000075AE /* aePronunciationTests */ = {
-			isa = PBXGroup;
-			children = (
-				50DC21851BB8FF65000075AE /* aePronunciationTests.swift */,
-				50DC21871BB8FF65000075AE /* Info.plist */,
-			);
-			path = aePronunciationTests;
-			sourceTree = "<group>";
-		};
-		50DC218F1BB8FF65000075AE /* aePronunciationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				50DC21901BB8FF65000075AE /* aePronunciationUITests.swift */,
-				50DC21921BB8FF65000075AE /* Info.plist */,
-			);
-			path = aePronunciationUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50483C1B1FC29A3200B6E228 /* aePronunciationTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50483C231FC29A3300B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationTests" */;
-			buildPhases = (
-				50483C181FC29A3200B6E228 /* Sources */,
-				50483C191FC29A3200B6E228 /* Frameworks */,
-				50483C1A1FC29A3200B6E228 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50483C221FC29A3300B6E228 /* PBXTargetDependency */,
-			);
-			name = aePronunciationTests;
-			productName = aePronunciationTests;
-			productReference = 50483C1C1FC29A3200B6E228 /* aePronunciationTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		50483C291FC29A5700B6E228 /* aePronunciationUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50483C311FC29A5700B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationUITests" */;
-			buildPhases = (
-				50483C261FC29A5700B6E228 /* Sources */,
-				50483C271FC29A5700B6E228 /* Frameworks */,
-				50483C281FC29A5700B6E228 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50483C301FC29A5700B6E228 /* PBXTargetDependency */,
-			);
-			name = aePronunciationUITests;
-			productName = aePronunciationUITests;
-			productReference = 50483C2A1FC29A5700B6E228 /* aePronunciationUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		50DC216A1BB8FF65000075AE /* aePronunciation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50DC21951BB8FF65000075AE /* Build configuration list for PBXNativeTarget "aePronunciation" */;
@@ -365,13 +246,15 @@
 				50DC21671BB8FF65000075AE /* Sources */,
 				50DC21681BB8FF65000075AE /* Frameworks */,
 				50DC21691BB8FF65000075AE /* Resources */,
-				50A7D9D21FD970B700671847 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = aePronunciation;
+			packageProductDependencies = (
+				710944E328C0344700876988 /* SQLite */,
+			);
 			productName = aePronunciation;
 			productReference = 50DC216B1BB8FF65000075AE /* aePronunciation.app */;
 			productType = "com.apple.product-type.application";
@@ -383,21 +266,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = Suragch;
 				TargetAttributes = {
-					50483C1B1FC29A3200B6E228 = {
-						CreatedOnToolsVersion = 9.0.1;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 50DC216A1BB8FF65000075AE;
-					};
-					50483C291FC29A5700B6E228 = {
-						CreatedOnToolsVersion = 9.0.1;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 50DC216A1BB8FF65000075AE;
-					};
 					50DC216A1BB8FF65000075AE = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = HSUZ2UJNHR;
@@ -418,34 +289,22 @@
 				ja,
 				vi,
 				mn,
+				ko,
 			);
 			mainGroup = 50DC21621BB8FF65000075AE;
+			packageReferences = (
+				710944E228C0344700876988 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 50DC216C1BB8FF65000075AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				50DC216A1BB8FF65000075AE /* aePronunciation */,
-				50483C1B1FC29A3200B6E228 /* aePronunciationTests */,
-				50483C291FC29A5700B6E228 /* aePronunciationUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		50483C1A1FC29A3200B6E228 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50483C281FC29A5700B6E228 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		50DC21691BB8FF65000075AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -461,40 +320,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		50A7D9D21FD970B700671847 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		50483C181FC29A3200B6E228 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50483C1F1FC29A3300B6E228 /* aePronunciationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50483C261FC29A5700B6E228 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50483C2D1FC29A5700B6E228 /* aePronunciationUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		50DC21671BB8FF65000075AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,19 +363,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		50483C221FC29A3300B6E228 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50DC216A1BB8FF65000075AE /* aePronunciation */;
-			targetProxy = 50483C211FC29A3300B6E228 /* PBXContainerItemProxy */;
-		};
-		50483C301FC29A5700B6E228 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50DC216A1BB8FF65000075AE /* aePronunciation */;
-			targetProxy = 50483C2F1FC29A5700B6E228 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		50156A9F1FEB58C000311087 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -561,6 +374,7 @@
 				ABF3F28B246E71640039D81B /* ja */,
 				ABF3F28F246E716F0039D81B /* vi */,
 				ABF3F293246E719A0039D81B /* mn */,
+				710944DD28C0083300876988 /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -575,6 +389,7 @@
 				ABF3F28C246E71640039D81B /* ja */,
 				ABF3F290246E716F0039D81B /* vi */,
 				ABF3F294246E719A0039D81B /* mn */,
+				710944DE28C0083300876988 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -589,6 +404,7 @@
 				ABF3F289246E71640039D81B /* ja */,
 				ABF3F28D246E716E0039D81B /* vi */,
 				ABF3F291246E719A0039D81B /* mn */,
+				710944DB28C0083300876988 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -603,6 +419,7 @@
 				ABF3F28A246E71640039D81B /* ja */,
 				ABF3F28E246E716F0039D81B /* vi */,
 				ABF3F292246E719A0039D81B /* mn */,
+				710944DC28C0083300876988 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -610,102 +427,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		50483C241FC29A3300B6E228 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HSUZ2UJNHR;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = aePronunciationTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aePronunciation.app/aePronunciation";
-			};
-			name = Debug;
-		};
-		50483C251FC29A3300B6E228 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HSUZ2UJNHR;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = aePronunciationTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aePronunciation.app/aePronunciation";
-			};
-			name = Release;
-		};
-		50483C321FC29A5700B6E228 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HSUZ2UJNHR;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = aePronunciationUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = aePronunciation;
-			};
-			name = Debug;
-		};
-		50483C331FC29A5700B6E228 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HSUZ2UJNHR;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = aePronunciationUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa.aePronunciationUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = aePronunciation;
-			};
-			name = Release;
-		};
 		50DC21931BB8FF65000075AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -729,6 +450,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -753,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -785,6 +507,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -803,10 +526,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -818,19 +542,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				CURRENT_PROJECT_VERSION = 10;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = aePronunciation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.2.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -840,43 +565,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				CURRENT_PROJECT_VERSION = 10;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = aePronunciation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.2.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aepronunciation.ipa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50483C231FC29A3300B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50483C241FC29A3300B6E228 /* Debug */,
-				50483C251FC29A3300B6E228 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50483C311FC29A5700B6E228 /* Build configuration list for PBXNativeTarget "aePronunciationUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50483C321FC29A5700B6E228 /* Debug */,
-				50483C331FC29A5700B6E228 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		50DC21661BB8FF65000075AE /* Build configuration list for PBXProject "aePronunciation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -896,6 +604,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		710944E228C0344700876988 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.13.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		710944E328C0344700876988 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 710944E228C0344700876988 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50DC21631BB8FF65000075AE /* Project object */;
 }

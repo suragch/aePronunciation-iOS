@@ -1,7 +1,7 @@
 import UIKit
 
 // View Controllers must adopt this protocol
-protocol KeyboardDelegate: class {
+protocol KeyboardDelegate: AnyObject {
     func keyWasTapped(_ character: String)
     func keyBackspace()
 }

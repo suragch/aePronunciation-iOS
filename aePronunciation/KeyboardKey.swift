@@ -6,7 +6,7 @@
 import UIKit
 
 // protocol for communication with keyboard
-protocol KeyboardKeyDelegate: class {
+protocol KeyboardKeyDelegate: AnyObject {
     func keyTextEntered(sender: KeyboardKey, keyText: String)
     func keyBackspaceTapped() 
 }

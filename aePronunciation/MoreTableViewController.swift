@@ -25,7 +25,7 @@ class MoreTableViewController: UITableViewController {
         if indexPath.section == ABOUT && indexPath.row == CONTACT {
             let urlString = "about_contact_url".localized
             guard let url = URL(string: urlString) else {return}
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url)
         }
     }
     

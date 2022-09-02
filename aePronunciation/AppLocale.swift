@@ -19,6 +19,8 @@ class AppLocale {
             return Locale(identifier: "mn") // Mongolian
         case "vi":
             return Locale(identifier: "vi") // Vietnamese
+        case "ko":
+            return Locale(identifier: "ko") // Korean
         default:
             return Locale(identifier: "en_US_POSIX") // US English
         }
@@ -30,10 +32,6 @@ class AppLocale {
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.medium
         return formatter.string(from: date)
-        
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy/M/d H:mm"
-//        return formatter.string(from: date)
     }
 
 }

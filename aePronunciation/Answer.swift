@@ -75,7 +75,7 @@ class Answer {
             } else if "wjh".contains(parsedIpa.1) {
                 
                 // ends with wjh
-                errorMessage = String.localizedStringWithFormat("error_final_wjh".localized, parsedIpa.0, parsedIpa.1)
+                errorMessage = String.localizedStringWithFormat("error_final_wjh".localized, parsedIpa.0, parsedIpa.1, parsedIpa.1)
             }
         }
         
