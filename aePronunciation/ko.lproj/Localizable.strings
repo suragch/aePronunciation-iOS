@@ -185,9 +185,9 @@
 "main_menu_about" = "이앱에대하여";
 
 // Tabs
-"main_tab_learn" = "배우기";
-"main_tab_practice" = "연습";
-"main_tab_test" = "시험";
+"main_tab_learn" = "학습하기";
+"main_tab_practice" = "연습하기";
+"main_tab_test" = "시험보기";
 
 // Learn Single fragment
 "learn_single_show_doubles" = "더보기";
@@ -224,7 +224,7 @@
 "test_results_right" = "정답: %d";
 "test_results_wrong" = "오답: %d";
 "test_results_time" = "소요된시간: %@";
-"test_results_practice_difficult_button" = "어려운음절 연습하기";
+"test_results_practice_difficult_button" = "틀린 음절 연습하기";
 
 // History Activity
 "title_activity_history" = "기록";
@@ -234,22 +234,22 @@
 
 // History Time Details Activity
 "title_activity_history_time" = "총소요된 시간";
-"history_time_details_learning" = "배웠던 시간";
-"history_time_details_practicing" = "연습했던 시간";
-"history_time_details_testing" = "시험본 시간";
+"history_time_details_learning" = "학습에 소요된 시간";
+"history_time_details_practicing" = "연습에 소요된 시간";
+"history_time_details_testing" = "시험에 소요된 시간";
 "history_time_details_total" = "총 시간";
 "history_time_details_type_single" = "단일음";
 "history_time_details_type_double" = "이중음";
 
 // History Test Details Activity
-"title_activity_history_tests" = "과거 시험들";
+"title_activity_history_tests" = "이전 시험기록";
 "history_test_details_type_single" = "단일음 (%d)";
 "history_test_details_type_double" = "이중음 (%d)";
-"history_test_details_specific_test_number_of_questions" = "문제들: %d";
+"history_test_details_specific_test_number_of_questions" = "문제 개수: %d";
 
 
 // History Tests Activity
-"title_activity_history_test_details" = "시험 새부사항";
+"title_activity_history_test_details" = "시험 세부사항";
 "history_tests_type_single" = "단일음: %d%%";
 "history_tests_type_double" = "이중음: %d%%";
 
